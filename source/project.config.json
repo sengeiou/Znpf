@@ -7,6 +7,10 @@
 		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
+<<<<<<< HEAD
+=======
+		"preloadBackgroundData": false,
+>>>>>>> a599b63bdebe15106c41fbce2df7c714dcb38482
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": false,
@@ -17,7 +21,11 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.11.0",
 	"appid": "wxb71c11ec91a75e4f",
+<<<<<<< HEAD
 	"projectname": "miniprogram-1",
+=======
+	"projectname": "%E7%9F%A5%E9%B8%9F%E8%AF%84%E6%88%BF",
+>>>>>>> a599b63bdebe15106c41fbce2df7c714dcb38482
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
