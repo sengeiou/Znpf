@@ -1,3 +1,9 @@
+
+
+<cu-custom bgColor="bg-white">
+
+	<view slot="content" class="txt-bold" style="color:#161616;">入驻知鸟</view>
+</cu-custom>
 <view class=" padding-8">
   <view class="h5" style="color:#9C72C1" bindtap="why">为什么要入驻知鸟 <image src="{{uploadpath}}resource/{{res.arrowright}}" style="width:25rpx;height:25rpx;"></image></view>
   <view class="h6" style="color:#A0A0A0;margin-top:6rpx;">填写入驻信息，我们会尽快与您联系</view>

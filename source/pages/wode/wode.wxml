@@ -1,5 +1,8 @@
 
+<cu-custom bgColor="bg-white">
 
+	<view slot="content" class="txt-bold" style="color:#161616;">我的</view>
+</cu-custom>
 <view style="background-image:url('{{uploadpath}}resource/{{res.a}}');background-size:100% 100%;" >
   <view class="flex-row flex-center position-230">
     <image src="{{memberinfo.avatarUrl}}" wx:if='{{memberinfo.avatarUrl!=""}}' class=" touxiang radius-50 margin-left-40"></image>

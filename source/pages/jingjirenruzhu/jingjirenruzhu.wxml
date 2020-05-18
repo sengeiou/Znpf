@@ -1,2 +1,5 @@
-<!--pages/jingjirenruzhu/jingjirenruzhu.wxml-->
-<text>pages/jingjirenruzhu/jingjirenruzhu.wxml</text>
+
+<cu-custom bgColor="bg-white">
+
+	<view slot="content" class="txt-bold" style="color:#161616;">入驻知鸟</view>
+</cu-custom>

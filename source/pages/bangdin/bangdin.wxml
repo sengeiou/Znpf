@@ -1,3 +1,8 @@
+<cu-custom bgColor="bg-white">
+
+	<view slot="content" class="txt-bold" style="color:#161616;">入驻知鸟</view>
+</cu-custom>
+
 <view class="padding-left-32 padding-right-30">
   <view style="height:32rpx;"></view>
   <view class="xuanze txt-bold">您的角色是？</view>
