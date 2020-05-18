@@ -26,6 +26,8 @@ class Content extends AppBase {
   }
 
   getUserInfo(e) {
+    AppBase.UserInfo.openid = undefined;
+    this.Base.setMyData({ isgrantuser: true })
     console.log(666666666);
     wx.switchTab({
       url: '/pages/home/home',

@@ -7,18 +7,18 @@
 		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
-		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": false,
 		"coverView": true,
+		"preloadBackgroundData": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.11.0",
 	"appid": "wxb71c11ec91a75e4f",
-	"projectname": "%E7%9F%A5%E9%B8%9F%E8%AF%84%E6%88%BF",
+	"projectname": "miniprogram-1",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -34,13 +34,49 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
-		"miniprogram": {
+		"gamePlugin": {
 			"current": -1,
 			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/feedback/feedback",
+					"pathName": "pages/feedback/feedback",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/wode/wode",
+					"pathName": "pages/wode/wode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/bangdin/bangdin",
+					"pathName": "pages/bangdin/bangdin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/guwenruzhu/guwenruzhu",
+					"pathName": "pages/guwenruzhu/guwenruzhu",
+					"scene": null
+				}
+			]
 		}
 	}
 }

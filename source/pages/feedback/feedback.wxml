@@ -1,0 +1,25 @@
+
+<view style="background:#F7F8FA;height:100vh;">
+  <view class="bg-white flex-center padding-left-32 padding-right-30">
+
+    <view class="flex-row " style="padding: 20rpx 0;">
+      <view class="h5" style="color:#404858;">联系方式（选填）</view>
+      <view class="flex-1"></view>
+      <input class="text-right h5" bindinput="bindlianxi" style="color:#CCCCCC;" placeholder="请输入"></input>
+    </view>
+    <view class="line"></view>
+    <view class="flex-row " style="padding: 20rpx 0;" >
+      <view class="h5" style="color:#404858;">您的反馈问题</view>
+    </view>
+    <view>
+        <textarea class="txta h6 " bindinput="bindinput"  placeholder="请输入您的宝贵意见（200字以内）"></textarea>
+    </view>
+    <view style="height:48rpx;"></view>
+  </view>
+
+  <view class="box">
+    <view class="tijiao" bindtap="tijiao">提交</view>
+  </view>
+ 
+</view>
+

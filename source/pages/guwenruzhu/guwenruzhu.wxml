@@ -1,0 +1,11 @@
+<view class=" padding-8">
+  <view class="h5" style="color:#9C72C1">为什么要入驻知鸟</view>
+  <view class="h6" style="color:#A0A0A0;margin-top:6rpx;">填写入驻信息，我们会尽快与您联系</view>
+</view>
+
+<view class="flex-row flex-center bg-white padding-1213">
+  <view style="color:#161616;">城市</view>
+  <view></view>
+  <view class="flex-1"></view>
+  <image src="{{uploadpath}}resource/{{res.right}}" class="icon-20"></image>
+</view> 

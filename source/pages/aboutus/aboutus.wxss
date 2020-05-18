@@ -1,0 +1,24 @@
+/* pages/aboutus/aboutus.wxss */
+.imgs {
+  width: 91%;
+  height: 240rpx;
+}
+.icon-32 {
+  width: 32rpx;
+  height: 32rpx;
+}
+.margin-top-28{
+  margin-top: 28rpx;
+}
+
+.nostyle view,navigator,input,text,textarea{
+  color:#777777;
+  font-size:unset;
+  
+  word-break: normal;
+  background: #ffffff;
+}
+
+.padding-28 {
+  padding: 28rpx 40rpx 
+}
