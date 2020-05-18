@@ -1,0 +1,23 @@
+/* pages/bangdin/bangdin.wxss */
+Page {
+  background: #F7F8FA;
+}
+.padding-left-32{
+  padding-left: 32rpx;
+}
+.xuanze {
+  font-size: 46rpx;
+  color: #161616;
+}
+.f-34 {
+  font-size: 34rpx;
+}
+.margin-left-80{
+  margin-left:160rpx;
+}
+.padding-top-40 {
+  padding-top:40rpx;
+}
+.margin-left-104{
+  margin-left: 208rpx;
+}

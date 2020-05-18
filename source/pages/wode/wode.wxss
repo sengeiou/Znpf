@@ -1,3 +1,7 @@
+Page {
+  background: #F7F8FA;
+}
+
 .height-256{
   height: 256rpx;
   width:100%;
@@ -11,12 +15,15 @@
   width: 236rpx;
 }
 .position-230{
-  position: relative;
-  bottom: 230rpx;
+  /* position: relative; */
+  /* bottom: 230rpx; */
+  padding: 40rpx 0 60rpx;
 }
 .position-20{
-    position: relative;
-  bottom: 40rpx;
+    /* position: relative; */
+  /* bottom: 40rpx; */
+  /* border-radius: 32rpx 32rpx 0 0; */
+  margin-top: -20rpx;
 }
 .margin-top-4{
   margin-top: 4rpx;
@@ -35,4 +42,8 @@
 }
 .txt-color{
   color: #777777;
+}
+.touxiang {
+  width: 150rpx;
+  height: 150rpx;
 }

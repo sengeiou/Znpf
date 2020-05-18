@@ -4,7 +4,13 @@
     "pages/auth/auth",
     "pages/loupan/loupan",
     "pages/wode/wode",
-    "pages/xuanfang/xuanfang"
+    "pages/xuanfang/xuanfang",
+    "pages/feedback/feedback",
+    "pages/fuwuhao/fuwuhao",
+    "pages/aboutus/aboutus",
+    "pages/bangdin/bangdin",
+    "pages/guwenruzhu/guwenruzhu",
+    "pages/jingjirenruzhu/jingjirenruzhu"
   ],
   "permission": {
     "scope.userLocation": {

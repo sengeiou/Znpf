@@ -230,10 +230,16 @@ export class AppBase {
                 ApiConfig.SetToken(data.openid);
                 console.log("goto update info");
 
-
-                that.Base.gotoOpenUserInfoSetting();
+                memberapi.update(AppBase.UserInfo, () => {
+                  if (this.Base.needauth == true) {
+                    // wx.redirectTo({
+                    //   url: '/pages/auth/auth',
+                    // })
+                  } else {
+                    that.onMyShow();
+                  }
+                });
                  
-                  that.onMyShow();
                
               });
               //that.getAddress();
@@ -262,6 +268,7 @@ export class AppBase {
     var memberapi = new MemberApi();
     var that = this;
     memberapi.info({}, (info) => {
+
       this.Base.setMyData({ memberinfo: info }); 
       that.onMyShow();
     });
@@ -334,7 +341,7 @@ export class AppBase {
     if (result == '0') {
       var memberapi = new MemberApi();
       memberapi.updateshouji({
-        avatarUrl: mobile
+        mobile: mobile
       }, (updatetouxiang) => {
 
         var memberapi = new MemberApi();
@@ -353,12 +360,6 @@ export class AppBase {
           })
 
         });
-
-
-        
-
-
-
         //this.checkPermission();
       });
     } else {
@@ -966,10 +967,56 @@ export class AppBase {
     this.Base.setMyData({ clock:true })
    }
 
-  getUserInfo(e) {
-    console.log(666666666);
-    AppBase.UserInfo.openid = undefined;
-    this.onShow();
-    //this.checkPermission();
+
+  getUserInfo() {
+    var that = this;
+    var memberapi = new MemberApi();
+    wx.getUserInfo({
+      success: userres => {
+        var openid = AppBase.UserInfo.openid;
+        var session_key = AppBase.UserInfo.session_key;
+        AppBase.UserInfo = userres.userInfo;
+        AppBase.UserInfo.openid = openid;
+        AppBase.UserInfo.session_key = session_key;
+        console.log("loginres4", userres);
+        console.log(this.Base.getMyData().memberinfo,'11');
+        var memberinfo = this.Base.getMyData().memberinfo;
+         
+        var api = new WechatApi();
+        api.decrypteddata({
+          iv: userres.iv,
+          encryptedData: userres.encryptedData
+        }, ret => {
+          AppBase.jump = true;
+          AppBase.UserInfo.unionid = ret.return.openId;
+          ApiConfig.SetToken(ret.return.openId);
+          console.log("loginres5", ret);
+          console.log("loginres6", AppBase.UserInfo);
+          var json = null;
+          json = AppBase.UserInfo;
+          json.primary_id = memberinfo.id;
+          memberapi.update(json, () => {
+
+            console.log(AppBase.UserInfo);
+            that.Base.setMyData({
+              UserInfo: AppBase.UserInfo
+            });
+           
+             memberapi.info({},(info)=>{
+               this.Base.setMyData({memberinfo:info});
+             })
+          });
+        });
+
+      },
+      fail: userloginres => {
+        console.log("auth fail");
+        console.log(userloginres);
+
+        if (that.Base.needauth == true) {
+
+        }
+      }
+    })
   }
 }

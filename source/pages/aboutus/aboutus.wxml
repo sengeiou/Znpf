@@ -1,0 +1,18 @@
+
+
+<view >
+  <view class="flex-row " style="justify-content: center; ">
+    <image src="{{uploadpath}}aboutus/{{list.cover}}" class="imgs"></image>
+  </view>
+  <view class="flex-row flex-center padding-left-32 margin-top-28">
+    <image src="{{uploadpath}}resource/{{res.gerendindan}}" class="icon-32"></image>
+    <view class="txt-bold" style="margin-left:8rpx;">企业介绍</view>
+  </view>
+ 
+     <import src="../../wxParse/wxParse.wxml" />
+
+    <view  class='nostyle padding-28 h5' >
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+    </view>
+   
+</view>
