@@ -1,10 +1,4 @@
-/****使用方法，下面两句复制到page的js文件的头部
-		
-import { ApiConfig } from '../../apis/apiconfig';
-import { MemberApi } from '../../apis/member.api';
-
-var memberApi=new MemberApi();
-        *******/
+ 
 import {
   ApiConfig
 } from 'apiconfig';

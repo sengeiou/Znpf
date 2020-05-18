@@ -3,6 +3,9 @@ import { AppBase } from "../../appbase";
 import { ApiConfig } from "../../apis/apiconfig";
 import { InstApi } from "../../apis/inst.api.js";
 
+import { PremisesApi } from "../../apis/premises.api.js";
+
+
 class Content extends AppBase {
   constructor() {
     super();
@@ -18,7 +21,10 @@ class Content extends AppBase {
     this.Base.setMyData({
       order: "A"
     });
+
   }
+
+
   bindorder(e) {
     var orderid = e.currentTarget.dataset.order;
     //console.log(orderid, "选中的节点值");
