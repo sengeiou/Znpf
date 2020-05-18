@@ -226,6 +226,8 @@ export class AppBase {
 
         }
       })
+        }
+        })
       return false;
     } else {
       if (that.setMyData != undefined) {
@@ -239,7 +241,7 @@ export class AppBase {
 
       that.checkPermission();
     }
-
+      
   }
   checkPermission() {
     var memberapi = new MemberApi();

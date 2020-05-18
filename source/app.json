@@ -1,17 +1,18 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
     "pages/auth/auth"
   ],
-   "permission": {
+  "permission": {
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
   },
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "enablePullDownRefresh": true,
-    "navigationBarBackgroundColor": "white",
+    "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
