@@ -1,6 +1,7 @@
 /**app.wxss**/
 @import "wxParse/wxParse.wxss";
-
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
 page{
   background: white;
 }
@@ -187,8 +188,15 @@ overflow:hidden;               /* 内容超出宽度时隐藏超出部分的内�
 .h4{
   font-size: 40rpx !important;
 }
+.h-44{
+  font-size: 44rpx !important;
+
+}
 .h4-5{
   font-size: 32rpx !important;
+}
+.f-34{
+  font-size: 34rpx !important;
 }
 .h5{
   font-size: 28rpx !important;
@@ -202,8 +210,14 @@ overflow:hidden;               /* 内容超出宽度时隐藏超出部分的内�
 .f-32{
   font-size: 32rpx !important;
 }
+.f-26{
+  font-size: 26rpx !important;
+}
 .f-36{
   font-size: 36rpx !important;
+}
+.f-22{
+  font-size: 22rpx !important;
 }
 .text-underline{
   text-decoration: underline;
@@ -296,6 +310,9 @@ button[disabled][type=primary] {
 .padding-top-20{
   padding-top: 20rpx;
 }
+.padding-top-30{
+  padding-top: 30rpx;
+}
 .padding-top-50{
   padding-top: 50rpx;
 }
@@ -305,8 +322,14 @@ button[disabled][type=primary] {
 .padding-bottom-10{
   padding-bottom: 10rpx;
 }
+.padding-bottom-16{
+  padding-bottom: 16rpx;
+}
 .padding-bottom-20{
   padding-bottom: 20rpx;
+}
+.padding-bottom-30{
+  padding-bottom: 30rpx;
 }
 .padding-bottom-50{
   padding-bottom: 50rpx;
@@ -335,15 +358,25 @@ button[disabled][type=primary] {
 .margin-20{
   margin:20rpx;
 }
+.margin-30{
+  margin:30rpx;
+}
 .margin-40{
   margin:40rpx;
 }
 .margin-top-20{
   margin-top:20rpx;
 }
+.margin-top-30{
+  margin-top:30rpx;
+}
 .margin-top{
   margin-top:40rpx;
 }
+.margin-top-50{
+  margin-top:50rpx;
+}
+
 .margin-top-60{
   margin-top:60rpx;
 }
@@ -353,11 +386,20 @@ button[disabled][type=primary] {
 .margin-bottom-10{
   margin-bottom:10rpx;
 }
+.margin-bottom-16{
+  margin-bottom:16rpx;
+}
 .margin-bottom-20{
   margin-bottom:20rpx;
 }
+.margin-bottom-30{
+  margin-bottom:30rpx;
+}
 .margin-bottom-40{
   margin-bottom:40rpx;
+}
+.margin-bottom-50{
+  margin-bottom:50rpx;
 }
 .height-40{
   height: 40rpx;
@@ -377,8 +419,15 @@ button[disabled][type=primary] {
 .margin-top-10{
   margin-top:20rpx;
 }
+
+.margin-top-16{
+  margin-top:16rpx;
+}
+.margin-left-16{
+  margin-left:16rpx;
+}
 .margin-top-5{
-  margin-top:10rpx;
+  margin-top:5rpx;
 }
 .margin-left-5{
   margin-left:5rpx;
@@ -391,6 +440,9 @@ button[disabled][type=primary] {
 }
 .margin-right-20{
   margin-right:20rpx;
+}
+.margin-right-30{
+  margin-right:30rpx;
 }
 .margin-right-40{
   margin-right:40rpx;
@@ -515,5 +567,8 @@ button[disabled][type=primary] {
 }
 .maintab-item{
   height: 100%;
+}
+.padding-left-32 {
+  padding-left: 32rpx;
 }
 

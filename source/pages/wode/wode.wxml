@@ -1,0 +1,67 @@
+
+
+<view style="background-image:url('{{uploadpath}}resource/{{res.a}}');background-size:100% 100%;" >
+  <view class="flex-row flex-center position-230">
+    <image src="{{memberinfo.avatarUrl}}" wx:if='{{memberinfo.avatarUrl!=""}}' class=" touxiang radius-50 margin-left-40"></image>
+    <image src="{{uploadpath}}resource/{{res.a1}}" wx:if='{{memberinfo.avatarUrl==""}}' class=" touxiang radius-50 margin-left-40"></image>
+    <view class="margin-left-20">
+      <button wx:if='{{memberinfo.nickName==""}}'  class='h5 txt-white clear-button' open-type="getUserInfo" bindgetuserinfo="getUserInfo" >授权并登录</button>
+      <view wx:if='{{memberinfo.nickName!=""}}' class="txt-white">{{memberinfo.nickName}}</view>
+      <view class="flex-row marign-top-10">
+        <image src="{{uploadpath}}resource/{{res.a2}}" class="height-28 margin-top-5"></image>
+        <button class='clear-button margin-left-10 margin-top-4 h6 txt-white' hover-class="hover" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNo" style='' wx:if='{{memberinfo.mobile==""}}'>点击获取手机号</button>
+       <view class='margin-left-10 margin-top-4 h6 txt-white'  wx:if='{{memberinfo.mobile!=""}}'>{{memberinfo.mobile}}</view>
+      </view>
+
+    </view>
+  </view>
+</view>
+
+<view class="bg-white border-radius-32 width-100 position-20">
+  <view class="flex-row" style=" justify-content:space-around;">
+    <view class="margin-top-50 margin-bottom-50 margin-left-40 ">
+      <image src="{{uploadpath}}resource/{{res.a3}}" class="icon-30 margin-top-5"></image>
+      <view class="margin-top-5 h7 txt-color">我的消息</view>
+    </view>
+    <view class="margin-top-50 margin-bottom-50">
+      <image src="{{uploadpath}}resource/{{res.a4}}" class="icon-30 margin-top-5"></image>
+      <view class="margin-top-5 h7 txt-color">我的关注</view>
+    </view>
+
+    <view class="margin-top-50 margin-bottom-50 margin-right-40 ">
+      <image src="{{uploadpath}}resource/{{res.a5}}" class="icon-30 margin-top-5"></image>
+      <view class="margin-top-5 h7 txt-color">我的评测</view>
+    </view>
+  </view>
+</view>
+<view class="bg-color padding-top-20 width-100"></view>
+<view class='flex-row bg-white' bindtap="fankui">
+  <image src="{{uploadpath}}resource/{{res.fankui}}" class="icon margin-left-20 margin-top"></image>
+  <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20  flex-1'>反馈问题</view>
+  <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' src='{{uploadpath}}resource/{{res.right}}'></image>
+</view>
+<view class='border'></view>
+<view class='flex-row bg-white' bindtap="fuwu">
+  <image src="{{uploadpath}}resource/{{res.guanzhu}}" class="icon margin-left-20 margin-top"></image>
+  <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20  flex-1'>关注服务号</view>
+  <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' src='{{uploadpath}}resource/{{res.right}}'></image>
+</view>
+<view class='border'></view>
+<view class='flex-row bg-white'>
+  <image src="{{uploadpath}}resource/{{res.zaixian}}" class="icon margin-left-20 margin-top"></image>
+  <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20  flex-1'>在线客服</view>
+  <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' src='{{uploadpath}}resource/{{res.right}}'></image>
+</view>
+<view class='border'></view>
+<view class='flex-row bg-white' bindtap="aboutus">
+  <image src="{{uploadpath}}resource/{{res.aboutus}}" class="icon margin-left-20 margin-top"></image>
+  <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20  flex-1'>关于我们</view>
+  <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' src='{{uploadpath}}resource/{{res.right}}'></image>
+</view>
+<view class='border'></view>
+<view class='flex-row bg-white' bindtap="bangdin">
+  <image src="{{uploadpath}}resource/{{res.shu}}" class="icon margin-left-20 margin-top"></image>
+  <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20  flex-1'>账号绑定</view>
+  <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' src='{{uploadpath}}resource/{{res.right}}'></image>
+</view>
+<view class='border'></view>

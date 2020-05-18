@@ -1,0 +1,42 @@
+/* pages/feedback/feedback.wxss */
+
+.imgs {
+  width: 16rpx;
+  height: 32rpx;
+}
+
+.line {
+  height: 2rpx;
+  background: #F7F8FA;
+}
+.margin-bottom-48 {
+  margin-bottom:  48rpx;
+}
+.txta {
+  width: 688rpx;
+  height: 240rpx;
+  background: #F7F8FA;
+  padding: 20rpx 16rpx;
+  
+}
+.box {
+  width: 100vw;
+  height: 144rpx;
+  background: #ffffff;
+  position: fixed;
+  bottom: 0;
+}
+
+.tijiao {
+  width: 91%;
+  height: 76rpx;
+  background: #9C72C1;
+  line-height: 76rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  color: #ffffff;
+  margin: 12rpx auto 0;
+}
+.padding-left-32{
+  padding-left: 32rpx;
+}

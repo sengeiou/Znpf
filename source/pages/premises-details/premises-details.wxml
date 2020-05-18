@@ -1,4 +1,12 @@
 <!--pages/premises-details/premises-details.wxml-->
+
+<cu-custom isCustom="{{true}}" bgColor="">
+
+	<view slot="content" class="txt-bold" style="color:#161616;">{{detail.activitytype_id_name}}详情</view>
+</cu-custom>
+
+<view style="height:150rpx"></view>
+
 <view class="position:relative">
 
 	<image src="{{uploadpath}}resource/{{res.a}}" class="topimage"></image>

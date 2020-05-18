@@ -14,6 +14,14 @@ class Content extends AppBase {
   }
   onMyShow() {
     var that = this;
+    var api = new InstApi;
+    api.indexbanner({
+      orderby: 'r_main.seq'
+    }, (indexbanner) => {
+      this.Base.setMyData({
+        indexbanner: indexbanner
+      });
+    });
   }
 }
 var content = new Content();
