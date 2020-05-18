@@ -17,6 +17,9 @@ page{
   border-radius: 8rpx;
 
 }
+.width-88{
+  width:88rpx;
+}
 .img_2{
   width:216rpx;
   height: 216rpx;

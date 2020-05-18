@@ -28,17 +28,17 @@
 		</view>
 
 		<view class="flex-1"></view>
-		<view class="flex-column flex-row ">
+		<view class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.ershoufang}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">二手房</view>
 		</view>
 		<view class="flex-2"></view>
-		<view class="flex-column flex-row ">
+		<view class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.banjinzhaofan}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">半径找房</view>
 		</view>
 		<view class="flex-2"></view>
-		<view class="flex-column flex-row ">
+		<view class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.dituzhaofang}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">地图找房</view>
 		</view>
@@ -58,17 +58,17 @@
 
 		</view>
 		<view class="flex-1"></view>
-		<view class="flex-column flex-row ">
+		<view class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.dengji}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">登记</view>
 		</view>
 		<view class="flex-2"></view>
-		<view class="flex-column flex-row ">
+		<view class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.renchou}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">正在认筹</view>
 		</view>
 		<view class="flex-2"></view>
-		<view class="flex-column flex-row ">
+		<view class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.yujikaipan}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">预计开盘</view>
 		</view>
@@ -90,19 +90,19 @@
 		</view>
 
 		<view class="flex-1"></view>
-		<view class="flex-column flex-row ">
+		<view class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.pince}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">评测</view>
 		</view>
 		<view class="flex-2"></view>
-		<view class="flex-column flex-row ">
+		<view class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.guwen}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">置业顾问</view>
 		</view>
 		<view class="flex-2"></view>
-		<view class="flex-column flex-row ">
+		<view class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.gonzhonhao}}' class="icon-30"></image>
-			<view class="f-22 margin-top-16" style="color:#777777">公众号</view>
+			<view class="f-22 margin-top-16" style="color:#777777">               公众号</view>
 		</view>
 
 		<view class="flex-1"></view>
