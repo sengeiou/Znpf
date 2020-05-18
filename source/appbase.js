@@ -173,7 +173,7 @@ export class AppBase {
 
       }
     }, false);
-
+    console.log(AppBase.UserInfo.openid,'instinfo')
     if (AppBase.UserInfo.openid == undefined) {
       // 登录
       console.log("onShow");
@@ -231,7 +231,7 @@ export class AppBase {
                 console.log("goto update info");
 
 
-                //that.Base.gotoOpenUserInfoSetting();
+                that.Base.gotoOpenUserInfoSetting();
                  
                   that.onMyShow();
                
@@ -242,8 +242,7 @@ export class AppBase {
 
         }
       })
-        }
-        })
+      
       return false;
     } else {
       if (that.setMyData != undefined) {
