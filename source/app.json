@@ -21,7 +21,8 @@
     "backgroundTextStyle": "dark",
     "enablePullDownRefresh": true,
     "navigationBarBackgroundColor": "#FFFFFF",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
   },
   "tabBar": {
     "color": "#A0A0A0",
@@ -54,6 +55,11 @@
         "selectedIconPath": "images/icons/d1.png"
       }
     ]
+  },
+  "usingComponents": {
+  
+    "cu-custom": "/colorui/components/cu-custom"
+ 
   },
   "sitemapLocation": "sitemap.json"
 }
