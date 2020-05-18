@@ -10,7 +10,8 @@
     "pages/aboutus/aboutus",
     "pages/bangdin/bangdin",
     "pages/guwenruzhu/guwenruzhu",
-    "pages/jingjirenruzhu/jingjirenruzhu"
+    "pages/jingjirenruzhu/jingjirenruzhu",
+    "pages/whyruzhu/whyruzhu"
   ],
   "permission": {
     "scope.userLocation": {

@@ -12,3 +12,29 @@ Page {
   width: 40rpx;
   height: 40rpx;
 }
+.line {
+  height: 2rpx;
+}
+.huoqu {
+  width: 160rpx;
+  height: 52rpx;
+  background: #9C72C1;
+  text-align: center;
+  line-height: 52rpx;
+  color: #ffffff;
+  font-size: 26rpx;
+  border-radius: 8rpx;
+}
+.icon-64 {
+  width: 128rpx;
+  height: 128rpx;
+}
+.ti {
+  width: 688rpx;
+  height: 96rpx;
+  background: #9C72C1;
+  color:#ffffff;
+  line-height: 96rpx;
+  text-align: center;
+  border-radius: 8rpx;
+}

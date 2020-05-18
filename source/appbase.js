@@ -351,7 +351,7 @@ export class AppBase {
           this.Base.setMyData({ memberinfo: info }); 
           
           this.Base.setMyData({
-            phone: mobile
+            mobile: mobile
           });
           
           wx.showToast({
