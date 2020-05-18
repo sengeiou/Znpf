@@ -2,18 +2,52 @@
   "pages": [
     "pages/home/home",
     "pages/auth/auth",
-    "pages/premises-details/premises-details"
+    "pages/loupan/loupan",
+    "pages/wode/wode",
+    "pages/xuanfang/xuanfang"
   ],
   "permission": {
     "scope.userLocation": {
-      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+      "desc": ""
     }
   },
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "enablePullDownRefresh": true,
-    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#A0A0A0",
+    "selectedColor": "#161616",
+    "backgroundColor": "#FFFFFF",
+    "backgroundstyle": "black",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/home",
+        "iconPath": "images/icons/a.png",
+        "selectedIconPath": "images/icons/a1.png"
+      },
+      {
+        "text": "楼盘",
+        "pagePath": "pages/loupan/loupan",
+        "iconPath": "images/icons/b.png",
+        "selectedIconPath": "images/icons/b1.png"
+      },
+      {
+        "text": "选房",
+        "pagePath": "pages/xuanfang/xuanfang",
+        "iconPath": "images/icons/c.png",
+        "selectedIconPath": "images/icons/c1.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/wode/wode",
+        "iconPath": "images/icons/d.png",
+        "selectedIconPath": "images/icons/d1.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

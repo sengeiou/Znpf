@@ -8,12 +8,16 @@
 		"es6": true,
 		"postcss": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": false,
 		"coverView": true
 =======
+>>>>>>> 258c295828776aade0f5197934029c8a50d44773
+=======
 		"preloadBackgroundData": false,
+>>>>>>> a599b63bdebe15106c41fbce2df7c714dcb38482
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": false,
