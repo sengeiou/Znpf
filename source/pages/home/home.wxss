@@ -1,3 +1,4 @@
+@import "home.skeleton.wxss";
 page{
   background: #F7F8FA;
 }
@@ -15,6 +16,9 @@ page{
   height: 192rpx;
   border-radius: 8rpx;
 
+}
+.width-88{
+  width:88rpx;
 }
 .img_2{
   width:216rpx;

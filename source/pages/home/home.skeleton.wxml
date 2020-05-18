@@ -1,0 +1,126 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/5/18 下午6:20:00 
+使用方法：
+1. 在"pages\home\home.wxml"中使用`include`指令引入此模板，
+2. 在"pages\home\home.wxss"中使用`import`指令引入"pages\home\home.skeleton.wxss"
+3. 书写对应的逻辑，来控制骨架屏的显示与隐藏
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<view class="sk-container">
+  <view is="colorui/components/cu-custom">
+    <view class="cu-custom custom--cu-custom" style="height:84px">
+      <view class="cu-bar custom--cu-bar fixed custom--fixed bg-white custom--bg-white" style="height:84px;padding-top:44px;">
+        <view class="content custom--content" style="top:44px">
+          <view class="txt-bold sk-transparent sk-text-23-3333-172 sk-text" style="color: rgb(22, 22, 22); background-size: 41.2903% 1.875rem; background-position-x: 50%;">知鸟评房</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <swiper autoplay="true" circular="true" class="square-dot" current="0" duration="200" indicator-dots="true" interval="5000" style="width:375px;height:176px;">
+    <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+      <image class="bor-rd-6 sk-image" id="1" style="width:100%;height:100%; "></image>
+    </swiper-item>
+  </swiper>
+  <view class="padding-30 bg-white margin-top-10">
+    <view class="flex-row flex-center">
+      <image class="block_1 sk-image"></image>
+      <view class="zuixin">
+        <view class="f-22 sk-transparent sk-text-14-2857-762 sk-text" style="color: rgb(119, 119, 119); background-size: 100% 0.9625rem;">最新房源</view>
+        <view class="h-44 margin-top-10 text-center sk-transparent sk-text-14-2857-55 sk-text" style="color: rgb(252, 196, 150); background-size: 55.6463% 1.925rem; background-position-x: 50%;">12</view>
+      </view>
+      <view class="flex-1"></view>
+      <view class="flex-column flex-row">
+        <image class="icon-30 sk-image"></image>
+        <view class="f-22 margin-top-16 sk-transparent sk-text-14-2857-45 sk-text" style="color: rgb(119, 119, 119); background-size: 100% 0.9625rem;">二手房</view>
+      </view>
+      <view class="flex-2"></view>
+      <view class="flex-column flex-row">
+        <image class="icon-30 sk-image"></image>
+        <view class="f-22 margin-top-16 sk-transparent sk-text-14-2857-985 sk-text" style="color: rgb(119, 119, 119); background-size: 100% 0.9625rem;">半径找房</view>
+      </view>
+      <view class="flex-2"></view>
+      <view class="flex-column flex-row">
+        <image class="icon-30 sk-image"></image>
+        <view class="f-22 margin-top-16 sk-transparent sk-text-14-2857-561 sk-text" style="color: rgb(119, 119, 119); background-size: 100% 0.9625rem;">地图找房</view>
+      </view>
+      <view class="flex-1"></view>
+    </view>
+    <view class="flex-row flex-center margin-top-20">
+      <image class="block_1 sk-image"></image>
+      <view class="zuixin">
+        <view class="f-22 sk-transparent sk-text-14-2857-883 sk-text" style="color: rgb(119, 119, 119); background-size: 100% 0.9625rem;">新房预售</view>
+        <view class="h-44 margin-top-10 text-center sk-transparent sk-text-14-2857-554 sk-text" style="color: rgb(239, 136, 143); background-size: 55.6463% 1.925rem; background-position-x: 50%;">32</view>
+      </view>
+      <view class="flex-1"></view>
+      <view class="flex-column flex-row">
+        <image class="icon-30 sk-image"></image>
+        <view class="f-22 margin-top-16 sk-transparent sk-text-14-2857-977 sk-text" style="color: rgb(119, 119, 119); background-size: 100% 0.9625rem;">登记</view>
+      </view>
+      <view class="flex-2"></view>
+      <view class="flex-column flex-row">
+        <image class="icon-30 sk-image"></image>
+        <view class="f-22 margin-top-16 sk-transparent sk-text-14-2857-635 sk-text" style="color: rgb(119, 119, 119); background-size: 100% 0.9625rem;">正在认筹</view>
+      </view>
+      <view class="flex-2"></view>
+      <view class="flex-column flex-row">
+        <image class="icon-30 sk-image"></image>
+        <view class="f-22 margin-top-16 sk-transparent sk-text-14-2857-901 sk-text" style="color: rgb(119, 119, 119); background-size: 100% 0.9625rem;">预计开盘</view>
+      </view>
+      <view class="flex-1"></view>
+    </view>
+    <view class="flex-row flex-center margin-top-20">
+      <image class="block_1 sk-image"></image>
+      <view class="zuixin">
+        <view class="f-22 sk-transparent sk-text-14-2857-262 sk-text" style="color: rgb(119, 119, 119); background-size: 100% 0.9625rem;">最新评测</view>
+        <view class="h-44 margin-top-10 text-center sk-transparent sk-text-14-2857-115 sk-text" style="color: rgb(135, 191, 241); background-size: 83.4517% 1.925rem; background-position-x: 50%;">123</view>
+      </view>
+      <view class="flex-1"></view>
+      <view class="flex-column flex-row">
+        <image class="icon-30 sk-image"></image>
+        <view class="f-22 margin-top-16 sk-transparent sk-text-14-2857-596 sk-text" style="color: rgb(119, 119, 119); background-size: 100% 0.9625rem;">评测</view>
+      </view>
+      <view class="flex-2"></view>
+      <view class="flex-column flex-row">
+        <image class="icon-30 sk-image"></image>
+        <view class="f-22 margin-top-16 sk-transparent sk-text-14-2857-341 sk-text" style="color: rgb(119, 119, 119); background-size: 100% 0.9625rem;">置业顾问</view>
+      </view>
+      <view class="flex-2"></view>
+      <view class="flex-column flex-row">
+        <image class="icon-30 sk-image"></image>
+        <view class="f-22 margin-top-16 sk-transparent sk-text-14-2857-397 sk-text" style="color: rgb(119, 119, 119); background-size: 100% 0.9625rem;">公众号</view>
+      </view>
+      <view class="flex-1"></view>
+    </view>
+  </view>
+  <view class="bg-white margin-top-10">
+    <view class="f-34 txt-bold padding-30 sk-transparent sk-text-14-2857-526 sk-text" style="color: rgb(22, 22, 22); background-size: 29.5652% 1.4875rem;">你可能感兴趣</view>
+    <view class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30" style="border: none;">
+      <image class="img_1 sk-image"></image>
+      <view class="margin-left-30 flex-1">
+        <view class="txt-bold sk-transparent sk-text-14-2857-837 sk-text" style="color: rgb(22, 22, 22); background-size: 36.6972% 1.4rem;">恒大御景湾</view>
+        <view class="h5 sk-transparent sk-text-14-2857-94 sk-text" style="color: rgb(88, 58, 128); background-size: 31.4149% 1.225rem;">26000元/m</view>
+        <view class="flex-row flex-center margin-top-30">
+          <view>
+            <view class="flex-row">
+              <view class="lable sk-transparent sk-text-14-2857-475 sk-text" style="background-size: 100% 0.9625rem;">北辰区|宜兴埠</view>
+              <view class="lable margin-left-16 sk-transparent sk-text-14-2857-203 sk-text" style="background-size: 100% 0.9625rem;">刚需</view>
+            </view>
+            <view class="flex-row margin-top-16">
+              <view class="lable sk-transparent sk-text-14-2857-881 sk-text" style="background-size: 100% 0.9625rem;">综合体1公里+</view>
+              <view class="lable margin-left-16 sk-transparent sk-text-14-2857-841 sk-text" style="background-size: 100% 0.9625rem;">地铁</view>
+            </view>
+          </view>
+          <view class="flex-1"></view>
+          <view class="flex-row flex-column">
+            <view class="h2 sk-transparent sk-text-14-2857-231 sk-text" style="color: rgb(88, 58, 128); background-size: 100% 2.45rem;">3.4</view>
+            <view class="f-26 sk-transparent sk-text-14-2857-110 sk-text" style="color: rgb(160, 160, 160); background-size: 100% 1.1375rem;">配套评级</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30" style="border: none;">
+      <image class="img_1 sk-image"></image>
+    </view>
+  </view>
+</view>

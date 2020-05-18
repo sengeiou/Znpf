@@ -1,2 +1,4 @@
-<!--pages/loupan/loupan.wxml-->
-<text>pages/loupan/loupan.wxml</text>
+<cu-custom bgColor="bg-white">
+
+	<view slot="content" class="txt-bold" style="color:#161616;">楼盘</view>
+</cu-custom>

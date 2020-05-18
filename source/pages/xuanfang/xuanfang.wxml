@@ -1,2 +1,4 @@
-<!--pages/xuanfang/xuanfang.wxml-->
-<text>pages/xuanfang/xuanfang.wxml</text>
+<cu-custom bgColor="bg-white">
+
+	<view slot="content" class="txt-bold" style="color:#161616;">选房</view>
+</cu-custom>
