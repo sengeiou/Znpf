@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/auth/auth"
+    "pages/auth/auth",
+    "pages/premises-details/premises-details"
   ],
   "permission": {
     "scope.userLocation": {
