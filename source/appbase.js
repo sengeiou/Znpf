@@ -15,6 +15,7 @@ export class AppBase {
   static InstInfo = {};
   unicode = "znpf";
   needauth = false;
+  phone=null;
   pagetitle = null;
   app = null;
   options = null;
@@ -95,16 +96,22 @@ export class AppBase {
       navtoPage: base.navtoPage,
       openContent: base.openContent,
       getPhoneNo: base.getPhoneNo,
+      getUserInfo: base.getUserInfo,
       dataReturn: base.dataReturn,
       dataReturnCallback: base.dataReturnCallback,
       loadtabtype: base.loadtabtype,
       contactkefu: base.contactkefu,
       contactweixin: base.contactweixin,
       download: base.download,
-      checkPermission: base.checkPermission
-
-
-
+      checkPermission: base.checkPermission,
+      recorderManager: base.recorderManager,
+      backtotop: base.backtotop,
+      topage: base.topage,
+      tishi:base.tishi,
+      tishi2:base.tishi2,
+      tishi3:base.tishi3,
+      clock:base.clock,
+      close:base.close 
     }
   }
   log() {
@@ -115,10 +122,13 @@ export class AppBase {
     console.log(options);
     console.log("onload");
     this.Base.setBasicInfo();
-    this.Base.setMyData({ options: options });
+    this.Base.setMyData({ options: options,tishi:false,tishi2:false,tishi3:false });
 
     ApiConfig.SetUnicode(this.Base.unicode);
+
+
   }
+
   gotoOpenUserInfoSetting() {
     var that = this;
     wx.showModal({
@@ -136,6 +146,7 @@ export class AppBase {
       }
     })
   }
+
   setBasicInfo() {
     var that = this;
   }
@@ -154,12 +165,6 @@ export class AppBase {
 
         return;
       }
-      if (instinfo.instswitch == '否') {
-        wx.reLaunch({
-          url: '/pages/content/content?keycode=kaiguan',
-        })
-
-      }
       AppBase.InstInfo = instinfo;
       this.Base.setMyData({ instinfo: instinfo });
       if (this.Base.pagetitle == null) {
@@ -175,7 +180,11 @@ export class AppBase {
       wx.login({
         success: res => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
+
+          console.log("res");
+
           console.log(res);
+
           wx.getUserInfo({
             success: userres => {
               AppBase.UserInfo = userres.userInfo;
@@ -198,6 +207,8 @@ export class AppBase {
                   console.log(AppBase.UserInfo);
                   that.Base.setMyData({ UserInfo: AppBase.UserInfo });
 
+             
+
                   that.checkPermission();
 
                 });
@@ -205,31 +216,39 @@ export class AppBase {
                 //that.Base.getAddress();
               });
             },
-            fail: faukres => {
-              var memberapi = new MemberApi();
+            fail: userloginres => {
+              console.log("auth fail");
+              console.log(userloginres);
               console.log(res);
+              var memberapi = new MemberApi();
               memberapi.getuserinfo({ code: res.code, grant_type: "authorization_code" }, data => {
+                console.log("here");
                 console.log(data);
                 AppBase.UserInfo.openid = data.openid;
                 AppBase.UserInfo.session_key = data.session_key;
+                console.log(AppBase.UserInfo);
                 ApiConfig.SetToken(data.openid);
-                memberapi.update(AppBase.UserInfo, () => {
-                  if (this.Base.needauth == true) {
-                    wx.redirectTo({
-                      url: '/pages/auth/auth',
-                    })
-                  } else {
-                    that.onMyShow();
-                  }
-                });
+                console.log("goto update info");
+
+
+                //that.Base.gotoOpenUserInfoSetting();
+                 
+                  that.onMyShow();
+               
               });
-
+              //that.getAddress();
             }
-          })
-          return false;
-        }
-      });
+          });
 
+        }
+      })
+      return false;
+    } else {
+      if (that.setMyData != undefined) {
+        that.setMyData({ UserInfo: AppBase.UserInfo });
+      } else {
+        that.Base.setMyData({ UserInfo: AppBase.UserInfo });
+      }
       //this.loadtabtype();
 
       that.Base.setMyData({ UserInfo: AppBase.UserInfo });
@@ -242,21 +261,14 @@ export class AppBase {
     var memberapi = new MemberApi();
     var that = this;
     memberapi.info({}, (info) => {
-      if (info == null && this.Base.needauth == true) {
-        wx.navigateTo({
-          url: '/pages/auth/auth',
-        })
-      } else {
-
-        this.Base.setMyData({ memberinfo: info });
-        that.onMyShow();
-      }
+      this.Base.setMyData({ memberinfo: info }); 
+      that.onMyShow();
     });
   }
   loadtabtype() {
     console.log("loadtabtype");
     var memberapi = new MemberApi();
-    memberapi.update(AppBase.UserInfo, () => { });
+    memberapi.update(AppBase.UserInfo, () => {});
   }
 
   onMyShow() {
@@ -278,7 +290,6 @@ export class AppBase {
   }
   onShareAppMessage() {
 
-
   }
 
   dataReturn(data) {
@@ -299,29 +310,62 @@ export class AppBase {
     console.log(obj);
     this.Page.setData(obj);
   }
-  getMyData() {
+  getMyData() { 
     return this.Page.data;
   }
   getPhoneNo(e) {
     var that = this;
-    console.log(e);
-    var api = new WechatApi();
-    var data = this.Base.getMyData();
-    console.log(data);
+      
+    var api = new WechatApi(); 
 
     e.detail.session_key = AppBase.UserInfo.session_key;
-    e.detail.openid = AppBase.UserInfo.openid;
-    console.log(e.detail);
+    e.detail.openid = AppBase.UserInfo.openid;  
+   
     api.decrypteddata(e.detail, (ret) => {
-      console.log(ret);
-      that.phonenoCallback(ret.return.phoneNumber, e);
+      console.log(ret,'最最最');
+
+     that.phonenoCallback(ret.return.phoneNumber, e, ret.code);
+
     });
   }
-  phonenoCallback(phoneno, e) {
-    console.log("phone no callback");
-    console.log(phoneno);
-    console.log(e);
+  phonenoCallback(mobile, e,result) {
+      
+    if (result == '0') {
+      var memberapi = new MemberApi();
+      memberapi.updateshouji({
+        avatarUrl: mobile
+      }, (updatetouxiang) => {
+
+        var memberapi = new MemberApi();
+
+        var that = this;
+        memberapi.info({}, (info) => {
+          this.Base.setMyData({ memberinfo: info }); 
+          
+          this.Base.setMyData({
+            phone: mobile
+          });
+          
+          wx.showToast({
+            title: '获取成功',
+            icon: 'none'
+          })
+
+        });
+
+
+        
+
+
+
+        //this.checkPermission();
+      });
+    } else {
+      console.log('不出来')
+    }
+
   }
+
   viewPhoto(e) {
     var img = e.currentTarget.id;
     console.log(img);
@@ -438,17 +482,22 @@ export class AppBase {
       }
     });
   }
-  uploadFile(modul, filename, callback) {
+  uploadFile(modul, filename, lujin, callback) {
+    //console.log(8888888888);
 
     var tempFilePaths = filename
+    var lujin = lujin;
+    console.log("ssssssssssss" + tempFilePaths);
+    console.log(lujin);
     wx.uploadFile({
       url: ApiConfig.GetFileUploadAPI(), //仅为示例，非真实的接口地址
-      filePath: tempFilePaths,
+      filePath: lujin,
       name: 'file',
       formData: {
         'module': modul,
         "field": "file"
       },
+
       success: function (res) {
         console.log(res);
         var data = res.data
@@ -467,6 +516,7 @@ export class AppBase {
       }
     });
   }
+
   uploadImage(modul, callback, count = 1, completecallback) {
     wx.chooseImage({
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
@@ -813,11 +863,15 @@ export class AppBase {
         // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
         if (res.statusCode === 200) {
           var tempFilePath = res.tempFilePath;
-          console.log(tempFilePath);
-          wx.saveImageToPhotosAlbum({
-            filePath: tempFilePath,
+          console.log("tempFilePath", tempFilePath);
+          wx.saveFile({
+            tempFilePath: tempFilePath,
+            fail: function (savefail) {
+              console.log("savefail", savefail);
+            },
             success: function (res) {
               var savedFilePath = res.savedFilePath;
+              console.log("savedFilePath", savedFilePath, res);
               if (open == true) {
                 wx.openDocument({
                   filePath: savedFilePath,
@@ -877,4 +931,44 @@ export class AppBase {
       icon: "none"
     })
   }
-} 
+  backtotop() {
+    console.log("backtotop");
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
+    })
+  }
+  topage(e){
+   console.log(e);
+   //return;
+    var name = e.currentTarget.dataset.name;
+   var id=e.currentTarget.id;
+  
+   wx.navigateTo({
+     url: '/pages/' + name + '/' + name+'?id='+id
+   })
+  }
+   tishi(){
+    this.Base.setMyData({tishi:true})
+   }
+   tishi2(){
+    this.Base.setMyData({tishi2:true})
+   }
+   tishi3(){
+    this.Base.setMyData({tishi3:true})
+   }
+   close(){
+     this.Base.setMyData({ tishi: false,tishi2:false,tishi3:false,tishi4:false })
+   }
+
+   clock(){
+    this.Base.setMyData({ clock:true })
+   }
+
+  getUserInfo(e) {
+    console.log(666666666);
+    AppBase.UserInfo.openid = undefined;
+    this.onShow();
+    //this.checkPermission();
+  }
+}

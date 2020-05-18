@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/auth/auth"
+    "pages/auth/auth",
+    "pages/premises-details/premises-details"
   ],
   "permission": {
     "scope.userLocation": {
@@ -12,7 +13,33 @@
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": true,
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#4C4C4C",
+    "selectedColor": "#FFC30C",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/home",
+        "iconPath": "images/icons/a-a.png",
+        "selectedIconPath": "images/icons/a.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/auth/auth",
+        "iconPath": "images/icons/b-a.png",
+        "selectedIconPath": "images/icons/b.png"
+      }
+    ]
+  },
+  "usingComponents": {
+   
+    "cu-custom": "/colorui/components/cu-custom"
+   
   },
   "sitemapLocation": "sitemap.json"
 }
