@@ -379,6 +379,9 @@ button[disabled][type=primary] {
 .margin-right-20{
   margin-right:20rpx;
 }
+.margin-right-30{
+  margin-right:30rpx;
+}
 .margin-right-40{
   margin-right:40rpx;
 }

@@ -31,31 +31,31 @@
 <view class="bg-color padding-top-20 width-100"></view>
 <view class='flex-row bg-white'>
 <image src="{{uploadpath}}resource/{{res.shu}}" class="icon margin-left-20 margin-top"></image>
-    <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20 '>反馈问题
-    <image class='icon-15 padding-bottom-30rpx;' src='{{uploadpath}}resource/{{res.right}}'></image></view>
+    <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20  flex-1'>反馈问题</view>
+    <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' src='{{uploadpath}}resource/{{res.right}}'></image>
   </view>
     <view class='border'></view>
     <view class='flex-row bg-white'>
 <image src="{{uploadpath}}resource/{{res.shu}}" class="icon margin-left-20 margin-top"></image>
-    <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20 '>关注服务号
-    <image class='icon-15 padding-bottom-30rpx;' src='{{uploadpath}}resource/{{res.right}}'></image></view>
+    <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20  flex-1'>关注服务号</view>
+    <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' src='{{uploadpath}}resource/{{res.right}}'></image>
   </view>
-    <view class='border margin-left-40 margin-right-40'></view>
-        <view class='flex-row bg-white'>
+    <view class='border'></view>
+    <view class='flex-row bg-white'>
 <image src="{{uploadpath}}resource/{{res.shu}}" class="icon margin-left-20 margin-top"></image>
-    <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20 '>在线客服
-    <image class='icon-15 padding-bottom-30rpx;' src='{{uploadpath}}resource/{{res.right}}'></image></view>
+    <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20  flex-1'>在线客服</view>
+    <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' src='{{uploadpath}}resource/{{res.right}}'></image>
   </view>
-    <view class='border margin-left-40 margin-right-40'></view>
-        <view class='flex-row bg-white'>
+    <view class='border'></view>
+    <view class='flex-row bg-white'>
 <image src="{{uploadpath}}resource/{{res.shu}}" class="icon margin-left-20 margin-top"></image>
-    <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20 '>关于我们
-    <image class='icon-15 padding-bottom-30rpx;' src='{{uploadpath}}resource/{{res.right}}'></image></view>
+    <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20  flex-1'>关于我们</view>
+    <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' src='{{uploadpath}}resource/{{res.right}}'></image>
   </view>
-    <view class='border margin-left-40 margin-right-40'></view>
-        <view class='flex-row bg-white'>
+    <view class='border'></view>
+    <view class='flex-row bg-white'>
 <image src="{{uploadpath}}resource/{{res.shu}}" class="icon margin-left-20 margin-top"></image>
-    <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20 '>账号绑定
-    <image class='icon-15 padding-bottom-30rpx;' src='{{uploadpath}}resource/{{res.right}}'></image></view>
+    <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20  flex-1'>账号绑定</view>
+    <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' src='{{uploadpath}}resource/{{res.right}}'></image>
   </view>
-    <view class='border margin-left-40 margin-right-40'></view>
+    <view class='border'></view>
