@@ -324,6 +324,10 @@ button[disabled][type=primary] {
 .margin-top{
   margin-top:40rpx;
 }
+.margin-top-50{
+  margin-top:50rpx;
+}
+
 .margin-top-60{
   margin-top:60rpx;
 }
@@ -338,6 +342,9 @@ button[disabled][type=primary] {
 }
 .margin-bottom-40{
   margin-bottom:40rpx;
+}
+.margin-bottom-50{
+  margin-bottom:50rpx;
 }
 .height-40{
   height: 40rpx;
