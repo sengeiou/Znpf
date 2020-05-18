@@ -2,11 +2,21 @@
 import { MemberApi } from "../apis/member.api";
 import { WechatApi } from "../apis/wechat.api";
  */
-import { ApiConfig } from "apis/apiconfig.js";
-import { ApiUtil } from "apis/apiutil.js";
-import { InstApi } from "apis/inst.api.js";
-import { MemberApi } from "apis/member.api";
-import { WechatApi } from "apis/wechat.api";
+import {
+  ApiConfig
+} from "apis/apiconfig.js";
+import {
+  ApiUtil
+} from "apis/apiutil.js";
+import {
+  InstApi
+} from "apis/inst.api.js";
+import {
+  MemberApi
+} from "apis/member.api";
+import {
+  WechatApi
+} from "apis/wechat.api";
 
 export class AppBase {
   static BRANDAPPLE = 12;
@@ -15,13 +25,16 @@ export class AppBase {
   static InstInfo = {};
   unicode = "znpf";
   needauth = false;
-  phone=null;
+  phone = null;
   pagetitle = null;
   app = null;
   options = null;
   data = {
     uploadpath: ApiConfig.GetUploadPath(),
-    copyright: { name: "", website: "mecloud.com" }
+    copyright: {
+      name: "",
+      website: "mecloud.com"
+    }
   };
   Page = null;
   util = ApiUtil;
@@ -107,11 +120,11 @@ export class AppBase {
       recorderManager: base.recorderManager,
       backtotop: base.backtotop,
       topage: base.topage,
-      tishi:base.tishi,
-      tishi2:base.tishi2,
-      tishi3:base.tishi3,
-      clock:base.clock,
-      close:base.close 
+      tishi: base.tishi,
+      tishi2: base.tishi2,
+      tishi3: base.tishi3,
+      clock: base.clock,
+      close: base.close
     }
   }
   log() {
@@ -122,7 +135,12 @@ export class AppBase {
     console.log(options);
     console.log("onload");
     this.Base.setBasicInfo();
-    this.Base.setMyData({ options: options,tishi:false,tishi2:false,tishi3:false });
+    this.Base.setMyData({
+      options: options,
+      tishi: false,
+      tishi2: false,
+      tishi3: false
+    });
 
     ApiConfig.SetUnicode(this.Base.unicode);
 
@@ -152,12 +170,15 @@ export class AppBase {
   }
   onReady() {
     console.log("onReady");
-  } minimm
+  }
+  minimm
   onShow() {
     var that = this;
     var instapi = new InstApi();
     instapi.resources({}, (res) => {
-      this.Base.setMyData({ res });
+      this.Base.setMyData({
+        res
+      });
     });
 
     instapi.info({}, (instinfo) => {
@@ -166,7 +187,9 @@ export class AppBase {
         return;
       }
       AppBase.InstInfo = instinfo;
-      this.Base.setMyData({ instinfo: instinfo });
+      this.Base.setMyData({
+        instinfo: instinfo
+      });
       if (this.Base.pagetitle == null) {
         this.Base.setPageTitle(instinfo);
       } else {
@@ -191,7 +214,10 @@ export class AppBase {
               console.log(userres);
 
               var memberapi = new MemberApi();
-              memberapi.getuserinfo({ code: res.code, grant_type: "authorization_code" }, data => {
+              memberapi.getuserinfo({
+                code: res.code,
+                grant_type: "authorization_code"
+              }, data => {
                 console.log("here");
                 console.log(data);
                 AppBase.UserInfo.openid = data.openid;
@@ -205,9 +231,11 @@ export class AppBase {
                 memberapi.update(AppBase.UserInfo, () => {
 
                   console.log(AppBase.UserInfo);
-                  that.Base.setMyData({ UserInfo: AppBase.UserInfo });
+                  that.Base.setMyData({
+                    UserInfo: AppBase.UserInfo
+                  });
 
-             
+
 
                   that.checkPermission();
 
@@ -221,7 +249,10 @@ export class AppBase {
               console.log(userloginres);
               console.log(res);
               var memberapi = new MemberApi();
-              memberapi.getuserinfo({ code: res.code, grant_type: "authorization_code" }, data => {
+              memberapi.getuserinfo({
+                code: res.code,
+                grant_type: "authorization_code"
+              }, data => {
                 console.log("here");
                 console.log(data);
                 AppBase.UserInfo.openid = data.openid;
@@ -232,9 +263,9 @@ export class AppBase {
 
 
                 //that.Base.gotoOpenUserInfoSetting();
-                 
-                  that.onMyShow();
-               
+
+                that.onMyShow();
+
               });
               //that.getAddress();
             }
@@ -245,13 +276,19 @@ export class AppBase {
       return false;
     } else {
       if (that.setMyData != undefined) {
-        that.setMyData({ UserInfo: AppBase.UserInfo });
+        that.setMyData({
+          UserInfo: AppBase.UserInfo
+        });
       } else {
-        that.Base.setMyData({ UserInfo: AppBase.UserInfo });
+        that.Base.setMyData({
+          UserInfo: AppBase.UserInfo
+        });
       }
       //this.loadtabtype();
 
-      that.Base.setMyData({ UserInfo: AppBase.UserInfo });
+      that.Base.setMyData({
+        UserInfo: AppBase.UserInfo
+      });
 
       that.checkPermission();
     }
@@ -261,7 +298,9 @@ export class AppBase {
     var memberapi = new MemberApi();
     var that = this;
     memberapi.info({}, (info) => {
-      this.Base.setMyData({ memberinfo: info }); 
+      this.Base.setMyData({
+        memberinfo: info
+      });
       that.onMyShow();
     });
   }
@@ -294,7 +333,7 @@ export class AppBase {
 
   dataReturn(data) {
     var pages = getCurrentPages();
-    var currPage = pages[pages.length - 1];  //当前页面
+    var currPage = pages[pages.length - 1]; //当前页面
     var prevPage = pages[pages.length - 2]; //上一个页面
     console.log("????");
     //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
@@ -310,26 +349,26 @@ export class AppBase {
     console.log(obj);
     this.Page.setData(obj);
   }
-  getMyData() { 
+  getMyData() {
     return this.Page.data;
   }
   getPhoneNo(e) {
     var that = this;
-      
-    var api = new WechatApi(); 
+
+    var api = new WechatApi();
 
     e.detail.session_key = AppBase.UserInfo.session_key;
-    e.detail.openid = AppBase.UserInfo.openid;  
-   
-    api.decrypteddata(e.detail, (ret) => {
-      console.log(ret,'最最最');
+    e.detail.openid = AppBase.UserInfo.openid;
 
-     that.phonenoCallback(ret.return.phoneNumber, e, ret.code);
+    api.decrypteddata(e.detail, (ret) => {
+      console.log(ret, '最最最');
+
+      that.phonenoCallback(ret.return.phoneNumber, e, ret.code);
 
     });
   }
-  phonenoCallback(mobile, e,result) {
-      
+  phonenoCallback(mobile, e, result) {
+
     if (result == '0') {
       var memberapi = new MemberApi();
       memberapi.updateshouji({
@@ -340,12 +379,14 @@ export class AppBase {
 
         var that = this;
         memberapi.info({}, (info) => {
-          this.Base.setMyData({ memberinfo: info }); 
-          
+          this.Base.setMyData({
+            memberinfo: info
+          });
+
           this.Base.setMyData({
             phone: mobile
           });
-          
+
           wx.showToast({
             title: '获取成功',
             icon: 'none'
@@ -354,7 +395,7 @@ export class AppBase {
         });
 
 
-        
+
 
 
 
@@ -839,7 +880,10 @@ export class AppBase {
     })
   }
   console(key, val) {
-    var json = { key, val };
+    var json = {
+      key,
+      val
+    };
     console.log(json);
   }
 
@@ -938,32 +982,45 @@ export class AppBase {
       duration: 300
     })
   }
-  topage(e){
-   console.log(e);
-   //return;
+  topage(e) {
+    console.log(e);
+    //return;
     var name = e.currentTarget.dataset.name;
-   var id=e.currentTarget.id;
-  
-   wx.navigateTo({
-     url: '/pages/' + name + '/' + name+'?id='+id
-   })
-  }
-   tishi(){
-    this.Base.setMyData({tishi:true})
-   }
-   tishi2(){
-    this.Base.setMyData({tishi2:true})
-   }
-   tishi3(){
-    this.Base.setMyData({tishi3:true})
-   }
-   close(){
-     this.Base.setMyData({ tishi: false,tishi2:false,tishi3:false,tishi4:false })
-   }
+    var id = e.currentTarget.id;
 
-   clock(){
-    this.Base.setMyData({ clock:true })
-   }
+    wx.navigateTo({
+      url: '/pages/' + name + '/' + name + '?id=' + id
+    })
+  }
+  tishi() {
+    this.Base.setMyData({
+      tishi: true
+    })
+  }
+  tishi2() {
+    this.Base.setMyData({
+      tishi2: true
+    })
+  }
+  tishi3() {
+    this.Base.setMyData({
+      tishi3: true
+    })
+  }
+  close() {
+    this.Base.setMyData({
+      tishi: false,
+      tishi2: false,
+      tishi3: false,
+      tishi4: false
+    })
+  }
+
+  clock() {
+    this.Base.setMyData({
+      clock: true
+    })
+  }
 
   getUserInfo(e) {
     console.log(666666666);
@@ -971,4 +1028,15 @@ export class AppBase {
     this.onShow();
     //this.checkPermission();
   }
+
+  topage(e) {
+    var name = e.currentTarget.dataset.name;
+    var id = e.currentTarget.id;
+
+    wx.navigateTo({
+      url: '/pages/' + name + '/' + name + '?id=' + id
+    }) 
+
+  }
+  
 }
