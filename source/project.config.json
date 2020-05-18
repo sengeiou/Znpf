@@ -4,16 +4,24 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
+		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false,
 		"coverView": true,
-		"preloadBackgroundData": false,
+		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.11.0",
@@ -74,6 +82,12 @@
 					"id": -1,
 					"name": "pages/guwenruzhu/guwenruzhu",
 					"pathName": "pages/guwenruzhu/guwenruzhu",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "楼盘详情",
+					"pathName": "pages/premises-details/premises-details",
 					"scene": null
 				}
 			]

@@ -11,9 +11,25 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
+    this.Base.setMyData({ showSkeleton:true})
   }
   onMyShow() {
     var that = this;
+    var api = new InstApi;
+    api.indexbanner({
+      orderby: 'r_main.seq'
+    }, (indexbanner) => {
+      this.setData({
+        indexbanner: indexbanner
+      },()=>{
+
+        this.Base.setMyData({showSkeleton:false})
+
+      });
+    });
+  }
+  onReady(){
+    console.log("??????????????????");
   }
 }
 var content = new Content();

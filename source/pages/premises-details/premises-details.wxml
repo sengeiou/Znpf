@@ -1,2 +1,372 @@
 <!--pages/premises-details/premises-details.wxml-->
-<text>pages/premises-details/premises-details.wxml</text>
+
+<cu-custom isCustom="{{true}}" bgColor="">
+
+	<view slot="content" class="txt-bold" style="color:#161616;">{{detail.activitytype_id_name}}详情</view>
+</cu-custom>
+
+<view style="height:150rpx"></view>
+
+<view class="position:relative">
+
+	<image src="{{uploadpath}}resource/{{res.a}}" class="topimage"></image>
+
+
+	<view class="topblock ">
+
+		<!-- 简要信息 -->
+		<view class="padding-30 bg-white ">
+			<view class="flex-row flex-center">
+				<view class="txt-bold">远洋未来城</view>
+				<view class="blueblock text-center txt-white h6 margin-left-10">在售</view>
+				<view class="flex-1"></view>
+				<image src="{{uploadpath}}resource/{{res.shoucang}}" class="icon-25"></image>
+				<image src="{{uploadpath}}resource/{{res.fenxiang}}" class="icon margin-left-20"></image>
+			</view>
+
+			<view class="h5 txt-gray">品质洋房大盘</view>
+
+			<view class='flex-row flex-center margin-top-10'>
+				<view class="label h6 text-center">刚需</view>
+				<view class="label h6 margin-left-10 text-center">住宅</view>
+				<view class="label h6 margin-left-10 text-center">品牌房企</view>
+			</view>
+
+			<view class="flex-row flex-center margin-top">
+
+				<view class="text-center flex-1">
+					<view class="h5 txt-gray">参考均价(元)</view>
+					<view class="txt-bold h4 txt-purple">21000</view>
+				</view>
+
+				<view style="width:2rpx;height:64rpx;" class="bg-gray"></view>
+
+				<view class="text-center flex-1">
+					<view class="h5 txt-gray">建面(m2)</view>
+					<view class="txt-bold h4 txt-purple">21000</view>
+				</view>
+
+			</view>
+
+			<view class="flex-row flex-center margin-top">
+
+				<view class="text-center">
+					<view class="flex-row flex-center">
+						<view class="txt-gray h5">开盘：</view>
+						<view class=" h5">2015-12-15</view>
+					</view>
+					<view class="flex-row flex-center margin-top-10">
+						<view class="txt-gray h5">类型：</view>
+						<view class=" h5">住宅</view>
+					</view>
+				</view>
+
+				<view style="width:120rpx"></view>
+
+				<view class="text-center">
+					<view class="flex-row flex-center">
+						<view class="txt-gray h5">户型：</view>
+						<view class=" h5">3/4居</view>
+					</view>
+					<view class="flex-row flex-center margin-top-10">
+						<view class="txt-gray h5">套数：</view>
+						<view class=" h5">160套</view>
+					</view>
+				</view>
+
+			</view>
+
+
+
+
+		</view>
+
+		<!-- 地址 -->
+		<view class="padding-30 flex-row flex-center margin-top-20 bg-white">
+			<image src="{{uploadpath}}resource/{{res.dinwei}}" class="icon-25"></image>
+
+			<view class="chaochu flex-1 h5 margin-left-20">两口就阿里斯顿开房记录开局句卡萨积分拉到计数法</view>
+
+			<view class="h6 txt-gray margin-left-20">周边</view>
+			<image src="{{uploadpath}}resource/{{res.right}}" class="icon"></image>
+		</view>
+
+		<!-- 信息查看 -->
+		<view class=" margin-top bg-white padding-30">
+
+			<view class="flex-row flex-center">
+
+				<view class="text-center flex-1">
+					<image src="{{uploadpath}}resource/{{res.jiage}}" class="icon-40"></image>
+					<view class="h6 txt-gray margin-top-10">价格查询</view>
+				</view>
+
+				<view class="text-center flex-1 ">
+					<image src="{{uploadpath}}resource/{{res.hangpai}}" class="icon-40"></image>
+					<view class="h6 txt-gray margin-top-10">航拍景观</view>
+				</view>
+
+				<view class="text-center flex-1 ">
+					<image src="{{uploadpath}}resource/{{res.rizhao}}" class="icon-40"></image>
+					<view class="h6 txt-gray margin-top-10">日照评测</view>
+				</view>
+
+				<view class="text-center flex-1 ">
+					<image src="{{uploadpath}}resource/{{res.huxing}}" class="icon-40"></image>
+					<view class="h6 txt-gray margin-top-10">户型评测</view>
+				</view>
+
+			</view>
+
+			<view class="flex-row flex-center margin-top">
+
+				<view class="text-center flex-1" bindtap="">
+					<image src="{{uploadpath}}resource/{{res.peitao}}" class="icon-25"></image>
+					<view class="h6 txt-gray margin-top-10">配套</view>
+				</view>
+
+				<view class="text-center flex-1 ">
+					<image src="{{uploadpath}}resource/{{res.xiangqing}}" class="icon-25"></image>
+					<view class="h6 txt-gray margin-top-10">详情</view>
+				</view>
+
+				<view class="text-center flex-1 ">
+					<image src="{{uploadpath}}resource/{{res.xiangqing}}" class="icon-25"></image>
+					<view class="h6 txt-gray margin-top-10">顾问</view>
+				</view>
+
+				<view class="text-center flex-1 ">
+					<image src="{{uploadpath}}resource/{{res.dinwei}}" class="icon-25"></image>
+					<view class="h6 txt-gray margin-top-10">图库</view>
+				</view>
+
+			</view>
+
+		</view>
+
+		<!-- 测评文章 -->
+		<view class="padding-30 margin-top-20 bg-white">
+			<view class="txt-bold">测评文章</view>
+
+			<view class="flex-row flex-center margin-top">
+				<image src="{{uploadpath}}resource/{{res.a}}" class="wenzhan"></image>
+
+				<view class="flex-1 margin-left-20">
+					<view class="txt-bold">先抢为快！180%得房率，170万+起，奥莱旁6层洋房！</view>
+
+					<view class="flex-row flex-center margin-top">
+						<view class="h6 flex-1">远洋未来城</view>
+						<view class="h7" style="color:#CCCCCC">11月11日</view>
+					</view>
+				</view>
+			</view>
+
+		</view>
+
+		<!-- 楼盘纪事 -->
+		<view class="padding-30 margin-top-20 bg-white">
+			<view class="txt-bold">楼盘纪事</view>
+			<view class="flex-row flex-center margin-top">
+
+				<view class="text-center">
+					<view class="h6">11.11</view>
+					<view class="txtblock text-center h6 margin-top-20">预售时间</view>
+				</view>
+
+				<view class="text-center margin-left-20">
+					<view class="h6">11.11</view>
+					<view class="txtblock text-center h6 margin-top-20">预售时间</view>
+				</view>
+
+				<view class="text-center  margin-left-20">
+					<view class="h6">11.11</view>
+					<view class="txtblock text-center h6 margin-top-20">预售时间</view>
+				</view>
+
+			</view>
+		</view>
+
+		<!-- 楼盘动态 -->
+		<view class="padding-30  margin-top-20 bg-white">
+
+
+			<!-- 查看全部 -->
+			<view class="flex-row flex-center">
+				<view class="txt-bold flex-1">楼盘动态</view>
+				<view class="h6 txt-gray margin-left-20">查看全部</view>
+				<image src="{{uploadpath}}resource/{{res.right}}" class="icon"></image>
+			</view>
+
+			<!-- 标签 -->
+			<view class='flex-row flex-center margin-top-10'>
+				<view class="label2 h6 text-center">全部</view>
+				<view class="label2 h6 margin-left-10 text-center">销控信息</view>
+				<view class="label2 h6 margin-left-10 text-center">楼盘咨询</view>
+			</view>
+
+
+			<!-- 文章 -->
+			<view class="bg-dongtai padding-20 margin-top-20">
+				<view class="chaochu2">远洋未来城二期仅剩2号楼顶层97、88平米户型; 11月中旬将加推冬博苑，主推88平米两居室康佳还是看积分</view>
+
+				<view class='flex-row flex-center margin-top-10 margin-top-20'>
+					<view class="label2 h6 margin-left-10 text-center">销控信息</view>
+					<view class="label2 h6 margin-left-10 text-center">楼盘咨询</view>
+					<view class="flex-1"></view>
+					<view class="txt-gray h6">2020-10-10</view>
+				</view>
+
+
+			</view>
+
+		</view>
+
+		<!-- 销售顾问 -->
+		<view class="padding-30  margin-top-20 bg-white">
+			<view class="txt-bold">销售顾问</view>
+
+			<view class="flex-row flex-center margin-top">
+
+				<view class="flex-row flex-center padding-20 guwen">
+					<image src="{{uploadpath}}resource/{{res.a}}" class="icon-30 radius-50"></image>
+					<view class="flex-1 margin-left-10">
+						<view class="h5">逃避和</view>
+						<view class="h6 margin-top-10" style="color:#FCC496">万科西庐</view>
+					</view>
+				</view>
+
+				<view class="flex-row flex-center padding-20 guwen margin-left-20">
+					<image src="{{uploadpath}}resource/{{res.a}}" class="icon-30 radius-50"></image>
+					<view class="flex-1 margin-left-10">
+						<view class="h5">手动阀</view>
+						<view class="h6 margin-top-10" style="color:#FCC496">s科技</view>
+					</view>
+				</view>
+
+			</view>
+
+		</view>
+
+		<!-- 楼盘评级 -->
+		<view class="padding-30 bg-white margin-top-20">
+
+			<view class="txt-bold">楼盘评级</view>
+
+			<view class="flex-row   margin-top">
+
+				<view class="leftblock text-center padding-20">
+					<view class="txt-bold h4 txt-purple">3.4</view>
+					<view>配套评级</view>
+					<view class="txt-purple margin-top-20">河北区第13</view>
+					<view>查看地图</view>
+				</view>
+
+				<view class=" margin-left-20">
+
+					<view class="flex-row flex-center">
+						<view>学校</view>
+						<view class="flex-row flex-center margin-left-20">
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						</view>
+						<view class="txt-purple margin-left-20">5.0</view>
+					</view>
+
+					<view class="flex-row flex-center margin-top-10">
+						<view>商场</view>
+						<view class="flex-row flex-center margin-left-20">
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						</view>
+						<view class="txt-purple margin-left-20">5.0</view>
+					</view>
+
+					<view class="flex-row flex-center margin-top-10">
+						<view>医院</view>
+						<view class="flex-row flex-center margin-left-20">
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						</view>
+						<view class="txt-purple margin-left-20">5.0</view>
+					</view>
+
+					<view class="flex-row flex-center margin-top-10">
+						<view>景观</view>
+						<view class="flex-row flex-center margin-left-20">
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						</view>
+						<view class="txt-purple margin-left-20">5.0</view>
+					</view>
+
+				</view>
+
+			</view>
+
+		</view>
+
+		<!-- 楼盘优劣 -->
+		<view class="padding-30 bg-white margin-top">
+			<view class="txt-bold">楼盘优劣</view>
+
+			<view class='flex-row flex-center margin-top'>
+				<view class="label2 h6 text-center margin-right-10">刚需</view>
+				<view class="label2 h6 margin-right-10 text-center">住宅</view>
+				<view class="label2 h6 margin-right-10 text-center">品牌房企</view>
+			</view>
+		</view>
+
+		<!-- 周边配套 -->
+		<view class="  bg-white margin-top">
+			<view class="txt-bold padding-30">周边配套</view>
+
+			<view class='padding-30 flex-row  flex-center  ' style='height:80rpx;'>
+
+				<view class='flex-row flex-column flex-1' data-order='A' bindtap='bindorder'>
+					<view class='h5 txt-bold flex-1 text-center {{order=="A"?"":"txt-gray opa8"}}'>地铁</view>
+					<view class='order {{order=="A"?"bg-purple":"bg-white"}}'></view>
+				</view>
+
+				<view class='flex-row flex-column flex-1 ' data-order='B' bindtap='bindorder'>
+					<view class='h5 txt-bold flex-1 text-center {{order=="B"?"":"txt-gray opa8"}}'>学校</view>
+					<view class='order {{order=="B"?"bg-purple":"bg-white"}}'></view>
+				</view>
+
+				<view class='flex-row flex-column flex-1 ' data-order='C' bindtap='bindorder'>
+					<view class='h5 txt-bold flex-1 text-center {{order=="C"?"":"txt-gray opa8"}}'>医院</view>
+					<view class='order {{order=="C"?"bg-purple":"bg-white"}}'></view>
+				</view>
+
+				<view class='flex-row flex-column flex-1 ' data-order='D' bindtap='bindorder'>
+					<view class='h5 txt-bold flex-1 text-center {{order=="D"?"":"txt-gray opa8"}}'>购物</view>
+					<view class='order {{order=="D"?"bg-purple":"bg-white"}}'></view>
+				</view>
+
+				<view class='flex-row flex-column flex-1 ' data-order='E' bindtap='bindorder'>
+					<view class='h5 txt-bold flex-1 text-center {{order=="E"?"":"txt-gray opa8"}}'>公园</view>
+					<view class='order {{order=="E"?"bg-purple":"bg-white"}}'></view>
+				</view>
+
+			</view>
+
+      <view class="map txt-white text-center">
+        地图
+      </view>
+
+		</view>
+
+	</view>
+
+</view>

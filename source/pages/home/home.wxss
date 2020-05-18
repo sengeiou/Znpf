@@ -1,51 +1,74 @@
-.Top{
-  background-color:#2699EC;
+@import "home.skeleton.wxss";
+page{
+  background: #F7F8FA;
 }
-.search{
-  width:680rpx;
-  border-radius: 7rpx;
-  background-color: white;
+.block_1{
+
+  width:208rpx;
+  height: 128rpx;
+ 
+ 
+
 }
-.search_icon{
-  height:40rpx;
-  width:40rpx;
+.img_1{
+
+  width:224rpx;
+  height: 192rpx;
+  border-radius: 8rpx;
+
 }
-.Mid{
-  height: 150rpx;
+.width-88{
+  width:88rpx;
 }
-.mid1{
-  background:#F6511D;
-  border-radius:10rpx;
+.img_2{
+  width:216rpx;
+  height: 216rpx;
+  border-radius: 8rpx;
 }
-.mid2{
-  background:#FFB400;
-  border-radius:10rpx;
+.lable{
+
+  background: #FCE4D1;
+  font-size: 22rpx;
+  color:#161616;
+  padding:6rpx 10rpx 6rpx 10rpx;
+
 }
-.evaluation{
-  background-color: #2699EC;
-  border-radius: 10rpx;
-  margin-left: 20rpx;
-  margin-right: 20rpx;
+.center{
+  width:30rpx;
+  text-align: center;
 }
-.Under{
-  margin-top: 50rpx;
-  border-bottom: 1rpx solid rgb(233, 231, 231);
+.allin{
+  width:688rpx;
+  height: 80rpx;
+  background: #F0E9F6;
+  text-align: center;
+  line-height: 80rpx;
+  text-align: 28rpx;
+  color:#161616;
+  margin-left:32rpx;
+  font-size: 28rpx;
 }
-.phone{
-  border-radius: 10rpx;
-  box-shadow: 1px 1px 7px rgb(231, 228, 228);
+.allin1{
+  width:688rpx;
+  height: 80rpx;
+  background: #F0E9F6;
+  text-align: center;
+  line-height: 80rpx;
+  text-align: 28rpx;
+  color:#161616;
+  font-size: 28rpx;
 }
-.icon{
-  width: 110rpx;
-  height: 180rpx;
+.zuixin{
+  position: absolute;
+  margin-left:100rpx;
 }
-.column{
-  align-content: center;
-  flex-direction:column;
+.kaifashan {
+  width: 37vw;
+  height: 208rpx !important;
 }
-.ma-0{
-  margin-left: 20rpx;
-}
-.ma-1{
-  margin-left: 20rpx;
+.yinyin{
+  position: absolute;
+  width:304rpx;
+  height: 116rpx;
+ 
 }
