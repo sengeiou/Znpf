@@ -14,7 +14,8 @@
     "pages/jingjirenruzhu/jingjirenruzhu",
     "pages/whyruzhu/whyruzhu",
     "pages/yuanyang/yuanyang",
-    "pages/guwen/guwen"
+    "pages/guwen/guwen",
+    "pages/zhiyeguwen/zhiyeguwen"
   ],
   "permission": {
     "scope.userLocation": {

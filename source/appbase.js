@@ -124,7 +124,8 @@ export class AppBase {
       tishi2: base.tishi2,
       tishi3: base.tishi3,
       clock: base.clock,
-      close: base.close
+      close: base.close,
+      toast: base.toast
     }
   }
   log() {

@@ -2,6 +2,7 @@
 import { AppBase } from "../../appbase";
 import { ApiConfig } from "../../apis/apiconfig";
 import { InstApi } from "../../apis/inst.api.js";
+import { PremisesApi } from "../../apis/premises.api.js";
 
 class Content extends AppBase {
   constructor() {
@@ -12,16 +13,12 @@ class Content extends AppBase {
     //options.id=5;
     super.onLoad(options);
   }
-  setPageTitle(instinfo) {
-    wx.setNavigationBarTitle({
-      title: '',
-    })
-  }
+
   onMyShow() {
     var that = this;
-    var api = new InstApi;
-    api.fuwuhao({}, (fuwuhao) => {
-      this.Base.setMyData({ fuwuhao })
+    var premisesapi = new PremisesApi;
+    premisesapi.guwendetail({ id: this.Base.options.id }, (guwendetail)=>{
+      this.Base.setMyData({ guwendetail})
     })
   }
 }

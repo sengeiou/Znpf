@@ -55,3 +55,9 @@ background-color:#F7F8FA;
 padding-left: 80rpx;
 padding-right: 80rpx;
 }
+.margin-left-90 {
+  margin-left: 90rpx;
+}
+.margin-right-56 {
+  margin-right: 56rpx;
+}

@@ -40,6 +40,15 @@ Component({
    * 组件的方法列表
    */
   methods: {
-   
+    BackPage() {
+      wx.navigateBack({
+        delta: 1
+      });
+    },
+    toHome() {
+      wx.reLaunch({
+        url: '/pages/home/home',
+      })
+    }
   }
 })

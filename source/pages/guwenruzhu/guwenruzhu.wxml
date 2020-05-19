@@ -1,6 +1,6 @@
 
 
-<cu-custom bgColor="bg-white">
+<cu-custom bgColor="bg-white"  isCustom="{{true}}">
 
 	<view slot="content" class="txt-bold" style="color:#161616;">入驻知鸟</view>
 </cu-custom>
@@ -36,32 +36,32 @@
 
 <view class="flex-row flex-center bg-white padding-1213">
   <view style="color:#161616;">姓名</view>
-  <input value="{{name}}" placeholder="请输入您的真实姓名" class="flex-1" style="margin-left:144rpx;color:#161616;" placeholder-style="color:#CCCCCC"></input>
+  <input value="{{name}}" placeholder="请输入您的真实姓名" bindinput="nameFn" class="flex-1" style="margin-left:144rpx;color:#161616;" placeholder-style="color:#CCCCCC"></input>
 </view>
 <view class='line'></view>
 <view class="flex-row flex-center bg-white padding-1213">
   <view style="color:#161616;">微信号</view>
-  <input value="{{weixinhao}}" placeholder="请输入您的微信号" class="flex-1" style="margin-left:112rpx;color:#161616;" placeholder-style="color:#CCCCCC"></input>
+  <input value="{{weixinhao}}" placeholder="请输入您的微信号" bindinput="weixinFn" class="flex-1" style="margin-left:112rpx;color:#161616;" placeholder-style="color:#CCCCCC"></input>
 </view>
 <view class='line'></view>
 <view class="flex-row flex-center bg-white padding-1213">
   <view style="color:#161616;">推荐人手机</view>
-  <input value="{{tuijianphone}}" placeholder="填写为其加分，若没有可不填" class="flex-1" style="margin-left:48rpx;color:#161616;" placeholder-style="color:#CCCCCC"></input>
+  <input value="{{tuijianphone}}" placeholder="填写为其加分，若没有可不填" bindinput="tuiphoneFn" class="flex-1" style="margin-left:48rpx;color:#161616;" placeholder-style="color:#CCCCCC"></input>
 </view>
 <view class='line'></view>
 <view class="flex-row  bg-white padding-1213">
   <view style="color:#161616;">个人介绍</view>
-  <textarea value="{{jiesao}}" placeholder="参考样例：5年房产经验，恒泰家园李明全心为您服务" class="flex-1" style="margin-left:80rpx;height:88rpx;color:#161616;" placeholder-style="color:#CCCCCC"></textarea>
+  <textarea value="{{jiesao}}" placeholder="参考样例：5年房产经验，恒泰家园李明全心为您服务" bindinput="jiesaoFn" class="flex-1" style="margin-left:80rpx;height:88rpx;color:#161616;" placeholder-style="color:#CCCCCC"></textarea>
 </view>
 <view style="height:16rpx;"></view>
 
 
 
 
-<picker bindchange="bindPickerChange" range-key="name" range="{{citylist}}" class="flex-1">
+<picker bindchange="bindPickerChange2" range-key="name" range="{{list}}" class="flex-1">
  <view class="flex-row  bg-white padding-1213">
   <view style="color:#161616;">楼盘</view>
-  <input placeholder="请选择您所在的楼盘" class="flex-1" style="margin-left:144rpx;color:#161616;" placeholder-style="color:#CCCCCC"></input>
+  <input placeholder="请选择您所在的楼盘"  value='{{loupan}}' class="flex-1" style="margin-left:144rpx;color:#161616;" placeholder-style="color:#CCCCCC"></input>
 <view class="flex-1"></view>
     <image src="{{uploadpath}}resource/{{res.right}}" class="icon-20"></image>
 </view>
@@ -72,12 +72,14 @@
   <view style="color:#161616;">上传个人微信二维码和名片或工牌</view>
   <view style="height:42rpx;"></view>
   <view class="flex-row flex-center">
-    <view class="flex-row flex-column flex-1">
-      <image src="{{uploadpath}}resource/{{res.upload}}" class="icon-64"></image>
+    <view class="flex-row flex-column flex-1" bindtap='bindpic'>
+      <image src="{{uploadpath}}resource/{{res.upload}}" class="icon-64" wx:if='{{erweima==""}}'></image>
+      <image src="{{uploadpath}}member/{{erweima}}" class="icon-64" wx:if='{{erweima!=""}}'></image>
       <view class="h5" style="color:#A0A0A0">个人微信二维码</view>
     </view>
- <view class="flex-row flex-column flex-1">
-      <image src="{{uploadpath}}resource/{{res.upload}}" class="icon-64"></image>
+   <view class="flex-row flex-column flex-1" bindtap='bindpic2'>
+      <image src="{{uploadpath}}resource/{{res.upload}}" class="icon-64"  wx:if='{{minpai==""}}'></image>
+      <image src="{{uploadpath}}member/{{minpai}}" class="icon-64" wx:if='{{minpai!=""}}'></image>
       <view class="h5" style="color:#A0A0A0">名片或工牌</view>
     </view>
   </view>
@@ -85,5 +87,5 @@
 <view style="height:32rpx;"></view>
 
 <view class="flex-row flex-column">
-  <view class="ti">提交</view>
+  <view class="ti" bindtap="tijiao">提交</view>
 </view>
