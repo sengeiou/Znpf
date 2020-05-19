@@ -6,12 +6,17 @@
     "pages/wode/wode",
     "pages/xuanfang/xuanfang",
     "pages/feedback/feedback",
+    "pages/loupanlist/loupanlist",
     "pages/fuwuhao/fuwuhao",
     "pages/aboutus/aboutus",
     "pages/bangdin/bangdin",
     "pages/guwenruzhu/guwenruzhu",
     "pages/premises-details/premises-details",
-    "pages/jingjirenruzhu/jingjirenruzhu"
+    "pages/jingjirenruzhu/jingjirenruzhu",
+    "pages/whyruzhu/whyruzhu",
+    "pages/yuanyang/yuanyang",
+    "pages/guwen/guwen",
+    "pages/zhiyeguwen/zhiyeguwen"
   ],
   "permission": {
     "scope.userLocation": {
@@ -58,9 +63,7 @@
     ]
   },
   "usingComponents": {
-  
     "cu-custom": "/colorui/components/cu-custom"
- 
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,16 +1,18 @@
+<cu-custom bgColor="bg-white">
 
-
-<view style="background-image:url('{{uploadpath}}resource/{{res.a}}');background-size:100% 100%;" >
+  <view slot="content" class="txt-bold" style="color:#161616;">我的</view>
+</cu-custom>
+<view style="background-image:url('{{uploadpath}}resource/{{res.a}}');background-size:100% 100%;">
   <view class="flex-row flex-center position-230">
     <image src="{{memberinfo.avatarUrl}}" wx:if='{{memberinfo.avatarUrl!=""}}' class=" touxiang radius-50 margin-left-40"></image>
     <image src="{{uploadpath}}resource/{{res.a1}}" wx:if='{{memberinfo.avatarUrl==""}}' class=" touxiang radius-50 margin-left-40"></image>
     <view class="margin-left-20">
-      <button wx:if='{{memberinfo.nickName==""}}'  class='h5 txt-white clear-button' open-type="getUserInfo" bindgetuserinfo="getUserInfo" >授权并登录</button>
+      <button wx:if='{{memberinfo.nickName==""}}' class='h5 txt-white clear-button' open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权并登录</button>
       <view wx:if='{{memberinfo.nickName!=""}}' class="txt-white">{{memberinfo.nickName}}</view>
       <view class="flex-row marign-top-10">
         <image src="{{uploadpath}}resource/{{res.a2}}" class="height-28 margin-top-5"></image>
         <button class='clear-button margin-left-10 margin-top-4 h6 txt-white' hover-class="hover" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNo" style='' wx:if='{{memberinfo.mobile==""}}'>点击获取手机号</button>
-       <view class='margin-left-10 margin-top-4 h6 txt-white'  wx:if='{{memberinfo.mobile!=""}}'>{{memberinfo.mobile}}</view>
+        <view class='margin-left-10 margin-top-4 h6 txt-white' wx:if='{{memberinfo.mobile!=""}}'>{{memberinfo.mobile}}</view>
       </view>
 
     </view>
@@ -19,16 +21,16 @@
 
 <view class="bg-white border-radius-32 width-100 position-20">
   <view class="flex-row" style=" justify-content:space-around;">
-    <view class="margin-top-50 margin-bottom-50 margin-left-40 ">
+    <view class="margin-top-50 margin-bottom-50 margin-left-40 " bindtap="todetail" id='A'>
       <image src="{{uploadpath}}resource/{{res.a3}}" class="icon-30 margin-top-5"></image>
       <view class="margin-top-5 h7 txt-color">我的消息</view>
     </view>
-    <view class="margin-top-50 margin-bottom-50">
+    <view class="margin-top-50 margin-bottom-50"  bindtap="todetail" id='B'>
       <image src="{{uploadpath}}resource/{{res.a4}}" class="icon-30 margin-top-5"></image>
       <view class="margin-top-5 h7 txt-color">我的关注</view>
     </view>
 
-    <view class="margin-top-50 margin-bottom-50 margin-right-40 ">
+    <view class="margin-top-50 margin-bottom-50 margin-right-40 "  bindtap="todetail" id='C'>
       <image src="{{uploadpath}}resource/{{res.a5}}" class="icon-30 margin-top-5"></image>
       <view class="margin-top-5 h7 txt-color">我的评测</view>
     </view>

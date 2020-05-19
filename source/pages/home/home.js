@@ -31,9 +31,17 @@ class Content extends AppBase {
   onReady(){
     console.log("??????????????????");
   }
+  fanyuanlist(){
+
+    
+    wx.navigateTo({
+      url: '/pages/loupanlist/loupanlist'
+    })
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
+body.fanyuanlist=content.fanyuanlist;
 Page(body)

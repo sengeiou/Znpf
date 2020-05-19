@@ -82,12 +82,34 @@
 					"id": -1,
 					"name": "pages/guwenruzhu/guwenruzhu",
 					"pathName": "pages/guwenruzhu/guwenruzhu",
+					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "楼盘详情",
 					"pathName": "pages/premises-details/premises-details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/guwen/guwen",
+					"pathName": "pages/guwen/guwen",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/xuanfang/xuanfang",
+					"pathName": "pages/xuanfang/xuanfang",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loupan/loupan",
+					"pathName": "pages/loupan/loupan",
 					"scene": null
 				}
 			]

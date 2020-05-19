@@ -125,7 +125,7 @@
 					<view class="h6 txt-gray margin-top-10">详情</view>
 				</view>
 
-				<view class="text-center flex-1 ">
+				<view class="text-center flex-1 " bindtap="guwen">
 					<image src="{{uploadpath}}resource/{{res.xiangqing}}" class="icon-25"></image>
 					<view class="h6 txt-gray margin-top-10">顾问</view>
 				</view>

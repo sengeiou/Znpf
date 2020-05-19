@@ -2,6 +2,7 @@
 import { AppBase } from "../../appbase";
 import { ApiConfig } from "../../apis/apiconfig";
 import { InstApi } from "../../apis/inst.api.js";
+import { MemberApi } from "../../apis/member.api.js";
 import { ApiUtil } from "../../apis/apiutil";
 class Content extends AppBase {
   constructor() {
@@ -44,7 +45,13 @@ class Content extends AppBase {
       url: '/pages/bangdin/bangdin',
     })
   }
-
+  todetail(e){
+    var id=e.currentTarget.id;
+    wx.showToast({
+      title: '暂未开放！',
+      icon:'none'
+    })
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -54,4 +61,5 @@ body.fankui = content.fankui;
 body.fuwu = content.fuwu;
 body.aboutus = content.aboutus;
 body.bangdin = content.bangdin;
+body.todetail = content.todetail;
 Page(body)

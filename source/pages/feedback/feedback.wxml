@@ -1,4 +1,8 @@
 
+<cu-custom bgColor="bg-white"  isCustom="{{true}}">
+
+	<view slot="content" class="txt-bold" style="color:#161616;">反馈问题</view>
+</cu-custom>
 <view style="background:#F7F8FA;height:100vh;">
   <view class="bg-white flex-center padding-left-32 padding-right-30">
 

@@ -1,0 +1,63 @@
+.icon-200{
+width: 200rpx;
+height: 140rpx;
+}
+.t-color{
+  color: #777777;
+}
+.t-color-p{
+  color: #583A80;
+}
+.position-left{
+  position: relative;
+  bottom:120rpx;
+  left: 60rpx;
+}
+.margin-left-80{
+  margin-left: 80rpx
+}
+.f-50{
+  font-size: 50rpx;
+}
+.t-color-r{
+color: #595959;
+}
+.t-color-h{
+  color: #CCCCCC;
+}
+.bg-color{
+background-color:#F7F8FA;
+}
+.icon-220{
+  width: 220rpx;
+  height: 190rpx;
+}
+.bg-xf{
+  background-color: #EF888F;
+  border-radius: 4rpx;
+}
+.bg-gx{
+  background-color: rgba(252, 228, 209, 1);
+  border-radius: 4rpx;
+}
+.bg-dh{
+  background-color: rgba(255, 185, 139, 1);
+  border-radius: 4rpx;
+}
+.bg-zx{
+  background-color: rgba(156, 114, 193, 1);
+    border-radius: 4rpx;
+}
+.border{
+  border: 1px #F7F8FA solid;
+}
+.padding-left-80{
+padding-left: 80rpx;
+padding-right: 80rpx;
+}
+.margin-left-90 {
+  margin-left: 90rpx;
+}
+.margin-right-56 {
+  margin-right: 56rpx;
+}

@@ -1,0 +1,67 @@
+/* pages/zhiyeguwen/zhiyeguwen.wxss */
+Page {
+  background: #F7F8FA;
+}
+.icon-56 {
+  width: 112rpx;
+  height: 112rpx;
+  z-index: 10;
+  margin-top: -120rpx;
+}
+.icon-64 {
+  width: 128rpx;
+  height: 128rpx;
+  z-index: 5;
+}
+.icon-64w {
+  width: 128rpx;
+  height: 171rpx;
+  z-index: 5;
+}
+.gun {
+  font-size: 30rpx;
+  color: 583A80;
+  margin: 32rpx 0 18rpx;
+}
+.po {
+  margin-top: -325rpx;
+  padding: 0 80rpx;
+}
+.icon-48 {
+  width: 96rpx;
+  height: 96rpx;
+}
+.no {
+  padding: 6rpx 28rpx;
+  background: #F0E9F6;
+  color: #583A80;
+  font-size: 26rpx;
+  border-radius: 8rpx;
+  margin-top: 12rpx;
+}
+.padding-left-64 {
+  padding-left: 128rpx;
+}
+.padding-left-48 {
+  padding-left: 96rpx;
+}
+.pos {
+  width: 100vw;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+}
+.lian {
+  padding: 20rpx 96rpx;
+  background: #F0E9F6;
+  font-size: 28rpx;
+  color: #161616;
+  border-radius: 8rpx;
+}
+.fen {
+  padding: 20rpx 124rpx;
+  background: #FCE4D1;
+  font-size: 28rpx;
+  color: #161616;
+  border-radius: 8rpx;
+}
