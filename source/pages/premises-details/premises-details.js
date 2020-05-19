@@ -15,8 +15,15 @@ class Content extends AppBase {
     //options.id=5;
     super.onLoad(options);
   }
+  
   onMyShow() {
     var that = this;
+
+    var premisesapi=new PremisesApi();
+
+    premisesapi.info({id:1},(info)=>{
+       this.Base.setMyData({info})
+    })
 
     this.Base.setMyData({
       order: "A"
