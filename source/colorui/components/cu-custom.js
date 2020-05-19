@@ -45,7 +45,7 @@ Component({
         delta: 1
       });
     },
-    toHome() {
+    toHome(){
       wx.reLaunch({
         url: '/pages/home/home',
       })

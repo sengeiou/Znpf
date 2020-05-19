@@ -125,11 +125,22 @@ export class AppBase {
       tishi3: base.tishi3,
       clock: base.clock,
       close: base.close,
-      toast: base.toast
+      BackPage:base.BackPage,
+      toHome:base.toHome
     }
   }
   log() {
     console.log("yeah!");
+  }
+  BackPage() {
+    wx.navigateBack({
+      delta: 1
+    });
+  }
+  toHome() {
+    wx.reLaunch({
+      url: '/pages/home/home',
+    })
   }
   onLoad(options) {
     this.Base.options = options;

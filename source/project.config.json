@@ -101,23 +101,15 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/jingjirenruzhu/jingjirenruzhu",
-					"pathName": "pages/jingjirenruzhu/jingjirenruzhu",
+					"name": "pages/xuanfang/xuanfang",
+					"pathName": "pages/xuanfang/xuanfang",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 7,
-					"name": "pages/zhiyeguwen/zhiyeguwen",
-					"pathName": "pages/zhiyeguwen/zhiyeguwen",
-					"query": "id=1",
-					"scene": null
-				},
-				{
 					"id": -1,
-					"name": "pages/guwen/guwen",
-					"pathName": "pages/guwen/guwen",
-					"query": "id=1",
+					"name": "pages/loupan/loupan",
+					"pathName": "pages/loupan/loupan",
 					"scene": null
 				}
 			]
