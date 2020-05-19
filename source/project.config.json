@@ -82,12 +82,20 @@
 					"id": -1,
 					"name": "pages/guwenruzhu/guwenruzhu",
 					"pathName": "pages/guwenruzhu/guwenruzhu",
+					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "楼盘详情",
 					"pathName": "pages/premises-details/premises-details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/guwen/guwen",
+					"pathName": "pages/guwen/guwen",
 					"scene": null
 				}
 			]

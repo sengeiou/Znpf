@@ -417,7 +417,7 @@ button[disabled][type=primary] {
   height: 150rpx;
 }
 .margin-top-10{
-  margin-top:20rpx;
+  margin-top:10rpx;
 }
 
 .margin-top-16{

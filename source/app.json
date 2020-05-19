@@ -12,7 +12,9 @@
     "pages/guwenruzhu/guwenruzhu",
     "pages/premises-details/premises-details",
     "pages/jingjirenruzhu/jingjirenruzhu",
-    "pages/whyruzhu/whyruzhu"
+    "pages/whyruzhu/whyruzhu",
+    "pages/yuanyang/yuanyang",
+    "pages/guwen/guwen"
   ],
   "permission": {
     "scope.userLocation": {
@@ -59,9 +61,7 @@
     ]
   },
   "usingComponents": {
-  
     "cu-custom": "/colorui/components/cu-custom"
- 
   },
   "sitemapLocation": "sitemap.json"
 }
