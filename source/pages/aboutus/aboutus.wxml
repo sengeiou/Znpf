@@ -1,5 +1,5 @@
 
-<cu-custom bgColor="bg-white">
+<cu-custom bgColor="bg-white"  isCustom="{{true}}">
 
 	<view slot="content" class="txt-bold" style="color:#161616;">关于我们</view>
 </cu-custom>

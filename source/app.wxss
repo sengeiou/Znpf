@@ -213,6 +213,9 @@ overflow:hidden;               /* 内容超出宽度时隐藏超出部分的内�
 .f-26{
   font-size: 26rpx !important;
 }
+.f-30{
+  font-size: 30rpx !important;
+}
 .f-36{
   font-size: 36rpx !important;
 }
@@ -572,3 +575,6 @@ button[disabled][type=primary] {
   padding-left: 32rpx;
 }
 
+.padding-top-32{
+  padding-top: 32rpx;
+}
