@@ -1,0 +1,45 @@
+/* pages/sunshine/sunshine.wxss */
+.order {
+  height: 4rpx;
+  width: 32rpx;
+  margin-top: 10rpx;
+}
+
+.scroll {
+
+  white-space: nowrap;
+}
+
+.grayblock {
+  width: 100%;
+  height: 20rpx;
+  background: #F7F8FA;
+}
+
+.topimg {
+  width: 100%;
+  height: 368rpx;
+}
+
+.biaozhun {
+  width: 128rpx;
+  height: 64rpx; 
+  line-height: 64rpx;
+  opacity: 1;
+  border-radius: 8rpx;
+}
+.txt-gray{
+  color: #A0A0A0;
+}
+.bg1{
+  background: #DDF6DD;
+}
+.bg2{
+  background: #D3EBFE;
+}
+.bg3{
+  background: #FFECDE;
+}
+.bg4{
+  background: #F6CBCE;
+}

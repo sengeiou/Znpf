@@ -578,3 +578,26 @@ button[disabled][type=primary] {
 .padding-top-32{
   padding-top: 32rpx;
 }
+ 
+.under_block {
+  position: fixed;
+  width: 100vw;
+  z-index: 99;
+  bottom: 0;
+}
+.bg1{
+  background: #F0E9F6;
+}
+.bg2{
+  background:#FCE4D1;
+}
+.left_one {
+  width: 304rpx;
+  height: 80rpx;
+  line-height: 80rpx; 
+  opacity: 1;
+  border-radius: 8rpx;
+}
+.paddings{
+  padding: 10rpx 20rpx 10rpx 20rpx;
+}

@@ -65,7 +65,7 @@ Page {
 
 .txtblock {
   width: 80rpx;
-   
+
   padding: 6rpx 10rpx 6rpx 10rpx;
   background: rgba(240, 233, 246, 1);
   opacity: 1;
@@ -86,7 +86,7 @@ Page {
 }
 
 .leftblock {
-  width: 200rpx; 
+  width: 200rpx;
   background: rgba(240, 233, 246, 1);
   opacity: 1;
   border-radius: 8rpx;
@@ -102,12 +102,36 @@ Page {
   background: #D3EBFE;
   opacity: 1;
 }
- 
-.priceblock{
+
+.priceblock {
   height: 50rpx;
   /* width: 300rpx; */
   background: burlywood;
 }
-.loupanname{
+
+.loupanname {
   width: 150rpx;
+}
+
+.under_block {
+  position: fixed;
+  width: 100vw;
+  z-index: 99;
+  bottom: 0;
+}
+.bg1{
+  background: #F0E9F6;
+}
+.bg2{
+  background:#FCE4D1;
+}
+.left_one {
+  width: 304rpx;
+  height: 80rpx;
+  line-height: 80rpx; 
+  opacity: 1;
+  border-radius: 8rpx;
+}
+.paddings{
+  padding: 10rpx 20rpx 10rpx 20rpx;
 }

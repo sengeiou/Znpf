@@ -1,0 +1,152 @@
+<!--pages/hangpai/hangpai.wxml-->
+<cu-custom isCustom="{{true}}" bgColor="bg-white">
+	<view slot="content" class="txt-bold" style="color:#161616;">{{detail.activitytype_id_name}}航拍景观</view>
+</cu-custom>
+
+<view class='padding-30 '>
+	<scroll-view scroll-x class="scroll " style=" width:100%">
+		<view class='' style="width:150rpx;display:inline-block"  bindtap='bindorder' id="{{idx}}" wx:for='{{entrancelist}}' wx:for-index='idx' wx:key='e'>
+			<view class="flex-row flex-column">
+				<view class='h5 txt-bold flex-1  {{nowidx==idx?"":"txt-gray opa8"}}'>{{item.name}}</view>
+				<view class=' order {{nowidx==idx?"bg-purple":"bg-white"}}'></view>
+			</view>
+		</view>
+	</scroll-view>
+</view>
+
+<view class="grayblock"></view>
+
+<view wx:for='{{entrancelist}}' wx:key='k' wx:for-index='idx' wx:if='{{nowidx==idx}}' class="">
+
+
+	<!-- 航拍 -->
+	<view class="padding-30">
+		<view class="txt-bold">航拍</view>
+
+		<video class="margin-top" style='width:100%;height:320rpx;' object-fit="contain" autoplay='{{false}}' loop='{{false}}' controls src='{{uploadpath}}entrance/{{item.video}}'>
+		</video>
+
+		<scroll-view scroll-x class="scroll margin-top-20" style="width:100%">
+			<image wx:for='{{3}}' style=" display:inline-block" src="{{uploadpath}}resource/{{res.fz}}" class="imgs margin-right-20"></image>
+		</scroll-view>
+	</view>
+
+	<view class="grayblock"></view>
+
+	<!-- 评级 -->
+	<view class="padding-30">
+
+		<view class="txt-bold">评级</view>
+
+		<view class="flex-row   margin-top">
+
+			<view class="leftblock text-center padding-20">
+				<view class="txt-bold h4 txt-purple">3.4</view>
+				<view class="h5 margin-top-10">知鸟评级</view>
+			</view>
+
+			<view class=" margin-left-20">
+
+				<view class="flex-row flex-center">
+					<view class="h5">景观视野</view>
+					<view class="flex-row flex-center margin-left-20">
+						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
+						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+					</view>
+					<view class="txt-purple margin-left-20">5.0</view>
+				</view>
+
+				<view class="flex-row flex-center margin-top-10">
+					<view class="h5">道路影响</view>
+					<view class="flex-row flex-center margin-left-20">
+						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
+						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+					</view>
+					<view class="txt-purple margin-left-20">5.0</view>
+				</view>
+
+				<view class="flex-row flex-center margin-top-10">
+					<view class="h5">其他细节</view>
+					<view class="flex-row flex-center margin-left-20">
+						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
+						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+					</view>
+					<view class="txt-purple margin-left-20">5.0</view>
+				</view>
+
+			</view>
+
+		</view>
+
+
+	</view>
+
+	<view class="grayblock"></view>
+
+	<!-- 景观视野 -->
+	<view class="padding-30">
+
+		<view class="txt-bold">景观视野</view>
+
+		<view class="text-center margin-top ">
+			<image src="{{uploadpath}}entrance/{{item.attraction_img}}" class="shiye"></image>
+		</view>
+
+		<view class="h6 txt-gray margin-top">
+			{{item.attraction}}
+		</view>
+
+	</view>
+
+	<view class="grayblock"></view>
+
+	<!-- 道路影响 -->
+	<view class="padding-30">
+
+		<view class="txt-bold">道路影响</view>
+
+		<view class="text-center margin-top ">
+			<image src="{{uploadpath}}entrance/{{item.trafficimpact_img}}" class="shiye"></image>
+		</view>
+
+		<view class="h6 txt-gray margin-top">
+			{{item.trafficimpact}}
+		</view>
+
+	</view>
+
+	<view class="grayblock"></view>
+
+	<!-- 其他细节 -->
+	<view class="padding-30">
+
+		<view class="txt-bold">其他细节</view>
+
+		<view class="h6 txt-gray margin-top">
+			{{item.detail}}
+		</view>
+
+	</view>
+
+</view>
+
+<view style="height:120rpx"></view>
+
+<view class="under_block bg-white">
+	<view class="flex-row flex-center paddings">
+		<image src="{{uploadpath}}resource/{{res.bushoucang}}" class="icon-25"></image>
+		<view class="flex-1"></view>
+		<view class="left_one text-center bg1 h5">联系客服</view>
+
+		<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
+	</view>
+</view>

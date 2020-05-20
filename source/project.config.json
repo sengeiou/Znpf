@@ -110,6 +110,27 @@
 					"id": -1,
 					"name": "pages/loupan/loupan",
 					"pathName": "pages/loupan/loupan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "周边价格",
+					"pathName": "pages/otherprice/otherprice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "航拍景观",
+					"pathName": "pages/hangpai/hangpai",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "日照",
+					"pathName": "pages/sunshine/sunshine",
 					"scene": null
 				}
 			]
