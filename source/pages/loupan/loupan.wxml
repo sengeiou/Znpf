@@ -68,7 +68,7 @@
 <!-- 楼盘列表 -->
 
 <view wx:for="{{list}}" wx:key="k" class="flex-row flex-center padding-30 bg-white" style="margin-top:2rpx">
-	<image src='{{uploadpath}}resource/{{res.ceshi}}' class="img_1"></image>
+	<image src='{{uploadpath}}premises/{{item.cover}}' class="img_1"></image>
 
 	<view class="margin-left-30 flex-1">
 
