@@ -1,28 +1,28 @@
 <cu-custom bgColor="bg-white" isCustom="{{true}}">
   <view slot="content" class="txt-bold" style="color:#161616;">置业顾问</view>
 </cu-custom>
-<view class="flex-row margin-top-20">
-  <image src="{{uploadpath}}member/{{guwendetail.minpai}}" class="icon-60 margin-left-50 radius-50"></image>
-  <view class="txt-bold flex-1 margin-left-20">{{guwendetail.name}}
+<view class="flex-row margin-top-32 bg-white">
+  <image src="{{uploadpath}}member/{{guwendetail.minpai}}" class="icon-64 margin-left-50 radius-50"></image>
+  <view class="txt-bold flex-1 margin-left-20 f-34">{{guwendetail.name}}
     <view class="flex-row margin-top-5">
-      <image src="{{uploadpath}}resource/{{res.fw}}" class="icon-10 margin-top-5"></image>
-      <view class="h7 t-color margin-left-5">主营范围：{{guwendetail.zhuyinfanwei}}</view>
+      <image src="{{uploadpath}}resource/{{res.fw}}" class="icon-1012 margin-top-5"></image>
+      <view class="f-22 t-color margin-left-5">主营范围：{{guwendetail.zhuyinfanwei}}</view>
     </view>
     <view class="flex-row margin-top-5">
-      <image src="{{uploadpath}}resource/{{res.sj}}" class="icon-10 margin-top-5"></image>
-      <view class="h7 t-color margin-left-5">从业时间：{{guwendetail.congyetime}}</view>
+      <image src="{{uploadpath}}resource/{{res.sj}}" class="icon-11 margin-top-5"></image>
+      <view class="f-22 t-color margin-left-5">从业时间：{{guwendetail.congyetime}}</view>
     </view>
   </view>
-  <view class="position-60">
-    <image src="{{uploadpath}}resource/{{res.bq}}" class="icon-200"></image>
+  <view class="">
+    <image src="{{uploadpath}}resource/{{res.bq}}" mode="widthFix" class="icon-200"></image>
     <view class="position-left">
       <view class="t-color-p">{{guwendetail.manyidu}}</view>
-      <view class="h7 t-color-p">满意度</view>
+      <view class="f-22 t-color-p">满意度</view>
     </view>
   </view>
 </view>
-
-<view class="flex-row margin-bottom-20">
+<view style="height:48rpx"></view>
+<view class="flex-row margin-bottom-20 bg-white">
   <view class="flex-1 text-center">
     <view class=" t-color-r f-50">{{guwendetail.fuwuyonghu}}</view>
     <view class="h7 t-color-h">服务用户</view>
@@ -40,99 +40,65 @@
 </view>
 <view class="bg-color padding-top-20"></view>
 <view class="margin-top txt-bold margin-left-40">主营新房</view>
-<view class="flex-row margin-top">
-  <image src="{{uploadpath}}resource/{{res.fz}}" class="icon-220 margin-left-40"></image>
-  <view class="flex-1 margin-left-40">
-    <view class="flex">
-      <view class="flex-1 txt-bold">恒大御景湾</view>
-      <view class="h7 margin-right-40 bg-xf txt-white padding-left-10 padding-right-10 padding-top-5">新房</view>
-    </view>
-    <view class="t-color h6  margin-top-5">北辰 | 宜兴埠</view>
-    <view class="flex margin-bottom-30 margin-top-10">
-      <view class="h7 bg-gx padding-left-10 padding-right-10">刚需</view>
-      <view class="h7 margin-left-10 bg-gx padding-left-10 padding-right-10">住宅</view>
-      <view class="h7 margin-left-10 bg-gx padding-left-10 padding-right-10">环线房</view>
-    </view>
-    <view class="flex">
-      <view class="t-color-p txt-bold">26000</view>
-      <view class="h6 t-color-p txt-bold">元/m2</view>
-      <view class="h5 t-color margin-left-20">建面 88-123m2</view>
-    </view>
-  </view>
-</view>
-<view class="border margin-top-20"></view>
-<view class="flex-row margin-top-20">
-  <image src="{{uploadpath}}resource/{{res.fz}}" class="icon-220 margin-left-40"></image>
-  <view class="flex-1 margin-left-40">
-    <view class="flex">
-      <view class="flex-1 txt-bold">恒大御景湾</view>
-      <view class="h7 margin-right-40 bg-xf txt-white padding-left-10 padding-right-10 padding-top-5">新房</view>
-    </view>
-    <view class="t-color h6  margin-top-5">北辰 | 宜兴埠</view>
-    <view class="flex margin-bottom-30 margin-top-10">
-      <view class="h7 bg-gx padding-left-10 padding-right-10">刚需</view>
-      <view class="h7 margin-left-10 bg-gx padding-left-10 padding-right-10">住宅</view>
-      <view class="h7 margin-left-10 bg-gx padding-left-10 padding-right-10">环线房</view>
-    </view>
-    <view class="flex">
-      <view class="t-color-p txt-bold">26000</view>
-      <view class="h6 t-color-p txt-bold">元/m2</view>
-      <view class="h5 t-color margin-left-20">建面 88-123m2</view>
+<view class=" margin-top" wx:for='{{guwendetail.premises}}' wx:key='key' wx:if='{{item.premisestype_id==1}}'>
+  <view class="flex-row">
+    <image src="{{uploadpath}}premises/{{item.cover}}" class="icon-220 margin-left-40"></image>
+    <view class="flex-1 margin-left-40">
+      <view class="flex">
+        <view class="flex-1 txt-bold">{{item.name}}</view>
+        <view class="h7 margin-right-40 txt-white padding-left-10 padding-right-10 padding-top-5 {{item.sales_status!=''?'bg-87':'bg-xf'}}">{{item.sales_status!=''?item.sales_status:item.premisestype_id_name}}</view>
+      </view>
+      <view class="t-color h6  margin-top-5">北辰 | 宜兴埠</view>
+      <view class="flex margin-bottom-30 margin-top-10 flex-row flex-center">
+        <view class="h7 bg-gx padding-left-10 padding-right-10 margin-right-10" wx:for='{{item.label}}' wx:key='k'>{{item.name}}</view>
+      </view>
+      <view class="flex flex-bottom">
+        <view class="t-color-p txt-bold">{{item.avg_price}}</view>
+        <view class="h6 t-color-p txt-bold">元/m2</view>
+        <view class="h5 t-color margin-left-20">建面 {{item.avg_area}}</view>
+      </view>
     </view>
   </view>
+  <view class="border margin-top-20"></view>
 </view>
+
 <view class="bg-color padding-top-20"></view>
 <view class="margin-top txt-bold margin-left-40">主营二手房</view>
-<view class="flex-row margin-top">
-  <image src="{{uploadpath}}resource/{{res.fz}}" class="icon-220 margin-left-40"></image>
-  <view class="flex-1 margin-left-40">
-    <view class="flex">
-      <view class="flex-1 txt-bold">恒大御景湾</view>
-      <view class="h7 margin-right-40 bg-xf txt-white padding-left-10 padding-right-10 padding-top-5">新房</view>
-    </view>
-    <view class="t-color h6  margin-top-5">北辰 | 宜兴埠</view>
-    <view class="flex margin-bottom-30 margin-top-10">
-      <view class="h7 bg-gx padding-left-10 padding-right-10">刚需</view>
-      <view class="h7 margin-left-10 bg-gx padding-left-10 padding-right-10">住宅</view>
-      <view class="h7 margin-left-10 bg-gx padding-left-10 padding-right-10">环线房</view>
-    </view>
-    <view class="flex">
-      <view class="t-color-p txt-bold">26000</view>
-      <view class="h6 t-color-p txt-bold">元/m2</view>
-      <view class="h5 t-color margin-left-20">建面 88-123m2</view>
-    </view>
-  </view>
-</view>
-<view class="border margin-top-20"></view>
-<view class="flex-row margin-top-20">
-  <image src="{{uploadpath}}resource/{{res.fz}}" class="icon-220 margin-left-40"></image>
-  <view class="flex-1 margin-left-40">
-    <view class="flex">
-      <view class="flex-1 txt-bold">恒大御景湾</view>
-      <view class="h7 margin-right-40 bg-xf txt-white padding-left-10 padding-right-10 padding-top-5">新房</view>
-    </view>
-    <view class="t-color h6  margin-top-5">北辰 | 宜兴埠</view>
-    <view class="flex margin-bottom-30 margin-top-10">
-      <view class="h7 bg-gx padding-left-10 padding-right-10">刚需</view>
-      <view class="h7 margin-left-10 bg-gx padding-left-10 padding-right-10">住宅</view>
-      <view class="h7 margin-left-10 bg-gx padding-left-10 padding-right-10">环线房</view>
-    </view>
-    <view class="flex">
-      <view class="t-color-p txt-bold">26000</view>
-      <view class="h6 t-color-p txt-bold">元/m2</view>
-      <view class="h5 t-color margin-left-20">建面 88-123m2</view>
+<view class="margin-top" wx:for='{{guwendetail.premises}}' wx:key='key' wx:if='{{item.premisestype_id==2}}'>
+  <view class="flex-row">
+    <image src="{{uploadpath}}resource/{{res.fz}}" class="icon-220 margin-left-40"></image>
+    <view class="flex-1 margin-left-40">
+      <view class="flex">
+        <view class="flex-1 txt-bold">{{item.name}}</view>
+        <view class="h7 margin-right-40  txt-white padding-left-10 padding-right-10 padding-top-5 {{item.sales_status!=''?'bg-87':'bg-xf'}}">{{item.sales_status!=''?item.sales_status:item.premisestype_id_name}}</view>
+      </view>
+      <view class="t-color h6  margin-top-5">北辰 | 宜兴埠</view>
+      <view class="flex margin-bottom-30 margin-top-10">
+        <view class="h7 bg-gx padding-left-10 padding-right-10 margin-right-10" wx:for='{{item.label}}' wx:key='k'>{{item.name}}</view>
+      </view>
+      <view class="flex flex-bottom">
+        <view class="t-color-p txt-bold">{{item.avg_price}}</view>
+        <view class="h6 t-color-p txt-bold">元/m2</view>
+        <view class="h5 t-color margin-left-20">建面 {{item.avg_area}}</view>
+      </view>
     </view>
   </view>
+  <view class="border margin-top-20"></view>
 </view>
+
 <view class="bg-color padding-top-20"></view>
-<view class="flex-row margin-bottom-10 margin-top-10">
+<view class="flex-row margin-bottom-10 margin-top-10 pos bg-white">
+  <view class="flex-1"></view>
   <image src="{{uploadpath}}resource/{{res.xh}}" class="icon-15 margin-left-40 margin-top-30"></image>
-  <view class="bg-dh flex-row margin-left-20   padding-top-20 padding-bottom-20 padding-left-80">
+  <view class="flex-1"></view>
+  <view class="bg-dh flex-row flex-center lian">
     <image src="{{uploadpath}}resource/{{res.dh}}" class="icon-14 margin-top-5 margin-right-5"></image>
     <view class="h5 txt-white">电话联系</view>
   </view>
-  <view class="bg-zx flex-row margin-left-20  padding-top-20 padding-bottom-20 padding-left-80">
+  <view class="flex-1"></view>
+  <view class="bg-zx flex-row flex-center lian">
     <image src="{{uploadpath}}resource/{{res.zx}}" class="icon-14  margin-top-5 margin-right-5"></image>
     <view class="h5 txt-white">在线联系</view>
   </view>
+  <view class="flex-1"></view>
 </view>
