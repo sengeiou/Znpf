@@ -30,17 +30,17 @@
 <view class="padding-30 bg-white margin-top-10 ">
 
 
-	<view bindtap="fanyuanlist" class="flex-row flex-center ">
+	<view  class="flex-row flex-center ">
 
-		<image src='{{uploadpath}}resource/{{res.zuixinfanyuanbg}}' class="block_1"></image>
-		<view class="zuixin">
-			<view class="f-22" style="color:#777777">最新房源</view>
-			<view class="h-44 margin-top-10 text-center" style="color:#FCC496">12</view>
+		<image bindtap="fanyuanlist"  data-title="最新房源" data-name="1" src='{{uploadpath}}resource/{{res.zuixinfanyuanbg}}' class="block_1"></image>
+		<view  class="zuixin">
+			<view   class="f-22" style="color:#777777">最新房源</view>
+			<view class="h-44 margin-top-10 text-center" style="color:#FCC496">{{homenum.zuixinfanyuan}}</view>
 
 		</view>
 
 		<view class="flex-1"></view>
-		<view  class="flex-column  width-88 flex-row ">
+		<view  bindtap="fanyuanlist" data-title="二手房" data-name="2" class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.ershoufang}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">二手房</view>
 		</view>
@@ -66,7 +66,7 @@
 		<image src='{{uploadpath}}resource/{{res.xinfanyushoubg}}' class="block_1"></image>
 		<view class="zuixin">
 			<view class="f-22" style="color:#777777">新房预售</view>
-			<view class="h-44 margin-top-10 text-center" style="color:#EF888F">32</view>
+			<view class="h-44 margin-top-10 text-center" style="color:#EF888F">{{homenum.xinfanyushou}}</view>
 
 		</view>
 		<view class="flex-1"></view>
@@ -97,7 +97,7 @@
 		<image src='{{uploadpath}}resource/{{res.zuixinpincebg}}' class="block_1"></image>
 		<view class="zuixin">
 			<view class="f-22" style="color:#777777">最新评测</view>
-			<view class="h-44 margin-top-10 text-center" style="color:#87BFF1">123</view>
+			<view class="h-44 margin-top-10 text-center" style="color:#87BFF1">{{homenum.zuixinpince}}</view>
 
 		</view>
 

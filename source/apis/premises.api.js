@@ -9,6 +9,38 @@ import { ApiConfig } from 'apiconfig';
 export class PremisesApi{
 
 
+    entrancelist(json, callback, showLoading = true) {
+
+        if (showLoading)
+            ApiConfig.ShowLoading();
+
+        var header = ApiConfig.GetHeader();
+        console.log(header);
+        console.log(json);
+        wx.request({
+            url: ApiConfig.GetApiUrl() + 'premises/entrancelist',
+            data: json,
+            method: 'POST',
+            dataType: 'json',
+            header: header,
+            success: function (res) {
+                if (callback != null) {
+                    callback(res.data);
+                }
+            },
+            fail: function (res) {
+                console.log(res);
+                callback(false);
+            },
+            complete: function (res) {
+                console.log(res);
+            
+                if (showLoading)
+                    ApiConfig.CloseLoading();
+            }
+        })
+    }
+
     guwen(json, callback, showLoading = true) {
 
         if (showLoading)
@@ -19,6 +51,38 @@ export class PremisesApi{
         console.log(json);
         wx.request({
             url: ApiConfig.GetApiUrl() + 'premises/guwen',
+            data: json,
+            method: 'POST',
+            dataType: 'json',
+            header: header,
+            success: function (res) {
+                if (callback != null) {
+                    callback(res.data);
+                }
+            },
+            fail: function (res) {
+                console.log(res);
+                callback(false);
+            },
+            complete: function (res) {
+                console.log(res);
+            
+                if (showLoading)
+                    ApiConfig.CloseLoading();
+            }
+        })
+    }
+
+    guwendetail(json, callback, showLoading = true) {
+
+        if (showLoading)
+            ApiConfig.ShowLoading();
+
+        var header = ApiConfig.GetHeader();
+        console.log(header);
+        console.log(json);
+        wx.request({
+            url: ApiConfig.GetApiUrl() + 'premises/guwendetail',
             data: json,
             method: 'POST',
             dataType: 'json',
@@ -105,7 +169,7 @@ export class PremisesApi{
         })
     }
 
-    guwendetail(json, callback, showLoading = true) {
+    label(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -114,7 +178,7 @@ export class PremisesApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'premises/guwendetail',
+            url: ApiConfig.GetApiUrl() + 'premises/label',
             data: json,
             method: 'POST',
             dataType: 'json',
