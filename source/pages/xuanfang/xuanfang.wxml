@@ -20,7 +20,7 @@
 
 <view class="bg-white flex-row flex-center flex-wrap padding-bottom-60 ">
 
-	<view wx:for="{{xuanfanlist}}" wx:key="k" class="konzhi-block flex-row flex-column"  bindtap="detail">
+	<view wx:for="{{xuanfanlist}}" wx:key="k" class="konzhi-block flex-row flex-column" data-id="{{item.id}}"  data-title="{{item.name}}"  bindtap="fanyuanlist">
 
 		<view class="color-block" style="color:{{item.fontcolor}};background:{{item.bgcolor}}">{{item.count}}</view>
 		<view class="f-26 margin-top-16" style="color:#707070">{{item.name}}</view>

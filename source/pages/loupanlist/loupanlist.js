@@ -13,7 +13,8 @@ class Content extends AppBase {
     super.onLoad(options);
     var name = options.name;
     var title = options.title;
-    this.Base.setMyData({ name, title });
+    var id=options.id;
+    this.Base.setMyData({ name, title,id });
 
   }
   onMyShow() {
@@ -35,9 +36,13 @@ class Content extends AppBase {
   getloupan() {
     var json = {};
     var name = this.Base.getMyData().name;
+    var id=this.Base.getMyData().id;
     console.log(name);
     if (name != undefined) {
       json.premisestype_id = name;
+    }
+    if (id != undefined) {
+      json.xuanfantype = id;
     }
     var api = new PremisesApi;
     api.list( json , (list) => {
