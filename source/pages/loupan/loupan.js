@@ -2,6 +2,7 @@
 import { AppBase } from "../../appbase";
 import { ApiConfig } from "../../apis/apiconfig";
 import { InstApi } from "../../apis/inst.api.js";
+import { PremisesApi } from "../../apis/premises.api.js";
 
 class Content extends AppBase {
   constructor() {
@@ -11,6 +12,12 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
+    var api=new PremisesApi;
+    api.label({},(label1)=>{
+   
+       this.Base.setMyData({label1});
+
+    })
   }
   onMyShow() {
     var that = this;
@@ -21,12 +28,23 @@ class Content extends AppBase {
       this.setData({
         indexbanner: indexbanner
       },()=>{
-
         this.Base.setMyData({showSkeleton:false})
-
       });
     });
+  
+    var api=new PremisesApi;
+     api.list({},(list)=>{
+        
+       this.Base.setMyData({list});
+
+     })
+
+
+
+
   }
+
+
 }
 var content = new Content();
 var body = content.generateBodyJson();

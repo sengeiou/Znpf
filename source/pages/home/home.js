@@ -35,11 +35,13 @@ class Content extends AppBase {
   onReady(){
     console.log("??????????????????");
   }
-  fanyuanlist(){
-
+  fanyuanlist(e){
+   
+   var name=e.currentTarget.dataset.name;
+   var title=e.currentTarget.dataset.title;
     
     wx.navigateTo({
-      url: '/pages/loupanlist/loupanlist'
+      url: '/pages/loupanlist/loupanlist?name='+name+"&title="+title,
     })
   }
 }

@@ -61,29 +61,27 @@
 </view>
 <!-- 筛选区2 -->
 <view class="margin-top-20 flex-row flex-center padding-30 bg-white" style="margin-top:2rpx">
-	<view class="shaixuanlable">住宅</view>
-	<view class="shaixuanlable">VR看房</view>
-	<view class="shaixuanlable">近地铁</view>
+	<view wx:for="{{label1}}" wx:key="k" class="shaixuanlable">{{item.name}}</view>
+
 </view>
 
 <!-- 楼盘列表 -->
 
-<view wx:for="{{10}}" class="flex-row flex-center padding-30 bg-white" style="margin-top:2rpx">
+<view wx:for="{{list}}" wx:key="k" class="flex-row flex-center padding-30 bg-white" style="margin-top:2rpx">
 	<image src='{{uploadpath}}resource/{{res.ceshi}}' class="img_1"></image>
 
 	<view class="margin-left-30 flex-1">
 
 		<view class="flex-row flex-center ">
-			<view class="txt-bold" style="color:#161616">恒大御景湾</view>
+			<view class="txt-bold" style="color:#161616">{{item.name}}</view>
 			<view class="flex-1"></view>
-			<view class="lable">新房</view>
+			<view class="lable" style="background:{{item.premisestype_color}}">{{item.premisestype_name}}</view>
 		</view>
 		<view class="f-26 margin-top-10" style="color:#777777">北辰 | 宜兴埠</view>
 
 		<view class="flex-row flex-center margin-top-10">
-			<view class="lable1">刚需</view>
-			<view class="lable1 margin-left-10">住宅</view>
-			<view class="lable1 margin-left-10">环境房</view>
+			<view wx:for="{{item.label}}" wx:key="k1" wx:for-item="label" class="lable1">{{label.name}}</view>
+
 
 		</view>
 
@@ -91,8 +89,8 @@
 
 			<view class="flex-row flex-center">
 
-				<view class="h5" style="color:#583A80">26000元/m</view>
-				<view class="h5 margin-left-20" style="color:#777777">建面 88-123m</view>
+				<view class="h5" style="color:#583A80">{{item.avg_price}}</view>
+				<view class="h5 margin-left-20" style="color:#777777">建面 {{item.avg_area}}</view>
 			</view>
 
 

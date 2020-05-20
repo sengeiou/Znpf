@@ -52,5 +52,6 @@ page {
   background: #FCE4D1;
   border-radius: 4rpx;
   font-size: 22rpx;
-  color:#161616;
+  color:#777777;
+  margin-right: 10rpx;
 }
