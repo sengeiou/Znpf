@@ -23,7 +23,7 @@
 
 			<view class="h5 txt-gray">{{info.summary}}</view>
 
-			<view  class='flex-row flex-center margin-top-10'>
+			<view class='flex-row flex-center margin-top-10'>
 				<view class="label h6 text-center margin-right-10" wx:for='{{info.label}}' wx:key='k'>{{item.name}}</view>
 			</view>
 
@@ -96,12 +96,12 @@
 					<view class="h6 txt-gray margin-top-10">价格查询</view>
 				</view>
 
-				<view class="text-center flex-1 ">
+				<view class="text-center flex-1 " bindtap="topage" data-name="hangpai" id="{{info.id}}">
 					<image src="{{uploadpath}}resource/{{res.hangpai}}" class="icon-40"></image>
 					<view class="h6 txt-gray margin-top-10">航拍景观</view>
 				</view>
 
-				<view class="text-center flex-1 ">
+				<view class="text-center flex-1 " bindtap="topage" data-name="sunshine" id="{{info.id}}">
 					<image src="{{uploadpath}}resource/{{res.rizhao}}" class="icon-40"></image>
 					<view class="h6 txt-gray margin-top-10">日照评测</view>
 				</view>
@@ -161,22 +161,14 @@
 		<!-- 楼盘纪事 -->
 		<view class="padding-30 margin-top-20 bg-white">
 			<view class="txt-bold">楼盘纪事</view>
-			<view class="flex-row flex-center margin-top">
 
-				<view class="text-center">
-					<view class="h6">11.11</view>
-					<view class="txtblock text-center h6 margin-top-20">预售时间</view>
+			<view class="flex-row flex-center margin-top ">
+
+				<view class="text-center margin-right-20" wx:for='{{info.history}}'>
+					<view class="h6 ">{{item.time}}</view>
+					<view class="txtblock text-center h6 margin-top-20">{{item.name}}</view>
 				</view>
 
-				<view class="text-center margin-left-20">
-					<view class="h6">11.11</view>
-					<view class="txtblock text-center h6 margin-top-20">预售时间</view>
-				</view>
-
-				<view class="text-center  margin-left-20">
-					<view class="h6">11.11</view>
-					<view class="txtblock text-center h6 margin-top-20">预售时间</view>
-				</view>
 
 			</view>
 		</view>
@@ -220,15 +212,15 @@
 			<view class="txt-bold">销售顾问</view>
 
 			<view class="flex-row flex-center margin-top">
- 
-					<view class="flex-row flex-center padding-20 guwen margin-right-20" wx:for='{{info.guwen}}' wx:key='g'>
-						<image src="{{uploadpath}}member/{{item.minpai}}" class="icon-30 radius-50"></image>
-						<view class="flex-1 margin-left-10">
-							<view class="h5">{{item.name}}</view>
-							<view class="h6 margin-top-10 chaochu" style="color:#FCC496">{{info.name}}</view>
-						</view>
+
+				<view class="flex-row flex-center padding-20 guwen margin-right-20" wx:for='{{info.guwen}}' wx:key='g'>
+					<image src="{{uploadpath}}member/{{item.minpai}}" class="icon-30 radius-50"></image>
+					<view class="flex-1 margin-left-10">
+						<view class="h5">{{item.name}}</view>
+						<view class="h6 margin-top-10 chaochu" style="color:#FCC496">{{info.name}}</view>
 					</view>
-				  
+				</view>
+
 			</view>
 
 		</view>
@@ -308,11 +300,10 @@
 			<view class="txt-bold">楼盘优劣</view>
 
 			<view class='flex-row flex-center margin-top'>
-				<view class="label2 h6 text-center margin-right-10">刚需</view>
-				<view class="label2 h6 margin-right-10 text-center">住宅</view>
-				<view class="label2 h6 margin-right-10 text-center">品牌房企</view>
+				<view class="label2 h6 text-center margin-right-10" wx:for='{{info.yllabels}}' wx:key='y'>{{item.name}}</view>
 			</view>
 		</view>
+
 
 		<!-- 周边配套 -->
 		<view class="  bg-white margin-top-20">
@@ -357,7 +348,7 @@
 		<view class="padding-30 bg-white margin-top-20">
 
 			<!-- 查看全部 -->
-			<view class="flex-row flex-center">
+			<view class="flex-row flex-center" bindtap="topage" data-name="otherprice">
 				<view class="txt-bold flex-1">周边价格</view>
 				<view class="h6 txt-gray margin-left-20">查看全部</view>
 				<image src="{{uploadpath}}resource/{{res.right}}" class="icon"></image>
@@ -366,14 +357,29 @@
 			<view class="flex-row  margin-top" wx:for='{{info.otherprice}}' wx:key='o'>
 				<view class="loupanname text-right h5">{{item.name}}</view>
 				<view class="flex-row flex-center flex-1">
-					<view class="priceblock margin-left-20"  style="width:{{(item.price/100000)*300}}rpx"></view>
+					<view class="priceblock margin-left-20" style="width:{{item.price>100000?300:(item.price/100000)*300}}rpx"></view>
 					<view class="margin-left-20 h5">{{item.price}}</view>
 				</view>
 			</view>
 
+      <view class="txt-gray h6  margin-top-20 opa8">价格来自网络成交价，二手房价格每天都在变化，统计可能延迟，仅供参考。</view>
+
 
 		</view>
 
+	<view style="height:120rpx"></view>
+	</view>
+
+
+
+	<view class="under_block bg-white">
+		<view class="flex-row flex-center paddings">
+			<image src="{{uploadpath}}resource/{{res.bushoucang}}" class="icon-25"></image>
+			<view class="flex-1"></view>
+			<view class="left_one text-center bg1 h5">联系客服</view>
+
+			<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
+		</view>
 	</view>
 
 </view>

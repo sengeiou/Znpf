@@ -16,7 +16,10 @@
     "pages/whyruzhu/whyruzhu",
     "pages/yuanyang/yuanyang",
     "pages/guwen/guwen",
-    "pages/zhiyeguwen/zhiyeguwen"
+    "pages/zhiyeguwen/zhiyeguwen",
+    "pages/otherprice/otherprice",
+    "pages/sunshine/sunshine",
+    "pages/hangpai/hangpai"
   ],
   "permission": {
     "scope.userLocation": {
