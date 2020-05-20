@@ -20,10 +20,10 @@
 
 <view class="bg-white flex-row flex-center flex-wrap padding-bottom-60 ">
 
-	<view wx:for="{{24}}" wx:key="k" class="konzhi-block flex-row flex-column" data-current="{{item.name}}" bindtap="detail">
+	<view wx:for="{{xuanfanlist}}" wx:key="k" class="konzhi-block flex-row flex-column"  bindtap="detail">
 
-		<view class="color-block">12</view>
-		<view class="f-26 margin-top-16" style="color:#707070">余杭区</view>
+		<view class="color-block" style="color:{{item.fontcolor}};background:{{item.bgcolor}}">{{item.count}}</view>
+		<view class="f-26 margin-top-16" style="color:#707070">{{item.name}}</view>
 	</view>
 
 

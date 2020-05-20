@@ -11,6 +11,12 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
+    var api=new InstApi();
+
+     api.xuanfanlist({},(xuanfanlist)=>{
+
+       this.Base.setMyData({xuanfanlist})
+     })
   }
   onMyShow() {
     var that = this;

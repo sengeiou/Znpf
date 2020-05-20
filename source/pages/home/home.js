@@ -11,7 +11,13 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
-    this.Base.setMyData({ showSkeleton:true})
+    this.Base.setMyData({ showSkeleton:true});
+    var api=new InstApi;
+    api.homenum({},(homenum)=>{
+
+      this.Base.setMyData({homenum});
+
+    })
   }
   onMyShow() {
     var that = this;
@@ -22,9 +28,7 @@ class Content extends AppBase {
       this.setData({
         indexbanner: indexbanner
       },()=>{
-
         this.Base.setMyData({showSkeleton:false})
-
       });
     });
   }
