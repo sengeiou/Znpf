@@ -14,6 +14,7 @@ class Content extends AppBase {
     super.onLoad(options);
     this.Base.setMyData({nowidx:0})
   }
+  
   onMyShow() {
     var that = this;
     var premisesapi=new PremisesApi();

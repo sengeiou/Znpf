@@ -12,7 +12,7 @@ class Content extends AppBase {
   }
   onLoad(options) {
     this.Base.Page = this;
-    //options.id=5;
+     options.id=1;
     super.onLoad(options);
   }
 
@@ -21,7 +21,7 @@ class Content extends AppBase {
 
     var premisesapi=new PremisesApi();
 
-    premisesapi.info({id:1},(info)=>{
+    premisesapi.info({id:this.Base.options.id},(info)=>{
        var history=info.history;
        for(var i=0;i<history.length;i++){
         history[i].name=history[i].name.slice(0,4);
