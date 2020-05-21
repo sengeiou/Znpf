@@ -151,7 +151,7 @@ class Content extends AppBase {
           weixinhao,
           tuijianphone,
           jiesao,
-          premises_id,
+          premise_id: premises_id,
           erweima,
           minpai
         }, (res) => {

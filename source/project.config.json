@@ -26,7 +26,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.11.0",
 	"appid": "wxb71c11ec91a75e4f",
-	"projectname": "miniprogram-1",
+	"projectname": "%E7%9F%A5%E9%B8%9F%E8%AF%84%E6%88%BF",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -131,6 +131,14 @@
 					"id": -1,
 					"name": "日照",
 					"pathName": "pages/sunshine/sunshine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "pages/zhiyeguwen/zhiyeguwen",
+					"pathName": "pages/guwenlist/guwenlist",
+					"query": "",
 					"scene": null
 				}
 			]

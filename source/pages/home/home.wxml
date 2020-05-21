@@ -5,7 +5,7 @@
 
 <!-- 轮播图 -->
 
-<include wx:if="{{showSkeleton}}" src="home.skeleton.wxml"/> 
+<include wx:if="{{showSkeleton}}" src="home.skeleton.wxml" />
 
 <view class="sousuo   flex-row flex-center" bindtap="search">
 	<image class="icon-15 margin-left-10" src="{{uploadpath}}resource/{{res.sousuo}}"></image>
@@ -30,17 +30,17 @@
 <view class="padding-30 bg-white margin-top-10 ">
 
 
-	<view  class="flex-row flex-center ">
+	<view class="flex-row flex-center ">
 
-		<image bindtap="fanyuanlist"  data-title="最新房源" data-name="1" src='{{uploadpath}}resource/{{res.zuixinfanyuanbg}}' class="block_1"></image>
-		<view  class="zuixin">
-			<view   class="f-22" style="color:#777777">最新房源</view>
+		<image bindtap="fanyuanlist" data-title="最新房源" data-name="1" src='{{uploadpath}}resource/{{res.zuixinfanyuanbg}}' class="block_1"></image>
+		<view bindtap="fanyuanlist" data-title="最新房源" data-name="1" class="zuixin">
+			<view class="f-22" style="color:#777777">最新房源</view>
 			<view class="h-44 margin-top-10 text-center" style="color:#FCC496">{{homenum.zuixinfanyuan}}</view>
 
 		</view>
 
 		<view class="flex-1"></view>
-		<view  bindtap="fanyuanlist" data-title="二手房" data-name="2" class="flex-column  width-88 flex-row ">
+		<view bindtap="fanyuanlist" data-title="二手房" data-name="2" class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.ershoufang}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">二手房</view>
 		</view>
@@ -63,24 +63,24 @@
 	<view class="flex-row flex-center  margin-top-20">
 
 
-		<image src='{{uploadpath}}resource/{{res.xinfanyushoubg}}' class="block_1"></image>
-		<view class="zuixin">
+		<image bindtap="fanyuanlist" data-title="新房预售" data-name="4" src='{{uploadpath}}resource/{{res.xinfanyushoubg}}' class="block_1"></image>
+		<view bindtap="fanyuanlist" data-title="新房预售" data-name="4" class="zuixin">
 			<view class="f-22" style="color:#777777">新房预售</view>
 			<view class="h-44 margin-top-10 text-center" style="color:#EF888F">{{homenum.xinfanyushou}}</view>
 
 		</view>
 		<view class="flex-1"></view>
-		<view class="flex-column  width-88 flex-row ">
+		<view bindtap="fanyuanlist" data-title="登记" data-name="5" class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.dengji}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">登记</view>
 		</view>
 		<view class="flex-2"></view>
-		<view class="flex-column  width-88 flex-row ">
+		<view bindtap="fanyuanlist" data-title="正在认筹" data-name="6" class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.renchou}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">正在认筹</view>
 		</view>
 		<view class="flex-2"></view>
-		<view class="flex-column  width-88 flex-row ">
+		<view bindtap="fanyuanlist" data-title="预计开盘" data-name="7" class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.yujikaipan}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">预计开盘</view>
 		</view>
@@ -94,8 +94,8 @@
 	<view class="flex-row flex-center margin-top-20 ">
 
 
-		<image src='{{uploadpath}}resource/{{res.zuixinpincebg}}' class="block_1"></image>
-		<view class="zuixin">
+		<image bindtap="fanyuanlist" data-title="最新评测" data-name="3" src='{{uploadpath}}resource/{{res.zuixinpincebg}}' class="block_1"></image>
+		<view bindtap="fanyuanlist" data-title="最新评测" data-name="3" class="zuixin">
 			<view class="f-22" style="color:#777777">最新评测</view>
 			<view class="h-44 margin-top-10 text-center" style="color:#87BFF1">{{homenum.zuixinpince}}</view>
 
@@ -107,14 +107,14 @@
 			<view class="f-22 margin-top-16" style="color:#777777">评测</view>
 		</view>
 		<view class="flex-2"></view>
-		<view class="flex-column  width-88 flex-row ">
+		<view bindtap="topage" data-name="guwenlist" class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.guwen}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">置业顾问</view>
 		</view>
 		<view class="flex-2"></view>
-		<view class="flex-column  width-88 flex-row ">
+		<view bindtap="topage" data-name="fuwuhao"  class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.gonzhonhao}}' class="icon-30"></image>
-			<view class="f-22 margin-top-16" style="color:#777777">               公众号</view>
+			<view class="f-22 margin-top-16" style="color:#777777"> 公众号</view>
 		</view>
 
 		<view class="flex-1"></view>
@@ -130,19 +130,19 @@
 	<view class="f-34 txt-bold padding-30" style="color:#161616">你可能感兴趣</view>
 
 
-	<view bindtap="topage" data-name="premises-details"  wx:for="{{3}}" style="border-bottom:1rpx solid #F7F8FA" wx:key="k" class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30">
+	<view bindtap="topage" data-name="premises-details" wx:for="{{list}}" style="border-bottom:1rpx solid #F7F8FA" wx:key="k" class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30">
 
-		<image src='{{uploadpath}}resource/{{res.ceshi}}' class="img_1"></image>
+		<image src='{{uploadpath}}premises/{{item.cover}}' class="img_1"></image>
 
 
 		<view class="margin-left-30 flex-1">
-			<view class="txt-bold" style="color:#161616">恒大御景湾</view>
-			<view class="h5 " style="color:#583A80">26000元/m</view>
+			<view class="txt-bold" style="color:#161616">{{item.name}}</view>
+			<view class="h5 " style="color:#583A80">{{item.avg_price}}</view>
 
-			<view class="flex-row flex-center margin-top-30">
+			<view class="flex-row margin-top-30">
 
 				<view>
-					<view class="flex-row ">
+					<!-- <view class="flex-row ">
 
 						<view class="lable">北辰区|宜兴埠</view>
 						<view class="lable margin-left-16">刚需</view>
@@ -153,13 +153,18 @@
 						<view class="lable">综合体1公里+</view>
 						<view class="lable margin-left-16">地铁</view>
 
+					</view> -->
+					<view class="flex-row flex-center ">
+						<view wx:for="{{item.label}}" wx:key="k1" wx:for-item="label" class="lable1">{{label.name}}</view>
+
+
 					</view>
 				</view>
 
 
 				<view class=" flex-1"></view>
 				<view class="flex-row flex-column">
-					<view class="h2" style="color:#583A80">3.4</view>
+					<view class="h2" style="color:#583A80">{{item.premisesgrade_grade}}</view>
 					<view class="f-26" style="color:#A0A0A0">配套评级</view>
 				</view>
 
@@ -170,7 +175,7 @@
 
 	</view>
 
-	<view class="allin margin-bottom-30">
+	<view bindtap="gotoloupan" data-page="loupan" class="allin margin-bottom-30">
 		查看全部
 	</view>
 </view>
@@ -181,72 +186,29 @@
 
 	<view class="flex-row flex-center margin-top">
 		<view class="flex-1"></view>
-		<view class="padding-20" style="background:#F0E9F6;border-radius:8rpx">
+		<view bindtap="topage" id="{{item.id}}" data-name="sunshine"  wx:for="{{zuixinpince}}" wx:key="k" wx:for-index="idx" class="padding-20" style="background:#F0E9F6;border-radius:8rpx;margin-left:{{idx==0?'0rpx':'48rpx'}}">
 
 
 			<view class="flex-row flex-bottom">
 
-				<view class="h-44" style="color:#583A80">6.5</view>
+				<view class="h-44" style="color:#583A80">{{item.rizhao}}</view>
 				<view class="f-22  center " style="color:#777777">H</view>
 				<view class="f-22 " style="color:#777777">日照</view>
 
 			</view>
 			<view class="flex-row flex-bottom">
 
-				<view class="h-44" style="color:#583A80">2.3</view>
+				<view class="h-44" style="color:#583A80">{{item.jingguan}}</view>
 				<view class="f-22 center " style="color:#777777">分</view>
 				<view class="f-22 " style="color:#777777">景观</view>
 
 			</view>
-			<view class="margin-top-20 f-26" style="color:#161616">恒大御景湾</view>
-			<view class=" f-26 text-center" style="color:#777777">11#</view>
+			<view class="margin-top-20 f-26" style="color:#161616">{{item.loupanname}}</view>
+			<view class=" f-26 text-center" style="color:#777777">{{item.entrance_name}}</view>
 
 
 		</view>
-		<view class="padding-20" style="background:#F0E9F6;border-radius:8rpx;margin-left:48rpx">
 
-
-			<view class="flex-row flex-bottom">
-
-				<view class="h-44" style="color:#583A80">6.5</view>
-				<view class="f-22  center " style="color:#777777">H</view>
-				<view class="f-22 " style="color:#777777">日照</view>
-
-			</view>
-			<view class="flex-row flex-bottom">
-
-				<view class="h-44" style="color:#583A80">2.3</view>
-				<view class="f-22 center " style="color:#777777">分</view>
-				<view class="f-22 " style="color:#777777">景观</view>
-
-			</view>
-			<view class="margin-top-20 f-26" style="color:#161616">恒大御景湾</view>
-			<view class=" f-26 text-center" style="color:#777777">11#</view>
-
-
-		</view>
-		<view class="padding-20" style="background:#F0E9F6;border-radius:8rpx;margin-left:48rpx">
-
-
-			<view class="flex-row flex-bottom">
-
-				<view class="h-44" style="color:#583A80">6.5</view>
-				<view class="f-22  center " style="color:#777777">H</view>
-				<view class="f-22 " style="color:#777777">日照</view>
-
-			</view>
-			<view class="flex-row flex-bottom">
-
-				<view class="h-44" style="color:#583A80">2.3</view>
-				<view class="f-22 center " style="color:#777777">分</view>
-				<view class="f-22 " style="color:#777777">景观</view>
-
-			</view>
-			<view class="margin-top-20 f-26" style="color:#161616">恒大御景湾</view>
-			<view class=" f-26 text-center" style="color:#777777">11#</view>
-
-
-		</view>
 		<view class="flex-1"></view>
 
 	</view>
@@ -258,33 +220,20 @@
 	<view class="f-34 txt-bold " style="color:#161616">最新户型分析</view>
 
 	<view class="flex-row flex-center margin-top">
-		<view>
-			<image src='{{uploadpath}}resource/{{res.ceshi}}' class="img_2"></image>
 
-			<view class="margin-top-5 h5" style="color:#161616">2室2厅 | 88m</view>
-			<view class="margin-top-5 f-22" style="color:#777777">保利梧桐语</view>
+		<view wx:for="{{huxinfenxi}}" wx:key="k" wx:for-index="idx" class="{{idx==0?'0rpx':'margin-left-20'}} ">
 
-		</view>
-		<view class="margin-left-20">
-			<image src='{{uploadpath}}resource/{{res.ceshi}}' class="img_2"></image>
+			<image src='{{uploadpath}}housing/{{item.fengmian}}' class="img_2"></image>
 
-			<view class="margin-top-5 h5" style="color:#161616">2室2厅 | 88m</view>
-			<view class="margin-top-5 f-22" style="color:#777777">保利梧桐语</view>
+			<view class="margin-top-5 h5" style="color:#161616">{{item.disposal}} | {{item.areatype_name}}</view>
+			<view class="margin-top-5 f-22" style="color:#777777">{{item.premises_name}}</view>
 
 		</view>
 
-		<view class="margin-left-20">
-			<image src='{{uploadpath}}resource/{{res.ceshi}}' class="img_2"></image>
 
-			<view class="margin-top-5 h5" style="color:#161616">2室2厅 | 88m</view>
-			<view class="margin-top-5 f-22" style="color:#777777">保利梧桐语</view>
-
-		</view>
 	</view>
 
-	<view class="allin1  margin-top-30">
-		查看全部
-	</view>
+
 </view>
 <!-- 最新航拍 -->
 <view class="bg-white margin-top-10 padding-30">
@@ -296,20 +245,19 @@
 
 	</view>
 
-  <scroll-view scroll-x class="bg-white nav margin-top "  scroll-with-animation scroll-left="{{scrollLeft}}">
-  <view style="margin:0;padding:0;margin-right:32rpx"  id="{{item.id}}" wx:for="{{3}}" wx:key='k' class="cu-item   kaifashan ">
-    <image bindtap="kaifashaninfo" class="kaifashan"  src="{{uploadpath}}resource/{{res.ceshi}}" ></image>
-    <view class="yinyin">
-    
-    <view class="padding-10">
-    
-    <view>恒大御景湾</view>
-    <view>河东区</view>
-    </view>
-    
-    </view>
-  </view>
-</scroll-view>
+	<scroll-view scroll-x class="bg-white nav margin-top " scroll-with-animation scroll-left="{{scrollLeft}}">
+		<view style="margin:0;padding:0;margin-right:32rpx" id="{{item.id}}" wx:for="{{hanpai}}" wx:key='k' class="cu-item   kaifashan ">
+			<image bindtap="kaifashaninfo" class="kaifashan" src="{{uploadpath}}resource/{{res.ceshi}}"></image>
+			<view class="yinyin">
+
+				<view class="padding-10">
+					<view>恒大御景湾</view>
+					<view>河东区</view>
+				</view>
+
+			</view>
+		</view>
+	</scroll-view>
 
 
 </view>
@@ -320,25 +268,25 @@
 	<view class="f-34 txt-bold padding-30" style="color:#161616">最新测评文章</view>
 
 
-	<view wx:for="{{3}}" style="border-bottom:1rpx solid #F7F8FA" wx:key="k" class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30">
+	<view wx:for="{{wenzhan}}" wx:key="k" style="border-bottom:1rpx solid #F7F8FA" wx:key="k" class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30">
 
-		<image src='{{uploadpath}}resource/{{res.ceshi}}' class="img_1"></image>
+		<image src='{{uploadpath}}article/{{item.image}}' class="img_1"></image>
 
 
 		<view class="margin-left-30 flex-1">
-			<view class="txt-bold" style="color:#161616;height:80rpx">恒大御景湾</view>
+			<view class="txt-bold" style="color:#161616;height:80rpx"> {{item.name}}</view>
 
 
 			<view class="flex-row flex-center " style="margin-top:72rpx">
 
 				<view class="f-26" style="color:#777777">
-					恒大御景湾
+					{{item.summary}}
 				</view>
 
 
 				<view class=" flex-1"></view>
 				<view class="f-22" style="color:#CCCCCC">
-					11月11日
+					{{item.time}}
 				</view>
 
 			</view>
@@ -347,7 +295,7 @@
 		</view>
 
 	</view>
-	<view class="allin margin-bottom-30">
+	<view bindtap="pincelist" class="allin margin-bottom-30">
 		查看全部
 	</view>
 </view>

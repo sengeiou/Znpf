@@ -40,7 +40,7 @@
 </view>
 <view class="bg-color padding-top-20"></view>
 <view class="margin-top txt-bold margin-left-40">主营新房</view>
-<view class=" margin-top" wx:for='{{guwendetail.premises}}' wx:key='key' wx:if='{{item.premisestype_id==1}}'>
+<view class=" margin-top" wx:for='{{guwendetail.premises}}' wx:key='key' >
   <view class="flex-row">
     <image src="{{uploadpath}}premises/{{item.cover}}" class="icon-220 margin-left-40"></image>
     <view class="flex-1 margin-left-40">
@@ -64,7 +64,7 @@
 
 <view class="bg-color padding-top-20"></view>
 <view class="margin-top txt-bold margin-left-40">主营二手房</view>
-<view class="margin-top" wx:for='{{guwendetail.premises}}' wx:key='key' wx:if='{{item.premisestype_id==2}}'>
+<view class="margin-top" wx:for='{{guwendetail.premises2}}' wx:key='key'>
   <view class="flex-row">
     <image src="{{uploadpath}}resource/{{res.fz}}" class="icon-220 margin-left-40"></image>
     <view class="flex-1 margin-left-40">
@@ -85,7 +85,7 @@
   </view>
   <view class="border margin-top-20"></view>
 </view>
-
+<view style="height:100rpx;"></view>
 <view class="bg-color padding-top-20"></view>
 <view class="flex-row margin-bottom-10 margin-top-10 pos bg-white">
   <view class="flex-1"></view>
