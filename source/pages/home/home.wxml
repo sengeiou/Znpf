@@ -186,7 +186,7 @@
 
 	<view class="flex-row flex-center margin-top">
 		<view class="flex-1"></view>
-		<view wx:for="{{zuixinpince}}" wx:key="k" wx:for-index="idx" class="padding-20" style="background:#F0E9F6;border-radius:8rpx;margin-left:{{idx==0?'0rpx':'48rpx'}}">
+		<view bindtap="topage" id="{{item.id}}" data-name="sunshine"  wx:for="{{zuixinpince}}" wx:key="k" wx:for-index="idx" class="padding-20" style="background:#F0E9F6;border-radius:8rpx;margin-left:{{idx==0?'0rpx':'48rpx'}}">
 
 
 			<view class="flex-row flex-bottom">
@@ -233,9 +233,7 @@
 
 	</view>
 
-	<view bindtap="gotoloupan" class="allin1  margin-top-30">
-		查看全部
-	</view>
+
 </view>
 <!-- 最新航拍 -->
 <view class="bg-white margin-top-10 padding-30">
