@@ -131,6 +131,20 @@
 					"id": -1,
 					"name": "日照",
 					"pathName": "pages/sunshine/sunshine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "户型列表",
+					"pathName": "pages/huxinglist/huxinglist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "户型详情",
+					"pathName": "pages/huxing/huxing",
 					"scene": null
 				}
 			]

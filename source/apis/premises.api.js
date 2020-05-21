@@ -201,35 +201,70 @@ export class PremisesApi{
         })
     }
 
-    entrancelist(json, callback, showLoading = true) {
+    housinglist(json, callback, showLoading = true) {
 
-      if (showLoading)
-          ApiConfig.ShowLoading();
+        if (showLoading)
+            ApiConfig.ShowLoading();
 
-      var header = ApiConfig.GetHeader();
-      console.log(header);
-      console.log(json);
-      wx.request({
-          url: ApiConfig.GetApiUrl() + 'premises/entrancelist',
-          data: json,
-          method: 'POST',
-          dataType: 'json',
-          header: header,
-          success: function (res) {
-              if (callback != null) {
-                  callback(res.data);
-              }
-          },
-          fail: function (res) {
-              console.log(res);
-              callback(false);
-          },
-          complete: function (res) {
-              console.log(res);
-          
-              if (showLoading)
-                  ApiConfig.CloseLoading();
-          }
-      })
-  }
+        var header = ApiConfig.GetHeader();
+        console.log(header);
+        console.log(json);
+        wx.request({
+            url: ApiConfig.GetApiUrl() + 'premises/housinglist',
+            data: json,
+            method: 'POST',
+            dataType: 'json',
+            header: header,
+            success: function (res) {
+                if (callback != null) {
+                    callback(res.data);
+                }
+            },
+            fail: function (res) {
+                console.log(res);
+                callback(false);
+            },
+            complete: function (res) {
+                console.log(res);
+            
+                if (showLoading)
+                    ApiConfig.CloseLoading();
+            }
+        })
+    }
+    
+    housinginfo(json, callback, showLoading = true) {
+
+        if (showLoading)
+            ApiConfig.ShowLoading();
+
+        var header = ApiConfig.GetHeader();
+        console.log(header);
+        console.log(json);
+        wx.request({
+            url: ApiConfig.GetApiUrl() + 'premises/housinginfo',
+            data: json,
+            method: 'POST',
+            dataType: 'json',
+            header: header,
+            success: function (res) {
+                if (callback != null) {
+                    callback(res.data);
+                }
+            },
+            fail: function (res) {
+                console.log(res);
+                callback(false);
+            },
+            complete: function (res) {
+                console.log(res);
+            
+                if (showLoading)
+                    ApiConfig.CloseLoading();
+            }
+        })
+    }
+ 
+
+
 }
