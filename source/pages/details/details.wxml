@@ -1,0 +1,219 @@
+<!--pages/details/details.wxml-->
+<cu-custom isCustom="{{true}}" bgColor="bg-white">
+	<view slot="content" class="txt-bold" style="color:#161616;">{{detail.activitytype_id_name}}航拍景观</view>
+</cu-custom>
+
+<!-- 基本信息 -->
+<view class="padding-30 bg-white margin-top-20">
+	<view class="txt-bold h4-5">基本信息</view>
+
+	<view class="flex-row flex-center margin-top">
+		<view class="txt-gray" style="width:144rpx">楼盘名称：</view>
+		<view class="margin-left-20">{{info.name}}</view>
+	</view>
+
+	<view class="flex-row   margin-top-20">
+		<view class="txt-gray" style="width:144rpx">楼盘特色：</view>
+		<view class="margin-left-20 flex-row flex-center flex-wrap">
+			<view wx:for='{{info.label}}' wx:key='k' wx:for-index='idx'>{{idx>0?',':''}}{{item.name}}</view>
+		</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">参考均价：</view>
+		<view class="margin-left-20">{{info.avg_price}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">参考总价：</view>
+		<view class="margin-left-20">{{info.sumprice}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">物业类型：</view>
+		<view class="margin-left-20">{{info.propertytype_name}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">建筑类型:</view>
+		<view class="margin-left-20">{{info.buildingtype_name}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">装修标准：</view>
+		<view class="margin-left-20">{{info.fitment_name}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">产权年限：</view>
+		<view class="margin-left-20">{{info.term}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">品 牌：</view>
+		<view class="margin-left-20">{{info.brand}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">开 发 商：</view>
+		<view class="margin-left-20">{{info.developers}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">所在区域：</view>
+		<view class="margin-left-20">{{info.region}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">楼盘地址：</view>
+		<view class="margin-left-20">{{info.address}}</view>
+	</view>
+
+</view>
+
+<view class="grayblock"></view>
+
+<!-- 销售信息 -->
+<view class="padding-30 bg-white margin-top-20">
+	<view class="txt-bold h4-5">销售信息</view>
+
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">售卖状态：</view>
+		<view class="margin-left-20">{{info.sales_status}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">售楼地址：</view>
+		<view class="margin-left-20">{{info.sales_address}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">售卖楼栋：</view>
+		<view class="margin-left-20">{{info.sales_building}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">售卖户型：</view>
+		<view class="margin-left-20">{{info.sales_housing}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">最新开盘：</view>
+		<view class="margin-left-20">{{info.recent_open_date}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">最近交房：</view>
+		<view class="margin-left-20">{{info.recent_deal_date}}</view>
+	</view>
+
+
+</view>
+
+<view class="grayblock"></view>
+
+<!-- 小区概况 -->
+<view class="padding-30 bg-white margin-top-20">
+	<view class="txt-bold h4-5">小区概况</view>
+
+	<view class="flex-row flex-center margin-top">
+		<view class="txt-gray" style="width:144rpx">占地面积：</view>
+		<view class="margin-left-20">{{info.floor_area}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">建筑面积：</view>
+		<view class="margin-left-20">{{info.premises_area}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">容 积 率：</view>
+		<view class="margin-left-20">{{info.plot_ratio}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">绿 化 率：</view>
+		<view class="margin-left-20">{{info.greening_rate}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">规划车位：</view>
+		<view class="margin-left-20">{{info.place_number}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">车位配比：</view>
+		<view class="margin-left-20">{{info.place_ratio}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">规划户数：</view>
+		<view class="margin-left-20">{{info.account_number}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">物业公司：</view>
+		<view class="margin-left-20">{{info.property_company}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">物业费用：</view>
+		<view class="margin-left-20">{{info.property_cost}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">供暖方式：</view>
+		<view class="margin-left-20">{{info.heating}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">供 水：</view>
+		<view class="margin-left-20">{{info.water}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">供 电：</view>
+		<view class="margin-left-20">{{info.power}}</view>
+	</view>
+
+</view>
+
+<view class="grayblock"></view>
+
+<!-- 预售许可证 -->
+<view class="padding-30 bg-white margin-top-20">
+	<view class="txt-bold h4-5">预售许可证</view>
+
+	<view class="flex-row flex-center margin-top">
+		<view class="txt-gray" style="width:144rpx">预 售 证：</view>
+		<view class="margin-left-20">预 售 证</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">发证时间：</view>
+		<view class="margin-left-20">发证时间</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:144rpx">容 积 率：</view>
+		<view class="margin-left-20">容 积 率</view>
+	</view>
+
+
+</view>
+
+<view style="height:150rpx"></view>
+
+<view class="under_block bg-white">
+	<view class="flex-row flex-center paddings">
+		<image src="{{uploadpath}}resource/{{res.bushoucang}}" class="icon-25"></image>
+		<view class="flex-1"></view>
+		<view class="left_one text-center bg1 h5">联系客服</view>
+
+		<button open-type="share" class="clear-button">
+			<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
+	  </button>
+    
+	</view>
+</view>

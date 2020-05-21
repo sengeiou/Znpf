@@ -14,8 +14,8 @@ class Content extends AppBase {
   }
   onMyShow() {
     var that = this;
-    var api = new PremisesApi;
-    api.guwen({ premises_ids: this.Base.options.id }, (guwen)=>{
+    var api = new InstApi;
+    api.guwen({ premise_id: this.Base.options.id }, (guwen)=>{
       if(guwen.length>0){
         var titlename = guwen[0].premises_name;
         this.Base.setMyData({ guwen, titlename })

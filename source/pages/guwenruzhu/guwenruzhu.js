@@ -116,49 +116,59 @@ class Content extends AppBase {
     var erweima = this.Base.getMyData().erweima;
     var minpai = this.Base.getMyData().minpai;
     var api=new MemberApi;
+
     if (city_id.trim() == '') {
-      this.toast('请选择城市');
+      this.Base.toast('请选择城市');
       return
     }
     if(name.trim()==''){
-      this.toast('请输入姓名');
+      this.Base.toast('请输入姓名');
       return
     }
     
     if (mobile.trim() == '') {
-      this.toast('请输入获取手机号');
+      this.Base.toast('请输入获取手机号');
       return
     }
     if (weixinhao.trim() == '') {
-      this.toast('请输入微信号');
+      this.Base.toast('请输入微信号');
       return
     }
     if (premises_id.trim() == '') {
-      this.toast('请选择楼盘');
+      this.Base.toast('请选择楼盘');
       return
     }
-    api.addguwen({
-      name,
-      city_id,
-      mobile,
-      weixinhao,
-      tuijianphone,
-      jiesao,
-      premises_id,
-      erweima,
-      minpai
-    },(res)=>{
-      console.log(res)
-      if(res.code=='0'){
-        wx.navigateBack({
-          
-        })
-        wx.showToast({
-          title: '提交成功！',
-          icon:'none'
+    var instApi = new InstApi;
+    instApi.guwen({ mobile: mobile }, (guwen) => {
+      if (guwen.length > 0) {
+        this.Base.toast('该手机号已经入驻过了！');
+        return
+      }else {
+        api.addguwen({
+          name,
+          city_id,
+          mobile,
+          weixinhao,
+          tuijianphone,
+          jiesao,
+          premise_id: premises_id,
+          erweima,
+          minpai
+        }, (res) => {
+          console.log(res)
+          if (res.code == '0') {
+            wx.navigateBack({
+
+            })
+            wx.showToast({
+              title: '提交成功！',
+              icon: 'none'
+            })
+          }
         })
       }
     })
+   
   }
 }
 var content = new Content();

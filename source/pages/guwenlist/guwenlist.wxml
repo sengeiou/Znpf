@@ -45,7 +45,7 @@
           <view class="f-26" style="margin-left:22rpx;color:#CCCCCC">置业顾问</view>
         </view>
         <view class="h5" style="color:#777777;margin-top:14rpx;">
-          {{item.premises_name}}
+          {{item.premise_id_name}}
         </view>
       </view>
       <view class="">

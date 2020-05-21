@@ -135,10 +135,16 @@
 					"scene": null
 				},
 				{
-					"id": 11,
-					"name": "pages/zhiyeguwen/zhiyeguwen",
-					"pathName": "pages/guwenlist/guwenlist",
+					"id": -1,
+					"name": "户型列表",
+					"pathName": "pages/huxinglist/huxinglist",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "户型详情",
+					"pathName": "pages/huxing/huxing",
 					"scene": null
 				}
 			]

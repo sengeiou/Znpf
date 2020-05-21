@@ -1,0 +1,290 @@
+<!--pages/huxing/huxing.wxml-->
+<cu-custom isCustom="{{true}}" bgColor="bg-white">
+	<view slot="content" class="txt-bold" style="color:#161616;">{{detail.activitytype_id_name}}航拍景观</view>
+</cu-custom>
+
+
+<swiper class="square-dot " indicator-dots='true' autoplay='false' interval='5000' duration='200' current="{{indexcurrent}}" circular='true' style='width:100%;height:512rpx;'>
+	<swiper-item wx:key="k">
+		<image src='{{uploadpath}}housing/{{info.fengmian}}' style="width:100%;height:100%; " class=' '></image>
+	</swiper-item>
+</swiper>
+
+<view class="flex-row flex-center padding-30">
+
+	<view class="midblock bg1">
+		<view class="txt-bold">{{info.housingname}}</view>
+		<view class="flex-row flex-center">
+			<view class="h7 flex-1" style="color:#FCC496">户型</view>
+			<image src="{{uploadpath}}resource/{{res.housing_icon}}" class="icon1"></image>
+		</view>
+	</view>
+
+	<view class="flex-1"></view>
+
+	<view class="midblock bg2">
+		<view class="txt-bold">{{info.premises_area}}</view>
+		<view class="flex-row flex-center">
+			<view class="h7 flex-1" style="color:#EF888F">建筑面积</view>
+			<image src="{{uploadpath}}resource/{{res.jianzhu}}" class="icon1"></image>
+		</view>
+	</view>
+
+	<view class="flex-1"></view>
+
+	<view class="midblock bg3">
+		<view class="txt-bold">{{info.orientation}}</view>
+		<view class="flex-row flex-center">
+			<view class="h7 flex-1" style="color:#87BFF1">朝向</view>
+			<image src="{{uploadpath}}resource/{{res.chaoxiang}}" class="icon1"></image>
+		</view>
+	</view>
+
+</view>
+
+<view class="grayblock"></view>
+
+<!-- 评级 -->
+<view class="padding-30">
+
+	<view class="txt-bold h4-5">评级</view>
+
+	<view class="flex-row   margin-top">
+
+		<view class="leftblock text-center padding-20">
+			<view class="txt-bold h4 txt-purple">{{info.grade}}</view>
+			<view class="h5 margin-top-10">知鸟评级</view>
+		</view>
+
+		<view class=" margin-left-20">
+
+			<view class="flex-row flex-center">
+				<view class="h5">景观视野</view>
+				<view class="flex-row flex-center margin-left-20">
+					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
+					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+				</view>
+				<view class="txt-purple margin-left-20">{{info.jinguan}}</view>
+			</view>
+
+			<view class="flex-row flex-center margin-top-10">
+				<view class="h5">道路影响</view>
+				<view class="flex-row flex-center margin-left-20">
+					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
+					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+				</view>
+				<view class="txt-purple margin-left-20">{{info.daolu}}</view>
+			</view>
+
+			<view class="flex-row flex-center margin-top-10">
+				<view class="h5">其他细节</view>
+				<view class="flex-row flex-center margin-left-20">
+					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
+					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+				</view>
+				<view class="txt-purple margin-left-20">{{info.qita}}</view>
+			</view>
+
+		</view>
+
+	</view>
+
+
+</view>
+
+<view class="grayblock"></view>
+
+<!-- 优势 -->
+<view class="padding-30 bg-white margin-top-20">
+	<view class="txt-bold h4-5">优劣</view>
+
+	<view class='flex-row flex-center margin-top flex-wrap'>
+		<view class="label2 bg4 h6 text-center margin-right-10 margin-top-10" wx:for='{{info.youshi}}' wx:key='y'>{{item.name}}</view>
+	</view>
+</view>
+
+<view class="grayblock"></view>
+
+<!-- 劣势 -->
+<view class="padding-30 bg-white margin-top-20">
+	<view class="txt-bold h4-5">劣势</view>
+
+	<view class='flex-row flex-center margin-top flex-wrap'>
+		<view class="label2 bg-gray h6 text-center margin-right-10  margin-top-10" wx:for='{{info.lieshi}}' wx:key='y'>{{item.name}}</view>
+	</view>
+</view>
+
+<view class="grayblock"></view>
+
+<!-- 综合评测 -->
+<view class="padding-30 bg-white margin-top-20">
+	<view class="txt-bold h4-5">综合评测</view>
+
+	<view class="flex-row flex-center margin-top">
+
+		<view class="text-center flex-1">
+			<view class=" h4 txt-purple">{{info.disposal}}</view>
+			<view class="h6  txt-gray margin-top-10">户型配置</view>
+		</view>
+
+		<view style="width:2rpx;height:64rpx;" class="bg-gray"></view>
+
+		<view class="text-center flex-1">
+			<view class=" h4 txt-purple">{{info.area}}</view>
+			<view class="h6 txt-gray margin-top-10">套内得房面积</view>
+		</view>
+
+		<view style="width:2rpx;height:64rpx;" class="bg-gray"></view>
+
+		<view class="text-center flex-1">
+			<view class="h4 txt-purple">{{info.get_rate}}</view>
+			<view class=" h6 txt-gray margin-top-10">实际得房率</view>
+		</view>
+
+	</view>
+
+	<view class="flex-row flex-center margin-top">
+		<view class="txt-gray" style="width:224rpx">总赠送面积：</view>
+		<view class="margin-left-20">{{info.free_area}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:224rpx">套内使用面积：</view>
+		<view class="margin-left-20">{{info.use_area}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:224rpx">实际使用率：</view>
+		<view class="margin-left-20">{{info.utilization}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:224rpx">套内纯使用面积：</view>
+		<view class="margin-left-20">{{info.actual_use_area}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:224rpx">实际纯使用率：</view>
+		<view class="margin-left-20">{{info.actual_usage}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:224rpx">总开间：</view>
+		<view class="margin-left-20">{{info.total_width}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:224rpx">总进深：</view>
+		<view class="margin-left-20">{{info.total_length}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:224rpx">朝南开间数：</view>
+		<view class="margin-left-20">{{info.southroom_number}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="txt-gray" style="width:224rpx">主要采光面：</view>
+		<view class="margin-left-20">{{info.lighting_surface}}</view>
+	</view>
+
+</view>
+
+<view class="grayblock"></view>
+
+<!-- 房间评测 -->
+<view class="">
+	<view class="txt-bold h4-5 padding-30">房间评测</view>
+
+	<view class="flex-row flex-center bg5" style="padding:10rpx 0 10rpx 0">
+		<view class="flex-1"></view>
+		<view class="txt-gray h6 text-left" style="width:100rpx">房间名称</view>
+		<view class="flex-1"></view>
+		<view class="txt-gray h6 text-left" style="width:100rpx">面积(m2)</view>
+		<view class="flex-1"></view>
+		<view class="txt-gray h6 text-left" style="width:100rpx">开间(米)</view>
+		<view class="flex-1"></view>
+		<view class="txt-gray h6 text-left" style="width:100rpx">进深(米)</view>
+		<view class="flex-1"></view>
+		<view class="txt-gray h6 text-left" style=" ">空间体验</view>
+		<view class="flex-1"></view>
+	</view>
+
+	<view wx:for='{{info.evaluating}}' wx:key='k' wx:for-index='idx' class="flex-row flex-center  {{idx%2==0?'':'bg6'}}" style="padding:14rpx 0 14rpx 0">
+		<view class="flex-1"></view>
+		<view class="txt-gray h6 text-left" style="width:100rpx">{{item.name}}</view>
+		<view class="flex-1"></view>
+		<view class="txt-gray h6 text-left" style="width:100rpx">{{item.mianji}}</view>
+		<view class="flex-1"></view>
+		<view class="txt-gray h6 text-left" style="width:100rpx">{{item.kaijian}}</view>
+		<view class="flex-1"></view>
+		<view class="txt-gray h6 text-left" style="width:100rpx">{{item.jinshen}}</view>
+		<view class="flex-1"></view>
+		<view class="txt-gray h6 text-left" style="width:100rpx" wx:if='{{item.konjian==100}}'>豪华</view>
+		<view class="txt-gray h6 text-left" style="width:100rpx" wx:if='{{item.konjian==75}}'>较大</view>
+		<view class="txt-gray h6 text-left" style="width:100rpx" wx:if='{{item.konjian==50}}'>中等</view>
+		<view class="txt-gray h6 text-left" style="width:100rpx" wx:if='{{item.konjian==25}}'>偏小</view>
+		<view class="flex-1"></view>
+	</view>
+
+	<view class="padding-30">
+		<view class="h6" style="color:#CCCCCC">注释：豪华>较大>中等>偏小</view>
+
+		<view class="h6 margin-top-30" style="color:#CCCCCC">户型房间评测根据全国大量的户型实地调研，国内户型权威研究，以及知鸟城市住宅研究院的大数据总和得出的标准，主要一居室房间的面积，房间的开间进深比等数据来建模</view>
+	</view>
+
+</view>
+
+<view class="grayblock"></view>
+
+<!-- 细节评测 -->
+<view class="padding-30">
+	<view class="txt-bold h4-5 ">细节评测</view>
+
+	<view class="flex-row flex-center margin-top-30">
+		<view class="txt-zi" style="width:112rpx;">舒适合理</view>
+		<view class="margin-left-20 txt-zi" style="">22项</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-30">
+		<view class="txt-purple txt-zi" style="width:112rpx;">略有不足</view>
+		<view class="margin-left-20 txt-zi" style="">2项</view>
+	</view>
+
+	<view class="margin-top-30 flex-row" wx:for='{{info.evaluating}}' wx:key='k'>
+		<view class="txt-purple" style="width:112rpx;color:#9C72C1">{{item.name}}</view>
+
+		<view class="margin-left-20">
+			<view class=" " wx:for='{{item.xijie}}' wx:key='y'>
+				<view class="{{item.qufen=='N'?'txt-purple':''}}">{{item.name}}</view>
+			</view>
+		</view>
+
+	</view>
+
+
+</view>
+
+<view class="txt-bold txt-zi text-center">如有疑问，详情咨询客服哦</view>
+
+
+<view style="height:150rpx"></view>
+
+<view class="under_block bg-white">
+	<view class="flex-row flex-center paddings">
+		<image src="{{uploadpath}}resource/{{res.bushoucang}}" class="icon-25"></image>
+		<view class="flex-1"></view>
+		<view class="left_one text-center bg1 h5">联系客服</view>
+
+		<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
+	</view>
+</view>

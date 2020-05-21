@@ -26,26 +26,46 @@ class Content extends AppBase {
     var instapi = new InstApi();
   }
   fankui(){
+    if (this.Base.getMyData().memberinfo.nickName==''){
+      this.Base.toast('请授权');
+      return
+    }
     wx.navigateTo({
       url: '/pages/feedback/feedback',
     })
   }
   fuwu(){
+    if (this.Base.getMyData().memberinfo.nickName == '') {
+      this.Base.toast('请授权登录');
+      return
+    }
     wx.navigateTo({
       url: '/pages/fuwuhao/fuwuhao',
     })
   }
   aboutus(){
+    if (this.Base.getMyData().memberinfo.nickName == '') {
+      this.Base.toast('请授权');
+      return
+    }
     wx.navigateTo({
       url: '/pages/aboutus/aboutus',
     })
   }
   bangdin(){
+    if (this.Base.getMyData().memberinfo.nickName == '') {
+      this.Base.toast('请授权');
+      return
+    }
     wx.navigateTo({
       url: '/pages/bangdin/bangdin',
     })
   }
   todetail(e){
+    if (this.Base.getMyData().memberinfo.nickName == '') {
+      this.Base.toast('请授权');
+      return
+    }
     var id=e.currentTarget.id;
     wx.showToast({
       title: '暂未开放！',

@@ -151,30 +151,39 @@ class Content extends AppBase {
       this.toast('请选择楼盘');
       return
     }
-    api.addjingjiren({
-      name,
-      city_id,
-      mobile,
-      weixinhao,
-      tuijianphone,
-      jiesao,
-      premises_id,
-      erweima,
-      minpai,
-      mendian,
-      jingjigongsi
-    }, (res) => {
-      console.log(res)
-      if (res.code == '0') {
-        wx.navigateBack({
+    var instApi = new InstApi;
+    instApi.jingjirenlist({ mobile: mobile }, (jingjirenlist) => {
+      if (jingjirenlist.length > 0) {
+        this.Base.toast('该手机号已经入驻过了！');
+        return
+      } else {
+        api.addjingjiren({
+          name,
+          city_id,
+          mobile,
+          weixinhao,
+          tuijianphone,
+          jiesao,
+          premises_id,
+          erweima,
+          minpai,
+          mendian,
+          jingjigongsi
+        }, (res) => {
+          console.log(res)
+          if (res.code == '0') {
+            wx.navigateBack({
 
-        })
-        wx.showToast({
-          title: '提交成功！',
-          icon: 'none'
+            })
+            wx.showToast({
+              title: '提交成功！',
+              icon: 'none'
+            })
+          }
         })
       }
     })
+  
   }
 }
 var content = new Content();

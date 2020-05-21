@@ -21,6 +21,9 @@
     "pages/zhiyeguwen/zhiyeguwen",
     "pages/otherprice/otherprice",
     "pages/sunshine/sunshine",
+    "pages/huxing/huxing",
+    "pages/huxinglist/huxinglist",
+    "pages/details/details",
     "pages/hangpai/hangpai"
   ],
   "permission": {

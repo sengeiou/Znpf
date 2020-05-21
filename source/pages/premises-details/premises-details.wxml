@@ -52,7 +52,7 @@
 					</view>
 					<view class="flex-row flex-center margin-top-10">
 						<view class="txt-gray h5">户型：</view>
-						<view class=" h5">{{info.housing}}</view>
+						<view class=" h5">{{info.housingname}}</view>
 
 					</view>
 				</view>
@@ -91,7 +91,7 @@
 
 			<view class="flex-row flex-center">
 
-				<view class="text-center flex-1">
+				<view class="text-center flex-1" bindtap="topage" data-name="otherprice" id="{{info.id}}">
 					<image src="{{uploadpath}}resource/{{res.jiage}}" class="icon-40"></image>
 					<view class="h6 txt-gray margin-top-10">价格查询</view>
 				</view>
@@ -106,7 +106,7 @@
 					<view class="h6 txt-gray margin-top-10">日照评测</view>
 				</view>
 
-				<view class="text-center flex-1 ">
+				<view class="text-center flex-1 " bindtap="topage" data-name="huxinglist" id="{{info.id}}">
 					<image src="{{uploadpath}}resource/{{res.huxing}}" class="icon-40"></image>
 					<view class="h6 txt-gray margin-top-10">户型评测</view>
 				</view>
@@ -120,7 +120,7 @@
 					<view class="h6 txt-gray margin-top-10">配套</view>
 				</view>
 
-				<view class="text-center flex-1 ">
+				<view class="text-center flex-1 " bindtap="topage" data-name="details" id="{{info.id}}">
 					<image src="{{uploadpath}}resource/{{res.xiangqing}}" class="icon-25"></image>
 					<view class="h6 txt-gray margin-top-10">详情</view>
 				</view>
@@ -362,12 +362,12 @@
 				</view>
 			</view>
 
-      <view class="txt-gray h6  margin-top-20 opa8">价格来自网络成交价，二手房价格每天都在变化，统计可能延迟，仅供参考。</view>
+			<view class="txt-gray h6  margin-top-20 opa8">价格来自网络成交价，二手房价格每天都在变化，统计可能延迟，仅供参考。</view>
 
 
 		</view>
 
-	<view style="height:120rpx"></view>
+		<view style="height:120rpx"></view>
 	</view>
 
 
@@ -376,9 +376,13 @@
 		<view class="flex-row flex-center paddings">
 			<image src="{{uploadpath}}resource/{{res.bushoucang}}" class="icon-25"></image>
 			<view class="flex-1"></view>
-			<view class="left_one text-center bg1 h5">联系客服</view>
+			<button  class="clear-button" open-type='contact' >
+				<view class="left_one text-center bg1 h5">联系客服</view>
+			</button>
+			<button open-type="share" class="clear-button">
+				<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
+			</button>
 
-			<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
 		</view>
 	</view>
 
