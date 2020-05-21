@@ -18,7 +18,7 @@
 
 </view>
 
-<view class="bg-white flex-row flex-center flex-wrap padding-bottom-60 ">
+<view class="bg-white flex-row flex-center flex-wrap padding-bottom-60 margin-bottom-40 ">
 
 	<view wx:for="{{xuanfanlist}}" wx:key="k" class="konzhi-block flex-row flex-column" data-id="{{item.id}}"  data-title="{{item.name}}"  bindtap="fanyuanlist">
 

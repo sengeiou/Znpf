@@ -2,7 +2,7 @@
 import { AppBase } from "../../appbase";
 import { ApiConfig } from "../../apis/apiconfig";
 import { InstApi } from "../../apis/inst.api.js";
-
+import { PremisesApi } from "../../apis/premises.api.js";
 class Content extends AppBase {
   constructor() {
     super();
@@ -18,6 +18,22 @@ class Content extends AppBase {
       this.Base.setMyData({homenum});
 
     })
+    api.zuixinpince({},(zuixinpince)=>{
+
+      this.Base.setMyData({zuixinpince});
+    })
+    api.huxinfenxi({},(huxinfenxi)=>{
+
+      this.Base.setMyData({huxinfenxi});
+    })
+    api.wenzhan({},(wenzhan)=>{
+
+      this.Base.setMyData({wenzhan});
+    })
+    api.hanpai({},(hanpai)=>{
+
+      this.Base.setMyData({hanpai});
+    })
   }
   onMyShow() {
     var that = this;
@@ -31,6 +47,14 @@ class Content extends AppBase {
         this.Base.setMyData({showSkeleton:false})
       });
     });
+
+    var api=new PremisesApi;
+    api.list({hpd1:"Y"},(list)=>{
+       
+      this.Base.setMyData({list});
+
+    })
+
   }
   onReady(){
     console.log("??????????????????");
@@ -44,10 +68,26 @@ class Content extends AppBase {
       url: '/pages/loupanlist/loupanlist?name='+name+"&title="+title,
     })
   }
+  gotoloupan(){
+
+     wx.switchTab({
+       url: '/pages/loupan/loupan',
+     })
+
+  }
+  pincelist(){
+ 
+    wx.navigateTo({
+      url: '/pages/pincelist/pincelist',
+    })
+
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.fanyuanlist=content.fanyuanlist;
+body.gotoloupan=content.gotoloupan;
+body.pincelist=content.pincelist;
 Page(body)

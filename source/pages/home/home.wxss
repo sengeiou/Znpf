@@ -90,3 +90,11 @@ page{
   height: 40rpx;
   background: rgba(22, 22, 22, 0.3);
 }
+.lable1{
+  padding:1rpx 10rpx 2rpx 10rpx;
+  background: #FCE4D1;
+  border-radius: 4rpx;
+  font-size: 22rpx;
+  color:#777777;
+  margin-right: 10rpx;
+}

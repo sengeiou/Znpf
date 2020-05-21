@@ -131,6 +131,14 @@
 					"id": -1,
 					"name": "日照",
 					"pathName": "pages/sunshine/sunshine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "pages/zhiyeguwen/zhiyeguwen",
+					"pathName": "pages/guwenlist/guwenlist",
+					"query": "",
 					"scene": null
 				}
 			]

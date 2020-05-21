@@ -1,6 +1,6 @@
 <cu-custom isCustom="{{true}}" bgColor="bg-white">
 
-	<view slot="content" class="txt-bold" style="color:#161616;">{{title}}</view>
+	<view slot="content" class="txt-bold" style="color:#161616;">最新评测</view>
 </cu-custom>
 
 <view class="flex-row  bg-white flex-center " catchtouchmove="doNothing">
@@ -18,7 +18,7 @@
 </view>
 
 <!-- 筛选区1 -->
-<view class=" flex-row flex-center bg-white" style="margin-top:2rpx">
+<!-- <view class=" flex-row flex-center bg-white" style="margin-top:2rpx">
 
 	<view class="flex-1 flex-row flex-center padding-30">
 
@@ -57,40 +57,41 @@
 	</view>
 	<image class="icon-15 margin-right-30 " src="{{uploadpath}}resource/{{res.paixu}}"></image>
 
-</view>
+</view> -->
 
 
 <!-- 楼盘列表 -->
 
-<view bindtap="topage" data-name="premises-details" id="{{item.id}}" wx:for="{{list}}" wx:key="k" class="flex-row flex-center padding-30 bg-white" style="margin-top:2rpx">
-	<image src='{{uploadpath}}premises/{{item.cover}}' class="img_1"></image>
+<view class=" bg-white  ">
 
-	<view class="margin-left-30 flex-1">
-
-		<view class="flex-row flex-center ">
-			<view class="txt-bold" style="color:#161616">{{item.name}}</view>
-			<view class="flex-1"></view>
-			<view class="lable" style="background:{{item.premisestype_color}}">{{item.premisestype_name}}</view>
-		</view>
-		<view class="f-26 margin-top-10" style="color:#777777">北辰 | 宜兴埠</view>
-
-		<view class="flex-row flex-center margin-top-10">
-			<view wx:for="{{item.label}}" wx:key="k1" wx:for-item="label" class="lable1">{{label.name}}</view>
+	<view class="f-34 txt-bold padding-30" style="color:#161616">最新测评文章</view>
 
 
-		</view>
+	<view wx:for="{{wenzhan}}" wx:key="k" style="border-bottom:1rpx solid #F7F8FA" wx:key="k" class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30">
 
-		<view class="margin-top-20">
+		<image src='{{uploadpath}}article/{{item.image}}' class="img_1"></image>
 
-			<view class="flex-row flex-center">
 
-				<view class="h5" style="color:#583A80">{{item.avg_price}}</view>
-				<view class="h5 margin-left-20" style="color:#777777">建面 {{item.avg_area}}</view>
+		<view class="margin-left-30 flex-1">
+			<view class="txt-bold" style="color:#161616;height:80rpx"> {{item.name}}</view>
+
+
+			<view class="flex-row flex-center " style="margin-top:72rpx">
+
+				<view class="f-26" style="color:#777777">
+					{{item.summary}}
+				</view>
+
+
+				<view class=" flex-1"></view>
+				<view class="f-22" style="color:#CCCCCC">
+					{{item.time}}
+				</view>
+
 			</view>
 
 
 		</view>
-
 
 	</view>
 
