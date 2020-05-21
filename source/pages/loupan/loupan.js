@@ -44,10 +44,15 @@ class Content extends AppBase {
 
   }
 
-
+ loupanxianqin(){
+   wx.navigateTo({
+     url: '/pages/premises-details/premises-details',
+   })
+ }
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad; 
 body.onMyShow = content.onMyShow;
+body.loupanxianqin=content.loupanxianqin;
 Page(body)
