@@ -87,7 +87,7 @@
 </view>
 <view style="height:100rpx;"></view>
 <view class="bg-color padding-top-20"></view>
-<view class="flex-row margin-bottom-10 margin-top-20 pos bg-white">
+<view class="flex-row padding-bottom-10 padding-top-10 pos bg-white">
   <view class="flex-1"></view>
   <image src="{{uploadpath}}resource/{{res.xh}}" class="icon-15 margin-left-40 margin-top-30"></image>
   <view class="flex-1"></view>
