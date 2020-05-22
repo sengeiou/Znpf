@@ -42,16 +42,16 @@
 
 					<view class="h5 text-right chaochu" style="color:{{shaixuanid==2?'#87BFF1':'#583A80'}};width:70rpx">{{(danjiaid>0||zonjiaid>0)?jiagename:'价格'}}</view>
 					<image class="paixuxia" src="{{uploadpath}}resource/{{res.paixuxia}}"></image>
-          <view class="flex-1"></view>
+					<view class="flex-1"></view>
 				</view>
 
 			</view>
 
 
-			<view class="flex-1 flex-row flex-column">
+			<view bindtap="shaixuan" data-id="3" class="flex-1 flex-row flex-column">
 				<view class="flex-row flex-center">
 
-					<view class="h5" style="color:#583A80">筛选</view>
+					<view class="h5" style="color:{{shaixuanid==3?'#87BFF1':'#583A80'}}">筛选</view>
 					<image class="paixuxia" src="{{uploadpath}}resource/{{res.paixuxia}}"></image>
 
 				</view>
@@ -111,6 +111,22 @@
 
 		</view>
 
+		<view class="" wx:if="{{shaixuanid==3}}">
+
+
+			<view class="padding-20" style="background:white;height:500rpx" class="flex-1">
+
+
+				<view class="">面积</view>
+
+
+			</view>
+
+
+
+
+
+		</view>
 
 	</view>
 
