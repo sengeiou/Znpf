@@ -45,18 +45,39 @@ page {
   border-radius: 8rpx;
 
 }
-.lable{
-  padding:1rpx 10rpx 2rpx 10rpx;
- 
+
+.lable {
+  padding: 1rpx 10rpx 2rpx 10rpx;
+
   border-radius: 4rpx;
   font-size: 22rpx;
-  color:white;
+  color: white;
 }
-.lable1{
-  padding:1rpx 10rpx 2rpx 10rpx;
+
+.lable1 {
+  padding: 1rpx 10rpx 2rpx 10rpx;
   background: #FCE4D1;
   border-radius: 4rpx;
   font-size: 22rpx;
-  color:#777777;
+  color: #777777;
   margin-right: 10rpx;
+}
+
+.rel {
+  position: fixed;
+  top: 152rpx;
+  z-index: 999;
+  width: 100vw;
+}
+.quyu{
+  width: 100vw;
+  background: white;
+ 
+}
+.balckbg {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 998;
+  width: 100vw;
+  height: 100vh;
 }

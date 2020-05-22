@@ -1,0 +1,48 @@
+<cu-custom isCustom="{{true}}" bgColor="bg-white">
+	<view slot="content" class="txt-bold" style="color:#161616;">选择城市</view>
+</cu-custom>
+<!--pages/city/city.wxml-->
+<view class='flex-row flex-center top'>
+  <view class='h5 txt-bold txt-black'>当前：</view>
+  <view class='h5 txt-bold txt-black'>{{CurrentName}}</view>
+</view>
+
+
+
+
+
+<view class='flex-row column mid '>
+
+ <view class='h5 txt-bold txt-black margin-20'>定位/最近访问</view>
+
+  <view class='flex-row flex-center flex-wrap'>
+
+    <view class='flex-row flex-center ' wx:for="{{memberinfo.citylist}}">
+      <view bindtap='setCity' id='{{item.id}}' style='' class='block flex-row flex-column radius-10 text-center'>
+        <view class='h5 txt-black margin-left-5 '>{{item.name}}</view>
+      </view>
+    </view>
+
+
+  </view>
+
+</view>
+
+
+<view class='flex-row column mid '>
+
+  
+<view class='h5 txt-bold txt-black margin-20' style=''>已开放城市</view>
+
+  <view class='flex-row flex-center  flex-wrap'>
+
+    <view wx:if="{{item.city_name!=''}}" style='' class='block flex-row flex-column  radius-10' wx:for="{{usecitylist}}" wx:key="k" wx:for-index='idx'>
+      <view class='flex-row  flex-center'  bindtap='setCity' id='{{idx}}' >
+        <image src='{{uploadpath}}resource/{{res.zuobiao}}' class='icon-15' wx:if="{{idx==0}}"></image>
+        <view class='h5 txt-black margin-left-5'>{{item.name}}</view>
+      </view>
+    </view>
+
+
+  </view>
+</view>

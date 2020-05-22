@@ -23,6 +23,21 @@ export class AppBase {
   static QQMAPKEY = "IDVBZ-TSAKD-TXG43-H442I-74KVK-6LFF5";
   static UserInfo = {};
   static InstInfo = {};
+
+  static lastlat = 0;
+  static lastlng = 0;
+  static lastdistance = 0;
+  static lastaddress = {
+    address: {
+      ad_info: {
+        adcode: "",
+        city: ""
+      }
+    }
+  };
+  static CITYID = 1;
+  static CITYNAME = "天津";
+  static CITYSET = false;
   unicode = "znpf";
   needauth = false;
   phone = null;
@@ -119,18 +134,24 @@ export class AppBase {
       checkPermission: base.checkPermission,
       recorderManager: base.recorderManager,
       backtotop: base.backtotop,
+      xuanzechenshi: base.xuanzechenshi,
       topage: base.topage,
       tishi: base.tishi,
       tishi2: base.tishi2,
       tishi3: base.tishi3,
       clock: base.clock,
       close: base.close,
-      BackPage:base.BackPage,
-      toHome:base.toHome
+      BackPage: base.BackPage,
+      toHome: base.toHome
     }
   }
   log() {
     console.log("yeah!");
+  }
+  xuanzechenshi() {
+    wx.navigateTo({
+      url: '/pages/xuanzechenshi/xuanzechenshi',
+    })
   }
   BackPage() {
     wx.navigateBack({
@@ -155,6 +176,98 @@ export class AppBase {
     });
 
     ApiConfig.SetUnicode(this.Base.unicode);
+
+    this.Base.getAddress((address) => {
+      console.log("vvckc", "4", address);
+      AppBase.lastaddress = address;
+      var mylat = address.location.lat;
+      var mylng = address.location.lng;
+    
+      var citycode = address.ad_info.adcode;
+
+      this.Base.setMyData({
+        adcode: address.ad_info.adcode,
+        citycode
+      });
+
+      if (AppBase.CITYSET == false) {
+
+        console.log(AppBase.CITYID, "哦哦", citycode)
+
+        // var citys = citylist.filter((item, idx) => {
+        //   return item.code == citycode
+        // })
+
+
+
+        // if (citys.length == 0) {
+        //   this.Base.setMyData({
+        //     nocity: 1
+        //   });
+        // }
+
+
+        var citylist = this.Base.getMyData().usecitylist
+    
+        for (var i = 0; i < citylist.length; i++) {
+
+          console.log(citylist[i].id, "大蒜", citycode, AppBase.CITYID)
+
+          if (citylist[i].citycode == citycode) {
+            console.log("说锤子呢啊大大");
+            AppBase.CITYID = citylist[i].id;
+            AppBase.CITYNAME = citylist[i].name;
+            break;
+          }
+
+
+        }
+
+
+
+
+      }
+
+
+
+      this.Base.setMyData({
+        mylat,
+        mylng,
+        cityname: AppBase.CITYNAME
+      });
+
+      var lastlat = Number(AppBase.lastlat == undefined ? 0 : AppBase.lastlat);
+      var lastlng = Number(AppBase.lastlng == undefined ? 0 : AppBase.lastlng);
+
+
+
+      AppBase.lastlat = mylat;
+      AppBase.lastlng = mylng;
+
+
+      this.Base.setMyData({
+
+        address,
+        mia: "??",
+      });
+
+
+    }, () => {
+
+      this.Base.setMyData({
+        address: AppBase.lastaddress,
+
+        address: {
+          ad_info: {}
+        },
+        mylat: 0,
+        mylng: 0
+      });
+      console.log("vvckc", "2");
+      that.onMyShow();
+
+
+    });
 
 
   }
@@ -186,13 +299,108 @@ export class AppBase {
   minimm
   onShow() {
     var that = this;
+    this.Base.getAddress((address) => {
+      console.log("vvckc", "4", address);
+      AppBase.lastaddress = address;
+      var mylat = address.location.lat;
+      var mylng = address.location.lng;
+    
+      var citycode = address.ad_info.adcode;
+
+      this.Base.setMyData({
+        adcode: address.ad_info.adcode,
+        citycode
+      });
+
+      if (AppBase.CITYSET == false) {
+
+        console.log(AppBase.CITYID, "哦哦", citycode)
+
+        // var citys = citylist.filter((item, idx) => {
+        //   return item.code == citycode
+        // })
+
+
+
+        // if (citys.length == 0) {
+        //   this.Base.setMyData({
+        //     nocity: 1
+        //   });
+        // }
+
+
+        var citylist = this.Base.getMyData().usecitylist
+    
+        for (var i = 0; i < citylist.length; i++) {
+
+          console.log(citylist[i].id, "大蒜", citycode, AppBase.CITYID)
+
+          if (citylist[i].citycode == citycode) {
+            console.log("说锤子呢啊大大");
+            AppBase.CITYID = citylist[i].id;
+            AppBase.CITYNAME = citylist[i].name;
+            break;
+          }
+
+
+        }
+
+
+
+
+      }
+
+
+
+      this.Base.setMyData({
+        mylat,
+        mylng,
+        cityname: AppBase.CITYNAME
+      });
+
+      var lastlat = Number(AppBase.lastlat == undefined ? 0 : AppBase.lastlat);
+      var lastlng = Number(AppBase.lastlng == undefined ? 0 : AppBase.lastlng);
+
+
+
+      AppBase.lastlat = mylat;
+      AppBase.lastlng = mylng;
+
+
+      this.Base.setMyData({
+
+        address,
+        mia: "??",
+      });
+
+
+    }, () => {
+
+      this.Base.setMyData({
+        address: AppBase.lastaddress,
+
+        address: {
+          ad_info: {}
+        },
+        mylat: 0,
+        mylng: 0
+      });
+      console.log("vvckc", "2");
+      that.onMyShow();
+
+
+    });
     var instapi = new InstApi();
     instapi.resources({}, (res) => {
       this.Base.setMyData({
         res
       });
     });
-
+    instapi.citylist({}, (usecitylist) => {
+      this.Base.setMyData({
+        usecitylist
+      });
+    });
     instapi.info({}, (instinfo) => {
       if (instinfo == null || instinfo == false) {
 
@@ -208,7 +416,7 @@ export class AppBase {
 
       }
     }, false);
-    console.log(AppBase.UserInfo.openid,'instinfo')
+    console.log(AppBase.UserInfo.openid, 'instinfo')
     if (AppBase.UserInfo.openid == undefined) {
       // 登录
       console.log("onShow");
@@ -282,8 +490,8 @@ export class AppBase {
                     that.onMyShow();
                   }
                 });
-                 
-               
+
+
               });
               //that.getAddress();
             }
@@ -291,7 +499,7 @@ export class AppBase {
 
         }
       })
-      
+
       return false;
     } else {
       if (that.setMyData != undefined) {
@@ -311,16 +519,21 @@ export class AppBase {
 
       that.checkPermission();
     }
-      
+
   }
   checkPermission() {
     var memberapi = new MemberApi();
     var that = this;
+
     memberapi.info({}, (info) => {
 
-      this.Base.setMyData({ memberinfo: info }); 
+      this.Base.setMyData({
+        memberinfo: info
+      });
       that.onMyShow();
     });
+
+  
   }
   loadtabtype() {
     console.log("loadtabtype");
@@ -445,7 +658,7 @@ export class AppBase {
       phoneNumber: tel
     })
   }
-  getAddress(callback, lat, lng) {
+  getAddress(callback, failcallback, lat, lng) {
     var that = this;
     if (AppBase.QQMAP == null) {
       var QQMapWX = require('libs/qqmap/qqmap-wx-jssdk.js');
@@ -478,6 +691,13 @@ export class AppBase {
               console.log(res);
             }
           });
+        },
+        fail: function (res) {
+          console.log("fail open location");
+          console.log(res);
+          if (failcallback != undefined) {
+            failcallback();
+          }
         }
       });
     } else {
@@ -1047,9 +1267,9 @@ export class AppBase {
         AppBase.UserInfo.openid = openid;
         AppBase.UserInfo.session_key = session_key;
         console.log("loginres4", userres);
-        console.log(this.Base.getMyData().memberinfo,'11');
+        console.log(this.Base.getMyData().memberinfo, '11');
         var memberinfo = this.Base.getMyData().memberinfo;
-         
+
         var api = new WechatApi();
         api.decrypteddata({
           iv: userres.iv,
@@ -1069,10 +1289,12 @@ export class AppBase {
             that.Base.setMyData({
               UserInfo: AppBase.UserInfo
             });
-           
-             memberapi.info({},(info)=>{
-               this.Base.setMyData({memberinfo:info});
-             })
+
+            memberapi.info({}, (info) => {
+              this.Base.setMyData({
+                memberinfo: info
+              });
+            })
           });
         });
 
@@ -1094,8 +1316,8 @@ export class AppBase {
 
     wx.navigateTo({
       url: '/pages/' + name + '/' + name + '?id=' + id
-    }) 
+    })
 
   }
-  
+
 }
