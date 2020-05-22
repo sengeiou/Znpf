@@ -130,7 +130,7 @@
 	<view class="f-34 txt-bold padding-30" style="color:#161616">你可能感兴趣</view>
 
 
-	<view bindtap="topage" data-name="premises-details" wx:for="{{list}}" style="border-bottom:1rpx solid #F7F8FA" wx:key="k" class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30">
+	<view bindtap="topage" data-name="premises-details" id="{{item.id}}" wx:for="{{list}}" style="border-bottom:1rpx solid #F7F8FA" wx:key="k" class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30">
 
 		<image src='{{uploadpath}}premises/{{item.cover}}' class="img_1"></image>
 

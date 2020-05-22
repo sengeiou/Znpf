@@ -1,0 +1,21 @@
+<!--pages/dongtai/dongtai.wxml-->
+<cu-custom isCustom="{{true}}" bgColor="bg-white">
+	<view slot="content" class="txt-bold" style="color:#161616;">楼盘动态</view>
+</cu-custom>
+
+ 
+<view class="grayblock"></view>
+<view class="padding-30">
+
+	<view class="" wx:for='{{info.zixun}}' wx:key='s'>
+
+		<view class="txt-gray h6">{{item.updated_date}}</view>
+
+		<view class="txt-bold margin-top-20">{{item.name}}</view>
+
+		<view class="txt-gray h5 margin-top-20">{{item.content}}</view>
+
+	</view>
+
+
+</view>

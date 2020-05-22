@@ -1,0 +1,72 @@
+<!--pages/gallery/gallery.wxml-->
+<cu-custom isCustom="{{true}}" bgColor="bg-white">
+	<view slot="content" class="txt-bold" style="color:#161616;">航拍景观</view>
+</cu-custom>
+
+<view class=' ' style="padding-bottom:10rpx">
+
+	<view class='flex-row flex-center'>
+		<view class="flex-1"></view>
+		<view class="flex-row flex-column" bindtap='bindorder' id="A">
+			<view class='h5 txt-bold flex-1  {{nowidx=="A"?"":"txt-gray opa8"}}'>效果图({{a}})</view>
+			<view class=' order {{nowidx=="A"?"bg-purple":"bg-white"}}'></view>
+		</view>
+		<view class="flex-1"></view>
+		<view class="flex-row flex-column" bindtap='bindorder' id="B">
+			<view class='h5 txt-bold flex-1  {{nowidx=="B"?"":"txt-gray opa8"}}'>户型({{b}})</view>
+			<view class=' order {{nowidx=="B"?"bg-purple":"bg-white"}}'></view>
+		</view>
+		<view class="flex-1"></view>
+		<view class="flex-row flex-column" bindtap='bindorder' id="C">
+			<view class='h5 txt-bold flex-1  {{nowidx=="C"?"":"txt-gray opa8"}}'>样板间({{c}})</view>
+			<view class=' order {{nowidx=="C"?"bg-purple":"bg-white"}}'></view>
+		</view>
+		<view class="flex-1"></view>
+		<view class="flex-row flex-column" bindtap='bindorder' id="D">
+			<view class='h5 txt-bold flex-1  {{nowidx=="D"?"":"txt-gray opa8"}}'>区位({{d}})</view>
+			<view class=' order {{nowidx=="D"?"bg-purple":"bg-white"}}'></view>
+		</view>
+		<view class="flex-1"></view>
+	</view>
+
+</view>
+
+<view class="grayblock"></view>
+<view class="padding-30">
+	<view class="txt-bold">效果图</view>
+	<view class="flex-row flex-center flex-wrap margin-top-20">
+		<view wx:for='{{info.gallery}}' wx:key='s' wx:if='{{item.type=="A"}}'>
+			<image src="{{uploadpath}}gallery/{{item.picture}}" class="icon-80 margin-right-10 margin-top-20"></image>
+		</view>
+	</view>
+</view>
+
+<view class="grayblock"></view>
+<view class="padding-30">
+	<view class="txt-bold">户型</view>
+	<view class="flex-row flex-center flex-wrap margin-top-20">
+		<view wx:for='{{info.gallery}}' wx:key='s' wx:if='{{item.type=="B"}}'>
+			<image src="{{uploadpath}}gallery/{{item.picture}}" class="icon-80 margin-right-10 margin-top-20"></image>
+		</view>
+	</view>
+</view>
+
+<view class="grayblock"></view>
+<view class="padding-30">
+	<view class="txt-bold">样板间</view>
+	<view class="flex-row flex-center flex-wrap margin-top-20">
+		<view wx:for='{{info.gallery}}' wx:key='s' wx:if='{{item.type=="C"}}'>
+			<image src="{{uploadpath}}gallery/{{item.picture}}" class="icon-80 margin-right-10 margin-top-20"></image>
+		</view>
+	</view>
+</view>
+
+<view class="grayblock"></view>
+<view class="padding-30">
+	<view class="txt-bold">区位</view>
+	<view class="flex-row flex-center flex-wrap margin-top-20">
+		<view wx:for='{{info.gallery}}' wx:key='s' wx:if='{{item.type=="D"}}'>
+			<image src="{{uploadpath}}gallery/{{item.picture}}" class="icon-80 margin-right-10 margin-top-20"></image>
+		</view>
+	</view>
+</view>

@@ -27,7 +27,7 @@
 
 	<view class="flex-row flex-center padding-30">
 		<image src="{{uploadpath}}resource/{{res.sun}}" class="icon"></image>
-		<view class="h5 margin-left-10">冬至 11:00</view>
+		<view class="h5 margin-left-10">{{item.rizhao}}</view>
 		<view class="flex-1"></view>
 		<view class="txt-gray h5">滑动查看其他示意图</view>
 		<view></view>
