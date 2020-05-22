@@ -9,6 +9,15 @@
 <view class="position:relative ">
 	<image src="{{uploadpath}}premises/{{info.cover}}" class="topimage"></image>
 
+	<view class="toptwo text-center padding-top-10" bindtap="topage" data-name="huxinglist" id="{{info.id}}">
+		<view class="h4 txt-bold txt-purple">户型</view>
+	</view>
+
+	<view class="topone text-center padding-top-10" bindtap="topage" data-name="gallery" id="{{info.id}}">
+		<view class="h4 txt-bold txt-purple">+{{info.gallery.length}}</view>
+		<view class="h6">查看更多</view>
+	</view>
+
 	<view class="topblock ">
 
 		<!-- 简要信息 -->
@@ -18,10 +27,15 @@
 				<view class="blueblock text-center txt-white h6 margin-left-10">{{info.sales_status}}</view>
 				<view class="flex-1"></view>
 				<image src="{{uploadpath}}resource/{{res.shoucang}}" class="icon-25"></image>
-				<image src="{{uploadpath}}resource/{{res.fenxiang}}" class="icon margin-left-20"></image>
+
+				<button open-type="share" class="clear-button">
+					<image src="{{uploadpath}}resource/{{res.fenxiang}}" class="icon margin-left-20"></image>
+				</button>
 			</view>
 
+
 			<view class="h5 txt-gray">{{info.summary}}</view>
+
 
 			<view class='flex-row flex-center margin-top-10'>
 				<view class="label h6 text-center margin-right-10" wx:for='{{info.label}}' wx:key='k'>{{item.name}}</view>
@@ -52,8 +66,7 @@
 					</view>
 					<view class="flex-row flex-center margin-top-10">
 						<view class="txt-gray h5">户型：</view>
-						<view class=" h5">{{info.housing}}</view>
-
+						<view class=" h5">{{info.huxing}}</view>
 					</view>
 				</view>
 
@@ -62,22 +75,21 @@
 				<view class="text-center">
 					<view class="flex-row flex-center">
 						<view class="txt-gray h5">类型：</view>
-						<view class=" h5">{{info.premisestype_name}}</view>
+						<view class=" h5">{{info.buildingtype_name}}</view>
 					</view>
 					<view class="flex-row flex-center margin-top-10">
 						<view class="txt-gray h5">套数：</view>
-						<view class=" h5">{{info.number}}套</view>
+						<view class=" h5">{{info.number}}</view>
 					</view>
 				</view>
 
 			</view>
 
 
-
 		</view>
 
 		<!-- 地址 -->
-		<view class="padding-30 flex-row flex-center margin-top-20 bg-white">
+		<view class="padding-30 flex-row flex-center margin-top-20 bg-white" bindtap="topage" data-name="peitao" id="{{info.id}}">
 			<image src="{{uploadpath}}resource/{{res.dinwei}}" class="icon-25"></image>
 
 			<view class="chaochu flex-1 h5 margin-left-20">{{info.address}}</view>
@@ -91,7 +103,7 @@
 
 			<view class="flex-row flex-center">
 
-				<view class="text-center flex-1">
+				<view class="text-center flex-1" bindtap="topage" data-name="otherprice" id="{{info.id}}">
 					<image src="{{uploadpath}}resource/{{res.jiage}}" class="icon-40"></image>
 					<view class="h6 txt-gray margin-top-10">价格查询</view>
 				</view>
@@ -106,7 +118,7 @@
 					<view class="h6 txt-gray margin-top-10">日照评测</view>
 				</view>
 
-				<view class="text-center flex-1 ">
+				<view class="text-center flex-1 " bindtap="topage" data-name="huxinglist" id="{{info.id}}">
 					<image src="{{uploadpath}}resource/{{res.huxing}}" class="icon-40"></image>
 					<view class="h6 txt-gray margin-top-10">户型评测</view>
 				</view>
@@ -115,22 +127,22 @@
 
 			<view class="flex-row flex-center margin-top">
 
-				<view class="text-center flex-1" bindtap="">
+				<view class="text-center flex-1" bindtap="topage" data-name="peitao" id="{{info.id}}">
 					<image src="{{uploadpath}}resource/{{res.peitao}}" class="icon-25"></image>
 					<view class="h6 txt-gray margin-top-10">配套</view>
 				</view>
 
-				<view class="text-center flex-1 ">
+				<view class="text-center flex-1 " bindtap="topage" data-name="details" id="{{info.id}}">
 					<image src="{{uploadpath}}resource/{{res.xiangqing}}" class="icon-25"></image>
 					<view class="h6 txt-gray margin-top-10">详情</view>
 				</view>
 
-				<view class="text-center flex-1 " bindtap="guwen">
+				<view class="text-center flex-1 " bindtap="topage" data-name="zhiyeguwen" id="{{info.id}}">
 					<image src="{{uploadpath}}resource/{{res.xiangqing}}" class="icon-25"></image>
 					<view class="h6 txt-gray margin-top-10">顾问</view>
 				</view>
 
-				<view class="text-center flex-1 ">
+				<view class="text-center flex-1 " bindtap="topage" data-name="gallery" id="{{info.id}}">
 					<image src="{{uploadpath}}resource/{{res.dinwei}}" class="icon-25"></image>
 					<view class="h6 txt-gray margin-top-10">图库</view>
 				</view>
@@ -164,7 +176,7 @@
 
 			<view class="flex-row flex-center margin-top ">
 
-				<view class="text-center margin-right-20" wx:for='{{info.history}}'>
+				<view class="flex-row flex-column margin-right-20" wx:for='{{info.history}}'>
 					<view class="h6 ">{{item.time}}</view>
 					<view class="txtblock text-center h6 margin-top-20">{{item.name}}</view>
 				</view>
@@ -178,17 +190,17 @@
 
 
 			<!-- 查看全部 -->
-			<view class="flex-row flex-center">
+			<view class="flex-row flex-center" bindtap="topage" data-name="dongtai" id="{{info.id}}">
 				<view class="txt-bold flex-1">楼盘动态</view>
 				<view class="h6 txt-gray margin-left-20">查看全部</view>
 				<image src="{{uploadpath}}resource/{{res.right}}" class="icon"></image>
 			</view>
 
 			<!-- 标签 -->
-			<view class='flex-row flex-center margin-top-10'>
+			<view class='flex-row flex-center  margin-top'>
 				<view class="label2 h6 text-center">全部</view>
-				<view class="label2 h6 margin-left-10 text-center">销控信息</view>
-				<view class="label2 h6 margin-left-10 text-center">楼盘咨询</view>
+				<!-- <view class="label2 h6 margin-left-10 text-center">销控信息</view>
+				<view class="label2 h6 margin-left-10 text-center">楼盘咨询</view> -->
 			</view>
 
 			<!-- 文章 -->
@@ -213,7 +225,7 @@
 
 			<view class="flex-row flex-center margin-top">
 
-				<view class="flex-row flex-center padding-20 guwen margin-right-20" wx:for='{{info.guwen}}' wx:key='g'>
+				<view class="flex-row flex-center padding-20 guwen margin-right-20" wx:for='{{info.guwen}}' wx:key='g' bindtap="topage" data-name="guwen" id="{{item.id}}">
 					<image src="{{uploadpath}}member/{{item.minpai}}" class="icon-30 radius-50"></image>
 					<view class="flex-1 margin-left-10">
 						<view class="h5">{{item.name}}</view>
@@ -309,50 +321,50 @@
 		<view class="  bg-white margin-top-20">
 			<view class="txt-bold padding-30">周边配套</view>
 
-			<view class='padding-30 flex-row  flex-center  '>
 
-				<view class='flex-row flex-column flex-1' data-order='A' bindtap='bindorder'>
-					<view class='h5 txt-bold flex-1 text-center {{order=="A"?"":"txt-gray opa8"}}'>地铁</view>
-					<view class='order {{order=="A"?"bg-purple":"bg-white"}}'></view>
-				</view>
-
-				<view class='flex-row flex-column flex-1 ' data-order='B' bindtap='bindorder'>
-					<view class='h5 txt-bold flex-1 text-center {{order=="B"?"":"txt-gray opa8"}}'>学校</view>
-					<view class='order {{order=="B"?"bg-purple":"bg-white"}}'></view>
-				</view>
-
-				<view class='flex-row flex-column flex-1 ' data-order='C' bindtap='bindorder'>
-					<view class='h5 txt-bold flex-1 text-center {{order=="C"?"":"txt-gray opa8"}}'>医院</view>
-					<view class='order {{order=="C"?"bg-purple":"bg-white"}}'></view>
-				</view>
-
-				<view class='flex-row flex-column flex-1 ' data-order='D' bindtap='bindorder'>
-					<view class='h5 txt-bold flex-1 text-center {{order=="D"?"":"txt-gray opa8"}}'>购物</view>
-					<view class='order {{order=="D"?"bg-purple":"bg-white"}}'></view>
-				</view>
-
-				<view class='flex-row flex-column flex-1 ' data-order='E' bindtap='bindorder'>
-					<view class='h5 txt-bold flex-1 text-center {{order=="E"?"":"txt-gray opa8"}}'>公园</view>
-					<view class='order {{order=="E"?"bg-purple":"bg-white"}}'></view>
-				</view>
-
+			<view class='  ' style="padding-bottom:10rpx">
+				<scroll-view scroll-x class="scroll " style=" width:100%">
+					<view class='' style="width:150rpx;display:inline-block" bindtap='bindorder' id="{{idx}}" data-id="{{item.id}}" wx:for='{{typelist}}' wx:for-index='idx' wx:key='e'>
+						<view class="flex-row flex-column">
+							<view class='h5 txt-bold flex-1  {{nowidx==idx?"":"txt-gray opa8"}}'>{{item.name}}</view>
+							<view class=' order {{nowidx==idx?"bg-purple":"bg-white"}}'></view>
+						</view>
+					</view>
+				</scroll-view>
 			</view>
+
 
 			<view class="map txt-white text-center">
 				地图
 			</view>
 
+			<view class="" style="padding:10rpx 30rpx 30rpx 30rpx">
+				<view class="margin-top-20 " wx:for-index='idxs' wx:for='{{info.periphery}}' wx:key='p' wx:if='{{item.type_id==nowid}}'>
+					<view class="flex-row flex-center">
+						<view class="flex-1 h5">{{item.name}}</view>
+						<image wx:if='{{item.fangshi=="A"}}' src="{{uploadpath}}resource/{{res.buxing}}" class="icon"></image>
+						<image wx:if='{{item.fangshi=="B"}}' src="{{uploadpath}}resource/{{res.qiche}}" class="icon"></image>
+						<image wx:if='{{item.fangshi=="C"}}' src="{{uploadpath}}resource/{{res.kaiche}}" class="icon"></image>
+						<view class="h6 txt-gray margin-left-10">{{item.shichang}}</view>
+						<view class="h6 txt-gray margin-left-10">{{item.juli}}</view>
+					</view>
+				</view>
+			</view>
+
 		</view>
+
+
 
 		<!-- 周边价格 -->
 		<view class="padding-30 bg-white margin-top-20">
 
 			<!-- 查看全部 -->
-			<view class="flex-row flex-center" bindtap="topage" data-name="otherprice">
+			<view class="flex-row flex-center" bindtap="topage" data-name="otherprice" id="{{info.id}}">
 				<view class="txt-bold flex-1">周边价格</view>
 				<view class="h6 txt-gray margin-left-20">查看全部</view>
 				<image src="{{uploadpath}}resource/{{res.right}}" class="icon"></image>
 			</view>
+ 
 
 			<view class="flex-row  margin-top" wx:for='{{info.otherprice}}' wx:key='o'>
 				<view class="loupanname text-right h5">{{item.name}}</view>
@@ -362,12 +374,12 @@
 				</view>
 			</view>
 
-      <view class="txt-gray h6  margin-top-20 opa8">价格来自网络成交价，二手房价格每天都在变化，统计可能延迟，仅供参考。</view>
+			<view class="txt-gray h6  margin-top-20 opa8">{{info.beizhu}}</view>
 
 
 		</view>
 
-	<view style="height:120rpx"></view>
+		<view style="height:120rpx"></view>
 	</view>
 
 
@@ -376,9 +388,13 @@
 		<view class="flex-row flex-center paddings">
 			<image src="{{uploadpath}}resource/{{res.bushoucang}}" class="icon-25"></image>
 			<view class="flex-1"></view>
-			<view class="left_one text-center bg1 h5">联系客服</view>
+			<button class="clear-button" open-type='contact'>
+				<view class="left_one text-center bg1 h5">联系客服</view>
+			</button>
+			<button open-type="share" class="clear-button">
+				<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
+			</button>
 
-			<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
 		</view>
 	</view>
 

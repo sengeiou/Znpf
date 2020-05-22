@@ -113,25 +113,38 @@ Page {
   width: 150rpx;
 }
 
-.under_block {
-  position: fixed;
-  width: 100vw;
-  z-index: 99;
-  bottom: 0;
-}
-.bg1{
+
+.bg1 {
   background: #F0E9F6;
 }
-.bg2{
-  background:#FCE4D1;
+
+.bg2 {
+  background: #FCE4D1;
 }
-.left_one {
-  width: 304rpx;
-  height: 80rpx;
-  line-height: 80rpx; 
-  opacity: 1;
+
+ 
+.topone {
+  position: absolute;
+  z-index: 12;
+  top: 23%;
+  right: 40rpx;
+
+  width: 128rpx;
+  height: 96rpx;
+  background: rgba(255, 255, 255, 1);
+  opacity: 0.8;
   border-radius: 8rpx;
 }
-.paddings{
-  padding: 10rpx 20rpx 10rpx 20rpx;
+
+.toptwo {
+  position: absolute;
+  z-index: 12;
+  top: 16%;
+  right: 40rpx;
+
+  width: 128rpx;
+  height: 96rpx;
+  background: rgba(255, 255, 255, 1);
+  opacity: 0.8;
+  border-radius: 8rpx;
 }

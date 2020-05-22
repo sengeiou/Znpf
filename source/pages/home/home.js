@@ -48,14 +48,15 @@ class Content extends AppBase {
       });
     });
 
-    var api=new PremisesApi;
-    api.list({hpd1:"Y"},(list)=>{
+    var premisesapi=new PremisesApi;
+    premisesapi.list({hpd1:"Y"},(list)=>{
        
       this.Base.setMyData({list});
 
     })
 
   }
+  
   onReady(){
     console.log("??????????????????");
   }

@@ -135,10 +135,30 @@
 					"scene": null
 				},
 				{
-					"id": 11,
-					"name": "pages/zhiyeguwen/zhiyeguwen",
-					"pathName": "pages/guwenlist/guwenlist",
+					"id": -1,
+					"name": "户型列表",
+					"pathName": "pages/huxinglist/huxinglist",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "户型详情",
+					"pathName": "pages/huxing/huxing",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "配套列表",
+					"pathName": "pages/peitao/peitao",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "图库",
+					"pathName": "pages/gallery/gallery",
 					"scene": null
 				}
 			]

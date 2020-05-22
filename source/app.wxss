@@ -532,6 +532,10 @@ button[disabled][type=primary] {
   width: 150rpx;
   height: 150rpx;
 }
+.icon-80{
+  width: 160rpx;
+  height: 160rpx;
+}
 .icon-100{
   width: 200rpx;
   height: 200rpx;
@@ -599,5 +603,31 @@ button[disabled][type=primary] {
   border-radius: 8rpx;
 }
 .paddings{
-  padding: 10rpx 20rpx 10rpx 20rpx;
+  padding: 10rpx 20rpx 40rpx 20rpx;
+}
+.grayblock {
+  width: 100%;
+  height: 20rpx;
+  background: #F7F8FA;
+}
+.under_block {
+  position: fixed;
+  width: 100vw;
+  z-index: 99;
+  bottom: 0;
+}
+.left_one {
+  width: 304rpx;
+  height: 80rpx;
+  line-height: 80rpx; 
+  opacity: 1;
+  border-radius: 8rpx;
+}
+.scroll { 
+  white-space: nowrap;
+}
+.order {
+  height: 4rpx;
+  width: 32rpx;
+  margin-top: 10rpx;
 }

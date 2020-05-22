@@ -14,11 +14,12 @@ class Content extends AppBase {
     super.onLoad(options);
     var api=new PremisesApi;
     api.label({},(label1)=>{
-   
+
        this.Base.setMyData({label1});
 
     })
   }
+  
   onMyShow() {
     var that = this;
     var api = new InstApi;

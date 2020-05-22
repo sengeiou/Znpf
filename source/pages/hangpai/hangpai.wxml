@@ -101,7 +101,7 @@
 			<image src="{{uploadpath}}entrance/{{item.attraction_img}}" class="shiye"></image>
 		</view>
 
-		<view class="h6 txt-gray margin-top">
+		<view class="h6 txt-grayF margin-top">
 			{{item.attraction}}
 		</view>
 

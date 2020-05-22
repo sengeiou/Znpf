@@ -14,7 +14,8 @@
 
 	</view>
 	<image class="icon-15 margin-left-20" src="{{uploadpath}}resource/{{res.fenxianzi}}"></image>
-	<view class="h5 margin-left-10" style="color:#583A80">分享</view>
+
+	<button  class="h5 margin-left-10  clear-button"  open-type="share" style="color:#583A80">分享</button>
 
 </view>
 

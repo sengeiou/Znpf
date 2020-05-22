@@ -1,0 +1,45 @@
+/* pages/huxinglist/huxinglist.wxss */
+.scroll {
+  white-space: nowrap;
+}
+
+.block1 {
+  width: 216rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  background: rgba(156, 114, 193, 1);
+  opacity: 1;
+  border-radius: 8rpx;
+}
+
+.block2 {
+  width: 216rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  background: #EEEEEE;
+  opacity: 1;
+  border-radius: 8rpx;
+}
+
+.fengmian {
+  width: 224rpx;
+  height: 304rpx;
+  background: rgba(0, 0, 0, 0);
+  opacity: 1;
+  border-radius: 8rpx;
+}
+
+.label {
+  min-width: 88rpx;
+  padding: 0 6rpx 0 6rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  background: rgba(252, 228, 209, 1);
+  opacity: 1;
+  border-radius: 4rpx;
+}
+
+view {
+  font-size: 28rpx;
+  color: #777777;
+}

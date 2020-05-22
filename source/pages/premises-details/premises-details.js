@@ -12,8 +12,9 @@ class Content extends AppBase {
   }
   onLoad(options) {
     this.Base.Page = this;
-     options.id=1;
+   //options.id=1;
     super.onLoad(options);
+    this.Base.setMyData({nowidx:0})
   }
 
   onMyShow() {
@@ -29,6 +30,10 @@ class Content extends AppBase {
        this.Base.setMyData({info})
     })
 
+    premisesapi.typelist({orderby:'r_main.id'},(typelist)=>{ 
+      this.Base.setMyData({typelist,nowid:typelist[0].id})
+   })
+
     this.Base.setMyData({
       order: "A"
     });
@@ -36,14 +41,12 @@ class Content extends AppBase {
   }
 
 
-  bindorder(e) {
-    var orderid = e.currentTarget.dataset.order;
-    //console.log(orderid, "选中的节点值");
-  
-    this.Base.setMyData({
-      order: orderid
-    }); 
+  bindorder(e) { 
+    var nowidx = e.currentTarget.id;
+    var nowid= e.currentTarget.dataset.id;
+    this.Base.setMyData({nowidx: nowidx,nowid})
   }
+
   guwen() {
     wx.navigateTo({
       url: '/pages/zhiyeguwen/zhiyeguwen?id='+this.Base.options.id,
