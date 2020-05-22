@@ -233,7 +233,7 @@ export class PremisesApi{
         })
     }
 
-    housinglist(json, callback, showLoading = true) {
+    list(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -242,7 +242,7 @@ export class PremisesApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'premises/housinglist',
+            url: ApiConfig.GetApiUrl() + 'premises/list',
             data: json,
             method: 'POST',
             dataType: 'json',
@@ -264,39 +264,4 @@ export class PremisesApi{
             }
         })
     }
-    
-    housinginfo(json, callback, showLoading = true) {
-
-        if (showLoading)
-            ApiConfig.ShowLoading();
-
-        var header = ApiConfig.GetHeader();
-        console.log(header);
-        console.log(json);
-        wx.request({
-            url: ApiConfig.GetApiUrl() + 'premises/housinginfo',
-            data: json,
-            method: 'POST',
-            dataType: 'json',
-            header: header,
-            success: function (res) {
-                if (callback != null) {
-                    callback(res.data);
-                }
-            },
-            fail: function (res) {
-                console.log(res);
-                callback(false);
-            },
-            complete: function (res) {
-                console.log(res);
-            
-                if (showLoading)
-                    ApiConfig.CloseLoading();
-            }
-        })
-    }
- 
-
-
 }
