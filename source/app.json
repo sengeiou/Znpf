@@ -25,6 +25,9 @@
     "pages/huxing/huxing",
     "pages/huxinglist/huxinglist",
     "pages/details/details",
+    "pages/peitao/peitao",
+    "pages/gallery/gallery",
+    "pages/dongtai/dongtai",
     "pages/hangpai/hangpai"
   ],
   "permission": {

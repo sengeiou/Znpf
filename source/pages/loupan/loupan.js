@@ -33,6 +33,7 @@ class Content extends AppBase {
     });
     this.getcanshu();
   }
+  
   onMyShow() {
     var that = this;
     var api = new InstApi;

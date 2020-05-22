@@ -1,0 +1,50 @@
+<!--pages/peitao/peitao.wxml-->
+<cu-custom isCustom="{{true}}" bgColor="bg-white">
+	<view slot="content" class="txt-bold" style="color:#161616;">{{detail.activitytype_id_name}}航拍景观</view>
+</cu-custom>
+
+<view class='  ' style="padding-bottom:10rpx">
+	<scroll-view scroll-x class="scroll " style=" width:100%">
+		<view class='' style="width:150rpx;display:inline-block" bindtap='bindorder' id="{{idx}}" data-id="{{item.id}}" wx:for='{{typelist}}' wx:for-index='idx' wx:key='e'>
+			<view class="flex-row flex-column">
+				<view class='h5 txt-bold flex-1  {{nowidx==idx?"":"txt-gray opa8"}}'>{{item.name}}</view>
+				<view class=' order {{nowidx==idx?"bg-purple":"bg-white"}}'></view>
+			</view>
+		</view>
+	</scroll-view>
+</view>
+
+
+<view class="" wx:for-index='idxs' wx:for='{{list}}'>
+	<view class="grayblock"></view>
+	<view class="padding-30" wx:key='p'>
+
+		<view class="txt-bold">{{item.type_name}}</view>
+
+		<view class="flex-row flex-center margin-top-20" wx:for='{{item.list}}' wx:key='e'>
+			<view class="flex-1 h5">{{item.name}}</view>
+			<image wx:if='{{item.fangshi=="A"}}' src="{{uploadpath}}resource/{{res.buxing}}" class="icon"></image>
+			<image wx:if='{{item.fangshi=="B"}}' src="{{uploadpath}}resource/{{res.qiche}}" class="icon"></image>
+			<image wx:if='{{item.fangshi=="C"}}' src="{{uploadpath}}resource/{{res.kaiche}}" class="icon"></image>
+			<view class="h6 txt-gray margin-left-10">{{item.shichang}}</view>
+			<view class="h6 txt-gray margin-left-10">{{item.juli}}</view>
+		</view>
+
+	</view>
+</view>
+
+		<view style="height:120rpx"></view>
+
+<view class="under_block bg-white">
+	<view class="flex-row flex-center paddings">
+		<image src="{{uploadpath}}resource/{{res.bushoucang}}" class="icon-25"></image>
+		<view class="flex-1"></view>
+		<button class="clear-button" open-type='contact'>
+			<view class="left_one text-center bg1 h5">联系客服</view>
+		</button>
+		<button open-type="share" class="clear-button">
+			<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
+		</button>
+
+	</view>
+</view>

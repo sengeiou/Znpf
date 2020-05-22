@@ -1,5 +1,4 @@
-// pages/huxing/huxing.js 
-
+// pages/gallery/gallery.js
 import {
   AppBase
 } from "../../appbase";
@@ -17,36 +16,66 @@ class Content extends AppBase {
   constructor() {
     super();
   }
+
   onLoad(options) {
     this.Base.Page = this;
-    // options.id=6;
+    //options.id = 1;
     super.onLoad(options);
     this.Base.setMyData({
-      nowidx: 0
+      nowidx: "A"
     })
   }
 
   onMyShow() {
     var that = this;
     var premisesapi = new PremisesApi();
-    var areatypelist = [];
-    premisesapi.housinginfo({
+
+    premisesapi.info({
       id: this.Base.options.id
     }, (info) => {
-        this.Base.setMyData({
-          info
-        }) 
+
+      var list = info.gallery;
+      var a = 0;
+      var b = 0;
+      var c = 0;
+      var d = 0;
+      for (var i = 0; i < list.length; i++) {
+
+        if (list[i].type == "A") {
+          a++
+        } else if (list[i].type == "B") {
+          b++
+        } else if (list[i].type == "C") {
+          c++
+        } else {
+          d++
+        }
+
+      }
+
+      this.Base.setMyData({
+        info,
+        a,
+        b,
+        c,
+        d
+      });
     })
-  
+
+  }
+
+  bindorder(e) {
+    var nowidx = e.currentTarget.id;
+    this.Base.setMyData({
+      nowidx
+    })
   }
 
 
- 
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.bindorder = content.bindorder;
-body.housing = content.housing;
 Page(body)

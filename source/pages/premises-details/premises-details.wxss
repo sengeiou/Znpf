@@ -114,13 +114,37 @@ Page {
 }
 
 
-.bg1{
+.bg1 {
   background: #F0E9F6;
 }
-.bg2{
-  background:#FCE4D1;
+
+.bg2 {
+  background: #FCE4D1;
 }
 
-.paddings{
-  padding: 10rpx 20rpx 10rpx 20rpx;
+ 
+.topone {
+  position: absolute;
+  z-index: 12;
+  top: 23%;
+  right: 40rpx;
+
+  width: 128rpx;
+  height: 96rpx;
+  background: rgba(255, 255, 255, 1);
+  opacity: 0.8;
+  border-radius: 8rpx;
+}
+
+.toptwo {
+  position: absolute;
+  z-index: 12;
+  top: 16%;
+  right: 40rpx;
+
+  width: 128rpx;
+  height: 96rpx;
+  background: rgba(255, 255, 255, 1);
+  opacity: 0.8;
+  border-radius: 8rpx;
 }

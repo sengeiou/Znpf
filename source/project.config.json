@@ -150,9 +150,15 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/xuanzechenshi/xuanzechenshi",
-					"pathName": "pages/xuanzechenshi/xuanzechenshi",
+					"name": "配套列表",
+					"pathName": "pages/peitao/peitao",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "图库",
+					"pathName": "pages/gallery/gallery",
 					"scene": null
 				}
 			]

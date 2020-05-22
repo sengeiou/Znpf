@@ -40,7 +40,7 @@
 </view>
 <view class="bg-color padding-top-20"></view>
 <view class="margin-top txt-bold margin-left-40">主营新房</view>
-<view class=" margin-top" wx:for='{{guwendetail.premises}}' wx:key='key' >
+<view class=" margin-top" wx:for='{{guwendetail.premises}}' wx:key='key'>
   <view class="flex-row">
     <image src="{{uploadpath}}premises/{{item.cover}}" class="icon-220 margin-left-40"></image>
     <view class="flex-1 margin-left-40">
@@ -87,7 +87,7 @@
 </view>
 <view style="height:100rpx;"></view>
 <view class="bg-color padding-top-20"></view>
-<view class="flex-row margin-bottom-10 margin-top-10 pos bg-white">
+<view class="flex-row padding-bottom-10 padding-top-10 pos bg-white">
   <view class="flex-1"></view>
   <image src="{{uploadpath}}resource/{{res.xh}}" class="icon-15 margin-left-40 margin-top-30"></image>
   <view class="flex-1"></view>

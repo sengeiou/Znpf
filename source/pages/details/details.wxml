@@ -1,6 +1,6 @@
 <!--pages/details/details.wxml-->
 <cu-custom isCustom="{{true}}" bgColor="bg-white">
-	<view slot="content" class="txt-bold" style="color:#161616;">{{detail.activitytype_id_name}}航拍景观</view>
+	<view slot="content" class="txt-bold" style="color:#161616;">航拍景观</view>
 </cu-custom>
 
 <!-- 基本信息 -->
@@ -214,6 +214,6 @@
 		<button open-type="share" class="clear-button">
 			<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
 	  </button>
-    
+
 	</view>
 </view>
