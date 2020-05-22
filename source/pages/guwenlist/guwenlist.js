@@ -31,14 +31,21 @@ class Content extends AppBase {
   }
   zixun(e){
     var id = e.currentTarget.id;
-    wx.setClipboardData({
-      data: id,
-      success: function (res) {
-       wx.showToast({
-         title: '复制成功',
-       })
-      }
-    })
+    
+      wx.showActionSheet({
+        itemList: [id,  "一键复制"],
+          success(e)  {
+              if  (e.tapIndex  ==  0)  {
+
+              }  else  {
+                  wx.setClipboardData({
+                    data: id,
+                  })
+              }
+          }
+      })
+      
+
   }
   call(e){
     var mobile = e.currentTarget.id;
