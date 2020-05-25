@@ -47,12 +47,12 @@
 			<view class="f-22 margin-top-16" style="color:#777777">二手房</view>
 		</view>
 		<view class="flex-2"></view>
-		<view class="flex-column  width-88 flex-row ">
+		<view bindtap="gomap"  class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.banjinzhaofan}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">半径找房</view>
 		</view>
 		<view class="flex-2"></view>
-		<view class="flex-column  width-88 flex-row ">
+		<view bindtap="gomap" class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.dituzhaofang}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">地图找房</view>
 		</view>

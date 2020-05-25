@@ -28,11 +28,31 @@ class Content extends AppBase {
         history[i].name=history[i].name.slice(0,4);
        }
        this.Base.setMyData({info})
+
+
+      premisesapi.typelist({ orderby: 'r_main.id' }, (typelist) => {
+        this.Base.setMyData({ typelist, nowid: typelist[0].id });
+
+
+        var list = this.Base.getMyData().info.periphery;
+        var markers = [];
+        for (var i = 0; i < list.length; i++) {
+          if (list[i].type_id == typelist[0].id) {
+            markers.push({
+              id: list[i].id,
+              title: list[i].name,
+              latitude: list[i].lat,
+              longitude: list[i].lng
+            });
+          }
+        }
+        this.Base.setMyData({ markers });
+
+
+      })
+
     })
 
-    premisesapi.typelist({orderby:'r_main.id'},(typelist)=>{ 
-      this.Base.setMyData({typelist,nowid:typelist[0].id})
-   })
 
     this.Base.setMyData({
       order: "A"
@@ -44,7 +64,21 @@ class Content extends AppBase {
   bindorder(e) { 
     var nowidx = e.currentTarget.id;
     var nowid= e.currentTarget.dataset.id;
-    this.Base.setMyData({nowidx: nowidx,nowid})
+    this.Base.setMyData({nowidx: nowidx,nowid});
+
+    var list = this.Base.getMyData().info.periphery;
+    var markers=[];
+    for(var i=0;i<list.length;i++){
+      if(list[i].type_id=nowid){
+        markers.push({
+          id:list[i].id,
+          title:list[i].name,
+          latitude: list[i].lat,
+          longitude: list[i].lng
+        });
+      }
+    }
+    this.Base.setMyData({ markers});
   }
 
   guwen() {
