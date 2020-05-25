@@ -57,3 +57,44 @@ view{
   line-height: 48rpx; 
   border-radius: 4rpx;
 }
+
+.width-76 {
+  width: 66rpx;
+}
+.piao {
+  position: relative;
+}
+
+.tiao { 
+  background: #EEEEEE;
+  height: 10rpx;
+  border-radius: 10rpx;
+}
+
+.tiao2 {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  background: #FFB98B;
+  height: 10rpx;
+  border-radius: 10rpx;
+}
+
+.width-224 {
+  width: 200rpx;
+}
+.chang { 
+  background: #EEEEEE;
+  height: 10rpx;
+  border-radius: 10rpx;
+}
+
+.chang2 {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  background: #FFB98B;
+  height: 10rpx;
+  border-radius: 10rpx;
+}
+ 

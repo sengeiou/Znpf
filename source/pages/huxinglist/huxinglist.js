@@ -18,7 +18,7 @@ class Content extends AppBase {
   }
   onLoad(options) {
     this.Base.Page = this;
-    // options.id=1;
+    // options.id = 4;
     super.onLoad(options);
     this.Base.setMyData({
       nowidx: 0
@@ -30,27 +30,29 @@ class Content extends AppBase {
     var premisesapi = new PremisesApi();
     var areatypelist = [];
     premisesapi.info({
-      id: 1
+      id: this.Base.options.id
     }, (info) => {
-      var housing=info.housing;
-      var typelist=[];
-      for(var i=0;i<housing.length-1;i++){
-        
-         if(typelist.indexOf(housing[i]) == -1){
+      var housing = info.housing;
+      var typelist = [];
+      for (var i = 0; i < housing.length; i++) {
+
+        if (typelist.indexOf(housing[i]) == -1) {
           typelist.push({
-            id:housing[i].areatype_id,
-            name:housing[i].areatype_name
+            id: housing[i].areatype_id,
+            name: housing[i].areatype_name
           })
-         }
-         
+        }
+
       }
 
-        this.Base.setMyData({
-          info,typeid:info.housing[0].areatype_id,typelist
-        })
-        this.housing();
+      this.Base.setMyData({
+        info,
+        typeid: info.housing[0].areatype_id,
+        typelist
+      })
+      this.housing();
     })
-  
+
   }
 
   housing(e) {
@@ -59,8 +61,14 @@ class Content extends AppBase {
     var premisesapi = new PremisesApi();
 
     premisesapi.housinglist({
-      areatype_id: typeid
+      areatype_id: typeid,
+      premises_id: this.Base.options.id
     }, (housinglist) => {
+
+      for (var i = 0; i < housinglist.length; i++) {
+        housinglist[i].grade = new Number(housinglist[i].grade).toFixed(1);
+      }
+
       this.Base.setMyData({
         housinglist
       })

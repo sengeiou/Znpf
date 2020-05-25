@@ -3,7 +3,13 @@
 	<view slot="content" class="txt-bold" style="color:#161616;">楼盘动态</view>
 </cu-custom>
 
- 
+
+<view class="flex-row flex-center flex-wrap padding-30">
+
+<view class="label2 h6 txt-blue">全部动态{{info.zixun.length}}</view>
+
+</view>
+
 <view class="grayblock"></view>
 <view class="padding-30">
 

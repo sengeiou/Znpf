@@ -190,10 +190,12 @@
 			<view class="txt-gray" style="width:144rpx">预 售 证：</view>
 			<view class="margin-left-20 flex-1">{{item.name}}</view>
 		</view>
+
 		<view class="flex-row flex-center margin-top-20">
 			<view class="txt-gray" style="width:144rpx">发证时间：</view>
 			<view class="margin-left-20 flex-1">{{item.time}}</view>
 		</view>
+
 		<view class="flex-row flex-center margin-top-20">
 			<view class="txt-gray" style="width:144rpx">容 积 率：</view>
 			<view class="margin-left-20 flex-1">{{item.rongjilv}}</view>

@@ -631,3 +631,29 @@ button[disabled][type=primary] {
   width: 32rpx;
   margin-top: 10rpx;
 }
+
+
+.starbox {
+  width: 180rpx;
+  position: relative;
+  display: inline-block; 
+  overflow: hidden;
+}
+
+.stars {
+  position: relative;
+  top: 0;
+  left: 0; 
+  overflow: hidden;
+}
+.ims {
+  float: left;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.stars2 { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}

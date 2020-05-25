@@ -20,11 +20,32 @@
 			<view class="txt-bold h4 txt-black">{{item.name}}</view>
 			<view class="margin-top-10">实际套内面积:{{item.actual_use_area}}</view>
 			<view class="margin-top-10">实际得房率:{{item.get_rate}}</view>
-			<view class="margin-top-10">评级:4.0</view>
 
-			<view class="flex-row flex-center flex-wrap ">
+			<view class="flex-row flex-center margin-top-10">
+				<view class="">评级:</view>
 
-				<view class="label text-center margin-right-10 h7 margin-top-10" wx:for='{{6}}'>双阳台</view>
+
+				<view class="starbox text-right   margin-top-5  margin-left-10">
+					<view class="stars" style="width: 100%;">
+						<view class=" ims">
+							<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+						</view>
+					</view>
+					<view class="stars2" style="width: {{(item.grade/5)*100}}%">
+						<view class="ims">
+							<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+						</view>
+					</view>
+				</view>
+
+
+				<view class="txt-blue margin-left-10 ">{{item.grade}}</view>
+
+			</view>
+
+			<view class="flex-row flex-center flex-wrap margin-top-10">
+
+				<view class="label text-center margin-right-10 h7 margin-top-10" wx:for='{{item.label}}'>{{item.name}}</view>
 
 			</view>
 		</view>

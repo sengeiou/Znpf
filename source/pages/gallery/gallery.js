@@ -34,6 +34,9 @@ class Content extends AppBase {
       id: this.Base.options.id
     }, (info) => {
 
+
+
+
       var list = info.gallery;
       var a = 0;
       var b = 0;
@@ -60,6 +63,12 @@ class Content extends AppBase {
         c,
         d
       });
+    })
+
+    premisesapi.huxinfenlei({
+      premises_id: this.Base.options.id
+    }, (fllist) => {
+    this.Base.setMyData({fllist})
     })
 
   }

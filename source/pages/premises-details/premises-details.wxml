@@ -208,8 +208,7 @@
 				<view class="chaochu2">{{item.content}}</view>
 
 				<view class='flex-row flex-center margin-top-10 margin-top-20'>
-					<view class="label2 h6 margin-left-10 text-center">销控信息</view>
-					<view class="label2 h6 margin-left-10 text-center">楼盘咨询</view>
+					<view class="label2 h6 margin-left-10 text-center">{{item.biaoqian_name}}</view> 
 					<view class="flex-1"></view>
 					<view class="txt-gray h6">{{item.created_date}}</view>
 				</view>
@@ -245,60 +244,87 @@
 			<view class="flex-row   margin-top">
 
 				<view class="leftblock text-center padding-20">
-					<view class="txt-bold h4 txt-purple">3.4</view>
+					<view class="txt-bold h4 txt-purple">{{info.pingji}}</view>
 					<view class="h5">配套评级</view>
-					<view class="h5 txt-purple margin-top-20">河北区第13</view>
+					<view class="h5 txt-purple margin-top-20">{{info.rank}}</view>
 					<view class="h5">查看地图</view>
 				</view>
+
+
 
 				<view class=" margin-left-20">
 
 					<view class="flex-row flex-center">
 						<view>学校</view>
-						<view class="flex-row flex-center margin-left-20">
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+							<view class="stars" style="width: 100%;">
+								<view class=" ims">
+									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+									 
+								</view>
+							</view>
+							<view class="stars2" style="width: {{(info.school/5)*100}}%">
+								<view class="ims">
+									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+								 
+								</view>
+							</view>
 						</view>
-						<view class="txt-purple margin-left-20">5.0</view>
+						<view class="txt-purple margin-left-20">{{info.school}}</view>
 					</view>
+
 
 					<view class="flex-row flex-center margin-top-10">
 						<view>商场</view>
-						<view class="flex-row flex-center margin-left-20">
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+							<view class="stars" style="width: 100%;">
+								<view class=" ims">
+									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+								</view>
+							</view>
+							<view class="stars2" style="width: {{(info.supermarket/5)*100}}%">
+								<view class="ims">
+									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+
+								</view>
+							</view>
 						</view>
-						<view class="txt-purple margin-left-20">5.0</view>
+						<view class="txt-purple margin-left-10">{{info.supermarket}}</view>
 					</view>
 
 					<view class="flex-row flex-center margin-top-10">
 						<view>医院</view>
-						<view class="flex-row flex-center margin-left-20">
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+							<view class="stars" style="width: 100%;">
+								<view class=" ims">
+									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+								</view>
+							</view>
+							<view class="stars2" style="width: {{(info.hospital/5)*100}}%">
+								<view class="ims">
+									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+
+								</view>
+							</view>
 						</view>
-						<view class="txt-purple margin-left-20">5.0</view>
+						<view class="txt-purple margin-left-20">{{info.hospital}}</view>
 					</view>
 
 					<view class="flex-row flex-center margin-top-10">
 						<view>景观</view>
-						<view class="flex-row flex-center margin-left-20">
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+						<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+							<view class="stars" style="width: 100%;">
+								<view class=" ims">
+									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+								</view>
+							</view>
+							<view class="stars2" style="width: {{(info.jingguan/5)*100}}%">
+								<view class="ims">
+									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+								</view>
+							</view>
 						</view>
-						<view class="txt-purple margin-left-20">5.0</view>
+						<view class="txt-purple margin-left-20">{{info.jingguan}}</view>
 					</view>
 
 				</view>
@@ -364,7 +390,7 @@
 				<view class="h6 txt-gray margin-left-20">查看全部</view>
 				<image src="{{uploadpath}}resource/{{res.right}}" class="icon"></image>
 			</view>
- 
+
 
 			<view class="flex-row  margin-top" wx:for='{{info.otherprice}}' wx:key='o'>
 				<view class="loupanname text-right h5">{{item.name}}</view>

@@ -60,36 +60,69 @@
 
 			<view class="flex-row flex-center">
 				<view class="h5">景观视野</view>
-				<view class="flex-row flex-center margin-left-20">
-					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
-					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+
+				<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+					<view class="stars" style="width: 100%;">
+						<view class=" ims">
+							<image src="{{uploadpath}}resource/{{res.star2}}" class="icon-14 "></image>
+							<image src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  margin-left-10  "></image>
+							<image src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  margin-left-10  "></image>
+							<image src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  margin-left-10  "></image>
+							<image src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  margin-left-10  "></image>
+						</view>
+					</view>
+					<view class="stars2" style="width: {{(info.jinguan/5)*100}}%">
+						<view class="ims">
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 "></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14  margin-left-10  "></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14  margin-left-10  "></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14  margin-left-10  "></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14  margin-left-10  "></image>
+						</view>
+					</view>
 				</view>
+
 				<view class="txt-purple margin-left-20">{{info.jinguan}}</view>
 			</view>
 
 			<view class="flex-row flex-center margin-top-10">
 				<view class="h5">道路影响</view>
-				<view class="flex-row flex-center margin-left-20">
-					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
-					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+				<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+					<view class="stars" style="width: 100%;">
+						<view class=" ims">
+							<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}} "></image>
+						</view>
+					</view>
+					<view class="stars2" style="width: {{(info.daolu/5)*100}}%">
+						<view class="ims">
+							<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+						</view>
+					</view>
 				</view>
 				<view class="txt-purple margin-left-20">{{info.daolu}}</view>
 			</view>
 
 			<view class="flex-row flex-center margin-top-10">
 				<view class="h5">其他细节</view>
-				<view class="flex-row flex-center margin-left-20">
-					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
-					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-					<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+				<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+					<view class="stars" style="width: 100%;">
+						<view class=" ims">
+							<image src="{{uploadpath}}resource/{{res.star2}}" class="icon-14 "></image>
+							<image src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  margin-left-10  "></image>
+							<image src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  margin-left-10  "></image>
+							<image src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  margin-left-10  "></image>
+							<image src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  margin-left-10  "></image>
+						</view>
+					</view>
+					<view class="stars2" style="width: {{(info.qita/5)*100}}%">
+						<view class="ims">
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 "></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14  margin-left-10  "></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14  margin-left-10  "></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14  margin-left-10  "></image>
+							<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14  margin-left-10  "></image>
+						</view>
+					</view>
 				</view>
 				<view class="txt-purple margin-left-20">{{info.qita}}</view>
 			</view>
@@ -179,22 +212,68 @@
 
 	<view class="flex-row flex-center margin-top-20">
 		<view class="txt-gray" style="width:224rpx">总开间：</view>
-		<view class="margin-left-20">{{info.total_width}}</view>
+
+		<view class="margin-left-20 flex-1" style="width:214rpx">{{info.total_width}}</view>
+
+		<view class="flex-row flex-center" style=" ">
+			<view class=" h6 text-left">{{info.kjpinfen_name}}</view>
+
+			<view class="piao flex-1 margin-left-10 margin-right-20">
+				<view class="chang width-224 "></view>
+				<view class="chang2  " style="width:{{(info.kjpinfen/100)*200}}rpx"></view>
+			</view>
+		</view>
+
 	</view>
 
 	<view class="flex-row flex-center margin-top-20">
 		<view class="txt-gray" style="width:224rpx">总进深：</view>
-		<view class="margin-left-20">{{info.total_length}}</view>
+		<view class="margin-left-20" style="width:214rpx">{{info.total_length}}</view>
+
+ 
+		<view class="flex-row flex-center" style=" ">
+			<view class=" h6 text-left">{{info.jspinfen_name}}</view>
+
+			<view class="piao flex-1 margin-left-10 margin-right-20">
+				<view class="chang width-224 "></view>
+				<view class="chang2  " style="width:{{(info.jspinfen/100)*200}}rpx"></view>
+			</view>
+		</view>
+
 	</view>
 
 	<view class="flex-row flex-center margin-top-20">
 		<view class="txt-gray" style="width:224rpx">朝南开间数：</view>
-		<view class="margin-left-20">{{info.southroom_number}}</view>
+		<view class="margin-left-20"style="width:214rpx">{{info.southroom_number}}</view>
+
+ 
+
+		<view class="flex-row flex-center" style=" ">
+			<view class=" h6 text-left">{{info.kjs_name}}</view>
+
+			<view class="piao flex-1 margin-left-10 margin-right-20">
+				<view class="chang width-224 "></view>
+				<view class="chang2  " style="width:{{(info.kjs/100)*200}}rpx"></view>
+			</view>
+		</view>
+
+
 	</view>
 
 	<view class="flex-row flex-center margin-top-20">
 		<view class="txt-gray" style="width:224rpx">主要采光面：</view>
-		<view class="margin-left-20">{{info.lighting_surface}}</view>
+		<view class="margin-left-20"style="width:214rpx">{{info.lighting_surface}}</view>
+ 
+		<view class="flex-row flex-center" style=" ">
+			<view class=" h6 text-left">{{info.cgm_name}}</view>
+
+			<view class="piao flex-1 margin-left-10 margin-right-20">
+				<view class="chang width-224 "></view>
+				<view class="chang2  " style="width:{{(info.cgm/100)*200}}rpx"></view>
+			</view>
+		</view>
+
+
 	</view>
 
 </view>
@@ -207,34 +286,45 @@
 
 	<view class="flex-row flex-center bg5" style="padding:10rpx 0 10rpx 0">
 		<view class="flex-1"></view>
-		<view class="txt-gray h6 text-left" style="width:100rpx">房间名称</view>
+		<view class=" h6 text-left" style="width:100rpx">房间名称</view>
 		<view class="flex-1"></view>
-		<view class="txt-gray h6 text-left" style="width:100rpx">面积(m2)</view>
+		<view class=" h6 text-left" style="width:100rpx">面积(m2)</view>
 		<view class="flex-1"></view>
-		<view class="txt-gray h6 text-left" style="width:100rpx">开间(米)</view>
+		<view class=" h6 text-left" style="width:100rpx">开间(米)</view>
 		<view class="flex-1"></view>
-		<view class="txt-gray h6 text-left" style="width:100rpx">进深(米)</view>
+		<view class=" h6 text-left" style="width:100rpx">进深(米)</view>
 		<view class="flex-1"></view>
-		<view class="txt-gray h6 text-left" style=" ">空间体验</view>
+		<view class=" h6 text-left" style=" ">空间体验</view>
 		<view class="flex-1"></view>
 	</view>
 
 	<view wx:for='{{info.evaluating}}' wx:key='k' wx:for-index='idx' class="flex-row flex-center  {{idx%2==0?'':'bg6'}}" style="padding:14rpx 0 14rpx 0">
 		<view class="flex-1"></view>
-		<view class="txt-gray h6 text-left" style="width:100rpx">{{item.name}}</view>
+		<view class=" h6 text-left" style="width:100rpx">{{item.name}}</view>
 		<view class="flex-1"></view>
-		<view class="txt-gray h6 text-left" style="width:100rpx">{{item.mianji}}</view>
+		<view class=" h6 text-left" style="width:100rpx">{{item.mianji}}</view>
 		<view class="flex-1"></view>
-		<view class="txt-gray h6 text-left" style="width:100rpx">{{item.kaijian}}</view>
+		<view class=" h6 text-left" style="width:100rpx">{{item.kaijian}}</view>
 		<view class="flex-1"></view>
-		<view class="txt-gray h6 text-left" style="width:100rpx">{{item.jinshen}}</view>
+		<view class=" h6 text-left" style="width:100rpx">{{item.jinshen}}</view>
 		<view class="flex-1"></view>
-		<view class="txt-gray h6 text-left" style="width:100rpx" wx:if='{{item.konjian==100}}'>豪华</view>
-		<view class="txt-gray h6 text-left" style="width:100rpx" wx:if='{{item.konjian==75}}'>较大</view>
-		<view class="txt-gray h6 text-left" style="width:100rpx" wx:if='{{item.konjian==50}}'>中等</view>
-		<view class="txt-gray h6 text-left" style="width:100rpx" wx:if='{{item.konjian==25}}'>偏小</view>
-		<view class="flex-1"></view>
+
+		<view class="flex-row flex-center" style=" ">
+			<view class=" h6 text-left" wx:if='{{item.konjian==100}}'>豪华</view>
+			<view class=" h6 text-left" wx:if='{{item.konjian==75}}'>较大</view>
+			<view class=" h6 text-left" wx:if='{{item.konjian==50}}'>中等</view>
+			<view class=" h6 text-left" wx:if='{{item.konjian==25}}'>偏小</view>
+
+			<view class="piao flex-1 margin-left-10 margin-right-20">
+				<view class="tiao width-76 "></view>
+				<view class="tiao2  " style="width:{{(item.konjian/100)*66}}rpx"></view>
+			</view>
+		</view>
+
+		<!-- <view class="flex-1"></view> -->
 	</view>
+
+
 
 	<view class="padding-30">
 		<view class="h6" style="color:#CCCCCC">注释：豪华>较大>中等>偏小</view>

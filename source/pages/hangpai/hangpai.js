@@ -10,7 +10,7 @@ class Content extends AppBase {
   }
   onLoad(options) {
     this.Base.Page = this;
-    //options.id=5;
+    // options.id=4;
     super.onLoad(options);
     this.Base.setMyData({nowidx:0})
   }
@@ -19,6 +19,13 @@ class Content extends AppBase {
     var premisesapi=new PremisesApi();
 
     premisesapi.entrancelist({premises_id:this.Base.options.id,orderby:'r_main.id'},(entrancelist)=>{ 
+ 
+      for (var i = 0; i < entrancelist.length; i++) {
+        entrancelist[i].pingji = new Number(entrancelist[i].pingji).toFixed(1);
+        entrancelist[i].jinguan = new Number(entrancelist[i].jinguan).toFixed(1);
+        entrancelist[i].daolu = new Number(entrancelist[i].daolu).toFixed(1);
+        entrancelist[i].qita = new Number(entrancelist[i].qita).toFixed(1);
+      }
        this.Base.setMyData({entrancelist})
     })
 

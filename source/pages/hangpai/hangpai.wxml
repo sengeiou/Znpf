@@ -5,7 +5,7 @@
 
 <view class='padding-30 '>
 	<scroll-view scroll-x class="scroll " style=" width:100%">
-		<view class='' style="width:150rpx;display:inline-block"  bindtap='bindorder' id="{{idx}}" wx:for='{{entrancelist}}' wx:for-index='idx' wx:key='e'>
+		<view class='' style="width:150rpx;display:inline-block" bindtap='bindorder' id="{{idx}}" wx:for='{{entrancelist}}' wx:for-index='idx' wx:key='e'>
 			<view class="flex-row flex-column">
 				<view class='h5 txt-bold flex-1  {{nowidx==idx?"":"txt-gray opa8"}}'>{{item.name}}</view>
 				<view class=' order {{nowidx==idx?"bg-purple":"bg-white"}}'></view>
@@ -27,8 +27,9 @@
 		</video>
 
 		<scroll-view scroll-x class="scroll margin-top-20" style="width:100%">
-			<image wx:for='{{3}}' style=" display:inline-block" src="{{uploadpath}}resource/{{res.fz}}" class="imgs margin-right-20"></image>
+			<image bindtap="viewPhoto" id="{{uploadpath}}hanpai/{{item.img}}" wx:for='{{item.hangpaitu}}' style=" display:inline-block" src="{{uploadpath}}hanpai/{{item.img}}" class="imgs margin-right-20"></image>
 		</scroll-view>
+
 	</view>
 
 	<view class="grayblock"></view>
@@ -41,7 +42,7 @@
 		<view class="flex-row   margin-top">
 
 			<view class="leftblock text-center padding-20">
-				<view class="txt-bold h4 txt-purple">3.4</view>
+				<view class="txt-bold h4 txt-purple">{{item.pingji}}</view>
 				<view class="h5 margin-top-10">知鸟评级</view>
 			</view>
 
@@ -49,38 +50,53 @@
 
 				<view class="flex-row flex-center">
 					<view class="h5">景观视野</view>
-					<view class="flex-row flex-center margin-left-20">
-						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
-						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+					<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+						<view class="stars" style="width: 100%;">
+							<view class=" ims">
+								<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+							</view>
+						</view>
+						<view class="stars2" style="width: {{(item.jinguan/5)*100}}%">
+							<view class="ims">
+								<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+							</view>
+						</view>
 					</view>
-					<view class="txt-purple margin-left-20">5.0</view>
+					<view class="txt-purple margin-left-20">{{item.jinguan}}</view>
 				</view>
 
 				<view class="flex-row flex-center margin-top-10">
 					<view class="h5">道路影响</view>
-					<view class="flex-row flex-center margin-left-20">
-						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
-						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+					<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+						<view class="stars" style="width: 100%;">
+							<view class=" ims">
+								<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+							</view>
+						</view>
+						<view class="stars2" style="width: {{(item.daolu/5)*100}}%">
+							<view class="ims">
+								<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+							</view>
+						</view>
 					</view>
-					<view class="txt-purple margin-left-20">5.0</view>
+					<view class="txt-purple margin-left-20">{{item.daolu}}</view>
 				</view>
 
 				<view class="flex-row flex-center margin-top-10">
 					<view class="h5">其他细节</view>
-					<view class="flex-row flex-center margin-left-20">
-						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14"></image>
-						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
-						<image src="{{uploadpath}}resource/{{res.star}}" class="icon-14 margin-left-10"></image>
+					<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+						<view class="stars" style="width: 100%;">
+							<view class=" ims">
+								<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+							</view>
+						</view>
+						<view class="stars2" style="width: {{(item.qita/5)*100}}%">
+							<view class="ims">
+								<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+							</view>
+						</view>
 					</view>
-					<view class="txt-purple margin-left-20">5.0</view>
+					<view class="txt-purple margin-left-20">{{item.qita}}</view>
 				</view>
 
 			</view>

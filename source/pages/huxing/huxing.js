@@ -20,7 +20,7 @@ class Content extends AppBase {
   
   onLoad(options) {
     this.Base.Page = this;
-    // options.id=6;
+     //options.id=6;
     super.onLoad(options);
     this.Base.setMyData({
       nowidx: 0
@@ -34,9 +34,16 @@ class Content extends AppBase {
     premisesapi.housinginfo({
       id: this.Base.options.id
     }, (info) => {
+
+      info.pingji=new Number(info.pingji).toFixed(1);
+      info.jinguan=new Number(info.jinguan).toFixed(1);  
+      info.daolu=new Number(info.daolu).toFixed(1);  
+      info.qita=new Number(info.qita).toFixed(1); 
+
         this.Base.setMyData({
           info
-        }) 
+        })
+
     })
   
   }

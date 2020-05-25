@@ -12,7 +12,7 @@ class Content extends AppBase {
   }
   onLoad(options) {
     this.Base.Page = this;
-   //options.id=1;
+     options.id=1;
     super.onLoad(options);
     this.Base.setMyData({nowidx:0})
   }
@@ -27,6 +27,13 @@ class Content extends AppBase {
        for(var i=0;i<history.length;i++){
         history[i].name=history[i].name.slice(0,4);
        }
+
+       info.pingji=new Number(info.pingji).toFixed(1);
+       info.school=new Number(info.school).toFixed(1); 
+       info.supermarket=new Number(info.supermarket).toFixed(1); 
+       info.hospital=new Number(info.hospital).toFixed(1);  
+       info.jingguan=new Number(info.jingguan).toFixed(1); 
+
        this.Base.setMyData({info})
     })
 

@@ -45,8 +45,9 @@
 <view class="padding-30">
 	<view class="txt-bold">户型</view>
 	<view class="flex-row flex-center flex-wrap margin-top-20">
-		<view wx:for='{{info.gallery}}' wx:key='s' wx:if='{{item.type=="B"}}'>
-			<image src="{{uploadpath}}gallery/{{item.picture}}" class="icon-80 margin-right-10 margin-top-20"></image>
+		<view wx:for='{{fllist}}' wx:key='s'>
+			<view class="h5 txt-gray">{{item.name}}</view>
+			<image wx:for='{{item.tuku}}' src="{{uploadpath}}huxin/{{item.img}}" class="icon-80 margin-right-10 margin-top-20"></image>
 		</view>
 	</view>
 </view>
