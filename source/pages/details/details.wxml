@@ -185,19 +185,19 @@
 <view class="padding-30 bg-white margin-top-20">
 	<view class="txt-bold h4-5">预售许可证</view>
 
-	<view class="flex-row flex-center margin-top">
-		<view class="txt-gray" style="width:144rpx">预 售 证：</view>
-		<view class="margin-left-20">预 售 证</view>
-	</view>
-
-	<view class="flex-row flex-center margin-top-20">
-		<view class="txt-gray" style="width:144rpx">发证时间：</view>
-		<view class="margin-left-20">发证时间</view>
-	</view>
-
-	<view class="flex-row flex-center margin-top-20">
-		<view class="txt-gray" style="width:144rpx">容 积 率：</view>
-		<view class="margin-left-20">容 积 率</view>
+	<view wx:for='{{info.licence}}' wx:key='k'>
+		<view class="flex-row flex-center margin-top">
+			<view class="txt-gray" style="width:144rpx">预 售 证：</view>
+			<view class="margin-left-20 flex-1">{{item.name}}</view>
+		</view>
+		<view class="flex-row flex-center margin-top-20">
+			<view class="txt-gray" style="width:144rpx">发证时间：</view>
+			<view class="margin-left-20 flex-1">{{item.time}}</view>
+		</view>
+		<view class="flex-row flex-center margin-top-20">
+			<view class="txt-gray" style="width:144rpx">容 积 率：</view>
+			<view class="margin-left-20 flex-1">{{item.rongjilv}}</view>
+		</view>
 	</view>
 
 
@@ -213,7 +213,7 @@
 
 		<button open-type="share" class="clear-button">
 			<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
-	  </button>
+		</button>
 
 	</view>
 </view>

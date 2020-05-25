@@ -40,7 +40,6 @@ class Content extends AppBase {
 
   }
 
-
   bindorder(e) { 
     var nowidx = e.currentTarget.id;
     var nowid= e.currentTarget.dataset.id;
