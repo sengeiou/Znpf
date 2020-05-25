@@ -358,12 +358,8 @@
 					</view>
 				</scroll-view>
 			</view>
-
-
-			<view class="map txt-white text-center">
-				地图
-			</view>
-
+      <map class="map" latitude="{{info.lat}}" longitude="{{info.lng}}" show-location="{{true}}" markers="{{markers}}" >
+      </map>
 			<view class="" style="padding:10rpx 30rpx 30rpx 30rpx">
 				<view class="margin-top-20 " wx:for-index='idxs' wx:for='{{info.periphery}}' wx:key='p' wx:if='{{item.type_id==nowid}}'>
 					<view class="flex-row flex-center">

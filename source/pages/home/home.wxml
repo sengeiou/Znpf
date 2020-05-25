@@ -47,12 +47,12 @@
 			<view class="f-22 margin-top-16" style="color:#777777">二手房</view>
 		</view>
 		<view class="flex-2"></view>
-		<view class="flex-column  width-88 flex-row ">
+		<view bindtap="gomap"  class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.banjinzhaofan}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">半径找房</view>
 		</view>
 		<view class="flex-2"></view>
-		<view class="flex-column  width-88 flex-row ">
+		<view bindtap="gomap" class="flex-column  width-88 flex-row ">
 			<image src='{{uploadpath}}resource/{{res.dituzhaofang}}' class="icon-30"></image>
 			<view class="f-22 margin-top-16" style="color:#777777">地图找房</view>
 		</view>
@@ -270,7 +270,7 @@
 	<view class="f-34 txt-bold padding-30" style="color:#161616">最新测评文章</view>
 
 
-	<view wx:for="{{wenzhan}}" wx:key="k" style="border-bottom:1rpx solid #F7F8FA" wx:key="k" class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30">
+	<view wx:for="{{wenzhan}}" wx:key="k" style="border-bottom:1rpx solid #F7F8FA" wx:key="k" class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30" bindtap="goarticle" data-iszn="{{item.iszn_value}}" data-url="{{item.url}}" >
 
 		<image src='{{uploadpath}}article/{{item.image}}' class="img_1"></image>
 

@@ -97,10 +97,8 @@ Page {
 }
 
 .map {
-  width: 100%;
+  width: 100vw;
   height: 480rpx;
-  background: #D3EBFE;
-  opacity: 1;
 }
 
 .priceblock {

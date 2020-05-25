@@ -83,12 +83,19 @@ class Content extends AppBase {
     })
 
   }
+
+  gomap(){
+    wx.navigateTo({
+      url: '/pages/map/map',
+    })
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.fanyuanlist=content.fanyuanlist;
-body.gotoloupan=content.gotoloupan;
-body.pincelist=content.pincelist;
+body.gotoloupan = content.gotoloupan; 
+body.pincelist = content.pincelist;
+body.gomap = content.gomap;
 Page(body)

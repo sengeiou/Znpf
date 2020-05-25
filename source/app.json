@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/map/map",
+    "pages/article/article",
     "pages/auth/auth",
     "pages/loupan/loupan",
     "pages/wode/wode",

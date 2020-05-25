@@ -1,0 +1,5 @@
+<!--pages/map/map.wxml-->
+<cu-custom isCustom="{{true}}" bgColor="bg-white">
+	<view slot="content" class="txt-bold" style="color:#161616;">最新评测</view>
+</cu-custom>
+<map scale="11" style="width:100vw;height:100vh" show-location="{{true}}" longitude="{{mylng}}" markers="{{markers}}" latitude="{{mylat}}" circles="{{circlelist}}" bindcallouttap="callouttap"></map>
