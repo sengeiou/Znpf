@@ -140,9 +140,10 @@ export class AppBase {
       tishi2: base.tishi2,
       tishi3: base.tishi3,
       clock: base.clock,
-      close: base.close,
+      close: base.close, 
       BackPage: base.BackPage,
-      toHome: base.toHome
+      toHome: base.toHome,
+      goarticle: base.goarticle
     }
   }
   log() {
@@ -1318,6 +1319,20 @@ export class AppBase {
       url: '/pages/' + name + '/' + name + '?id=' + id
     })
 
+  }
+
+  goarticle(e){
+     //bindtap="goarticle" data-iszn="{{item.iszn_value}}" data-url="{{item.url}}" 
+     console.log(e);
+    var iszn = e.currentTarget.dataset.iszn;
+    var url = e.currentTarget.dataset.url;
+    if(iszn!="Y"){
+      url ="https://uat6.helpfooter.com/articleload/index.php?url="+url;
+    }
+    url = encodeURIComponent(url);
+    wx.navigateTo({
+      url: '/pages/article/article?url=' + url,
+    })
   }
 
 }
