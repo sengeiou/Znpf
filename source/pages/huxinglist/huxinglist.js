@@ -53,6 +53,14 @@ class Content extends AppBase {
       this.housing();
     })
 
+    premisesapi.shoucanglist({premises_id:this.Base.options.id},(shoucanglist)=>{
+      if(shoucanglist!=null&&shoucanglist!=undefined&&shoucanglist!=""){
+         this.Base.setMyData({sc:'A'})
+      }else{
+        this.Base.setMyData({sc:'B'})
+      }
+    })
+
   }
 
   housing(e) {

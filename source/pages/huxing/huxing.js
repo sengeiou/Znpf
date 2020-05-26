@@ -20,7 +20,7 @@ class Content extends AppBase {
   
   onLoad(options) {
     this.Base.Page = this;
-     //options.id=6;
+    //options.id=6;
     super.onLoad(options);
     this.Base.setMyData({
       nowidx: 0
@@ -35,16 +35,43 @@ class Content extends AppBase {
       id: this.Base.options.id
     }, (info) => {
 
+
+      premisesapi.shoucanglist({premises_id:info.premises_id},(shoucanglist)=>{
+        if(shoucanglist!=null&&shoucanglist!=undefined&&shoucanglist!=""){
+           this.Base.setMyData({sc:'A'})
+        }else{
+          this.Base.setMyData({sc:'B'})
+        }
+      })
+
+      var evaluating=info.evaluating;
+      var shushi=0;
+      var buzu=0;
+      var zon=0
+      for(var i=0;i<evaluating.length;i++){
+        var xijie=evaluating[i].xijie;
+         for(var j=0;j<xijie.length;j++){
+            if(xijie[j].qufen=="N"){
+              buzu++
+            }else{
+              shushi++
+            }
+            zon++
+         }
+      }
+
       info.pingji=new Number(info.pingji).toFixed(1);
       info.jinguan=new Number(info.jinguan).toFixed(1);  
       info.daolu=new Number(info.daolu).toFixed(1);  
       info.qita=new Number(info.qita).toFixed(1); 
 
         this.Base.setMyData({
-          info
+          info,shushi,buzu,zon
         })
 
     })
+
+    
   
   }
 

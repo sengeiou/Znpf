@@ -230,7 +230,7 @@
 		<view class="txt-gray" style="width:224rpx">总进深：</view>
 		<view class="margin-left-20" style="width:214rpx">{{info.total_length}}</view>
 
- 
+
 		<view class="flex-row flex-center" style=" ">
 			<view class=" h6 text-left">{{info.jspinfen_name}}</view>
 
@@ -244,9 +244,9 @@
 
 	<view class="flex-row flex-center margin-top-20">
 		<view class="txt-gray" style="width:224rpx">朝南开间数：</view>
-		<view class="margin-left-20"style="width:214rpx">{{info.southroom_number}}</view>
+		<view class="margin-left-20" style="width:214rpx">{{info.southroom_number}}</view>
 
- 
+
 
 		<view class="flex-row flex-center" style=" ">
 			<view class=" h6 text-left">{{info.kjs_name}}</view>
@@ -262,8 +262,8 @@
 
 	<view class="flex-row flex-center margin-top-20">
 		<view class="txt-gray" style="width:224rpx">主要采光面：</view>
-		<view class="margin-left-20"style="width:214rpx">{{info.lighting_surface}}</view>
- 
+		<view class="margin-left-20" style="width:214rpx">{{info.lighting_surface}}</view>
+
 		<view class="flex-row flex-center" style=" ">
 			<view class=" h6 text-left">{{info.cgm_name}}</view>
 
@@ -342,12 +342,30 @@
 
 	<view class="flex-row flex-center margin-top-30">
 		<view class="txt-zi" style="width:112rpx;">舒适合理</view>
-		<view class="margin-left-20 txt-zi" style="">22项</view>
+		<view class="margin-left-20 txt-zi" style="">{{shushi}}项</view>
+
+		<view class="flex-row flex-center flex-1 margin-left-10" style=" ">
+		 
+
+			<view class="piao flex-1  margin-right-20">
+				<view class="chang width-464 "></view>
+				<view class="chang2  " style="width:{{(shushi/zon)*424}}rpx"></view>
+			</view>
+		</view>
+
 	</view>
 
 	<view class="flex-row flex-center margin-top-30">
 		<view class="txt-purple txt-zi" style="width:112rpx;">略有不足</view>
-		<view class="margin-left-20 txt-zi" style="">2项</view>
+		<view class="margin-left-20 txt-zi" style="">{{buzu}}项</view>
+
+		<view class="flex-row flex-center flex-1 margin-left-10" style=" ">
+		 
+			<view class="piao flex-1  margin-right-20">
+				<view class="chang width-464 "></view>
+				<view class="chang2  " style="width:{{(buzu/zon)*424}}rpx"></view>
+			</view>
+		</view>
 	</view>
 
 	<view class="margin-top-30 flex-row" wx:for='{{info.evaluating}}' wx:key='k'>
@@ -368,13 +386,16 @@
 
 
 <view style="height:150rpx"></view>
-
 <view class="under_block bg-white">
 	<view class="flex-row flex-center paddings">
-		<image src="{{uploadpath}}resource/{{res.bushoucang}}" class="icon-25"></image>
+		<image src="{{uploadpath}}resource/{{res.shoucang}}" wx:if='{{sc=="A"}}' class="icon-25" id="{{info.premises_id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
+		<image src="{{uploadpath}}resource/{{res.bushoucang}}" wx:if='{{sc=="B"}}' class="icon-25" id="{{info.premises_id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
 		<view class="flex-1"></view>
-		<view class="left_one text-center bg1 h5">联系客服</view>
-
-		<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
+		<button class="clear-button" open-type='contact'>
+			<view class="left_one text-center bg1 h5">联系客服</view>
+		</button>
+		<button open-type="share" class="clear-button">
+			<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
+		</button>
 	</view>
 </view>

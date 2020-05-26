@@ -20,6 +20,14 @@ class Content extends AppBase {
     premisesapi.info({id:this.Base.options.id},(info)=>{ 
        this.Base.setMyData({info})
     })
+ 
+    premisesapi.shoucanglist({premises_id:this.Base.options.id},(shoucanglist)=>{
+      if(shoucanglist!=null&&shoucanglist!=undefined&&shoucanglist!=""){
+         this.Base.setMyData({sc:'A'})
+      }else{
+        this.Base.setMyData({sc:'B'})
+      }
+    })
   }
 }
 var content = new Content();

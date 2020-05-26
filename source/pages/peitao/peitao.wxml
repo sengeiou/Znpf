@@ -33,11 +33,11 @@
 	</view>
 </view>
 
-		<view style="height:120rpx"></view>
-
+<view style="height:120rpx"></view>
 <view class="under_block bg-white">
 	<view class="flex-row flex-center paddings">
-		<image src="{{uploadpath}}resource/{{res.bushoucang}}" class="icon-25"></image>
+		<image src="{{uploadpath}}resource/{{res.shoucang}}" wx:if='{{sc=="A"}}' class="icon-25" id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
+		<image src="{{uploadpath}}resource/{{res.bushoucang}}" wx:if='{{sc=="B"}}' class="icon-25" id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
 		<view class="flex-1"></view>
 		<button class="clear-button" open-type='contact'>
 			<view class="left_one text-center bg1 h5">联系客服</view>
@@ -45,6 +45,5 @@
 		<button open-type="share" class="clear-button">
 			<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
 		</button>
-
 	</view>
 </view>

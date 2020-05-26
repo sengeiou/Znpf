@@ -12,7 +12,7 @@ class Content extends AppBase {
     this.Base.Page = this;
     // options.id=4;
     super.onLoad(options);
-    this.Base.setMyData({nowidx:0})
+    this.Base.setMyData({nowidx:0,premisesid:this.Base.options.id})
   }
   onMyShow() {
     var that = this;
@@ -27,6 +27,14 @@ class Content extends AppBase {
         entrancelist[i].qita = new Number(entrancelist[i].qita).toFixed(1);
       }
        this.Base.setMyData({entrancelist})
+    })
+
+    premisesapi.shoucanglist({premises_id:this.Base.options.id},(shoucanglist)=>{
+      if(shoucanglist!=null&&shoucanglist!=undefined&&shoucanglist!=""){
+         this.Base.setMyData({sc:'A'})
+      }else{
+        this.Base.setMyData({sc:'B'})
+      }
     })
 
   }

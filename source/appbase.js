@@ -18,6 +18,8 @@ import {
   WechatApi
 } from "apis/wechat.api";
 
+import { PremisesApi } from "apis/premises.api.js";
+
 export class AppBase {
   static BRANDAPPLE = 12;
   static QQMAPKEY = "IDVBZ-TSAKD-TXG43-H442I-74KVK-6LFF5";
@@ -136,6 +138,7 @@ export class AppBase {
       backtotop: base.backtotop,
       xuanzechenshi: base.xuanzechenshi,
       topage: base.topage,
+      shoucang:base.shoucang,
       tishi: base.tishi,
       tishi2: base.tishi2,
       tishi3: base.tishi3,
@@ -543,7 +546,7 @@ export class AppBase {
   }
 
   onMyShow() {
-    console.log("onMyShow");
+    console.log("onMyShow"); 
   }
   onHide() {
     console.log("onHide");
@@ -1216,16 +1219,7 @@ export class AppBase {
       duration: 300
     })
   }
-  topage(e) {
-    console.log(e);
-    //return;
-    var name = e.currentTarget.dataset.name;
-    var id = e.currentTarget.id;
-
-    wx.navigateTo({
-      url: '/pages/' + name + '/' + name + '?id=' + id
-    })
-  }
+ 
   tishi() {
     this.Base.setMyData({
       tishi: true
@@ -1320,6 +1314,28 @@ export class AppBase {
     })
 
   }
+
+
+  shoucang(e){
+    var premisesapi=new PremisesApi();
+    var id=e.currentTarget.id;
+    
+    premisesapi.shoucang({premises_id:id},ret=>{
+      console.log(ret);
+      if(ret.code==0){
+        this.Base.toast('收藏成功');
+      }else if(ret.code==1){
+        this.Base.toast('取消收藏');
+      }else{
+        this.Base.toast('操作失败');
+      }
+      
+      this.onMyShow();
+    })
+
+
+  }
+
 
   goarticle(e){
      //bindtap="goarticle" data-iszn="{{item.iszn_value}}" data-url="{{item.url}}" 
