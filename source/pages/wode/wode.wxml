@@ -14,7 +14,8 @@
         <button class='clear-button margin-left-10 margin-top-4 h6 txt-white' hover-class="hover" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNo" style='' wx:if='{{memberinfo.mobile==""}}'>点击获取手机号</button>
         <view class='margin-left-10 margin-top-4 h6 txt-white' wx:if='{{memberinfo.mobile!=""}}'>{{memberinfo.mobile}}</view>
       </view>
-
+ <image src="{{memberinfo.avatarUrl}}" wx:if='{{memberinfo.avatarUrl!=""}}' class='mianji  bg-white' style='border-radius:88rpx;'></image>
+       <image wx:if='{{memberinfo.avatarUrl==""}}' class='mianji  bg-white' style='border-radius:88rpx;'></image>
     </view>
   </view>
 </view>

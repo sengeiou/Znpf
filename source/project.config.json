@@ -168,6 +168,12 @@
 					"pathName": "pages/premises-details/premises-details",
 					"query": "id=4",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loupan/loupan",
+					"pathName": "pages/loupan/loupan",
+					"scene": null
 				}
 			]
 		}

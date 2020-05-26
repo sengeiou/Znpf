@@ -90,11 +90,21 @@ page{
   height: 40rpx;
   background: rgba(22, 22, 22, 0.3);
 }
+.position{
+  position: relative;
+  left:10rpx;
+  top:9rpx;
+}
 .lable1{
-  padding:1rpx 10rpx 2rpx 10rpx;
+  padding:1rpx 7rpx 2rpx 7rpx;
   background: #FCE4D1;
   border-radius: 4rpx;
   font-size: 22rpx;
   color:#777777;
   margin-right: 10rpx;
+  margin-top: 10rpx;
+}
+.cutem{
+  display:inline-block;
+
 }
