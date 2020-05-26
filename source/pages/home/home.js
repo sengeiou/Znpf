@@ -51,8 +51,14 @@ class Content extends AppBase {
     var premisesapi=new PremisesApi;
     premisesapi.list({hpd1:"Y"},(list)=>{
        
-      this.Base.setMyData({list});
-
+       for(var i=0;i<list.length;i++){
+         list[i].pingji = new Number(list[i].pingji).toFixed(1);
+         list[i].rizhao=new Number(list[i].rizhao).toFixed(1);
+         list[i].jingguan=new Number(list[i].jingguan).toFixed(1);
+       }
+      
+   
+      this.Base.setMyData({ list });
     })
 
   }
