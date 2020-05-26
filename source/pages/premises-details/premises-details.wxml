@@ -23,14 +23,19 @@
 		<!-- 简要信息 -->
 		<view class="padding-30 bg-white ">
 			<view class="flex-row flex-center">
-				<view class="txt-bold">{{info.name}}</view>
-				<view class="blueblock text-center txt-white h6 margin-left-10">{{info.sales_status}}</view>
-				<view class="flex-1"></view>
-				<image src="{{uploadpath}}resource/{{res.shoucang}}" class="icon-25"></image>
+				<view class="txt-bold  chaochu  " style="max-width:500rpx">{{info.name}}</view>
+
+				<view class="flex-1">
+					<view class="blueblock text-center txt-white h6 margin-left-10">{{info.sales_status_name}}</view>
+				</view>
+
+				<image src="{{uploadpath}}resource/{{res.shoucang}}" wx:if='{{sc=="A"}}' class="icon-25" id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
+				<image src="{{uploadpath}}resource/{{res.bushoucang}}" wx:if='{{sc=="B"}}' class="icon-25" id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
 
 				<button open-type="share" class="clear-button">
 					<image src="{{uploadpath}}resource/{{res.fenxiang}}" class="icon margin-left-20"></image>
 				</button>
+
 			</view>
 
 
@@ -208,7 +213,7 @@
 				<view class="chaochu2">{{item.content}}</view>
 
 				<view class='flex-row flex-center margin-top-10 margin-top-20'>
-					<view class="label2 h6 margin-left-10 text-center">{{item.biaoqian_name}}</view> 
+					<view class="label2 h6 margin-left-10 text-center">{{item.biaoqian_name}}</view>
 					<view class="flex-1"></view>
 					<view class="txt-gray h6">{{item.created_date}}</view>
 				</view>
@@ -260,13 +265,13 @@
 							<view class="stars" style="width: 100%;">
 								<view class=" ims">
 									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
-									 
+
 								</view>
 							</view>
 							<view class="stars2" style="width: {{(info.school/5)*100}}%">
 								<view class="ims">
 									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
-								 
+
 								</view>
 							</view>
 						</view>
@@ -358,8 +363,8 @@
 					</view>
 				</scroll-view>
 			</view>
-      <map class="map" latitude="{{info.lat}}" longitude="{{info.lng}}" show-location="{{true}}" markers="{{markers}}" >
-      </map>
+			<map class="map" latitude="{{info.lat}}" longitude="{{info.lng}}" show-location="{{true}}" markers="{{markers}}">
+			</map>
 			<view class="" style="padding:10rpx 30rpx 30rpx 30rpx">
 				<view class="margin-top-20 " wx:for-index='idxs' wx:for='{{info.periphery}}' wx:key='p' wx:if='{{item.type_id==nowid}}'>
 					<view class="flex-row flex-center">
@@ -408,7 +413,8 @@
 
 	<view class="under_block bg-white">
 		<view class="flex-row flex-center paddings">
-			<image src="{{uploadpath}}resource/{{res.bushoucang}}" class="icon-25"></image>
+			<image src="{{uploadpath}}resource/{{res.shoucang}}" wx:if='{{sc=="A"}}' class="icon-25" id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
+			<image src="{{uploadpath}}resource/{{res.bushoucang}}" wx:if='{{sc=="B"}}' class="icon-25" id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
 			<view class="flex-1"></view>
 			<button class="clear-button" open-type='contact'>
 				<view class="left_one text-center bg1 h5">联系客服</view>

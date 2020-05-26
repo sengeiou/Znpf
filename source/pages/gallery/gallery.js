@@ -65,6 +65,14 @@ class Content extends AppBase {
       });
     })
 
+    premisesapi.shoucanglist({premises_id:this.Base.options.id},(shoucanglist)=>{
+      if(shoucanglist!=null&&shoucanglist!=undefined&&shoucanglist!=""){
+         this.Base.setMyData({sc:'A'})
+      }else{
+        this.Base.setMyData({sc:'B'})
+      }
+    })
+
     premisesapi.huxinfenlei({
       premises_id: this.Base.options.id
     }, (fllist) => {

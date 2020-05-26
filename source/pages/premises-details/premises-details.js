@@ -12,9 +12,10 @@ class Content extends AppBase {
   }
   onLoad(options) {
     this.Base.Page = this;
-     //options.id=1;
+     options.id=4;
     super.onLoad(options);
-    this.Base.setMyData({nowidx:0})
+    this.Base.setMyData({nowidx:0});
+    
   }
 
   onMyShow() {
@@ -60,6 +61,14 @@ class Content extends AppBase {
 
     })
 
+    premisesapi.shoucanglist({premises_id:this.Base.options.id},(shoucanglist)=>{
+      if(shoucanglist!=null&&shoucanglist!=undefined&&shoucanglist!=""){
+         this.Base.setMyData({sc:'A'})
+      }else{
+        this.Base.setMyData({sc:'B'})
+      }
+    })
+
 
     this.Base.setMyData({
       order: "A"
@@ -87,6 +96,25 @@ class Content extends AppBase {
     this.Base.setMyData({ markers});
   }
 
+  // shoucang(e){
+  //   var premisesapi=new PremisesApi();
+  //   var id=e.currentTarget.id;
+    
+  //   premisesapi.shoucang({premises_id:id},ret=>{
+  //     console.log(ret);
+  //     if(ret.code==0){
+  //       this.Base.toast('收藏成功');
+  //     }else if(ret.code==1){
+  //       this.Base.toast('取消收藏');
+  //     }else{
+  //       this.Base.toast('操作失败');
+  //     }
+      
+  //     this.onMyShow();
+  //   })
+
+  // }
+
   guwen() {
     wx.navigateTo({
       url: '/pages/zhiyeguwen/zhiyeguwen?id='+this.Base.options.id,
@@ -99,4 +127,5 @@ body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.bindorder = content.bindorder;
 body.guwen = content.guwen;
+//body.shoucang = content.shoucang;
 Page(body)
