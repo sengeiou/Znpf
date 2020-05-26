@@ -12,7 +12,7 @@ class Content extends AppBase {
   }
   onLoad(options) {
     this.Base.Page = this;
-     options.id=4;
+     //options.id=4;
     super.onLoad(options);
     this.Base.setMyData({nowidx:0});
     
