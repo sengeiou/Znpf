@@ -72,7 +72,7 @@
 			<view class="flex-1"></view>
 			<view class="lable" style="background:{{item.premisestype_color}}">{{item.premisestype_name}}</view>
 		</view>
-		<view class="f-26 margin-top-10" style="color:#777777">北辰 | 宜兴埠</view>
+		<view class="f-26 margin-top-10" style="color:#777777">{{item.city_name}} | {{item.district_name}}</view>
 
 		<view class="flex-row flex-center margin-top-10">
 			<view wx:for="{{item.label}}" wx:key="k1" wx:for-item="label" class="lable1">{{label.name}}</view>
