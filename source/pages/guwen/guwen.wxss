@@ -47,22 +47,22 @@
 
 .bg-xf {
   background-color: #ef888f;
-  border-radius: 4rpx;
+  border-radius: 8rpx;
 }
 
 .bg-gx {
   background-color: rgba(252, 228, 209, 1);
-  border-radius: 4rpx;
+  border-radius: 8rpx;
 }
 
 .bg-dh {
   background-color: rgba(255, 185, 139, 1);
-  border-radius: 4rpx;
+  border-radius: 8rpx;
 }
 
 .bg-zx {
   background-color: rgba(156, 114, 193, 1);
-  border-radius: 4rpx;
+  border-radius: 8rpx;
 }
 
 .border {
@@ -87,8 +87,8 @@
   border-radius: 4rpx;
 }
 .pos {
-  width: 100vw;
-  height: 100rpx;
+  width: 100vw; 
+
   position: fixed;
   bottom: 0;
 }
