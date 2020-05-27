@@ -657,3 +657,7 @@ button[disabled][type=primary] {
   left: 0;
   overflow: hidden;
 }
+.map {
+  width: 100vw;
+  height: 480rpx;
+}

@@ -74,22 +74,12 @@
 
     <view class="flex-row flex-center margin-top-10">
       <view wx:for="{{item.label}}" wx:key="k1" wx:for-item="label" class="lable1">{{label.name}}</view>
-
-
     </view>
-
     <view class="margin-top-20">
-
       <view class="flex-row flex-center">
-
         <view class="h5" style="color:#583A80">{{item.avg_price}}</view>
         <view class="h5 margin-left-20" style="color:#777777">建面 {{item.avg_area}}</view>
       </view>
-
-
     </view>
-
-
   </view>
-
 </view>

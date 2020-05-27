@@ -72,6 +72,11 @@ class Content extends AppBase {
       icon:'none'
     })
   }
+  wodeguanzhu(){
+    wx.navigateTo({
+      url: '/pages/wodeguanzhu/wodeguanzhu',
+    })
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -82,4 +87,5 @@ body.fuwu = content.fuwu;
 body.aboutus = content.aboutus;
 body.bangdin = content.bangdin;
 body.todetail = content.todetail;
+body.wodeguanzhu=content.wodeguanzhu;
 Page(body)

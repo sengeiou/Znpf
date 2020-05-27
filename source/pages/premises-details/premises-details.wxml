@@ -167,7 +167,7 @@
 					<view class="txt-bold">{{info.article_summary}}</view>
 
 					<view class="flex-row flex-center margin-top">
-						<view class="h6 flex-1">{{info.name}}</view>
+						<view class="h6 flex-1 chaochu">{{info.name}}</view>
 						<view class="h7" style="color:#CCCCCC">{{info.article_time}}</view>
 					</view>
 				</view>

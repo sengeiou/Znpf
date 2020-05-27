@@ -1,0 +1,51 @@
+.xians{
+width:120rpx;
+height:4rpx;
+border-radius:4rpx;
+background-color:#583A80;
+}
+.dj-color{
+  color: #583A80;
+}
+.wdj-color{
+   color: #777777;
+}
+.bj-color{
+    background-color: #583A80;
+}
+.yingc{
+  width:120rpx;
+  height:4rpx;
+}
+.xian{
+
+width: 100vw;
+height: 2rpx;
+background: rgba(64, 72, 88, 0.05);
+
+}
+page {
+  background: #F7F8FA;
+}
+.img_1 {
+
+  width: 224rpx;
+  height: 192rpx;
+  border-radius: 8rpx;
+
+}
+.lable{
+  padding:1rpx 10rpx 2rpx 10rpx;
+  background: #87BFF1;
+  border-radius: 4rpx;
+  font-size: 22rpx;
+  color:white;
+}
+.lable1{
+  padding:1rpx 10rpx 2rpx 10rpx;
+  background: #FCE4D1;
+  border-radius: 4rpx;
+  font-size: 22rpx;
+  color:#777777;
+  margin-right: 10rpx;
+}

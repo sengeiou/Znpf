@@ -30,7 +30,8 @@
     "pages/peitao/peitao",
     "pages/gallery/gallery",
     "pages/dongtai/dongtai",
-    "pages/hangpai/hangpai"
+    "pages/hangpai/hangpai",
+    "pages/wodeguanzhu/wodeguanzhu"
   ],
   "permission": {
     "scope.userLocation": {

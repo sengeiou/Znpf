@@ -11,7 +11,13 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
+    if(this.Base.options.id!=undefined&&this.Base.options.id!=""){
+      this.Base.setMyData({show:'A'})
+    }else{
+      this.Base.setMyData({show:'B'})
+    }
   }
+
   onMyShow() {
     var that = this;
     var api = new InstApi;
@@ -19,8 +25,7 @@ class Content extends AppBase {
       if(guwen.length>0){
         var titlename = guwen[0].premises_name;
         this.Base.setMyData({ guwen, titlename })
-      }
-    
+      } 
     })
   }
   todetail(e){

@@ -178,15 +178,29 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/loupanlist/loupanlist",
-					"pathName": "pages/loupanlist/loupanlist",
+					"name": "顾问列表",
+					"pathName": "pages/guwenlist/guwenlist",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/loupanlist/loupanlist",
-					"pathName": "pages/loupanlist/loupanlist",
+					"name": "pages/wodeguanzhu/wodeguanzhu",
+					"pathName": "pages/wodeguanzhu/wodeguanzhu",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/wodeguanzhu/wodeguanzhu",
+					"pathName": "pages/wodeguanzhu/wodeguanzhu",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/wodeguanzhu/wodeguanzhu",
+					"pathName": "pages/wodeguanzhu/wodeguanzhu",
 					"scene": null
 				}
 			]

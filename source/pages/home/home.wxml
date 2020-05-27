@@ -109,7 +109,7 @@
       <view class="f-22 margin-top-16" style="color:#777777">评测</view>
     </view>
     <view class="flex-2"></view>
-    <view bindtap="topage" data-name="guwenlist" class="flex-column  width-88 flex-row ">
+    <view bindtap="topage" data-name="zhiyeguwen" class="flex-column  width-88 flex-row ">
       <image src='{{uploadpath}}resource/{{res.guwen}}' class="icon-30"></image>
       <view class="f-22 margin-top-16" style="color:#777777">置业顾问</view>
     </view>
