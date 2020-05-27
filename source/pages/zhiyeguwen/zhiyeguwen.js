@@ -11,7 +11,8 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
-    if(this.Base.options.id!=undefined&&this.Base.options.id!=""){
+
+    if(this.Base.options.id==undefined||this.Base.options.id==""){
       this.Base.setMyData({show:'A'})
     }else{
       this.Base.setMyData({show:'B'})
