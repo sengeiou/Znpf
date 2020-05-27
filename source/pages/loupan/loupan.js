@@ -71,6 +71,11 @@ class Content extends AppBase {
       danjiaid: 0,
       zonjiaid: 0,
     })
+     var premisesapi = new PremisesApi;
+     premisesapi.list({ }, (list) => {
+      this.Base.setMyData({ list });
+      // console.log(list,"3333")
+    })
 
 
 

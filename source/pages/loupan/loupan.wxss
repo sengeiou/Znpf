@@ -3,15 +3,20 @@
 } */
 
 .sousuo {
-  width: 624rpx;
+  width: 560rpx;
   height: 80rpx;
   border-radius: 8rpx;
   position: absolute;
-  margin-left: 32rpx;
+  margin-left: 30rpx;
   margin-top: 16rpx;
   z-index: 999;
 }
-
+.margin-right-30{
+  margin-right:30rpx;
+}
+.margin-top-35{
+  margin-top: 35rpx;
+}
 .juxin1 {
 
   width: 1rpx;
@@ -52,15 +57,39 @@
   color: white;
 }
 
-.lable1 {
+/* .lable1 {
   padding: 1rpx 10rpx 2rpx 10rpx;
   background: #FCE4D1;
   border-radius: 4rpx;
   font-size: 22rpx;
   color: #777777;
   margin-right: 10rpx;
+} */
+.lable1{
+  padding:1rpx 7rpx 2rpx 7rpx;
+  background: #FCE4D1;
+  border-radius: 4rpx;
+  font-size: 22rpx;
+  color:#777777;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
 }
-
+.margin-top-5{
+  margin-top:5rpx;
+}
+.bg-color{
+  width:32px;
+height:16px;
+background:rgba(239,136,143,1);
+opacity:1;
+border-radius:2px;
+}
+.padding-left-5{
+  padding-left: 8rpx;
+}
+.padding-bottom-2{
+  padding-bottom: 2rpx;
+}
 .rel {
   position: fixed;
   top: 152rpx;

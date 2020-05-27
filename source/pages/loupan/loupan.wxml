@@ -7,12 +7,18 @@
   <image class="icon-15 margin-left-10" src="{{uploadpath}}resource/{{res.sousuo}}"></image>
 
   <view class="h6 margin-left-20 flex-1" style="color:#CCCCCC">请输入您要搜索的内容</view>
+  <!-- <view class="juxin1"></view> -->
 
-  <view class="juxin1"></view>
-  <view bindtap="xuanzechenshi" class="flex-row flex-center">
-    <!-- <image class="icon-15 margin-left-10" src="{{uploadpath}}resource/{{res.weizhi}}"></image>
+  <!-- <view bindtap="xuanzechenshi" class="flex-row flex-center"> -->
+  <!-- <image class="icon-15 margin-left-10" src="{{uploadpath}}resource/{{res.weizhi}}"></image>
     <view class="h5 margin-right-20 margin-left-10" style="color:#161616">{{cityname}}</view> -->
-  </view>
+  <!-- </view> -->
+</view>
+<view class="h5 flex-row" style="color:#583A80;">
+  <view class="flex-1"></view>
+  <image class="icon-15 margin-top margin-right-10" src="{{uploadpath}}resource/{{res.fx}}"></image>
+  <view class="h5 margin-right-30 margin-top-35" style="color:#583A80;">分享</view>
+
 </view>
 <!-- <swiper indicator-dots='true' autoplay='false' interval='5000' duration='200' current="{{indexcurrent}}" circular='true' > -->
 <!-- <swiper-item wx:for="{{indexbanner}}" wx:key="k">
@@ -22,7 +28,7 @@
 
 <view catchtouchmove='true' class="{{scrollTop>182 ? 'rel' : 'nav'}}">
   <!-- 筛选区1 -->
-  <view class=" flex-row  flex-center bg-white margin-top-80">
+  <view class=" flex-row  flex-center bg-white margin-top">
 
     <view class="flex-1 flex-row flex-center padding-30">
 
@@ -66,25 +72,25 @@
   <view style="height:2rpx;width:100vw;background: #F7F8FA;"></view>
   <view wx:if="{{shaixuan}}" class="quyu">
 
-    <view class=" " wx:if="{{shaixuanid==1}}" style="">
-
-      <view class="flex-row flex-center">
-        <view style="background:white;height:500rpx" class="flex-1">
+    <!-- <view class=" " wx:if="{{shaixuanid==1}}" style=""> -->
+    <!-- 
+      <view class="flex-row flex-center"> -->
+    <!-- <view style="background:white;height:500rpx" class="flex-1">
 
           <view class="text-center padding-20 h5" style="color:#87BFF1">城区</view>
 
-        </view>
+        </view> -->
 
-        <scroll-view scroll-y="{{true}}" style="background: #EEEEEE;height:500rpx" class="flex-2">
+    <!-- <scroll-view scroll-y="{{true}}" style="background: #EEEEEE;height:500rpx" class="flex-2">
 
           <view wx:for="{{qu}}" bindtap="xuanzequyu" style="color:{{quid==item.id?'#87BFF1':''}}" data-name="{{item.name}}" data-id="{{item.id}}" wx:key="k" class="padding-20 h5 margin-left-20">{{item.name}}</view>
 
 
-        </scroll-view>
-      </view>
+        </scroll-view> -->
+    <!-- </view> -->
 
-    </view>
-    <view class=" " wx:if="{{shaixuanid==2}}" style="">
+    <!-- </view> -->
+    <!-- <view class=" " wx:if="{{shaixuanid==2}}" style="">
 
       <view class="flex-row flex-center">
         <view style="background:white;height:500rpx" class="flex-1">
@@ -108,9 +114,9 @@
         </scroll-view>
       </view>
 
-    </view>
+    </view> -->
 
-    <view class="" wx:if="{{shaixuanid==3}}">
+    <!-- <view class="" wx:if="{{shaixuanid==3}}">
 
 
       <view class="padding-20" style="background:white;height:500rpx" class="flex-1">
@@ -125,21 +131,21 @@
 
 
 
-    </view>
+    </view> -->
 
   </view>
 
 
   <!-- 筛选区2 -->
-  <view wx:if="{{!shaixuan}}" class=" flex-row flex-center padding-30 bg-white">
+  <!-- <view wx:if="{{!shaixuan}}" class=" flex-row flex-center padding-30 bg-white">
     <view wx:for="{{label1}}" wx:key="k" class="shaixuanlable">{{item.name}}</view>
 
-  </view>
+  </view> -->
 </view>
-<view catchtouchmove='true' bindtap="guanbi" wx:if="{{shaixuan==true}}" class="balckbg"></view>
+<!-- <view catchtouchmove='true' bindtap="guanbi" wx:if="{{shaixuan==true}}" class="balckbg"></view> -->
 <!-- 楼盘列表 -->
 
-<view style="height:{{scrollTop>182?'226rpx':''}}"></view>
+<!-- <view style="height:{{scrollTop>182?'226rpx':''}}"></view>
 <view>
   <view bindtap="loupanxianqin" data-id="{{item.id}}" wx:for="{{list}}" wx:key="k" class="flex-row flex-center padding-30 bg-white" style="margin-top:2rpx">
     <image src='{{uploadpath}}premises/{{item.cover}}' class="img_1"></image>
@@ -157,9 +163,9 @@
         <view wx:for="{{item.label}}" wx:key="k1" wx:for-item="label" class="lable1">{{label.name}}</view>
 
 
-      </view>
+      </view> -->
 
-      <view class="margin-top-20">
+<!-- <view class="margin-top-20">
 
         <view class="flex-row flex-center">
 
@@ -168,11 +174,36 @@
         </view>
 
 
-      </view>
+      </view> -->
 
 
+<!-- </view> -->
+
+<!-- </view> -->
+<!-- <view style="height:2500rpx"></view> -->
+<!-- </view>
+
+<!-- 楼盘列表 -->
+<view class=" bg-white margin-top-10 ">
+  <view bindtap="topage" data-name="premises-details" id="{{item.id}}" wx:for="{{list}}" style="border-bottom:1rpx solid #F7F8FA" wx:key="k" class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30">
+    <image src='{{uploadpath}}premises/{{item.cover}}' class="img_1"></image>
+    <view class="margin-left-30 flex-1" style=" height:206rpx;                     overflow:hidden;">
+    <view class="flex-row">
+     <view class="txt-bold chaochu" style="color:#161616s; width:380rpx;">{{item.name}} </view>
+     <view class="flex-1"></view>
+     <view class="txt-white bg-color h6 padding-left-5 padding-bottom-2" >新房</view>
     </view>
-
+     
+      <view class="h6 lable margin-top-5" style="color:#A0A0A0;">{{item.city_name}}|{{item.district_name}}</view>
+      <view class="flex-row flex-center chaochu" style=" width: 440rpx;">
+          <view wx:for="{{item.label}}" wx:key="k1" wx:for-item="label" class="lable1 ">{{label.name}}</view>
+        </view>
+        <view class="flex-row">
+        <view class="f-32 txt-bold margin-top-20" style="color:#583A80;">{{item.avg_price}} </view>
+        <view class="h5 lable margin-top-20" style="color:#A0A0A0;">建面 {{item.avg_area}}</view>
+        </view>
+      
+   
+    </view>
   </view>
-  <view style="height:2500rpx"></view>
-</view>
+  </view>
