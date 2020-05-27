@@ -5,49 +5,52 @@
 
 <image src="{{uploadpath}}resource/{{res.guwenbg}}" mode="widthFix" style="width:100vw"></image>
 
-<view class="flex-row flex-bottom po bg-white">
+<view class="flex-row flex-bottom po  ">
+	<view class="flex-1"></view>
 	<view class=' flex-row flex-column '>
-
 		<image src="{{uploadpath}}resource/{{res.silver}}" class="icon-64"></image>
 		<image src="{{uploadpath}}member/{{guwen[1].minpai}}" class="icon-56 radius-50"></image>
 		<view class="gun txt-bold">{{guwen[1].name}}</view>
 		<view class="f-26" style="color:#A0A0A0">积分： {{guwen[1].jifen}}</view>
 	</view>
-	<view class=' flex-row flex-column ' style="margin: 0 104rpx;">
-
+	<view class="flex-5"></view>
+	<view class=' flex-row flex-column '>
 		<image src="{{uploadpath}}resource/{{res.winner}}" class="icon-64w"></image>
 		<image src="{{uploadpath}}member/{{guwen[0].minpai}}" class="icon-56 radius-50"></image>
 		<view class="gun txt-bold">{{guwen[0].name}}</view>
 		<view class="f-26" style="color:#A0A0A0">积分： {{guwen[0].jifen}}</view>
 	</view>
+	<view class="flex-5"></view>
 	<view class=' flex-row flex-column '>
-
 		<image src="{{uploadpath}}resource/{{res.copper}}" class="icon-64"></image>
 		<image src="{{uploadpath}}member/{{guwen[2].minpai}}" class="icon-56 radius-50"></image>
 		<view class="gun txt-bold">{{guwen[2].name}}</view>
 		<view class="f-26" style="color:#A0A0A0">积分： {{guwen[2].jifen}}</view>
 	</view>
-
+	<view class="flex-1"></view>
 </view>
+
 <view class="bg-white" style="height:32rpx;width:100vw;"></view>
 <view style="height:16rpx;width:100vw;"></view>
 
-<view class="padding-left-32 bg-white padding-top-32 padding-right-30">
-	<view class="f-34 txt-bold" style="color:#161616">置业顾问</view>
+<view class="  bg-white  ">
+	<view class="f-34 txt-bold padding-30" style="color:#161616">置业顾问</view>
 	<view style="height:16rpx;"></view>
-	<view wx:for='{{guwen}}' wx:for-index='idx' wx:key='k'>
-		<view class="flex-row flex-center padding-top-32" bindtap="todetail" id='{{item.id}}'>
+
+	<view wx:for='{{guwen}}' wx:for-index='idx' class="padding-30" wx:key='k'>
+		<view class="flex-row flex-center  " bindtap="todetail" id='{{item.id}}'>
 			<image src="{{uploadpath}}resource/{{res.copper}}" class="icon-48"></image>
 			<image src="{{uploadpath}}member/{{item.minpai}}" class="icon-40 radius-50" style="margin-left:-88rpx;"></image>
-			<view class="padding-left-32 flex-1">
+			<view class=" flex-1 margin-left-20">
 				<view class="flex-row flex-center">
 					<view class="txt-bold f-30" style="color:#161616">{{item.name}}</view>
-					<view class="f-26" style="margin-left:22rpx;color:#CCCCCC">置业顾问</view>
+					<view class="f-26 margin-left-10 txt-gray">置业顾问</view>
 				</view>
 				<view class="h5" style="color:#777777;margin-top:14rpx;">
 					{{item.premises_name}}
 				</view>
 			</view>
+
 			<view class="">
 				<view class="f-26" style="color:#777777;">积分：{{item.jifen}}</view>
 				<view class="no">No.{{idx+1}}</view>
@@ -67,12 +70,15 @@
 		</view> -->
 
 		<view style="height:22rpx;"></view>
-		<view style="height:2rpx;width:100vw;background:#F7F8FA"></view>
+
+		<view style="height:2rpx;width:100%;background:#F7F8FA"></view>
+
 	</view>
+
 </view>
 
 <view style="height:100rpx;"></view>
-
+<!-- 
 <view class="pos bg-white">
 	<view class="flex-row flex-center text-center margin-top-10">
 		<view class="flex-1"></view>
@@ -81,9 +87,9 @@
 		<button open-type="share" hover-class='none' class="clear-button fen">分享</button>
 		<view class="flex-1"></view>
 	</view>
-</view>
+</view> -->
 
-<view class="under_block bg-white">
+<view class="under_block bg-white" wx:if='{{show=="B"}}'>
 	<view class="flex-row flex-center paddings">
 		<view class="flex-1"></view>
 		<button class="clear-button" open-type='contact'>
