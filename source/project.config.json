@@ -173,6 +173,13 @@
 					"id": -1,
 					"name": "pages/loupan/loupan",
 					"pathName": "pages/loupan/loupan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "顾问列表",
+					"pathName": "pages/guwenlist/guwenlist",
 					"scene": null
 				}
 			]
