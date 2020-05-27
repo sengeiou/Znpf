@@ -17,17 +17,25 @@ class Content extends AppBase {
   onMyShow() {
     var that = this;
     var premisesapi = new PremisesApi;
-    premisesapi.list({
-      premisestype_id: 2
+    premisesapi.shoucanglist({
+      // premises_premisestype_id: 2
     }, (ret) => {
         this.Base.setMyData({
           list: ret
         })
+        var arr=[]
+    for(var i=0;i<ret.length;i++){
+      if (ret[i].premises_premisestype_id==2){
+              arr.push(ret[i]);
+      }
+    }
+      this.Base.setMyData({ list2: arr })
+
     })
-    premisesapi.list({
+    premisesapi.guwenlist	({
     }, (ret) => {
       this.Base.setMyData({
-        list2: ret
+        list3: ret
       })
     })
 

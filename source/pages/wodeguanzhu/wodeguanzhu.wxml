@@ -1,6 +1,8 @@
-<cu-custom bgColor="bg-white">
-  <view slot="content" class="txt-bold" style="color:#161616;">我的关注</view>
+
+<cu-custom isCustom="{{true}}" bgColor="bg-white">
+	<view slot="content" class="txt-bold" style="color:#161616;">{{detail.activitytype_id_name}}我的收藏</view>
 </cu-custom>
+
 <!-- 导航条 -->
 <view class="padding-30 flex-row flex-center bg-white" style="padding-bottom:0rpx">
   <view class='flex-1 flex-row flex-column' bindtap='bindshow' data-type='fy'>
@@ -23,11 +25,12 @@
 
 <view class="xian"></view>
 <!-- 房源 -->
- <view wx:if='{{show=="fy"}}' bindtap="topage" data-name="premises-details" id="{{item.id}}" wx:for="{{list2}}" wx:key="k" class="flex-row flex-center padding-30 bg-white" style="margin-top:2rpx">
+
+ <view wx:if='{{show=="fy"}}' wx:for="{{list}}"  class="flex-row flex-center padding-30 bg-white" style="margin-top:2rpx">
     <image src='{{uploadpath}}premises/{{item.cover}}' class="img_1"></image>
     <view class="margin-left-30 flex-1" style="height:206rpx;overflow:hidden;">
       <view class="flex-row flex-center">
-        <view class="txt-bold" style="color:#161616">{{item.name}}</view>
+        <view class="txt-bold" style="color:#161616">{{item.premises_name}}</view>
         <view class="flex-1"></view>
         <view class="lable" style="background:{{item.premisestype_color}}">{{item.premisestype_name}}</view>
       </view>
@@ -38,18 +41,22 @@
       </view>
       <view class="margin-top-20">
         <view class="flex-row flex-center">
-          <view class="h5" style="color:#583A80">{{item.avg_price}}</view>
-          <view class="h5 margin-left-20" style="color:#777777">建面 {{item.avg_area}}</view>
+          <view class="h5" style="color:#583A80">{{item.premises_avg_price}}</view>
+          <view class="h5 margin-left-20" style="color:#777777">建面 {{item.premises_avg_price}}</view>
         </view>
       </view>
     </view>
   </view>
+
+
   <!-- 二手房 -->
-  <view wx:if='{{show=="esf"}}' bindtap="topage" data-name="premises-details" id="{{item.id}}" wx:for="{{list}}" wx:key="k" class="flex-row flex-center padding-30 bg-white" style="margin-top:2rpx">
+  <view class="xian"></view>
+
+  <view wx:if='{{show=="esf"}}'  wx:for="{{list2}}" class="flex-row flex-center padding-30 bg-white" style="margin-top:2rpx">
     <image src='{{uploadpath}}premises/{{item.cover}}' class="img_1"></image>
     <view class="margin-left-30 flex-1" style="height:206rpx;overflow:hidden;">
       <view class="flex-row flex-center">
-        <view class="txt-bold" style="color:#161616">{{item.name}}</view>
+        <view class="txt-bold" style="color:#161616">{{item.premises_name}}</view>
         <view class="flex-1"></view>
         <view class="lable" style="background:{{item.premisestype_color}}">{{item.premisestype_name}}</view>
       </view>
@@ -60,11 +67,46 @@
       </view>
       <view class="margin-top-20">
         <view class="flex-row flex-center">
-          <view class="h5" style="color:#583A80">{{item.avg_price}}</view>
-          <view class="h5 margin-left-20" style="color:#777777">建面 {{item.avg_area}}</view>
+          <view class="h5" style="color:#583A80">{{item.premises_avg_price}}</view>
+          <view class="h5 margin-left-20" style="color:#777777">建面 {{item.premises_avg_price}}</view>
         </view>
       </view>
     </view>
   </view>
+
+
   <!-- 置业顾问 -->
+  <view class="xian"></view>
+
+  	<view wx:if='{{show=="gw"}}' wx:for='{{list3}}' wx:for-index='idx' wx:key='k' class="bg-white padding-bottom-20">
+		<view class="flex-row flex-center padding-top-32 margin-left-40" bindtap="todetail" id='{{item.id}}'>
+			<image src="{{uploadpath}}resource/{{res.copper}}" class="icon-48"></image>
+			<image src="{{uploadpath}}member/{{item.minpai}}" class="icon-40 radius-50" style="margin-left:-88rpx;"></image>
+			<view class="padding-left-32 flex-1">
+				<view class="flex-row flex-center">
+					<view class="txt-bold f-30" style="color:#161616">{{item.guwen_name}}</view>
+					<view class="f-26" style="margin-left:22rpx;color:#CCCCCC">置业顾问</view>
+				</view>
+				<view class="h5" style="color:#777777;margin-top:14rpx;">
+					{{item.premises_name}}
+				</view>
+			</view>
+			<view class="margin-right-40">
+				<view class="f-26" style="color:#777777;">积分：{{item.guwen_jifen}}</view>
+				<view class="no">No.{{idx+1}}</view>
+			</view>
+		</view>
+ <view class="flex-row flex-center  padding-top-32 ">
+			<view class="flex-1 flex-row flex-center padding-left-64" bindtap="call" id='{{item.mobile}}'>
+				<image src="{{uploadpath}}resource/{{res.call}}" style="width:32rpx;height:40rpx;"></image>
+				<view class="h5" style="color:#583A80;margin-left:16rpx;">打电话</view>
+			</view>
+			<view style="width:2rpx;height:32rpx;background:#FCE4D1"></view>
+			<view class="flex-1 flex-row flex-center padding-left-48" bindtap="zixun" id='{{item.weixinhao}}'>
+				<image src="{{uploadpath}}resource/{{res.zixun}}" class="icon"></image>
+				<view class="h5" style="color:#583A80;margin-left:16rpx;">咨询我</view>
+			</view>
+		</view> 
+    </view>
+
   

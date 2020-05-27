@@ -68,9 +68,8 @@
     <view class="flex-row flex-center">
       <view class="txt-bold" style="color:#161616">{{item.name}}</view>
       <view class="flex-1"></view>
-      <view class="lable" style="background:{{item.premisestype_color}}">{{item.premisestype_name}}</view>
     </view>
-    <view class="f-26 margin-top-10" style="color:#777777">{{item.city_name}} | {{item.district_name}}</view>
+    <view class="f-26 margin-top-10" style="color:#777777">{{item.huxing}} | {{item.avg_area}}|{{item.buildingtype_name}}|{{item.address}}</view>
 
     <view class="flex-row flex-center margin-top-10">
       <view wx:for="{{item.label}}" wx:key="k1" wx:for-item="label" class="lable1">{{label.name}}</view>
@@ -78,7 +77,6 @@
     <view class="margin-top-20">
       <view class="flex-row flex-center">
         <view class="h5" style="color:#583A80">{{item.avg_price}}</view>
-        <view class="h5 margin-left-20" style="color:#777777">建面 {{item.avg_area}}</view>
       </view>
     </view>
   </view>

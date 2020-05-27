@@ -54,7 +54,7 @@
 			</view>
 		</view>
 
-		<!-- <view class="flex-row flex-center  padding-top-32 ">
+ <view class="flex-row flex-center  padding-top-32 ">
 			<view class="flex-1 flex-row flex-center padding-left-64" bindtap="call" id='{{item.mobile}}'>
 				<image src="{{uploadpath}}resource/{{res.call}}" style="width:32rpx;height:40rpx;"></image>
 				<view class="h5" style="color:#583A80;margin-left:16rpx;">打电话</view>
@@ -64,7 +64,7 @@
 				<image src="{{uploadpath}}resource/{{res.zixun}}" class="icon"></image>
 				<view class="h5" style="color:#583A80;margin-left:16rpx;">咨询我</view>
 			</view>
-		</view> -->
+		</view> 
 
 		<view style="height:22rpx;"></view>
 		<view style="height:2rpx;width:100vw;background:#F7F8FA"></view>

@@ -34,6 +34,10 @@ page {
   border-radius: 8rpx;
 
 }
+icon-48 {
+  width: 96rpx;
+  height: 96rpx;
+}
 .lable{
   padding:1rpx 10rpx 2rpx 10rpx;
   background: #87BFF1;
@@ -48,4 +52,26 @@ page {
   font-size: 22rpx;
   color:#777777;
   margin-right: 10rpx;
+}
+/* pages/zhiyeguwen/zhiyeguwen.wxss */
+Page {
+  background: #F7F8FA;
+}
+.icon-48 {
+  width: 96rpx;
+  height: 96rpx;
+}
+.no {
+  padding: 6rpx 28rpx;
+  background: #F0E9F6;
+  color: #583A80;
+  font-size: 26rpx;
+  border-radius: 8rpx;
+  margin-top: 12rpx;
+}
+.padding-left-64 {
+  padding-left: 128rpx;
+}
+.padding-left-48 {
+  padding-left: 96rpx;
 }
