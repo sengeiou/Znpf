@@ -14,6 +14,8 @@
 	</scroll-view>
 </view>
 
+<map class="map" latitude="{{info.lat}}" longitude="{{info.lng}}" show-location="{{true}}" markers="{{markers}}">
+</map>
 
 <view class="" wx:for-index='idxs' wx:for='{{list}}'>
 	<view class="grayblock"></view>
