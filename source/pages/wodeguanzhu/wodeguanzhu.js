@@ -20,16 +20,18 @@ class Content extends AppBase {
     premisesapi.shoucanglist({
       // premises_premisestype_id: 2
     }, (ret) => {
-        this.Base.setMyData({
-          list: ret
-        })
+        var arr2=[]
         var arr=[]
     for(var i=0;i<ret.length;i++){
-      if (ret[i].premises_premisestype_id==2){
+      if (ret[i].premises_premisestype_id == 2){
               arr.push(ret[i]);
+      }
+      if (ret[i].premises_premisestype_id != 2) {
+        arr2.push(ret[i]);
       }
     }
       this.Base.setMyData({ list2: arr })
+      this.Base.setMyData({ list: arr2 })
 
     })
     premisesapi.guwenlist	({
