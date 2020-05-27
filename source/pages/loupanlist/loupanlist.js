@@ -31,17 +31,13 @@ class Content extends AppBase {
 
       });
     });
-    this.getloupan();
     var premisesapi = new PremisesApi;
-    premisesapi.list({}, (list) => {
-      this.Base.setMyData({ list });
-      for(var i=0;i<list.length;i++){
-        if (list.premisestype_id=="2"){
-          this.Base.setMyData({
-            list
-          })
-        }
-      }
+    premisesapi.list({
+      premisestype_id:2
+    }, (list) => {
+      this.Base.setMyData({
+        list
+      })
     })
     
   }
