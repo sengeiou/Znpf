@@ -20,6 +20,19 @@ class Content extends AppBase {
     var premisesapi=new PremisesApi();
 
     premisesapi.info({id:this.Base.options.id},(info)=>{ 
+      var zixunlist=info.zixun;
+      var zxlabel=[];
+      for(var i=0;i<zixunlist.length;i++){
+       var labellist=zixunlist[i].label;
+        for(var j=0;j<labellist.length;j++){
+         zxlabel.push({
+           id:labellist[j].id,
+           name:labellist[j].name
+         })
+        }
+      }
+      info.zxlabel=zxlabel;
+      
        this.Base.setMyData({info})
     })
 

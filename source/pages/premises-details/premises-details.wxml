@@ -143,7 +143,7 @@
 				</view>
 
 				<view class="text-center flex-1 " bindtap="topage" data-name="zhiyeguwen" id="{{info.id}}">
-					<image src="{{uploadpath}}resource/{{res.xiangqing}}" class="icon-25"></image>
+					<image src="{{uploadpath}}resource/{{res.xiaoshouguwen}}" class="icon-25"></image>
 					<view class="h6 txt-gray margin-top-10">顾问</view>
 				</view>
 
@@ -160,7 +160,7 @@
 		<view class="padding-30 margin-top-20 bg-white">
 			<view class="txt-bold">测评文章</view>
 
-			<view class="flex-row flex-center margin-top">
+			<view class="flex-row flex-center margin-top" bindtap="goarticle" data-iszn="{{info.article_iszn}}" data-url="{{info.article_url}}">
 				<image src="{{uploadpath}}article/{{info.article_image}}" class="wenzhan"></image>
 
 				<view class="flex-1 margin-left-20">
@@ -183,7 +183,7 @@
 
 				<view class="flex-row flex-column margin-right-20" wx:for='{{info.history}}'>
 					<view class="h6 ">{{item.time}}</view>
-					<view class="txtblock text-center h6 margin-top-20">{{item.name}}</view>
+					<view class="txtblock text-center h6 margin-top-20" style="background:{{item.color}}">{{item.name}}</view>
 				</view>
 
 
@@ -202,8 +202,9 @@
 			</view>
 
 			<!-- 标签 -->
-			<view class='flex-row flex-center  margin-top'>
-				<view class="label2 h6 text-center">全部</view>
+			<view class='flex-row flex-center  margin-top flex-wrap' style="height:52rpx;overflow:hidden">
+				<view class="label2 h6 text-center margin-right-10">全部</view>
+				<view class="label2 h6 text-center margin-right-10" wx:for='{{info.zxlabel}}' wx:key='k' >{{item.name}}</view>
 				<!-- <view class="label2 h6 margin-left-10 text-center">销控信息</view>
 				<view class="label2 h6 margin-left-10 text-center">楼盘咨询</view> -->
 			</view>
@@ -212,10 +213,14 @@
 			<view class="bg-dongtai padding-20 margin-top-20" wx:for='{{info.zixun}}' wx:key='z'>
 				<view class="chaochu2">{{item.content}}</view>
 
-				<view class='flex-row flex-center margin-top-10 margin-top-20'>
-					<view class="label2 h6 margin-left-10 text-center">{{item.biaoqian_name}}</view>
+				<view class='flex-row   margin-top-10 '>
+
+					<view class="flex-row flex-center flex-wrap">
+						<view class="label2 h6 margin-right-10 margin-top-10 text-center" wx:for='{{item.label}}'>{{item.name}}</view>
+					</view>
+
 					<view class="flex-1"></view>
-					<view class="txt-gray h6">{{item.created_date}}</view>
+					<view class="txt-gray h6  margin-top-10">{{item.created_date}}</view>
 				</view>
 
 

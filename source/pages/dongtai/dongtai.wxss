@@ -7,3 +7,7 @@
   background: #EEEEEE;
   border-radius: 20rpx;
 }
+.scroll {
+
+  white-space: nowrap;
+}

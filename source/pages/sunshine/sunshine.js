@@ -20,7 +20,13 @@ class Content extends AppBase {
     var premisesapi=new PremisesApi();
 
     premisesapi.entrancelist({premises_id:this.Base.options.id,orderby:'r_main.id'},(entrancelist)=>{ 
-       this.Base.setMyData({entrancelist})
+     
+      if(this.Base.options.type=="D"){
+        this.Base.setMyData({entrancelist,nowid:this.Base.options.nowid,type:this.Base.options.type})
+      }else{
+        this.Base.setMyData({entrancelist,nowid:entrancelist[0].id,type:"A"})
+      }
+
     })
 
     premisesapi.shoucanglist({premises_id:this.Base.options.id},(shoucanglist)=>{
@@ -34,11 +40,10 @@ class Content extends AppBase {
   }
 
   bindorder(e) { 
-
+    var nowid=e.currentTarget.dataset.id;
     var nowidx = e.currentTarget.id;
-    this.Base.setMyData({nowidx: nowidx})
-   
-
+    this.Base
+    .setMyData({nowidx: nowidx,nowid:nowid})
   }
 }
 var content = new Content();

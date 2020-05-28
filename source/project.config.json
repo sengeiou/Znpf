@@ -184,37 +184,17 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/wodeguanzhu/wodeguanzhu",
+					"id": 18,
+					"name": "我的关注",
 					"pathName": "pages/wodeguanzhu/wodeguanzhu",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/wodeguanzhu/wodeguanzhu",
-					"pathName": "pages/wodeguanzhu/wodeguanzhu",
+					"name": "户型评测",
+					"pathName": "pages/huxingfenxi/huxingfenxi",
 					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/wodeguanzhu/wodeguanzhu",
-					"pathName": "pages/wodeguanzhu/wodeguanzhu",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/wodeguanzhu/wodeguanzhu",
-					"pathName": "pages/wodeguanzhu/wodeguanzhu",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/wodeguanzhu/wodeguanzhu",
-					"pathName": "pages/wodeguanzhu/wodeguanzhu",
 					"scene": null
 				}
 			]

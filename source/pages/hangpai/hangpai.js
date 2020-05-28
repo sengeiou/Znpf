@@ -26,8 +26,18 @@ class Content extends AppBase {
         entrancelist[i].daolu = new Number(entrancelist[i].daolu).toFixed(1);
         entrancelist[i].qita = new Number(entrancelist[i].qita).toFixed(1);
       }
-       this.Base.setMyData({entrancelist})
+
+      if(this.Base.options.type=="D"){
+        this.Base.setMyData({entrancelist,nowid:this.Base.options.nowid,type:this.Base.options.type})
+      }else{
+        this.Base.setMyData({entrancelist,nowid:entrancelist[0].id,type:"A"})
+      }
+
+     
     })
+
+  
+
 
     premisesapi.shoucanglist({premises_id:this.Base.options.id},(shoucanglist)=>{
       if(shoucanglist!=null&&shoucanglist!=undefined&&shoucanglist!=""){
@@ -40,11 +50,10 @@ class Content extends AppBase {
   }
 
   bindorder(e) { 
-
+    var nowid=e.currentTarget.dataset.id;
     var nowidx = e.currentTarget.id;
-    this.Base.setMyData({nowidx: nowidx})
-   
-
+    this.Base.setMyData({nowidx: nowidx,nowid:nowid})
+    
   }
 }
 var content = new Content();
