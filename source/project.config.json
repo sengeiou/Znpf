@@ -184,36 +184,8 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/wodeguanzhu/wodeguanzhu",
-					"pathName": "pages/wodeguanzhu/wodeguanzhu",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/wodeguanzhu/wodeguanzhu",
-					"pathName": "pages/wodeguanzhu/wodeguanzhu",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/wodeguanzhu/wodeguanzhu",
-					"pathName": "pages/wodeguanzhu/wodeguanzhu",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/wodeguanzhu/wodeguanzhu",
-					"pathName": "pages/wodeguanzhu/wodeguanzhu",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/wodeguanzhu/wodeguanzhu",
+					"id": 18,
+					"name": "我的关注",
 					"pathName": "pages/wodeguanzhu/wodeguanzhu",
 					"query": "",
 					"scene": null

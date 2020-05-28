@@ -29,6 +29,19 @@ class Content extends AppBase {
         history[i].name=history[i].name.slice(0,4);
        }
 
+       var zixunlist=info.zixun;
+       var zxlabel=[];
+       for(var i=0;i<zixunlist.length;i++){
+        var labellist=zixunlist[i].label;
+         for(var j=0;j<labellist.length;j++){
+          zxlabel.push({
+            id:labellist[j].id,
+            name:labellist[j].name
+          })
+         }
+       }
+       info.zxlabel=zxlabel;
+
        info.pingji=new Number(info.pingji).toFixed(1);
        info.school=new Number(info.school).toFixed(1); 
        info.supermarket=new Number(info.supermarket).toFixed(1); 

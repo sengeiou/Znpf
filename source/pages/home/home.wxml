@@ -187,17 +187,19 @@
 		<view class="flex-1"></view>
 		<view bindtap="tosunshine" id="{{item.id}}" data-id="{{item.premises_id}}" wx:for="{{hanpai}}" wx:if='{{idx<=2}}' wx:key="k" wx:for-index="idx" class="padding-20" style="background:#F0E9F6;border-radius:8rpx;margin-left:{{idx==0?'0rpx':'48rpx'}}">
 			<view class="flex-row flex-bottom">
-				<view class="h-44" style="color:#583A80">{{item.rizhao}}</view>
+				<view class="h-44 txt-bold" style="color:#583A80">{{item.rizhao}}</view> 
 				<view class="f-22  center " style="color:#777777">H</view>
+				<view class="flex-1"></view>
 				<view class="f-22 " style="color:#777777">日照</view>
 			</view>
 			<view class="flex-row flex-bottom">
-				<view class="h-44" style="color:#583A80">{{item.jinguan}}</view>
+				<view class="h-44  txt-bold" style="color:#583A80">{{item.jinguan}}</view> 
 				<view class="f-22 center " style="color:#777777">分</view>
+				<view class="flex-1"></view>
 				<view class="f-22 " style="color:#777777">景观</view>
 			</view>
 			<view class="margin-top-20 f-26" style="color:#161616">{{item.premises_name}}</view>
-			<view class=" f-26 text-center" style="color:#777777">{{item.name}}</view>
+			<view class=" h6 text-center margin-top-5" style="color:#777777">{{item.name}}</view>
 		</view>
 		<view class="flex-1"></view>
 

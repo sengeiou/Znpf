@@ -50,6 +50,10 @@ class Content extends AppBase {
     })
     api.hanpai({}, (hanpai) => {
 
+      for (var i = 0; i < hanpai.length; i++) { 
+        hanpai[i].jinguan = new Number(hanpai[i].jinguan).toFixed(1); 
+      }
+ 
       this.Base.setMyData({
         hanpai
       });

@@ -50,7 +50,7 @@
     "color": "#A0A0A0",
     "selectedColor": "#161616",
     "backgroundColor": "#FFFFFF",
-    "backgroundstyle": "black",
+    "backgroundstyle": "#000000",
     "list": [
       {
         "text": "首页",

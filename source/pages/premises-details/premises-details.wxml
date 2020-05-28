@@ -202,8 +202,9 @@
 			</view>
 
 			<!-- 标签 -->
-			<view class='flex-row flex-center  margin-top'>
-				<view class="label2 h6 text-center">全部</view>
+			<view class='flex-row flex-center  margin-top flex-wrap' style="height:52rpx;overflow:hidden">
+				<view class="label2 h6 text-center margin-right-10">全部</view>
+				<view class="label2 h6 text-center margin-right-10" wx:for='{{info.zxlabel}}' wx:key='k' >{{item.name}}</view>
 				<!-- <view class="label2 h6 margin-left-10 text-center">销控信息</view>
 				<view class="label2 h6 margin-left-10 text-center">楼盘咨询</view> -->
 			</view>
@@ -212,10 +213,14 @@
 			<view class="bg-dongtai padding-20 margin-top-20" wx:for='{{info.zixun}}' wx:key='z'>
 				<view class="chaochu2">{{item.content}}</view>
 
-				<view class='flex-row flex-center margin-top-10 margin-top-20'>
-					<view class="label2 h6 margin-left-10 text-center">{{item.biaoqian_name}}</view>
+				<view class='flex-row   margin-top-10 '>
+
+					<view class="flex-row flex-center flex-wrap">
+						<view class="label2 h6 margin-right-10 margin-top-10 text-center" wx:for='{{item.label}}'>{{item.name}}</view>
+					</view>
+
 					<view class="flex-1"></view>
-					<view class="txt-gray h6">{{item.created_date}}</view>
+					<view class="txt-gray h6  margin-top-10">{{item.created_date}}</view>
 				</view>
 
 
