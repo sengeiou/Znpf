@@ -15,7 +15,7 @@ class Content extends AppBase {
     var title = options.title;
     var id=options.id;
     this.Base.setMyData({ name, title,id });
-
+    
   }
   onMyShow() {
     var that = this;

@@ -108,3 +108,53 @@ border-radius:2px;
   width: 100vw;
   height: 100vh;
 }
+
+.fixTop{
+  position: fixed;
+  width:100vw;
+  left:0px;
+}
+
+.optioncol{
+  height:50vh;
+  overflow-y: scroll;
+  text-align: center;
+}
+.option{
+  width:200rpx;
+  padding-top:20rpx;
+  padding-bottom:20rpx;
+}
+
+.option-l1{
+  background: #f0f0f0;
+}
+.option-l1 .option.active{
+  background: #f8f8f8;
+}
+
+.option-l2{
+  background: #f8f8f8;
+}
+.option-l2 .option.active{
+  background: #ffffff;
+}
+.option{
+  font-size: 26rpx;
+}
+.option.active{
+  color:#583c7e;
+}
+
+.viewinput{
+  border-bottom: 1rpx solid rgba(22, 22, 22, 0.3);
+  padding:20rpx;
+}
+.priceoption{
+  margin-top:20rpx;
+  margin-right: 20rpx;
+  background: #efefef;
+  color:#666666;
+  font-size: 26rpx;
+  padding:4rpx 8rpx 4rpx 8rpx;
+}

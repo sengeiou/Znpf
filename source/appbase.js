@@ -18,7 +18,9 @@ import {
   WechatApi
 } from "apis/wechat.api";
 
-import { PremisesApi } from "apis/premises.api.js";
+import {
+  PremisesApi
+} from "apis/premises.api.js";
 
 export class AppBase {
   static BRANDAPPLE = 12;
@@ -37,7 +39,7 @@ export class AppBase {
       }
     }
   };
-  static CITYID = 1;
+  static CITYID = 440300;
   static CITYNAME = "天津";
   static CITYSET = false;
   unicode = "znpf";
@@ -138,12 +140,12 @@ export class AppBase {
       backtotop: base.backtotop,
       xuanzechenshi: base.xuanzechenshi,
       topage: base.topage,
-      shoucang:base.shoucang,
+      shoucang: base.shoucang,
       tishi: base.tishi,
       tishi2: base.tishi2,
       tishi3: base.tishi3,
       clock: base.clock,
-      close: base.close, 
+      close: base.close,
       BackPage: base.BackPage,
       toHome: base.toHome,
       goarticle: base.goarticle
@@ -181,97 +183,7 @@ export class AppBase {
 
     ApiConfig.SetUnicode(this.Base.unicode);
 
-    this.Base.getAddress((address) => {
-      console.log("vvckc", "4", address);
-      AppBase.lastaddress = address;
-      var mylat = address.location.lat;
-      var mylng = address.location.lng;
-    
-      var citycode = address.ad_info.adcode;
 
-      this.Base.setMyData({
-        adcode: address.ad_info.adcode,
-        citycode
-      });
-
-      if (AppBase.CITYSET == false) {
-
-        console.log(AppBase.CITYID, "哦哦", citycode)
-
-        // var citys = citylist.filter((item, idx) => {
-        //   return item.code == citycode
-        // })
-
-
-
-        // if (citys.length == 0) {
-        //   this.Base.setMyData({
-        //     nocity: 1
-        //   });
-        // }
-
-
-        var citylist = this.Base.getMyData().usecitylist
-    
-        for (var i = 0; i < citylist.length; i++) {
-
-          console.log(citylist[i].id, "大蒜", citycode, AppBase.CITYID)
-
-          if (citylist[i].citycode == citycode) {
-            console.log("说锤子呢啊大大");
-            AppBase.CITYID = citylist[i].id;
-            AppBase.CITYNAME = citylist[i].name;
-            break;
-          }
-
-
-        }
-
-
-
-
-      }
-
-
-
-      this.Base.setMyData({
-        mylat,
-        mylng,
-        cityname: AppBase.CITYNAME
-      });
-
-      var lastlat = Number(AppBase.lastlat == undefined ? 0 : AppBase.lastlat);
-      var lastlng = Number(AppBase.lastlng == undefined ? 0 : AppBase.lastlng);
-
-
-
-      AppBase.lastlat = mylat;
-      AppBase.lastlng = mylng;
-
-
-      this.Base.setMyData({
-
-        address,
-        mia: "??",
-      });
-
-
-    }, () => {
-
-      this.Base.setMyData({
-        address: AppBase.lastaddress,
-
-        address: {
-          ad_info: {}
-        },
-        mylat: 0,
-        mylng: 0
-      });
-      console.log("vvckc", "2");
-      that.onMyShow();
-
-
-    });
 
 
   }
@@ -282,7 +194,7 @@ export class AppBase {
       title: '需要您授权才能正常使用小程序',
       content: '请点击“去设置”并启用“用户信息”，然后确定即可正常使用',
       confirmText: "去设置",
-      success: function (res) {
+      success: function(res) {
         if (res.confirm) {
           wx.openSetting({
 
@@ -303,106 +215,11 @@ export class AppBase {
   minimm
   onShow() {
     var that = this;
-    this.Base.getAddress((address) => {
-      console.log("vvckc", "4", address);
-      AppBase.lastaddress = address;
-      var mylat = address.location.lat;
-      var mylng = address.location.lng;
     
-      var citycode = address.ad_info.adcode;
-
-      this.Base.setMyData({
-        adcode: address.ad_info.adcode,
-        citycode
-      });
-
-      if (AppBase.CITYSET == false) {
-
-        console.log(AppBase.CITYID, "哦哦", citycode)
-
-        // var citys = citylist.filter((item, idx) => {
-        //   return item.code == citycode
-        // })
-
-
-
-        // if (citys.length == 0) {
-        //   this.Base.setMyData({
-        //     nocity: 1
-        //   });
-        // }
-
-
-        var citylist = this.Base.getMyData().usecitylist
-    
-        for (var i = 0; i < citylist.length; i++) {
-
-          console.log(citylist[i].id, "大蒜", citycode, AppBase.CITYID)
-
-          if (citylist[i].citycode == citycode) {
-            console.log("说锤子呢啊大大");
-            AppBase.CITYID = citylist[i].id;
-            AppBase.CITYNAME = citylist[i].name;
-            break;
-          }
-
-
-        }
-
-
-
-
-      }
-
-
-
-      this.Base.setMyData({
-        mylat,
-        mylng,
-        cityname: AppBase.CITYNAME
-      });
-
-      var lastlat = Number(AppBase.lastlat == undefined ? 0 : AppBase.lastlat);
-      var lastlng = Number(AppBase.lastlng == undefined ? 0 : AppBase.lastlng);
-
-
-
-      AppBase.lastlat = mylat;
-      AppBase.lastlng = mylng;
-
-
-      this.Base.setMyData({
-
-        address,
-        mia: "??",
-      });
-
-
-    }, () => {
-
-      this.Base.setMyData({
-        address: AppBase.lastaddress,
-
-        address: {
-          ad_info: {}
-        },
-        mylat: 0,
-        mylng: 0
-      });
-      console.log("vvckc", "2");
-      that.onMyShow();
-
-
-    });
     var instapi = new InstApi();
     instapi.resources({}, (res) => {
       this.Base.setMyData({
         res
-      });
-    });
-    instapi.citylist({}, (usecitylist) => {
-      this.Base.setMyData({
-        usecitylist
       });
     });
     instapi.info({}, (instinfo) => {
@@ -530,14 +347,12 @@ export class AppBase {
     var that = this;
 
     memberapi.info({}, (info) => {
-
       this.Base.setMyData({
         memberinfo: info
       });
-      that.onMyShow();
     });
 
-  
+
   }
   loadtabtype() {
     console.log("loadtabtype");
@@ -546,7 +361,7 @@ export class AppBase {
   }
 
   onMyShow() {
-    console.log("onMyShow"); 
+    console.log("onMyShow");
   }
   onHide() {
     console.log("onHide");
@@ -673,7 +488,7 @@ export class AppBase {
     console.log("getmyaddress");
     if (lat == undefined && lng == undefined) {
       wx.getLocation({
-        success: function (res) {
+        success: function(res) {
           lat = res.latitude;
           lng = res.longitude;
           AppBase.QQMAP.reverseGeocoder({
@@ -681,22 +496,22 @@ export class AppBase {
               latitude: lat,
               longitude: lng
             },
-            success: function (res) {
+            success: function(res) {
               //that.setMyData({ addressinfo:res.result });
               callback(res.result);
             },
-            fail: function (res) {
+            fail: function(res) {
               console.log("fail get location");
               callback(res.result);
               console.log(res);
             },
-            complete: function (res) {
+            complete: function(res) {
               console.log("complete");
               console.log(res);
             }
           });
         },
-        fail: function (res) {
+        fail: function(res) {
           console.log("fail open location");
           console.log(res);
           if (failcallback != undefined) {
@@ -710,16 +525,16 @@ export class AppBase {
           latitude: lat,
           longitude: lng
         },
-        success: function (res) {
+        success: function(res) {
           console.log("success");
           console.log(res);
           callback(res.result);
         },
-        fail: function (res) {
+        fail: function(res) {
           console.log("fail");
           console.log(res);
         },
-        complete: function (res) {
+        complete: function(res) {
           console.log("complete");
           console.log(res);
         }
@@ -736,7 +551,7 @@ export class AppBase {
     var address = e.currentTarget.id;
     AppBase.QQMAP.geocoder({
       address: address,
-      success: function (res) {
+      success: function(res) {
         if (res.status == 0) {
           var lat = res.result.location.lat;
           var lng = res.result.location.lng;
@@ -746,16 +561,16 @@ export class AppBase {
             address: address,
             latitude: lat,
             longitude: lng,
-            success: function (res) {
+            success: function(res) {
 
             }
           })
         }
       },
-      fail: function (res) {
+      fail: function(res) {
         console.log(res);
       },
-      complete: function (res) {
+      complete: function(res) {
         console.log(res);
       }
     });
@@ -776,7 +591,7 @@ export class AppBase {
         "field": "file"
       },
 
-      success: function (res) {
+      success: function(res) {
         console.log(res);
         var data = res.data
         if (data.substr(0, 7) == "success") {
@@ -800,7 +615,7 @@ export class AppBase {
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       count: count,
-      success: function (res) {
+      success: function(res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         console.log(res.tempFilePaths);
         //that.setData({
@@ -817,7 +632,7 @@ export class AppBase {
               'module': modul,
               "field": "file"
             },
-            success: function (res) {
+            success: function(res) {
               console.log(res);
               var data = res.data
               if (data.substr(0, 7) == "success") {
@@ -848,7 +663,7 @@ export class AppBase {
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       count: 1,
-      success: function (res) {
+      success: function(res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         console.log(res.tempFilePaths);
         //that.setData({
@@ -865,7 +680,7 @@ export class AppBase {
               'module': modul,
               "field": "file"
             },
-            success: function (res) {
+            success: function(res) {
               console.log(res);
               var data = res.data
               if (data.substr(0, 7) == "success") {
@@ -896,7 +711,7 @@ export class AppBase {
       compressed: true, // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       maxDuration: 60,
-      success: function (res) {
+      success: function(res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         console.log(res.tempFilePaths);
         //that.setData({
@@ -915,7 +730,7 @@ export class AppBase {
               'module': modul,
               "field": "file"
             },
-            success: function (res) {
+            success: function(res) {
               console.log(res);
               var data = res.data
               if (data.substr(0, 7) == "success") {
@@ -946,7 +761,7 @@ export class AppBase {
       count: 1,
       sizeType: ['original'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function (res) {
+      success: function(res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         console.log(res.tempFilePaths);
         //that.setData({
@@ -963,7 +778,7 @@ export class AppBase {
               'module': modul,
               "field": "file"
             },
-            success: function (res) {
+            success: function(res) {
               console.log(res);
               var data = res.data
               if (data.substr(0, 7) == "success") {
@@ -993,7 +808,7 @@ export class AppBase {
       sizeType: ['original'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['camera'], // 可以指定来源是相册还是相机，默认二者都有
       maxDuration: 60,
-      success: function (res) {
+      success: function(res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         console.log(res.tempFilePaths);
         //that.setData({
@@ -1010,7 +825,7 @@ export class AppBase {
               'module': modul,
               "field": "file"
             },
-            success: function (res) {
+            success: function(res) {
               console.log(res);
               var data = res.data
               if (data.substr(0, 7) == "success") {
@@ -1140,17 +955,17 @@ export class AppBase {
   download(url, callback, open = false) {
     wx.downloadFile({
       url: url, //仅为示例，并非真实的资源
-      success: function (res) {
+      success: function(res) {
         // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
         if (res.statusCode === 200) {
           var tempFilePath = res.tempFilePath;
           console.log("tempFilePath", tempFilePath);
           wx.saveFile({
             tempFilePath: tempFilePath,
-            fail: function (savefail) {
+            fail: function(savefail) {
               console.log("savefail", savefail);
             },
-            success: function (res) {
+            success: function(res) {
               var savedFilePath = res.savedFilePath;
               console.log("savedFilePath", savedFilePath, res);
               if (open == true) {
@@ -1219,7 +1034,7 @@ export class AppBase {
       duration: 300
     })
   }
- 
+
   tishi() {
     this.Base.setMyData({
       tishi: true
@@ -1316,20 +1131,22 @@ export class AppBase {
   }
 
 
-  shoucang(e){
-    var premisesapi=new PremisesApi();
-    var id=e.currentTarget.id;
-    
-    premisesapi.shoucang({premises_id:id},ret=>{
+  shoucang(e) {
+    var premisesapi = new PremisesApi();
+    var id = e.currentTarget.id;
+
+    premisesapi.shoucang({
+      premises_id: id
+    }, ret => {
       console.log(ret);
-      if(ret.code==0){
+      if (ret.code == 0) {
         this.Base.toast('收藏成功');
-      }else if(ret.code==1){
+      } else if (ret.code == 1) {
         this.Base.toast('取消收藏');
-      }else{
+      } else {
         this.Base.toast('操作失败');
       }
-      
+
       this.onMyShow();
     })
 
@@ -1337,13 +1154,13 @@ export class AppBase {
   }
 
 
-  goarticle(e){
-     //bindtap="goarticle" data-iszn="{{item.iszn_value}}" data-url="{{item.url}}" 
-     console.log(e);
+  goarticle(e) {
+    //bindtap="goarticle" data-iszn="{{item.iszn_value}}" data-url="{{item.url}}" 
+    console.log(e);
     var iszn = e.currentTarget.dataset.iszn;
     var url = e.currentTarget.dataset.url;
-    if(iszn!="Y"){
-      url ="https://uat6.helpfooter.com/articleload/index.php?url="+url;
+    if (iszn != "Y") {
+      url = "https://uat6.helpfooter.com/articleload/index.php?url=" + url;
     }
     url = encodeURIComponent(url);
     wx.navigateTo({

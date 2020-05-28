@@ -661,3 +661,12 @@ button[disabled][type=primary] {
   width: 100vw;
   height: 480rpx;
 }
+.border-top{
+  border-top: 1rpx solid #cdcdcd;
+}
+.bg-back{
+  background: rgba(0,0,0,0.5);
+}
+.hv100{
+  height: 100vh;
+}
