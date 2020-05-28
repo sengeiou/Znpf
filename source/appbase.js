@@ -269,6 +269,7 @@ export class AppBase {
                 //this.loadtabtype();
 
 
+                that.onMyShow();
                 memberapi.update(AppBase.UserInfo, () => {
 
                   console.log(AppBase.UserInfo);
@@ -302,13 +303,13 @@ export class AppBase {
                 ApiConfig.SetToken(data.openid);
                 console.log("goto update info");
 
+                that.onMyShow();
                 memberapi.update(AppBase.UserInfo, () => {
                   if (this.Base.needauth == true) {
                     // wx.redirectTo({
                     //   url: '/pages/auth/auth',
                     // })
                   } else {
-                    that.onMyShow();
                   }
                 });
 

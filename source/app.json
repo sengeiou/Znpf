@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/loupan/loupan",
     "pages/home/home",
+    "pages/loupan/loupan",
+  
     "pages/map/map",
     "pages/article/article",
     "pages/auth/auth",
