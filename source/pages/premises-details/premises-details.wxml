@@ -183,7 +183,7 @@
 
 				<view class="flex-row flex-column margin-right-20" wx:for='{{info.history}}'>
 					<view class="h6 ">{{item.time}}</view>
-					<view class="txtblock text-center h6 margin-top-20">{{item.name}}</view>
+					<view class="txtblock text-center h6 margin-top-20" style="background:{{item.color}}">{{item.name}}</view>
 				</view>
 
 

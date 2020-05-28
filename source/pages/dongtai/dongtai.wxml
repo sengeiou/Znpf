@@ -3,7 +3,6 @@
 	<view slot="content" class="txt-bold" style="color:#161616;">楼盘动态</view>
 </cu-custom>
 
-
 <view class="  padding-30">
 	<scroll-view scroll-x class="scroll " style=" width:100%">
 		<view class="label2 h6  text-center margin-right-10 " style=" display:inline-block">全部动态({{info.zixun.length}})</view>
@@ -11,20 +10,13 @@
 	</scroll-view>
 </view>
 
-
-
-
 <view class="grayblock"></view>
 <view class="padding-30">
 
 	<view class="{{idx>0?'margin-top':'' }}" wx:for='{{info.zixun}}' wx:key='s' wx:for-index='idx'>
-
 		<view class="txt-gray h6">{{item.updated_date}}</view>
-
 		<view class="txt-bold margin-top-20">{{item.name}}</view>
-
 		<view class="txt-gray h5 margin-top-20">{{item.content}}</view>
-
 	</view>
 
 

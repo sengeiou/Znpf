@@ -131,32 +131,17 @@
 
 	<view class="f-34 txt-bold padding-30" style="color:#161616">你可能感兴趣</view>
 
-
 	<view bindtap="topage" data-name="premises-details" id="{{item.id}}" wx:for="{{list}}" style="border-bottom:1rpx solid #F7F8FA" wx:key="k" class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30">
 
 		<image src='{{uploadpath}}premises/{{item.cover}}' class="img_1"></image>
 
-
-		<view class="margin-left-30 flex-1" style=" height:206rpx;overflow:hidden;">
+		<view class="margin-left-30 flex-1" style=" height:226rpx;overflow:hidden;">
 			<view class="txt-bold chaochu" style="color:#161616">{{item.name}}</view>
 			<view class="h5 txt-bold" style="color:#583A80;">{{item.avg_price}}</view>
 
-			<view class="flex-row margin-top-30">
+			<view class="flex-row flex-bottom margin-top-20">
 
-
-				<!-- <view class="flex-row ">
-
-						<view class="lable">北辰区|宜兴埠</view>
-						<view class="lable margin-left-16">刚需</view>
-
-					</view>
-					<view class="flex-row margin-top-16 ">
-
-						<view class="lable">综合体1公里+</view>
-						<view class="lable margin-left-16">地铁</view>
-
-					</view> -->
-				<view class="flex-row flex-center flex-wrap" style=" width: 236rpx;">
+				<view class="flex-row flex-center flex-wrap" style=" width: 240rpx;">
 					<view wx:for="{{item.label}}" wx:key="k1" wx:for-item="label" class="lable1 ">{{label.name}}</view>
 				</view>
 
@@ -167,7 +152,6 @@
 				</view>
 
 			</view>
-
 
 		</view>
 
