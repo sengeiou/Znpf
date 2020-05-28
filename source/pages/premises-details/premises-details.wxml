@@ -160,7 +160,7 @@
 		<view class="padding-30 margin-top-20 bg-white">
 			<view class="txt-bold">测评文章</view>
 
-			<view class="flex-row flex-center margin-top">
+			<view class="flex-row flex-center margin-top" bindtap="goarticle" data-iszn="{{info.article_iszn}}" data-url="{{info.article_url}}">
 				<image src="{{uploadpath}}article/{{info.article_image}}" class="wenzhan"></image>
 
 				<view class="flex-1 margin-left-20">

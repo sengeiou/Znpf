@@ -48,16 +48,7 @@ class Content extends AppBase {
         wenzhan
       });
     })
-    api.hanpai({}, (hanpai) => {
-
-      for (var i = 0; i < hanpai.length; i++) { 
-        hanpai[i].jinguan = new Number(hanpai[i].jinguan).toFixed(1); 
-      }
  
-      this.Base.setMyData({
-        hanpai
-      });
-    })
   }
   onMyShow() {
     var that = this;
@@ -73,6 +64,16 @@ class Content extends AppBase {
         })
       });
     });
+    api.hanpai({}, (hanpai) => {
+
+      for (var i = 0; i < hanpai.length; i++) { 
+        hanpai[i].jinguan = new Number(hanpai[i].jinguan).toFixed(1); 
+      }
+ 
+      this.Base.setMyData({
+        hanpai
+      });
+    })
 
     var premisesapi = new PremisesApi;
     premisesapi.list({
