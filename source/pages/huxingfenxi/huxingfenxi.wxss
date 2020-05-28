@@ -1,0 +1,13 @@
+/* pages/huxingfenxi/huxingfenxi.wxss */
+.img_2{
+  width:216rpx;
+  height: 216rpx;
+  border-radius: 8rpx;
+}
+.cutem{
+  display:inline-block;
+
+}
+.scroll {
+  white-space: nowrap;
+}

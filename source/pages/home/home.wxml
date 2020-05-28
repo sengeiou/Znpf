@@ -177,6 +177,7 @@
 		查看全部
 	</view>
 </view>
+
 <!-- 最新评测 -->
 <view class=" bg-white margin-top-10 padding-30 ">
 
@@ -184,42 +185,34 @@
 
 	<view class="flex-row flex-center margin-top">
 		<view class="flex-1"></view>
-		<view bindtap="topage" id="{{item.id}}" data-name="sunshine" wx:for="{{zuixinpince}}" wx:key="k" wx:for-index="idx" class="padding-20" style="background:#F0E9F6;border-radius:8rpx;margin-left:{{idx==0?'0rpx':'48rpx'}}">
-
-
+		<view bindtap="tosunshine" id="{{item.id}}" data-id="{{item.premises_id}}" wx:for="{{hanpai}}" wx:if='{{idx<=2}}' wx:key="k" wx:for-index="idx" class="padding-20" style="background:#F0E9F6;border-radius:8rpx;margin-left:{{idx==0?'0rpx':'48rpx'}}">
 			<view class="flex-row flex-bottom">
-
-				<view class="h-44" style="color:#583A80">{{list[0].rizhao}}</view>
+				<view class="h-44" style="color:#583A80">{{item.rizhao}}</view>
 				<view class="f-22  center " style="color:#777777">H</view>
 				<view class="f-22 " style="color:#777777">日照</view>
-
 			</view>
 			<view class="flex-row flex-bottom">
-
-				<view class="h-44" style="color:#583A80">{{list[0].jingguan}}</view>
+				<view class="h-44" style="color:#583A80">{{item.jinguan}}</view>
 				<view class="f-22 center " style="color:#777777">分</view>
 				<view class="f-22 " style="color:#777777">景观</view>
-
 			</view>
-			<view class="margin-top-20 f-26" style="color:#161616">{{item.loupanname}}</view>
-			<view class=" f-26 text-center" style="color:#777777">{{item.entrance_name}}</view>
-
-
+			<view class="margin-top-20 f-26" style="color:#161616">{{item.premises_name}}</view>
+			<view class=" f-26 text-center" style="color:#777777">{{item.name}}</view>
 		</view>
-
 		<view class="flex-1"></view>
 
 	</view>
 
 </view>
+
 <!-- 最新户型分析 -->
 
-<view class="bg-white margin-top-10 padding-30">
+<view class="bg-white margin-top-10 padding-30 text-center">
 	<view class="f-34 txt-bold " style="color:#161616">最新户型分析</view>
 
 	<view class="flex-row flex-center margin-top">
 
-		<view wx:for="{{huxinfenxi}}" wx:key="k" wx:for-index="idx" class="{{idx==0?'0rpx':'margin-left-20'}} ">
+		<view wx:for="{{huxinfenxi}}" wx:key="k" wx:for-index="idx" class="{{idx==0?'':'margin-left-20'}} " bindtap="topage" data-name="huxing" id="{{item.id}}">
 
 			<image src='{{uploadpath}}housing/{{item.fengmian}}' class="img_2"></image>
 
@@ -229,10 +222,17 @@
 		</view>
 
 
+
 	</view>
 
-
 </view>
+
+<view class="bg-white ">
+	<view bindtap="topage" data-name="huxingfenxi" class="allin  ">
+		查看全部
+	</view>
+</view>
+
 <!-- 最新航拍 -->
 <view class="bg-white margin-top-10 padding-30">
 	<view class="flex-row flex-center ">
@@ -246,50 +246,31 @@
 	</view>
 
 
-
-	<!-- <scroll-view scroll-x class="bg-white nav margin-top " scroll-with-animation scroll-left="{{scrollLeft}}">
-  <view style="margin:0;padding:0;margin-right:32rpx;" id="{{item.id}}" wx:for="{{hanpai}}" wx:key='k' class="cutem   kaifashan ">
-  <image bindtap="kaifashaninfo" class="kaifashan" src="{{uploadpath}}resource/{{res.ceshi}}"></image>
-      <view class="yinyin">
-        <view class="padding-10">
-          <view>恒大御景湾</view>
-          <view>河东区</view>
-        </view>
-      </view>
-    </view>
-  </scroll-view> -->
-  
 	<scroll-view scroll-x class="bg-white nav margin-top" scroll-with-animation scroll-left="{{scrollLeft}}">
-		<view style="margin:0;padding:0;margin-right:32rpx;" id="{{item.id}}" wx:for="{{hanpai}}" wx:key='k' class="cutem" bindtap="todetails">
+		<view style="margin:0;padding:0;margin-right:32rpx;" id="{{item.id}}" data-id="{{item.premises_id}}" wx:for="{{hanpai}}" wx:key='k' class="cutem" bindtap="todetails">
 			<image src="{{uploadpath}}resource/{{res.ceshi}}" class="" style="width:152px;height:104px;"></image>
 		</view>
 	</scroll-view>
-  
+
 </view>
-
-
 
 <!-- 最新评测文章 -->
 <view class=" bg-white margin-top-10 ">
 
 	<view class="f-34 txt-bold padding-30" style="color:#161616">最新测评文章</view>
 
-
 	<view wx:for="{{wenzhan}}" wx:key="k" style="border-bottom:1rpx solid #F7F8FA" wx:key="k" class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30" bindtap="goarticle" data-iszn="{{item.iszn_value}}" data-url="{{item.url}}">
 
 		<image src='{{uploadpath}}article/{{item.image}}' class="img_1"></image>
 
-
 		<view class="margin-left-30 flex-1">
 			<view class="txt-bold" style="color:#161616;height:80rpx"> {{item.name}}</view>
-
 
 			<view class="flex-row flex-center " style="margin-top:72rpx">
 
 				<view class="f-26" style="color:#777777">
 					{{item.summary}}
 				</view>
-
 
 				<view class=" flex-1"></view>
 				<view class="f-22" style="color:#CCCCCC">
@@ -298,7 +279,6 @@
 
 			</view>
 
-
 		</view>
 
 	</view>
@@ -306,4 +286,5 @@
 		查看全部
 	</view>
 </view>
+
 <!-- 底部高度 -->

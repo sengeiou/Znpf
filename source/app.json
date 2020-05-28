@@ -31,7 +31,8 @@
     "pages/gallery/gallery",
     "pages/dongtai/dongtai",
     "pages/hangpai/hangpai",
-    "pages/wodeguanzhu/wodeguanzhu"
+    "pages/wodeguanzhu/wodeguanzhu",
+    "pages/huxingfenxi/huxingfenxi"
   ],
   "permission": {
     "scope.userLocation": {

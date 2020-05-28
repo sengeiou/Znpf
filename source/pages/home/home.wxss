@@ -38,14 +38,13 @@ page{
   text-align: center;
 }
 .allin{
-  width:688rpx;
+   margin: 30rpx;
   height: 80rpx;
   background: #F0E9F6;
   text-align: center;
   line-height: 80rpx;
   text-align: 28rpx;
-  color:#161616;
-  margin-left:32rpx;
+  color:#161616; 
   font-size: 28rpx;
 }
 .allin1{

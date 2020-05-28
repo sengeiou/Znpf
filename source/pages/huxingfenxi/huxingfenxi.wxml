@@ -1,0 +1,28 @@
+<!--pages/huxingfenxi/huxingfenxi.wxml-->
+<cu-custom isCustom="{{true}}" bgColor="bg-white">
+	<view slot="content" class="txt-bold" style="color:#161616;">户型评测</view>
+</cu-custom>
+
+<view class="">
+
+	<view class="txt-bold padding-30">最新户型评测</view>
+
+
+	<view class="bg-white   text-center padding-30">
+ 
+		<scroll-view scroll-x class="scroll " style=" width:100%">
+			<view wx:for="{{huxinfenxi}}" wx:key="k" wx:for-index="idx" class="{{idx==0?'':'margin-left-20'}} cutem" bindtap="topage" data-name="huxing" id="{{item.id}}">
+
+				<image src='{{uploadpath}}housing/{{item.fengmian}}' class="img_2"></image>
+
+				<view class="margin-top-5 h5" style="color:#161616">{{item.disposal}} | {{item.areatype_name}}</view>
+				<view class="margin-top-5 f-22 chaochu" style="color:#777777;width:160rpx">{{item.premises_name}}</view>
+
+			</view>
+
+		</scroll-view>
+
+	</view>
+
+
+</view>

@@ -215,6 +215,14 @@
 					"id": -1,
 					"name": "pages/wodeguanzhu/wodeguanzhu",
 					"pathName": "pages/wodeguanzhu/wodeguanzhu",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "户型评测",
+					"pathName": "pages/huxingfenxi/huxingfenxi",
+					"query": "",
 					"scene": null
 				}
 			]
