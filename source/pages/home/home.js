@@ -95,13 +95,20 @@ class Content extends AppBase {
       url: '/pages/map/map',
     })
   }
+
+  todetails(e){
+  
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.fanyuanlist=content.fanyuanlist;
-body.gotoloupan = content.gotoloupan; 
+body.gotoloupan = content.gotoloupan;
 body.pincelist = content.pincelist;
 body.gomap = content.gomap;
+
+body.todetails = content.todetails;
+
 Page(body)
