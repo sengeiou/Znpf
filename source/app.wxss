@@ -250,7 +250,7 @@ button.button-hover{
 
 button[type=primary]{
   
-  background-color: #2699EC;
+  background-color: #583A80;
 }
 button.button-hover[type=primary]{
   

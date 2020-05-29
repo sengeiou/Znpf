@@ -107,7 +107,7 @@
 		<view class="flex-row flex-center margin-top">
 			<view class="flex-1"></view>
 			<view class="viewinput"><input type="number" maxlength="4" placeholder="最低（万元）" bindinput="setminprice" value="{{minprice}}" class="text-center" placeholder-class="text-center" /></view>
-			<view class="margin-left margin-right">至</view>
+			<view class="margin-left margin-right" style="width:50rpx">至</view>
 			<view class="viewinput"><input bindinput="setmaxprice" type="number" maxlength="4" placeholder="最高（万元）" value="{{maxprice}}" class="text-center" placeholder-class="text-center" /></view>
 			<view class="flex-1"></view>
 		</view>
