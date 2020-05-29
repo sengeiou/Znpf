@@ -4,10 +4,10 @@ Page {
 }
 
 .topimage {
-  height: 342rpx;
+  height: 352rpx;
   width: 100%;
   position: absolute;
-  top: 168rpx;
+  top: 10.5%;
   /* margin-bottom: -36rpx; */
 }
 
@@ -15,7 +15,7 @@ Page {
   border-radius: 32rpx 32rpx 0 0;
   width: 100%;
   position: absolute;
-  top: 488rpx;
+  top: 30.5%;
   z-index: 10;
 }
 

@@ -1,151 +1,210 @@
 <cu-custom bgColor="bg-white">
-  <view slot="content" class="txt-bold" style="color:#161616;">楼盘</view>
+
+	<view slot="content" class="txt-bold" style="color:#161616;">楼盘</view>
 </cu-custom>
 
-<view class="fixTop bg-white">
-  <view class="sousuo flex-row flex-center" style="background:rgba(238,238,238,1);" bindtap="search">
-    <image class="icon-15 margin-left-10" src="{{uploadpath}}resource/{{res.sousuo}}"></image>
+<view class="sousuo flex-row flex-center" style="background:rgba(238,238,238,1);" bindtap="search">
+	<image class="icon-15 margin-left-10" src="{{uploadpath}}resource/{{res.sousuo}}"></image>
 
-    <view class="h6 margin-left-20 flex-1" style="color:#CCCCCC">请输入您要搜索的内容</view>
-  </view>
-  <view class="h5 flex-row" style="color:#583A80;">
-    <view class="flex-1"></view>
-    <image class="icon-15 margin-top margin-right-10" src="{{uploadpath}}resource/{{res.fx}}"></image>
-    <view class="h5 margin-right-30 margin-top-35" style="color:#583A80;">分享</view>
+	<view class="h6 margin-left-20 flex-1" style="color:#CCCCCC">请输入您要搜索的内容</view>
+	<!-- <view class="juxin1"></view> -->
 
-  </view>
-
-
-  <view>
-    <!-- 筛选区1 -->
-    <view class=" flex-row  flex-center bg-white margin-top">
-
-      <view class="flex-1 flex-row flex-center padding-30">
-
-        <view bindtap="showCitySelect" data-id="1" class="flex-1 flex-row flex-column">
-          <view class="flex-row flex-center">
-
-            <view class="h5 chaochu" style="color:{{shaixuanid==1?'#87BFF1':'#583A80'}}">{{selectdiquname}}</view>
-            <image class="paixuxia" src="{{uploadpath}}resource/{{res.paixuxia}}"></image>
-
-          </view>
-
-        </view>
-
-        <view data-id="2" class="flex-1 flex-row flex-column">
-          <view class="flex-row flex-center">
-
-            <view class="h5 text-right chaochu" style="color:{{shaixuanid==2?'#87BFF1':'#583A80'}};width:70rpx">{{(danjiaid>0||zonjiaid>0)?jiagename:'价格'}}</view>
-            <image class="paixuxia" src="{{uploadpath}}resource/{{res.paixuxia}}"></image>
-            <view class="flex-1"></view>
-          </view>
-
-        </view>
-
-
-        <view data-id="3" class="flex-1 flex-row flex-column">
-          <view class="flex-row flex-center">
-
-            <view class="h5" style="color:{{shaixuanid==3?'#87BFF1':'#583A80'}}">筛选</view>
-            <image class="paixuxia" src="{{uploadpath}}resource/{{res.paixuxia}}"></image>
-
-          </view>
-
-        </view>
-
-
-      </view>
-      <image class="icon-15 margin-right-30 " src="{{uploadpath}}resource/{{res.paixu}}"></image>
-
-    </view>
-    <!-- 间隔 -->
-
-
-
-
-
-  </view>
-
-
+	<!-- <view bindtap="xuanzechenshi" class="flex-row flex-center"> -->
+	<!-- <image class="icon-15 margin-left-10" src="{{uploadpath}}resource/{{res.weizhi}}"></image>
+    <view class="h5 margin-right-20 margin-left-10" style="color:#161616">{{cityname}}</view> -->
+	<!-- </view> -->
+</view>
+<view class="h5 flex-row" style="color:#583A80;">
+	<view class="flex-1"></view>
+	<image class="icon-15 margin-top margin-right-10" src="{{uploadpath}}resource/{{res.fx}}"></image>
+	<view class="h5 margin-right-30 margin-top-35" style="color:#583A80;">分享</view>
 
 </view>
-<view class="fixTop hv100" style="margin-top:216rpx;  " wx:if="{{cityselect==true}}">
-  <view class="border-top flex-row">
-    <view class="optioncol option-l1">
-      <view class="option {{city_id==0?'active':''}}" bindtap="selectcity" data-city_id='0'  >不限</view>
-      <view  class="option {{city_id==cityitem.id?'active':''}}" wx:for="{{citylist}}" wx:key="ck" wx:for-index='cityidx' wx:for-item="cityitem"  bindtap="selectcity" data-city_id='{{cityitem.id}}' >
-        {{cityitem.name}}
+<!-- <swiper indicator-dots='true' autoplay='false' interval='5000' duration='200' current="{{indexcurrent}}" circular='true' > -->
+<!-- <swiper-item wx:for="{{indexbanner}}" wx:key="k">
+		<image src='{{uploadpath}}indexbanner/{{item.img}}' style="width:100%;height:100%; " bindtap='bannerGo' id="{{item.id}}" class='bor-rd-6'></image>
+	</swiper-item> -->
+<!-- </swiper> -->
+
+<view catchtouchmove='true' class="{{scrollTop>182 ? 'rel' : 'nav'}}">
+	<!-- 筛选区1 -->
+	<view class=" flex-row  flex-center bg-white margin-top">
+
+		<view class="flex-1 flex-row flex-center padding-30">
+
+			<view bindtap="shaixuan" data-id="1" class="flex-1 flex-row flex-column">
+				<view class="flex-row flex-center">
+
+					<view class="h5 chaochu" style="color:{{shaixuanid==1?'#87BFF1':'#583A80'}}">{{quid>0?quname:'区域'}}</view>
+					<image class="paixuxia" src="{{uploadpath}}resource/{{res.paixuxia}}"></image>
+
+				</view>
+
+			</view>
+
+			<view bindtap="shaixuan" data-id="2" class="flex-1 flex-row flex-column">
+				<view class="flex-row flex-center">
+
+					<view class="h5 text-right chaochu" style="color:{{shaixuanid==2?'#87BFF1':'#583A80'}};width:70rpx">{{(danjiaid>0||zonjiaid>0)?jiagename:'价格'}}</view>
+					<image class="paixuxia" src="{{uploadpath}}resource/{{res.paixuxia}}"></image>
+					<view class="flex-1"></view>
+				</view>
+
+			</view>
+
+
+			<view bindtap="shaixuan" data-id="3" class="flex-1 flex-row flex-column">
+				<view class="flex-row flex-center">
+
+					<view class="h5" style="color:{{shaixuanid==3?'#87BFF1':'#583A80'}}">筛选</view>
+					<image class="paixuxia" src="{{uploadpath}}resource/{{res.paixuxia}}"></image>
+
+				</view>
+
+			</view>
+
+
+		</view>
+		<image class="icon-15 margin-right-30 " src="{{uploadpath}}resource/{{res.paixu}}"></image>
+
+	</view>
+	<!-- 间隔 -->
+	<view style="height:2rpx;width:100vw;background: #F7F8FA;"></view>
+	<view wx:if="{{shaixuan}}" class="quyu">
+
+		<!-- <view class=" " wx:if="{{shaixuanid==1}}" style=""> -->
+		<!-- 
+      <view class="flex-row flex-center"> -->
+		<!-- <view style="background:white;height:500rpx" class="flex-1">
+
+          <view class="text-center padding-20 h5" style="color:#87BFF1">城区</view>
+
+        </view> -->
+
+		<!-- <scroll-view scroll-y="{{true}}" style="background: #EEEEEE;height:500rpx" class="flex-2">
+
+          <view wx:for="{{qu}}" bindtap="xuanzequyu" style="color:{{quid==item.id?'#87BFF1':''}}" data-name="{{item.name}}" data-id="{{item.id}}" wx:key="k" class="padding-20 h5 margin-left-20">{{item.name}}</view>
+
+
+        </scroll-view> -->
+		<!-- </view> -->
+
+		<!-- </view> -->
+		<!-- <view class=" " wx:if="{{shaixuanid==2}}" style="">
+
+      <view class="flex-row flex-center">
+        <view style="background:white;height:500rpx" class="flex-1">
+
+          <view class="text-center padding-20 h5" bindtap="danshuan" data-id="0" style="color:{{danshuan==0?'#87BFF1':''}}">单价</view>
+          <view class="text-center padding-20 h5" bindtap="danshuan" data-id="1" style="color:{{danshuan==1?'#87BFF1':''}}">总价</view>
+        </view>
+
+        <scroll-view wx:if="{{danshuan==0}}" scroll-y="{{true}}" style="background: #EEEEEE;height:500rpx" class="flex-2">
+
+          <view wx:for="{{danjia}}" bindtap="xuanzedanjia" style="color:{{danjiaid==item.id?'#87BFF1':''}}" data-qujian="{{item.num}}" data-name="{{item.name}}" data-id="{{item.id}}" wx:key="k" class="padding-20 h5 margin-left-20">{{item.name}}</view>
+
+
+        </scroll-view>
+
+        <scroll-view wx:if="{{danshuan==1}}" scroll-y="{{true}}" style="background: #EEEEEE;height:500rpx" class="flex-2">
+
+          <view wx:for="{{zonjia}}" bindtap="xuanzezonjia" style="color:{{zonjiaid==item.id?'#87BFF1':''}}" data-qujian="{{item.num}}" data-name="{{item.name}}" data-id="{{item.id}}" wx:key="k" class="padding-20 h5 margin-left-20">{{item.name}}</view>
+
+
+        </scroll-view>
       </view>
-    </view>
-    <view class="optioncol option-l2">
-      <view class="option {{district_id==0?'active':''}}" bindtap="selectdistrict" data-district_id='0'  >不限</view>
-      <view  class="option {{district_id==districtitem.id?'active':''}}" wx:if="{{city!=null}}" wx:for="{{city.districtlist}}" wx:key="ck" wx:for-index='districtidx' wx:for-item="districtitem" bindtap="selectdistrict" data-district_id='{{districtitem.id}}'   >
-        {{districtitem.name}}
+
+    </view> -->
+
+		<!-- <view class="" wx:if="{{shaixuanid==3}}">
+
+
+      <view class="padding-20" style="background:white;height:500rpx" class="flex-1">
+
+
+        <view class="">面积</view>
+
+
       </view>
-    </view>
-    <view class="flex-1 optioncol bg-white ">
-      <view class="option {{street_id==0?'active':''}}" bindtap="selectstreet" data-street_id='0' >不限</view>
-      <view  class="option {{street_id==streetitem.id?'active':''}}" wx:if="{{district!=null}}" wx:for="{{district.streetlist}}" wx:key="ck" wx:for-index='streetidx' wx:for-item="streetitem"  bindtap="selectstreet" data-street_id='{{streetitem.id}}'  >
-        {{streetitem.name}}
-      </view>
-    </view>
-  </view>
-  <view class="padding-20 border-top bg-white">
-    <button type="primary" bindtap="setcity">确定</button>
-  </view>
-  <view bindtap="closecityselect" class="bg-back" style="height:calc( 100vh - 620rpx - 133rpx )">
-  
-  </view>
+
+
+
+
+
+    </view> -->
+
+	</view>
+
+
+	<!-- 筛选区2 -->
+	<!-- <view wx:if="{{!shaixuan}}" class=" flex-row flex-center padding-30 bg-white">
+    <view wx:for="{{label1}}" wx:key="k" class="shaixuanlable">{{item.name}}</view>
+
+  </view> -->
 </view>
+<!-- <view catchtouchmove='true' bindtap="guanbi" wx:if="{{shaixuan==true}}" class="balckbg"></view> -->
+<!-- 楼盘列表 -->
+
+<!-- <view style="height:{{scrollTop>182?'226rpx':''}}"></view>
+<view>
+  <view bindtap="loupanxianqin" data-id="{{item.id}}" wx:for="{{list}}" wx:key="k" class="flex-row flex-center padding-30 bg-white" style="margin-top:2rpx">
+    <image src='{{uploadpath}}premises/{{item.cover}}' class="img_1"></image>
+
+    <view class="margin-left-30 flex-1">
+
+      <view class="flex-row flex-center ">
+        <view class="txt-bold chaochu" style="color:#161616;width:300rpx">{{item.name}}</view>
+        <view class="flex-1"></view>
+        <view class="lable" style="background:{{item.premisestype_color}}">{{item.premisestype_name}}</view>
+      </view>
+      <view class="f-26 margin-top-10" style="color:#777777">北辰 | 宜兴埠</view>
+
+      <view class="flex-row flex-center margin-top-10">
+        <view wx:for="{{item.label}}" wx:key="k1" wx:for-item="label" class="lable1">{{label.name}}</view>
 
 
-<view class="fixTop hv100" style="margin-top:216rpx;  ">
-  <view class="border-top padding-40 bg-white">
-    <view class="h4 text-bold">价格区间</view>
-    <view class="flex-row flex-center margin-top">
-      <view class="flex-1"></view>
-      <view class="viewinput"><input type="number" maxlength="4" placeholder="最低（万元）" class="text-center" placeholder-class="text-center" /></view>
-      <view class="margin-left margin-right">至</view>
-      <view class="viewinput"><input type="number" maxlength="4" placeholder="最高（万元）" class="text-center" placeholder-class="text-center"  /></view>
-      <view class="flex-1"></view>
-    </view>
-    <view class="margin-top flex-row flex-wrap">
-      <view class="priceoption {{item.checked==true?'active':''}}" wx:for="{{pricearraylist}}" wx:key="k" wx:for-index='idx' id="{{idx}}">{{item.name}}</view>
-    </view>
-  </view>
-  <view class="padding-20 border-top bg-white">
-    <button type="primary" bindtap="setcity">确定</button>
-  </view>
-  <view bindtap="closecityselect" class="bg-back" style="height:calc( 100vh - 620rpx - 133rpx )">
-  
-  </view>
-</view>
+      </view> -->
+
+<!-- <view class="margin-top-20">
+
+        <view class="flex-row flex-center">
+
+          <view class="h5" style="color:#583A80">{{item.avg_price}}</view>
+          <view class="h5 margin-left-20" style="color:#777777">建面 {{item.avg_area}}</view>
+        </view>
 
 
+      </view> -->
 
-<view style="height:216rpx;"></view>
+
+<!-- </view> -->
+
+<!-- </view> -->
+<!-- <view style="height:2500rpx"></view> -->
+<!-- </view>
 
 <!-- 楼盘列表 -->
 <view class=" bg-white margin-top-10 ">
-  <view bindtap="topage" data-name="premises-details" id="{{item.id}}" wx:for="{{list}}" style="border-bottom:1rpx solid #F7F8FA" wx:key="k" class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30">
-    <image src='{{uploadpath}}premises/{{item.cover}}' class="img_1"></image>
-    <view class="margin-left-30 flex-1" style=" height:206rpx;                     overflow:hidden;">
-      <view class="flex-row">
-        <view class="txt-bold chaochu" style="color:#161616s; width:380rpx;">{{item.name}} </view>
-        <view class="flex-1"></view>
-        <view class="txt-white bg-color h6 padding-left-5 padding-bottom-2">新房</view>
-      </view>
+	<view bindtap="topage" data-name="premises-details" id="{{item.id}}" wx:for="{{list}}" style="border-bottom:1rpx solid #F7F8FA" wx:key="k" class="flex-row flex-center padding-30 padding-top-30 padding-bottom-30">
+		<image src='{{uploadpath}}premises/{{item.cover}}' class="img_1"></image>
+		<view class="margin-left-30 flex-1" style=" height:206rpx;overflow:hidden;">
 
-      <view class="h6 lable margin-top-5" style="color:#A0A0A0;">{{item.city_name}}|{{item.district_name}}</view>
-      <view class="flex-row flex-center chaochu" style=" width: 440rpx;">
-        <view wx:for="{{item.label}}" wx:key="k1" wx:for-item="label" class="lable1 ">{{label.name}}</view>
-      </view>
-      <view class="flex-row">
-        <view class="f-32 txt-bold margin-top-20" style="color:#583A80;">{{item.avg_price}} </view>
-        <view class="h5 lable margin-top-20" style="color:#A0A0A0;">建面 {{item.avg_area}}</view>
-      </view>
+			<view class="flex-row">
+				<view class="txt-bold chaochu" style="color:#161616s; width:380rpx;">{{item.name}} </view>
+				<	view class="flex-1"></view>
+				<view class="txt-white bg-color h6 padding-left-5 padding-bottom-2">新房</view>
+			</view>
+
+			<view class="h6 lable margin-top-5" style="color:#A0A0A0;">{{item.city_name}}|{{item.district_name}}</view>
+			<view class="flex-row flex-center chaochu" style=" width: 440rpx;">
+				<view wx:for="{{item.label}}" wx:key="k1" wx:for-item="label" class="lable1 ">{{label.name}}</view>
+			</view>
+			<view class="flex-row">
+				<view class="f-32 txt-bold margin-top-20" style="color:#583A80;">{{item.avg_price}} </view>
+				<view class="h5 lable margin-top-20" style="color:#A0A0A0;">建面 {{item.avg_area}}</view>
+			</view>
 
 
-    </view>
-  </view>
+		</view>
+	</view>
 </view>
