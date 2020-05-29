@@ -1,0 +1,31 @@
+/* pages/search/search.wxss */
+Page{
+background: #FFFFFF;
+}
+.sousuo {
+   
+  background: rgb(243, 243, 243);
+  border-radius: 10rpx; 
+}
+.img_1 {
+
+  width: 224rpx;
+  height: 192rpx;
+  border-radius: 8rpx;
+
+}
+.lable{
+  padding:1rpx 10rpx 2rpx 10rpx;
+  background: #87BFF1;
+  border-radius: 4rpx;
+  font-size: 22rpx;
+  color:white;
+}
+.lable1{
+  padding:1rpx 10rpx 2rpx 10rpx;
+  background: #FCE4D1;
+  border-radius: 4rpx;
+  font-size: 22rpx;
+  color:#777777;
+  margin-right: 10rpx;
+}
