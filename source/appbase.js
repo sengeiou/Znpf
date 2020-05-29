@@ -340,6 +340,7 @@ export class AppBase {
         UserInfo: AppBase.UserInfo
       });
 
+      that.onMyShow();
       that.checkPermission();
     }
 
