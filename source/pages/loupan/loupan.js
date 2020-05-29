@@ -119,19 +119,21 @@ class Content extends AppBase {
 
     if(data.minprice!=''||data.maxprice!=''){
       if(data.minprice!=''){
-        json.minprice=data.minprice;
+        json.minprice=data.selectminprice;
       } 
       if (data.maxprice != '') {
-        json.maxprice = data.maxprice;
+        json.maxprice = data.selectmaxprice;
       } 
     }else{
       var pricerange=[];
-      for(var i=0;i<data.pricearraylist.length;i++){
-        if(data.pricearraylist[i].checked==true){
-          pricerange.push(data.pricearraylist[i].min + "-" + data.pricearraylist[i].max);
+      for (var i = 0; i < data.selectpricearraylist.length;i++){
+        if (data.selectpricearraylist[i].checked==true){
+          pricerange.push(data.selectpricearraylist[i].min + "-" + data.selectpricearraylist[i].max);
         }
       }
-      json.pricerange = pricerange.join(",");
+      if(pricerange.length>0){
+        json.pricerange = pricerange.join(",");
+      }
     }
 
     api.list(json,(list)=>{
@@ -403,6 +405,7 @@ class Content extends AppBase {
       district: data.selectdistrict,
       street: data.selectstreet
     });
+
   }
   closecityselect(){
     this.Base.setMyData({
@@ -456,8 +459,8 @@ class Content extends AppBase {
     } else {
       for (var i = 0; i < data.pricearraylist.length; i++) {
         if (data.pricearraylist[i].checked == true) {
-          priceselect = data.pricearraylist[i].name;
-          return;
+          selectprice = data.pricearraylist[i].name;
+          break;
         }
       }
     }
@@ -470,6 +473,8 @@ class Content extends AppBase {
       selectmaxprice: data.maxprice,
       selectpricearraylist: data.pricearraylist
     });
+
+    this.getloupan();
   }
 }
 var content = new Content();
