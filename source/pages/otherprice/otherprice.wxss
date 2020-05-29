@@ -4,7 +4,5 @@
   width: 150rpx;
 }
 .priceblock {
-  height: 50rpx;
-  /* width: 300rpx; */
-  background: burlywood;
+  height: 50rpx; 
 }

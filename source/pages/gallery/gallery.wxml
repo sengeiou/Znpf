@@ -13,7 +13,7 @@
 		</view>
 		<view class="flex-1"></view>
 		<view class="flex-row flex-column" bindtap='bindorder' id="B">
-			<view class='h5 txt-bold flex-1  {{nowidx=="B"?"":"txt-gray opa8"}}'>户型({{b}})</view>
+			<view class='h5 txt-bold flex-1  {{nowidx=="B"?"":"txt-gray opa8"}}'>户型({{hxnum}})</view>
 			<view class=' order {{nowidx=="B"?"bg-purple":"bg-white"}}'></view>
 		</view>
 		<view class="flex-1"></view>

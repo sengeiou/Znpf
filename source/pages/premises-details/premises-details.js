@@ -12,10 +12,9 @@ class Content extends AppBase {
   }
   onLoad(options) {
     this.Base.Page = this;
-     //options.id=1;
+    //options.id=4;
     super.onLoad(options);
     this.Base.setMyData({nowidx:0});
-    
   }
 
   onMyShow() {
@@ -80,6 +79,21 @@ class Content extends AppBase {
       }else{
         this.Base.setMyData({sc:'B'})
       }
+    })
+
+    premisesapi.huxinfenlei({
+      premises_id: this.Base.options.id
+    }, (fllist) => {
+      var hxnum=0;
+      for(var i=0;i<fllist.length;i++){
+        
+        var tuku=fllist[i].tuku;
+        for(var j=0;j<tuku.length;j++){
+          hxnum++
+        }
+
+      }
+    this.Base.setMyData({hxnum})
     })
 
 

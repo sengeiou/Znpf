@@ -10,12 +10,13 @@
 	<image src="{{uploadpath}}premises/{{info.cover}}" class="topimage"></image>
 
 	<view class="toptwo text-center padding-top-10" bindtap="topage" data-name="huxinglist" id="{{info.id}}">
-		<view class="h4 txt-bold txt-purple">户型</view>
+		<!-- <view class="h4 txt-bold txt-purple">户型</view> -->
+		<image src="{{uploadpath}}housing/{{info.housing[0].fengmian}}" class="imgs"></image>
 	</view>
 
 	<view class="topone text-center padding-top-10" bindtap="topage" data-name="gallery" id="{{info.id}}">
-		<view class="h4 txt-bold txt-purple">+{{info.gallery.length}}</view>
-		<view class="h6">查看更多</view>
+		<view class="h4 txt-bold txt-purple">+{{(info.gallery.length)+hxnum}}</view>
+		<view class="h6 txt-purple">查看更多</view>
 	</view>
 
 	<view class="topblock ">
@@ -43,7 +44,7 @@
 
 
 			<view class='flex-row flex-center margin-top-10'>
-				<view class="label h6 text-center margin-right-10" wx:for='{{info.label}}' wx:key='k'>{{item.name}}</view>
+				<view class="label h6_5 text-center margin-right-16" wx:for='{{info.label}}' wx:key='k'>{{item.name}}</view>
 			</view>
 
 			<view class="flex-row flex-center margin-top">
@@ -53,7 +54,7 @@
 					<view class="txt-bold h4 txt-purple">{{info.avg_price}}</view>
 				</view>
 
-				<view style="width:2rpx;height:64rpx;" class="bg-gray"></view>
+				<view style="width:2rpx;height:64rpx;" class="bg2"></view>
 
 				<view class="text-center flex-1">
 					<view class="h5 txt-gray">建面(m2)</view>
@@ -104,7 +105,7 @@
 		</view>
 
 		<!-- 信息查看 -->
-		<view class=" margin-top bg-white padding-30">
+		<view class=" margin-top-20 bg-white padding-30">
 
 			<view class="flex-row flex-center">
 
@@ -148,7 +149,7 @@
 				</view>
 
 				<view class="text-center flex-1 " bindtap="topage" data-name="gallery" id="{{info.id}}">
-					<image src="{{uploadpath}}resource/{{res.dinwei}}" class="icon-25"></image>
+					<image src="{{uploadpath}}resource/{{res.tuku}}" class="icon-25"></image>
 					<view class="h6 txt-gray margin-top-10">图库</view>
 				</view>
 
@@ -163,9 +164,9 @@
 			<view class="flex-row flex-center margin-top" bindtap="goarticle" data-iszn="{{info.article_iszn}}" data-url="{{info.article_url}}">
 				<image src="{{uploadpath}}article/{{info.article_image}}" class="wenzhan"></image>
 
-				<view class="flex-1 margin-left-20">
+				<view class="flex-1 margin-left-20 flex-row column" style="height:192rpx">
 					<view class="txt-bold">{{info.article_summary}}</view>
-
+					<view class="flex-1"></view>
 					<view class="flex-row flex-center margin-top">
 						<view class="h6 flex-1 chaochu">{{info.name}}</view>
 						<view class="h7" style="color:#CCCCCC">{{info.article_time}}</view>
@@ -193,7 +194,6 @@
 		<!-- 楼盘动态 -->
 		<view class="padding-30  margin-top-20 bg-white">
 
-
 			<!-- 查看全部 -->
 			<view class="flex-row flex-center" bindtap="topage" data-name="dongtai" id="{{info.id}}">
 				<view class="txt-bold flex-1">楼盘动态</view>
@@ -203,10 +203,9 @@
 
 			<!-- 标签 -->
 			<view class='flex-row flex-center  margin-top flex-wrap' style="height:52rpx;overflow:hidden">
-				<view class="label2 h6 text-center margin-right-10">全部</view>
-				<view class="label2 h6 text-center margin-right-10" wx:for='{{info.zxlabel}}' wx:key='k' >{{item.name}}</view>
-				<!-- <view class="label2 h6 margin-left-10 text-center">销控信息</view>
-				<view class="label2 h6 margin-left-10 text-center">楼盘咨询</view> -->
+
+				<view class="label3 h6 text-center margin-right-16" wx:for='{{info.zxlabel}}' wx:key='k'>{{item.name}}</view>
+
 			</view>
 
 			<!-- 文章 -->
@@ -220,7 +219,7 @@
 					</view>
 
 					<view class="flex-1"></view>
-					<view class="txt-gray h6  margin-top-10">{{item.created_date}}</view>
+					<view class="txt-gray h6  margin-top-10">{{item.time}}</view>
 				</view>
 
 
@@ -234,12 +233,15 @@
 
 			<view class="flex-row flex-center margin-top">
 
-				<view class="flex-row flex-center padding-20 guwen margin-right-20" wx:for='{{info.guwen}}' wx:key='g' bindtap="topage" data-name="guwen" id="{{item.id}}">
-					<image src="{{uploadpath}}member/{{item.minpai}}" class="icon-30 radius-50"></image>
-					<view class="flex-1 margin-left-10">
-						<view class="h5">{{item.name}}</view>
-						<view class="h6 margin-top-10 chaochu" style="color:#FCC496">{{info.name}}</view>
+				<view class="flex-row flex-center  guwen   {{idx>0?'margin-left-20':''}}" style="background:{{item.color}}" wx:if='{{idx<3}}' wx:for='{{info.guwen}}' wx:for-index='idx' wx:key='g' bindtap="topage" data-name="guwen" id="{{item.id}}">
+
+					<image src="{{uploadpath}}member/{{item.minpai}}" class="icon-30 radius-50  "></image>
+
+					<view class="flex-1  margin-left-10">
+						<view class="h5  ">{{item.name}}</view>
+						<view class="h6_5 margin-top-10 chaochu" style="color:{{item.fontcolor}};width:88rpx">{{info.name}}</view>
 					</view>
+
 				</view>
 
 			</view>
@@ -251,26 +253,23 @@
 
 			<view class="txt-bold">楼盘评级</view>
 
-			<view class="flex-row   margin-top">
+			<view class="flex-row  flex-center margin-top margin-left-20">
 
 				<view class="leftblock text-center padding-20">
-					<view class="txt-bold h4 txt-purple">{{info.pingji}}</view>
-					<view class="h5">配套评级</view>
+					<view class="txt-bold h3 txt-purple margin-top-10">{{info.pingji}}</view>
+					<view class="h5 txt-gray">配套评级</view>
 					<view class="h5 txt-purple margin-top-20">{{info.rank}}</view>
-					<view class="h5">查看地图</view>
+					<view class="h5 txt-gray">查看地图</view>
 				</view>
 
-
-
-				<view class=" margin-left-20">
+				<view class=" margin-left-40">
 
 					<view class="flex-row flex-center">
 						<view>学校</view>
-						<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+						<view class="starbox text-right margin-top-10 flex-1  margin-left-40">
 							<view class="stars" style="width: 100%;">
 								<view class=" ims">
 									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
-
 								</view>
 							</view>
 							<view class="stars2" style="width: {{(info.school/5)*100}}%">
@@ -283,10 +282,9 @@
 						<view class="txt-purple margin-left-20">{{info.school}}</view>
 					</view>
 
-
 					<view class="flex-row flex-center margin-top-10">
 						<view>商场</view>
-						<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+						<view class="starbox text-right margin-top-10 flex-1  margin-left-40">
 							<view class="stars" style="width: 100%;">
 								<view class=" ims">
 									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
@@ -304,7 +302,7 @@
 
 					<view class="flex-row flex-center margin-top-10">
 						<view>医院</view>
-						<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+						<view class="starbox text-right margin-top-10 flex-1  margin-left-40">
 							<view class="stars" style="width: 100%;">
 								<view class=" ims">
 									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
@@ -322,7 +320,7 @@
 
 					<view class="flex-row flex-center margin-top-10">
 						<view>景观</view>
-						<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+						<view class="starbox text-right margin-top-10 flex-1  margin-left-40">
 							<view class="stars" style="width: 100%;">
 								<view class=" ims">
 									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
@@ -377,8 +375,8 @@
 						<image wx:if='{{item.fangshi=="A"}}' src="{{uploadpath}}resource/{{res.buxing}}" class="icon"></image>
 						<image wx:if='{{item.fangshi=="B"}}' src="{{uploadpath}}resource/{{res.qiche}}" class="icon"></image>
 						<image wx:if='{{item.fangshi=="C"}}' src="{{uploadpath}}resource/{{res.kaiche}}" class="icon"></image>
-						<view class="h6 txt-gray margin-left-10">{{item.shichang}}</view>
-						<view class="h6 txt-gray margin-left-10">{{item.juli}}</view>
+						<view class="h6 txt-gray margin-left-20">{{item.shichang}}</view>
+						<view class="h6 txt-gray margin-left-20">{{item.juli}}</view>
 					</view>
 				</view>
 			</view>
@@ -401,13 +399,12 @@
 			<view class="flex-row  margin-top" wx:for='{{info.otherprice}}' wx:key='o'>
 				<view class="loupanname text-right h5">{{item.name}}</view>
 				<view class="flex-row flex-center flex-1">
-					<view class="priceblock margin-left-20" style="width:{{item.price>100000?300:(item.price/100000)*300}}rpx"></view>
+					<view class="margin-left-20 priceblock" style="background:{{item.color}};width:{{item.price>100000?300:(item.price/100000)*300}}rpx"></view>
 					<view class="margin-left-20 h5">{{item.price}}</view>
 				</view>
 			</view>
 
 			<view class="txt-gray h6  margin-top-20 opa8">{{info.beizhu}}</view>
-
 
 		</view>
 
@@ -418,8 +415,8 @@
 
 	<view class="under_block bg-white">
 		<view class="flex-row flex-center paddings">
-			<image src="{{uploadpath}}resource/{{res.shoucang}}" wx:if='{{sc=="A"}}' class="icon-25" id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
-			<image src="{{uploadpath}}resource/{{res.bushoucang}}" wx:if='{{sc=="B"}}' class="icon-25" id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
+			<image src="{{uploadpath}}resource/{{res.shoucang}}" wx:if='{{sc=="A"}}' class="icon-25  " id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
+			<image src="{{uploadpath}}resource/{{res.bushoucang}}" wx:if='{{sc=="B"}}' class="icon-25  " id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
 			<view class="flex-1"></view>
 			<button class="clear-button" open-type='contact'>
 				<view class="left_one text-center bg1 h5">联系客服</view>

@@ -10,7 +10,7 @@
 	<view class="flex-row  margin-top" wx:for='{{info.otherprice}}' wx:key='o'>
 		<view class="loupanname text-right h5">{{item.name}}</view>
 		<view class="flex-row flex-center flex-1">
-			<view class="priceblock margin-left-20" style="width:{{item.price>100000?300:(item.price/100000)*300}}rpx"></view>
+			<view class="priceblock margin-left-20" style="width:{{item.price>100000?300:(item.price/100000)*300}}rpx;background:{{item.color}}"></view>
 			<view class="margin-left-20 h5">{{item.price}}</view>
 		</view>
 	</view>

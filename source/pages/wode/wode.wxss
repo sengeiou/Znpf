@@ -2,52 +2,68 @@ Page {
   background: #F7F8FA;
 }
 
-.height-256{
+.height-256 {
   height: 256rpx;
-  width:100%;
+  width: 100%;
 }
-.height-28{
+
+.height-28 {
   height: 28rpx;
   width: 21rpx;
 }
-.height-236{
+
+.height-236 {
   height: 236rpx;
   width: 236rpx;
 }
-.icon-15{
-  width:32rpx;
+
+.icon-15 {
+  width: 32rpx;
   height: 64rpx;
 }
-.position-230{
+
+.position-230 {
   /* position: relative; */
   /* bottom: 230rpx; */
-  padding: 40rpx 0 60rpx;
+  padding: 60rpx 0 70rpx;
 }
-.position-20{
-    /* position: relative; */
+
+.position-20 {
+  /* position: relative; */
   /* bottom: 40rpx; */
   /* border-radius: 32rpx 32rpx 0 0; */
   margin-top: -20rpx;
 }
-.margin-top-4{
+
+.margin-top-4 {
   margin-top: 4rpx;
 }
-.border-radius-32{
-  border-radius:32rpx;
+
+.border-radius-32 {
+  border-radius: 32rpx;
 }
-.width-100{
+
+.width-100 {
   width: 100%;
 }
-.bg-color{
+
+.bg-color {
   background-color: #F7F8FA;
 }
-.border{
-  border: 1px #F7F8FA solid;
+
+.border {
+  border-bottom: 2rpx #F7F8FA solid;
 }
-.txt-color{
+
+.txt-color {
   color: #777777;
 }
+
 .touxiang {
   width: 150rpx;
   height: 150rpx;
+}
+
+.padding-block {
+  padding: 48rpx 30rpx 48rpx 30rpx;
 }
