@@ -66,21 +66,23 @@
 
 <!-- 楼盘列表 -->
 
-<view bindtap="topage" data-name="premises-details" id="{{item.id}}" wx:for="{{list}}" wx:key="k" class="flex-row flex-center padding-30 bg-white" style="margin-top:2rpx">
+<view bindtap="topage" data-name="premises-details" id="{{item.id}}" wx:for="{{list}}" wx:key="k" class="flex-row  padding-30 bg-white" style="margin-top:2rpx">
 	<image src='{{uploadpath}}premises/{{item.cover}}' class="img_1"></image>
-	<view class="margin-left-30 flex-1" style="height:206rpx;overflow:hidden;">
+	<view class="margin-left-30 flex-1">
 		<view class="flex-row flex-center">
 			<view class="txt-bold" style="color:#161616">{{item.name}}</view>
 			<view class="flex-1"></view>
 		</view>
-		<view class="f-26 margin-top-10" style="color:#777777">{{item.huxing}} | {{item.avg_area}}|{{item.buildingtype_name}}|{{item.address}}</view>
+		<view class="f-26 margin-top-10" style="color:#777777">{{item.huxing}} | {{item.avg_area}}|{{item.buildingtype_name}}|{{item.cityqu_name}}</view>
 
 		<view class="flex-row flex-center margin-top-10">
-			<view wx:for="{{item.label}}" wx:key="k1" wx:for-item="label" class="lable1">{{label.name}}</view>
+			<view wx:for="{{item.label}}" wx:if="{{idx<3}}" wx:for-index="idx" wx:key="k1" wx:for-item="label" class="lable1">{{label.name}}</view>
 		</view>
 		<view class="margin-top-20">
 			<view class="flex-row flex-center">
-				<view class="h5" style="color:#583A80">{{item.avg_price}}</view>
+				<view class="" style="color:#583A80">{{item.avg_price}}</view>
+
+				<view wx:if="{{premisestype_name=='二手房'}}" class="h5" style="color:#777777;margin-left:36rpx">{{item.avg_area}}</view>
 			</view>
 		</view>
 	</view>

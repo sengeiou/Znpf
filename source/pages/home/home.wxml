@@ -8,7 +8,7 @@
 <include wx:if="{{showSkeleton}}" src="home.skeleton.wxml" />
 
 <view class="sousuo   flex-row flex-center" bindtap="search">
-	<image class="icon-15 margin-left-10" src="{{uploadpath}}resource/{{res.sousuo}}"></image>
+	<image class="icon-15 margin-left-15" src="{{uploadpath}}resource/{{res.sousuo}}"></image>
 
 	<view class="h6 margin-left-20 flex-1" style="color:#CCCCCC">请输入您要搜索的内容</view>
 
@@ -22,7 +22,7 @@
 
 
 
-<swiper class="square-dot " indicator-dots='true' autoplay='false' interval='5000' duration='200' current="{{indexcurrent}}" circular='true' style='width:750rpx;height:352rpx;'>
+<swiper class=" " indicator-color="rgba(255, 255, 255, 0.6 )" indicator-active-color="rgba(255, 255, 255, 1)"  indicator-dots='true' autoplay='false' interval='5000' duration='200' current="{{indexcurrent}}" circular='true' style='width:750rpx;height:352rpx;'>
 	<swiper-item wx:for="{{indexbanner}}" wx:key="k">
 		<image src='{{uploadpath}}indexbanner/{{item.img}}' style="width:100%;height:100%; " bindtap='bannerGo' id="{{item.id}}" class='bor-rd-6'></image>
 	</swiper-item>
@@ -149,7 +149,7 @@
 				<view class=" flex-1"></view>
 
 				<view class="flex-row flex-column">
-					<view class="h2" style="color:#583A80">{{item.pingji}}</view>
+					<view class="h2 txt-bold" style="color:#583A80">{{item.pingji}}</view>
 					<view class="f-26" style="color:#A0A0A0;">配套评级</view>
 				</view>
 
@@ -195,10 +195,10 @@
 
 <!-- 最新户型分析 -->
 
-<view class="bg-white margin-top-10 padding-30 text-center">
+<view class="bg-white margin-top-10 padding-30 ">
 	<view class="f-34 txt-bold " style="color:#161616">最新户型分析</view>
 
-	<view class="flex-row flex-center margin-top">
+	<view class="flex-row text-center flex-center margin-top">
 
 		<view wx:for="{{huxinfenxi}}" wx:key="k" wx:for-index="idx" class="{{idx==0?'':'margin-left-20'}} " bindtap="topage" data-name="huxing" id="{{item.id}}">
 
@@ -227,10 +227,10 @@
 
 		<view class="f-34 txt-bold " style="color:#161616">最新航拍</view>
 		<view class="flex-1"></view>
-		<view class="flex-row" bindtap="topage" data-name="loupanlist">
+		<!-- <view class="flex-row" bindtap="topage" data-name="loupanlist">
 			<view class="f-26 position" style="color:#777777">查看全部</view>
 			<image src='{{uploadpath}}resource/{{res.right}}' class="icon-25 "></image>
-		</view>
+		</view> -->
 	</view>
 
 
@@ -276,7 +276,7 @@
 
 				<view class=" flex-1"></view>
 				<view class="f-22" style="color:#CCCCCC">
-					{{item.time}}
+					{{item.ToTime}}
 				</view>
 
 			</view>
