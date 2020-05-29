@@ -30,6 +30,7 @@ class Content extends AppBase {
     })
 
     this.Base.setMyData({
+      orderby:"",
       city_id: 0,
       street_id: 0,
       district_id: 0,
@@ -64,7 +65,20 @@ class Content extends AppBase {
       selectprice: "价格",
     });
 
+
+
     var instApi = new InstApi();
+
+    instApi.allsearchlabels({},(labeltypelist)=>{
+      this.Base.setMyData({
+        labeltypelist: labeltypelist,
+        selectlabeltypelist: labeltypelist,
+        selectlabels:"筛选"
+      });
+    });
+
+
+
     instApi.cityall({}, (citylist) => {
       this.Base.setMyData({
         citylist
@@ -135,6 +149,24 @@ class Content extends AppBase {
         json.pricerange = pricerange.join(",");
       }
     }
+    var labels=[];
+    var labeltypelist = data.selectlabeltypelist;
+    for (var i = 0; i < labeltypelist.length; i++) {
+      for (var j = 0; j < labeltypelist[i].labels.length; j++) {
+        if (labeltypelist[i].labels[j].checked == true) {
+          labels.push(labeltypelist[i].labels[j].id);
+        }
+      }
+    }
+    if(labels){
+      json.searchlabel=labels.join(",");
+    }
+    if(data.orderby==""){
+      json.orderby="r_main.seq";
+    }else{
+      json.orderby = "loupanprice " + data.orderby;
+    }
+    console.log("data.orderby", data.orderby, json.orderby);
 
     api.list(json,(list)=>{
       this.Base.setMyData({list});
@@ -476,6 +508,57 @@ class Content extends AppBase {
 
     this.getloupan();
   }
+
+  showlabels() {
+    var data = this.Base.getMyData();
+    this.Base.setMyData({
+      labelselect: true,
+      labeltypelist: data.selectlabeltypelist
+    });
+  }
+  closelabels() {
+    this.Base.setMyData({
+      labelselect: false
+    });
+  }
+  selectlabel(e){
+    var id=e.currentTarget.id.split("_");
+    var x=id[0];
+    var y = id[1];
+    var data = this.Base.getMyData();
+    data.labeltypelist[x].labels[y].checked = data.labeltypelist[x].labels[y].checked==true?false:true;
+    this.Base.setMyData({ labeltypelist: data.labeltypelist });
+  }
+
+  setLabels(e){
+    var k=[];
+    var selectlabels="筛选";
+    var data = this.Base.getMyData();
+    var labeltypelist=data.labeltypelist;
+    for(var i=0;i<labeltypelist.length;i++){
+      for (var j = 0; j < labeltypelist[i].labels.length; j++) {
+        if (labeltypelist[i].labels[j].checked==true){
+          k.push(labeltypelist[i].labels[j].name);
+        }
+      }
+    }
+    if(k.length>0){
+      selectlabels=k.join(",");
+    }
+    this.Base.setMyData({
+      labelselect: false,
+      selectlabels,
+      selectlabeltypelist: labeltypelist
+    });
+    this.getloupan();
+  }
+
+  changeorderby(e){
+    var orderby = e.currentTarget.dataset.orderby;
+    this.Base.setMyData({ orderby})
+    this.getloupan();
+  }
+
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -505,4 +588,9 @@ body.closepriceselect = content.closepriceselect;
 body.setminprice = content.setminprice; 
 body.setmaxprice = content.setmaxprice;
 body.setPriceOption = content.setPriceOption;
+body.showlabels = content.showlabels; 
+body.closelabels = content.closelabels; 
+body.selectlabel = content.selectlabel; 
+body.setLabels = content.setLabels;
+body.changeorderby = content.changeorderby;
 Page(body)
