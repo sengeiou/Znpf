@@ -11,9 +11,9 @@
 	<image class="icon-15 margin-left-10" src="{{uploadpath}}resource/{{res.sousuo}}"></image>
 
 	<view class="h6 margin-left-20 flex-1" style="color:#CCCCCC">请输入您要搜索的内容</view>
-  
+
 	<view class="juxin1"></view>
-  
+
 	<view bindtap="xuanzechenshi" class="flex-row flex-center">
 		<image class="icon-15 margin-left-10" src="{{uploadpath}}resource/{{res.weizhi}}"></image>
 		<view class="h5 margin-right-20 margin-left-10" style="color:#161616">{{cityname}}</view>
@@ -236,7 +236,21 @@
 
 	<scroll-view scroll-x class="bg-white nav margin-top" scroll-with-animation scroll-left="{{scrollLeft}}">
 		<view style="margin:0;padding:0;margin-right:32rpx;" id="{{item.id}}" data-id="{{item.premises_id}}" wx:for="{{hanpai}}" wx:key='k' class="cutem" bindtap="todetails">
-			<image src="{{uploadpath}}entrance/{{item.fengmian}}" mode="aspectFit" class="" style="width:152px;height:104px;"></image>
+			<!-- <image src="{{uploadpath}}entrance/{{item.fengmian}}" mode="aspectFit" class="" style="width:152px;height:104px;"></image> -->
+			<view style="width:152px;height:104px;background-image:url({{uploadpath}}entrance/{{item.fengmian}});background-size:100% 100%">
+				<view class=" padding-15 ">
+					<view class="h5 txt-bold" style="color:#161616">{{item.premises_name}}</view>
+					<view class="f-22" style="color:#161616"> {{item.quname}}</view>
+				</view>
+  
+	 <view class="flex-row flex-center">
+	 
+	 <view class="flex-1"></view>
+	 <image src="{{uploadpath}}resource/{{res.bofan}}" mode="aspectFit" class="margin-right-20 margin-top" style="width:48rpx;height:48rpx;"></image>
+	 </view>
+
+
+			</view>
 		</view>
 	</scroll-view>
 
