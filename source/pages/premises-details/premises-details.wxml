@@ -148,7 +148,7 @@
 				</view>
 
 				<view class="text-center flex-1 " bindtap="topage" data-name="gallery" id="{{info.id}}">
-					<image src="{{uploadpath}}resource/{{res.dinwei}}" class="icon-25"></image>
+					<image src="{{uploadpath}}resource/{{res.tuku}}" class="icon-25"></image>
 					<view class="h6 txt-gray margin-top-10">图库</view>
 				</view>
 
@@ -204,7 +204,7 @@
 			<!-- 标签 -->
 			<view class='flex-row flex-center  margin-top flex-wrap' style="height:52rpx;overflow:hidden">
 				<view class="label2 h6 text-center margin-right-10">全部</view>
-				<view class="label2 h6 text-center margin-right-10" wx:for='{{info.zxlabel}}' wx:key='k' >{{item.name}}</view>
+				<view class="label2 h6 text-center margin-right-10" wx:for='{{info.zxlabel}}' wx:key='k'>{{item.name}}</view>
 				<!-- <view class="label2 h6 margin-left-10 text-center">销控信息</view>
 				<view class="label2 h6 margin-left-10 text-center">楼盘咨询</view> -->
 			</view>
@@ -251,26 +251,25 @@
 
 			<view class="txt-bold">楼盘评级</view>
 
-			<view class="flex-row   margin-top">
+			<view class="flex-row   margin-top margin-left-20">
 
 				<view class="leftblock text-center padding-20">
-					<view class="txt-bold h4 txt-purple">{{info.pingji}}</view>
-					<view class="h5">配套评级</view>
+					<view class="txt-bold h3 txt-purple margin-top-20">{{info.pingji}}</view>
+					<view class="h5 txt-gray">配套评级</view>
 					<view class="h5 txt-purple margin-top-20">{{info.rank}}</view>
-					<view class="h5">查看地图</view>
+					<view class="h5 txt-gray">查看地图</view>
 				</view>
 
 
 
-				<view class=" margin-left-20">
+				<view class=" margin-left-40">
 
 					<view class="flex-row flex-center">
 						<view>学校</view>
-						<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+						<view class="starbox text-right margin-top-10 flex-1  margin-left-40">
 							<view class="stars" style="width: 100%;">
 								<view class=" ims">
 									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
-
 								</view>
 							</view>
 							<view class="stars2" style="width: {{(info.school/5)*100}}%">
@@ -286,7 +285,7 @@
 
 					<view class="flex-row flex-center margin-top-10">
 						<view>商场</view>
-						<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+						<view class="starbox text-right margin-top-10 flex-1  margin-left-40">
 							<view class="stars" style="width: 100%;">
 								<view class=" ims">
 									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
@@ -304,7 +303,7 @@
 
 					<view class="flex-row flex-center margin-top-10">
 						<view>医院</view>
-						<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+						<view class="starbox text-right margin-top-10 flex-1  margin-left-40">
 							<view class="stars" style="width: 100%;">
 								<view class=" ims">
 									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
@@ -322,7 +321,7 @@
 
 					<view class="flex-row flex-center margin-top-10">
 						<view>景观</view>
-						<view class="starbox text-right margin-top-10 flex-1  margin-left-20">
+						<view class="starbox text-right margin-top-10 flex-1  margin-left-40">
 							<view class="stars" style="width: 100%;">
 								<view class=" ims">
 									<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>

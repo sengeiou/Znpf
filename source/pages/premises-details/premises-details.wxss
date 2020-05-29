@@ -85,7 +85,7 @@ Page {
 }
 
 .leftblock {
-  width: 200rpx;
+  width: 240rpx;
   background: rgba(240, 233, 246, 1);
   opacity: 1;
   border-radius: 8rpx;
