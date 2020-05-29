@@ -20,6 +20,10 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
+    var name = options.name;
+    var title = options.title;
+    var id=options.id;
+    this.Base.setMyData({ name, title,id });
     var api = new PremisesApi;
     api.label({}, (label1) => {
 
@@ -167,6 +171,9 @@ class Content extends AppBase {
       json.orderby = "loupanprice " + data.orderby;
     }
     console.log("data.orderby", data.orderby, json.orderby);
+
+
+   
 
     api.list(json,(list)=>{
       this.Base.setMyData({list});
@@ -420,7 +427,9 @@ class Content extends AppBase {
       selectcity: data.city,
       selectdistrict: data.district,
       selectstreet: data.street,
-      cityselect:false
+      cityselect:false,
+      priceselect: false,
+      labelselect: false,
     });
 
     this.getloupan();
@@ -430,6 +439,8 @@ class Content extends AppBase {
 
     var data = this.Base.getMyData();
     this.Base.setMyData({cityselect:true,
+      priceselect: false,
+      labelselect: false,
       city_id: data.selectcity_id,
       district_id: data.selectdistrict_id,
       street_id: data.selectstreet_id,
@@ -441,7 +452,9 @@ class Content extends AppBase {
   }
   closecityselect(){
     this.Base.setMyData({
-      cityselect: false
+      cityselect:false,
+      priceselect: false,
+      labelselect: false,
     });
   }
   checkPricearrange(e){
@@ -469,6 +482,8 @@ class Content extends AppBase {
     var data = this.Base.getMyData();
     this.Base.setMyData({
       priceselect: true,
+      cityselect:false,
+      labelselect: false,
       minprice: data.selectminprice,
       maxprice: data.selectmaxprice,
       pricearraylist: data.selectpricearraylist
@@ -476,7 +491,9 @@ class Content extends AppBase {
   }
   closepriceselect() {
     this.Base.setMyData({
-      priceselect: false
+      cityselect:false,
+      priceselect: false,
+      labelselect: false,
     });
   }
   setPriceOption(){
@@ -500,7 +517,9 @@ class Content extends AppBase {
 
     this.Base.setMyData({
       selectprice,
+      cityselect:false,
       priceselect: false,
+      labelselect: false,
       selectminprice: data.minprice,
       selectmaxprice: data.maxprice,
       selectpricearraylist: data.pricearraylist
@@ -512,12 +531,16 @@ class Content extends AppBase {
   showlabels() {
     var data = this.Base.getMyData();
     this.Base.setMyData({
+      cityselect:false,
+      priceselect: false,
       labelselect: true,
       labeltypelist: data.selectlabeltypelist
     });
   }
   closelabels() {
     this.Base.setMyData({
+      cityselect:false,
+      priceselect: false,
       labelselect: false
     });
   }
@@ -546,6 +569,8 @@ class Content extends AppBase {
       selectlabels=k.join(",");
     }
     this.Base.setMyData({
+      cityselect:false,
+      priceselect: false,
       labelselect: false,
       selectlabels,
       selectlabeltypelist: labeltypelist
@@ -555,7 +580,10 @@ class Content extends AppBase {
 
   changeorderby(e){
     var orderby = e.currentTarget.dataset.orderby;
-    this.Base.setMyData({ orderby})
+    this.Base.setMyData({ orderby,
+      cityselect:false,
+      priceselect: false,
+      labelselect: false})
     this.getloupan();
   }
 
