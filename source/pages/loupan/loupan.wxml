@@ -33,9 +33,9 @@
         </view>
 
         <view data-id="2" class="flex-1 flex-row flex-column">
-          <view class="flex-row flex-center">
+          <view bindtap="showPriceSelect" class="flex-row flex-center">
 
-            <view class="h5 text-right chaochu" style="color:{{shaixuanid==2?'#87BFF1':'#583A80'}};width:70rpx">{{(danjiaid>0||zonjiaid>0)?jiagename:'价格'}}</view>
+            <view class="h5 text-right chaochu" style="color:{{shaixuanid==2?'#87BFF1':'#583A80'}};width:70rpx">{{selectprice}}</view>
             <image class="paixuxia" src="{{uploadpath}}resource/{{res.paixuxia}}"></image>
             <view class="flex-1"></view>
           </view>
@@ -99,24 +99,24 @@
 </view>
 
 
-<view class="fixTop hv100" style="margin-top:216rpx;  ">
+<view class="fixTop hv100" style="margin-top:216rpx;  " wx:if="{{priceselect==true}}">
   <view class="border-top padding-40 bg-white">
     <view class="h4 text-bold">价格区间</view>
     <view class="flex-row flex-center margin-top">
       <view class="flex-1"></view>
-      <view class="viewinput"><input type="number" maxlength="4" placeholder="最低（万元）" class="text-center" placeholder-class="text-center" /></view>
+      <view class="viewinput"><input type="number" maxlength="4" placeholder="最低（万元）" bindinput="setminprice" value="{{minprice}}"  class="text-center" placeholder-class="text-center" /></view>
       <view class="margin-left margin-right">至</view>
-      <view class="viewinput"><input type="number" maxlength="4" placeholder="最高（万元）" class="text-center" placeholder-class="text-center"  /></view>
+      <view class="viewinput"><input bindinput="setmaxprice" type="number" maxlength="4" placeholder="最高（万元）" value="{{maxprice}}" class="text-center" placeholder-class="text-center"  /></view>
       <view class="flex-1"></view>
     </view>
     <view class="margin-top flex-row flex-wrap">
-      <view class="priceoption {{item.checked==true?'active':''}}" wx:for="{{pricearraylist}}" wx:key="k" wx:for-index='idx' id="{{idx}}">{{item.name}}</view>
+      <view class="priceoption {{item.checked==true?'active':''}}" wx:for="{{pricearraylist}}" bindtap="checkPricearrange"  wx:key="k" wx:for-index='idx' id="{{idx}}">{{item.name}}</view>
     </view>
   </view>
   <view class="padding-20 border-top bg-white">
-    <button type="primary" bindtap="setcity">确定</button>
+    <button type="primary" bindtap="setPriceOption">确定</button>
   </view>
-  <view bindtap="closecityselect" class="bg-back" style="height:calc( 100vh - 620rpx - 133rpx )">
+  <view bindtap="closepriceselect" class="bg-back" style="height:calc( 100vh - 620rpx - 133rpx )">
   
   </view>
 </view>

@@ -51,7 +51,17 @@ class Content extends AppBase {
         { min: 400, max: 500, name: "400-500万", checked: false },
         { min: 500, max: 800, name: "500-800万", checked: false },
         { min: 800, max: 1000, name: "800-1000万", checked: false },
-        { min: 1000, max: 65535, name: "1000万以上", checked: false }]
+        { min: 1000, max: 65535, name: "1000万以上", checked: false }],
+      selectminprice: "", selectmaxprice: "",
+      selectpricearraylist: [
+        { min: 0, max: 200, name: "200万以下", checked: false },
+        { min: 200, max: 300, name: "200-300万", checked: false },
+        { min: 300, max: 400, name: "300-400万", checked: false },
+        { min: 400, max: 500, name: "400-500万", checked: false },
+        { min: 500, max: 800, name: "500-800万", checked: false },
+        { min: 800, max: 1000, name: "800-1000万", checked: false },
+        { min: 1000, max: 65535, name: "1000万以上", checked: false }],
+      selectprice: "价格",
     });
 
     var instApi = new InstApi();
@@ -399,6 +409,68 @@ class Content extends AppBase {
       cityselect: false
     });
   }
+  checkPricearrange(e){
+    var idx=e.currentTarget.id;
+    var pricearraylist = this.Base.getMyData().pricearraylist;
+    pricearraylist[idx].checked = pricearraylist[idx].checked==true?false:true;
+    this.Base.setMyData({ pricearraylist,minprice:"",maxprice:""});
+  }
+
+  setminprice(e) {
+    var pricearraylist = this.Base.getMyData().pricearraylist;
+    for (var i = 0; i < pricearraylist.length;i++){
+      pricearraylist[i].checked=false;
+    }
+    this.Base.setMyData({ minprice: e.detail.value, pricearraylist});
+  }
+  setmaxprice(e) {
+    var pricearraylist = this.Base.getMyData().pricearraylist;
+    for (var i = 0; i < pricearraylist.length; i++) {
+      pricearraylist[i].checked = false;
+    }
+    this.Base.setMyData({ maxprice: e.detail.value, pricearraylist });
+  }
+  showPriceSelect(){
+    var data = this.Base.getMyData();
+    this.Base.setMyData({
+      priceselect: true,
+      minprice: data.selectminprice,
+      maxprice: data.selectmaxprice,
+      pricearraylist: data.selectpricearraylist
+    });
+  }
+  closepriceselect() {
+    this.Base.setMyData({
+      priceselect: false
+    });
+  }
+  setPriceOption(){
+    var data = this.Base.getMyData();
+    var selectprice="价格";
+    if (data.minprice != '' && data.maxprice != '') {
+      selectprice = data.minprice + "-" + data.maxprice+"万";
+    }else if (data.minprice != '') {
+      selectprice = data.minprice + "万起";
+    } else if (data.maxprice != '') {
+      selectprice = data.maxprice + "万内";
+    } else {
+      for (var i = 0; i < data.pricearraylist.length; i++) {
+        if (data.pricearraylist[i].checked == true) {
+          priceselect = data.pricearraylist[i].name;
+          return;
+        }
+      }
+    }
+
+
+    this.Base.setMyData({
+      selectprice,
+      priceselect: false,
+      selectminprice: data.minprice,
+      selectmaxprice: data.maxprice,
+      selectpricearraylist: data.pricearraylist
+    });
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -420,6 +492,12 @@ body.selectcity = content.selectcity;
 body.selectdistrict = content.selectdistrict;
 body.selectstreet = content.selectstreet; 
 body.setcity = content.setcity; 
-body.showCitySelect = content.showCitySelect;
+body.showCitySelect = content.showCitySelect; 
 body.closecityselect = content.closecityselect;
+body.checkPricearrange = content.checkPricearrange;
+body.showPriceSelect = content.showPriceSelect;
+body.closepriceselect = content.closepriceselect; 
+body.setminprice = content.setminprice; 
+body.setmaxprice = content.setmaxprice;
+body.setPriceOption = content.setPriceOption;
 Page(body)
