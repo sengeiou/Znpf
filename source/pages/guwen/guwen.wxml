@@ -16,8 +16,11 @@
 	<view class="">
 		<image src="{{uploadpath}}resource/{{res.bq}}" mode="widthFix" class="icon-200"></image>
 		<view class="position-left">
-			<view class="t-color-p">{{guwendetail.manyidu}}分</view>
-			<view class="f-22 t-color-p">满意度</view>
+			<view class="flex-row flex-bottom">
+				<view class="t-color-p h-44" style="line-height:44rpx">{{guwendetail.manyidu}}</view>
+				<view class="f-22" style="color:#583A80;line-height:22rpx">分</view>
+			</view>
+			<view class="f-22 t-color-p" style="color:#9C72C1;line-height:22rpx">满意度</view>
 		</view>
 	</view>
 </view>

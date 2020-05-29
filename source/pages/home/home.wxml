@@ -136,11 +136,11 @@
 
 		<image src='{{uploadpath}}premises/{{item.cover}}' class="img_1"></image>
 
-		<view class="margin-left-30 flex-1" style=" height:226rpx;overflow:hidden;">
+		<view class="margin-left-30 flex-1" >
 			<view class="txt-bold chaochu" style="color:#161616">{{item.name}}</view>
-			<view class="h5 txt-bold" style="color:#583A80;">{{item.avg_price}}</view>
+			<view class="h5 txt-bold margin-top-10" style="color:#583A80;">{{item.avg_price}}</view>
 
-			<view class="flex-row flex-bottom margin-top-20">
+			<view class="flex-row flex-bottom ">
 
 				<view class="flex-row flex-center flex-wrap" style=" width: 240rpx;">
 					<view wx:for="{{item.label}}" wx:key="k1" wx:for-item="label" class="lable1 ">{{label.name}}</view>
@@ -202,7 +202,7 @@
 
 		<view wx:for="{{huxinfenxi}}" wx:key="k" wx:for-index="idx" class="{{idx==0?'':'margin-left-20'}} " bindtap="topage" data-name="huxing" id="{{item.id}}">
 
-			<image src='{{uploadpath}}housing/{{item.fengmian}}' class="img_2"></image>
+			<image src='{{uploadpath}}housing/{{item.fengmian}}' mode="aspectFit" class="img_2"></image>
 
 			<view class="margin-top-5 h5" style="color:#161616">{{item.disposal}} | {{item.areatype_name}}</view>
 			<view class="margin-top-5 f-22" style="color:#777777">{{item.premises_name}}</view>
@@ -237,7 +237,7 @@
 	<scroll-view scroll-x class="bg-white nav margin-top" scroll-with-animation scroll-left="{{scrollLeft}}">
 		<view style="margin:0;padding:0;margin-right:32rpx;" id="{{item.id}}" data-id="{{item.premises_id}}" wx:for="{{hanpai}}" wx:key='k' class="cutem" bindtap="todetails">
 			<!-- <image src="{{uploadpath}}entrance/{{item.fengmian}}" mode="aspectFit" class="" style="width:152px;height:104px;"></image> -->
-			<view style="width:152px;height:104px;background-image:url({{uploadpath}}entrance/{{item.fengmian}});background-size:100% 100%">
+			<view style="width:152px;height:104px;background-image:url({{uploadpath}}entrance/{{item.fengmian}});background-size:100% 100%;border-radius:8rpx">
 				<view class=" padding-15 ">
 					<view class="h5 txt-bold" style="color:#161616">{{item.premises_name}}</view>
 					<view class="f-22" style="color:#161616"> {{item.quname}}</view>

@@ -1,1 +1,19 @@
-/* pages/map/map.wxss */
+.bottom{
+  width:100vw;
+  height: 100rpx;
+  background: #FFFFFF;
+  position: fixed;
+  bottom: 0rpx;
+}
+.bb{
+  width:100vw;
+  height: 100rpx;
+  
+}
+.sousuo{
+  width:256rpx;
+  height: 80rpx;
+  background: #F0E9F6;
+  border-radius: 8rpx;
+  margin-right: 30rpx;
+}
