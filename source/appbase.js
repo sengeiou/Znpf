@@ -310,6 +310,7 @@ export class AppBase {
                     //   url: '/pages/auth/auth',
                     // })
                   } else {
+                    that.onMyShow();
                   }
                 });
 
@@ -352,7 +353,7 @@ export class AppBase {
         memberinfo: info
       });
     });
-
+    that.onMyShow();
 
   }
   loadtabtype() {
@@ -1117,6 +1118,7 @@ export class AppBase {
         if (that.Base.needauth == true) {
 
         }
+        
       }
     })
   }

@@ -47,7 +47,7 @@ class Content extends AppBase {
        info.supermarket=new Number(info.supermarket).toFixed(1); 
        info.hospital=new Number(info.hospital).toFixed(1);  
        info.jingguan=new Number(info.jingguan).toFixed(1); 
-
+      console.log("哈哈哈哈"+info)
        this.Base.setMyData({info})
 
 
