@@ -7,7 +7,7 @@
 
 <include wx:if="{{showSkeleton}}" src="home.skeleton.wxml" />
 
-<!-- <view class="sousuo   flex-row flex-center" bindtap="search">
+<view class="sousuo   flex-row flex-center" bindtap="search">
 	<image class="icon-15 margin-left-10" src="{{uploadpath}}resource/{{res.sousuo}}"></image>
 
 	<view class="h6 margin-left-20 flex-1" style="color:#CCCCCC">请输入您要搜索的内容</view>
@@ -18,7 +18,7 @@
 		<image class="icon-15 margin-left-10" src="{{uploadpath}}resource/{{res.weizhi}}"></image>
 		<view class="h5 margin-right-20 margin-left-10" style="color:#161616">{{cityname}}</view>
 	</view>
-</view> -->
+</view>
 
 
 
@@ -236,7 +236,7 @@
 
 	<scroll-view scroll-x class="bg-white nav margin-top" scroll-with-animation scroll-left="{{scrollLeft}}">
 		<view style="margin:0;padding:0;margin-right:32rpx;" id="{{item.id}}" data-id="{{item.premises_id}}" wx:for="{{hanpai}}" wx:key='k' class="cutem" bindtap="todetails">
-			<image src="{{uploadpath}}entrance/{{item.fengmian}}" class="" style="width:152px;height:104px;"></image>
+			<image src="{{uploadpath}}entrance/{{item.fengmian}}" mode="aspectFit" class="" style="width:152px;height:104px;"></image>
 		</view>
 	</scroll-view>
 

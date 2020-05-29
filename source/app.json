@@ -33,7 +33,8 @@
     "pages/dongtai/dongtai",
     "pages/hangpai/hangpai",
     "pages/wodeguanzhu/wodeguanzhu",
-    "pages/huxingfenxi/huxingfenxi"
+    "pages/huxingfenxi/huxingfenxi",
+    "pages/search/search"
   ],
   "permission": {
     "scope.userLocation": {

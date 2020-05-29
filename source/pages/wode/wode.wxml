@@ -41,32 +41,32 @@
 <view class='flex-row bg-white' bindtap="fankui">
   <image src="{{uploadpath}}resource/{{res.fankui}}" class="icon margin-left-20 margin-top"></image>
   <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20  flex-1'>反馈问题</view>
-  <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' src='{{uploadpath}}resource/{{res.right}}'></image>
+  <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' mode="aspectFit" src='{{uploadpath}}resource/{{res.right}}'></image>
 </view>
 <view class='border'></view>
 <view class='flex-row bg-white' bindtap="fuwu">
   <image src="{{uploadpath}}resource/{{res.guanzhu}}" class="icon margin-left-20 margin-top"></image>
   <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20  flex-1'>关注服务号</view>
-  <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' src='{{uploadpath}}resource/{{res.right}}'></image>
+  <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' mode="aspectFit" src='{{uploadpath}}resource/{{res.right}}'></image>
 </view>
 <view class='border'></view>
  <button class="clear-button" open-type="contact"> 
   <view class='flex-row bg-white'>
   <image src="{{uploadpath}}resource/{{res.zaixian}}" class="icon margin-left-20 margin-top"></image>
   <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20  flex-1'>在线客服</view>
-  <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' src='{{uploadpath}}resource/{{res.right}}'></image>
+  <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' mode="aspectFit" src='{{uploadpath}}resource/{{res.right}}'></image>
 </view>
 </button>
 <view class='border'></view> 
 <view class='flex-row bg-white' bindtap="aboutus">
   <image src="{{uploadpath}}resource/{{res.aboutus}}" class="icon margin-left-20 margin-top"></image>
   <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20  flex-1'>关于我们</view>
-  <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' src='{{uploadpath}}resource/{{res.right}}'></image>
+  <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' mode="aspectFit" src='{{uploadpath}}resource/{{res.right}}'></image>
 </view>
 <view class='border'></view>
 <view class='flex-row bg-white' bindtap="bangdin">
   <image src="{{uploadpath}}resource/{{res.shu}}" class="icon margin-left-20 margin-top"></image>
   <view class='txt-black txt-bold margin-top margin-bottom-40 margin-left-20  flex-1'>入驻知鸟</view>
-  <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' src='{{uploadpath}}resource/{{res.right}}'></image>
+  <image class='icon-15 padding-bottom-30rpx; margin-top margin-right-30' mode="aspectFit" src='{{uploadpath}}resource/{{res.right}}'></image>
 </view>
 <view class='border'></view>

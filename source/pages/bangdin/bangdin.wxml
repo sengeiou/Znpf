@@ -1,26 +1,28 @@
-<cu-custom bgColor="bg-white"  isCustom="{{true}}">
+<cu-custom bgColor="bg-white" isCustom="{{true}}">
 
 	<view slot="content" class="txt-bold" style="color:#161616;">入驻知鸟</view>
 </cu-custom>
 
 <view class="padding-left-32 padding-right-30">
-  <view style="height:32rpx;"></view>
-  <view class="xuanze txt-bold">您的角色是？</view>
-  <view class="h5" style="color:#A0A0A0;margin-top:8rpx">我们根据选择为您提供精准服务</view>
-  <view style="height:32rpx;"></view>
-  <view style="wdith:100vw;border-radius:8rpx;" class="flex-row flex-center bg-white" bindtap="todetail" id='A'>
-    <view class="padding-left-32">
-      <view class="f-34" style="color:#9C72C1;">置业顾问</view>
-      <view class="h6" style="color:#A0A0A0;margin-top:14rpx;">为购房人提供专业服务</view>
-    </view>
-    <image src="{{uploadpath}}resource/{{res.guwens}}" class="margin-left-80 padding-top-40" style='width:153rpx;height:192rpx;'></image>
-  </view>
-  <view style="wdith:100vw;border-radius:8rpx;margin-top:16rpx;" class="flex-row flex-center bg-white" bindtap="todetail" id='B'>
-    <view class="padding-left-32">
-      <view class="f-34" style="color:#FFB98B;">经纪人</view>
-      <view class="h6" style="color:#A0A0A0;margin-top:14rpx;">祝您开单开单开单</view>
-    </view>
-    <image src="{{uploadpath}}resource/{{res.jingjiren}}" class="margin-left-104 padding-top-40" style='width:188rpx;height:192rpx;'></image>
-  </view>
+	<view style="height:32rpx;"></view>
+	<view class="xuanze txt-bold">您的角色是？</view>
+	<view class="h5" style="color:#A0A0A0;margin-top:8rpx">我们根据选择为您提供精准服务</view>
+	<view style="height:32rpx;"></view>
+	<view style="wdith:100vw;border-radius:8rpx;" class="flex-row flex-center bg-white" bindtap="todetail" id='A'>
+		<view class="padding-left-32">
+			<view class="f-34" style="color:#9C72C1;">置业顾问</view>
+			<view class="h6" style="color:#A0A0A0;margin-top:14rpx;">为购房人提供专业服务</view>
+		</view>
+    <view class="flex-1"></view>
+		<image src="{{uploadpath}}resource/{{res.guwens}}" class="margin-left-80 " style='width:368rpx;height:240rpx;'></image>
+	</view>
+	<view style="wdith:100vw;border-radius:8rpx;margin-top:16rpx;" class="flex-row flex-center bg-white" bindtap="todetail" id='B'>
+		<view class="padding-left-32">
+			<view class="f-34" style="color:#FFB98B;">经纪人</view>
+			<view class="h6" style="color:#A0A0A0;margin-top:14rpx;">祝您开单开单开单</view>
+		</view>
+     <view class="flex-1"></view>
+		<image src="{{uploadpath}}resource/{{res.jingjiren}}" class="margin-left-104 " style='width:400rpx;height:240rpx;'></image>
+	</view>
 
 </view>
