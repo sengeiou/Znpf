@@ -199,8 +199,9 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/bangdin/bangdin",
-					"pathName": "pages/bangdin/bangdin",
+					"name": "搜索",
+					"pathName": "pages/search/search",
+					"query": "",
 					"scene": null
 				}
 			]
