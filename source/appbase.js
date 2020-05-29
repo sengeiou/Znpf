@@ -146,13 +146,20 @@ export class AppBase {
       tishi3: base.tishi3,
       clock: base.clock,
       close: base.close,
+      search:base.search,
       BackPage: base.BackPage,
       toHome: base.toHome,
-      goarticle: base.goarticle
+      goarticle: base.goarticle,
+      addresscallback: base.addresscallback
     }
   }
   log() {
     console.log("yeah!");
+  }
+  search(){
+    wx.navigateTo({
+      url: '/pages/search/search',
+    })
   }
   xuanzechenshi() {
     wx.navigateTo({
@@ -182,10 +189,20 @@ export class AppBase {
     });
 
     ApiConfig.SetUnicode(this.Base.unicode);
+    this.Base.getAddress((res)=>{
+      console.log("res",res);
+      this.addresscallback(res);
+      this.Base.setMyData({cityname:res.address_component.city})
+    },(failres)=>{
+      console.log("failres", failres);
+    });
 
 
 
+  }
 
+  addresscallback(res){
+    console.log("addresscallback",res);
   }
 
   gotoOpenUserInfoSetting() {

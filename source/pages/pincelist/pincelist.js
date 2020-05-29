@@ -3,6 +3,7 @@ import { AppBase } from "../../appbase";
 import { ApiConfig } from "../../apis/apiconfig";
 import { InstApi } from "../../apis/inst.api.js";
 import { PremisesApi } from "../../apis/premises.api.js";
+import { ApiUtil } from "../../apis/apiutil";
 class Content extends AppBase {
   constructor() {
     super();
@@ -21,7 +22,11 @@ class Content extends AppBase {
     var that = this;
     var api = new InstApi;
     api.wenzhan({},(wenzhan)=>{
+      wenzhan.map((item)=>{
+        
+        item.ToTime=ApiUtil.timestampToTime(item.time_timespan);
 
+      })
       this.Base.setMyData({wenzhan});
     })
    

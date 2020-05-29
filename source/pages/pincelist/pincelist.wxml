@@ -71,7 +71,7 @@
 				</view>
 				<view class=" flex-1"></view>
 				<view class="f-22" style="color:#CCCCCC">
-					{{item.time}}
+					{{item.ToTime}}
 				</view>
 			</view>
 		</view>

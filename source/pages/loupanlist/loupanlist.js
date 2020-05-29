@@ -31,15 +31,15 @@ class Content extends AppBase {
 
       });
     });
-    var premisesapi = new PremisesApi;
-    premisesapi.list({
-      premisestype_id:2
-    }, (list) => {
-      this.Base.setMyData({
-        list
-      })
-    })
-    
+    // var premisesapi = new PremisesApi;
+    // premisesapi.list({
+    //   premisestype_id:2
+    // }, (list) => {
+    //   this.Base.setMyData({
+    //     list
+    //   })
+    // })
+    this.getloupan();
   }
   getloupan() {
     var json = {};
