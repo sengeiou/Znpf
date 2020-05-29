@@ -9,10 +9,14 @@
 
 	<view class="flex-row flex-center bb">
 		<view class="flex-1"></view>
-		<view class="h5 txt-bold" style="color:#583A80;line-height:28rpx">工作圈(15公里)</view>
-		<image src="{{uploadpath}}resource/{{res.asd}}" style="width:16rpx;height:8rpx;margin-left:5rpx"></image>
+		<picker  value="{{index}}" range="{{list}}" range-key="name" bindchange="bindleixin">
+		<view class="flex-row flex-center">
+			<view class="h5 txt-bold" style="color:#583A80;line-height:28rpx">工作圈({{list[index].name}})</view>
+			<image src="{{uploadpath}}resource/{{res.asd}}" style="width:16rpx;height:8rpx;margin-left:5rpx"></image>
+			</view>
+		</picker>
 		<view class="flex-1"></view>
-		<view  bindtap="search" class="sousuo flex-row flex-center">
+		<view bindtap="search" class="sousuo flex-row flex-center">
 			<view class="flex-1"></view>
 			<image src="{{uploadpath}}resource/{{res.sousuo}}" style="width:29rpx;height:29rpx"></image>
 			<view class='h5 margin-left-10' style="color:rgba(22, 22, 22, 0.6);line-height:28rpx">搜索楼盘</view>
