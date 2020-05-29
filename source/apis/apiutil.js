@@ -78,6 +78,26 @@ export class ApiUtil {
     val = val * 1.0;
     return val.toFixed(digits);
   }
+  static timestampToTime(timestamp) {
+    timestamp=timestamp*1000
+    var date =new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+    
+      var   Y = date.getFullYear() +'年';
+    
+      var   M = (date.getMonth() +1 <10 ?'0' + (date.getMonth() +1) : date.getMonth() +1) +'月';
+    
+       var   D = date.getDate() +'日';
+    
+       var   h = date.getHours() +':';
+    
+       var   m = date.getMinutes() +':';
+    
+      var   s = date.getSeconds();
+    
+        return M +D;//时分秒可以根据自己的需求加上
+    
+    }
+    
   static Storage = null;
 
   static TimeAgo(agoTime) {
@@ -156,6 +176,7 @@ export class ApiUtil {
   }
   return images;
 }
+
 
 
 }

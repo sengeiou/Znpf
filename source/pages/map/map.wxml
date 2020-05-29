@@ -3,3 +3,20 @@
 	<view slot="content" class="txt-bold" style="color:#161616;">最新评测</view>
 </cu-custom>
 <map scale="11" style="width:100vw;height:100vh" show-location="{{true}}" longitude="{{mylng}}" markers="{{markers}}" latitude="{{mylat}}" circles="{{circlelist}}" bindcallouttap="callouttap"></map>
+
+
+<view class="bottom">
+
+	<view class="flex-row flex-center bb">
+		<view class="flex-1"></view>
+		<view class="h5 txt-bold" style="color:#583A80;line-height:28rpx">工作圈(15公里)</view>
+		<image src="{{uploadpath}}resource/{{res.asd}}" style="width:16rpx;height:8rpx;margin-left:5rpx"></image>
+		<view class="flex-1"></view>
+		<view  bindtap="search" class="sousuo flex-row flex-center">
+			<view class="flex-1"></view>
+			<image src="{{uploadpath}}resource/{{res.sousuo}}" style="width:29rpx;height:29rpx"></image>
+			<view class='h5 margin-left-10' style="color:rgba(22, 22, 22, 0.6);line-height:28rpx">搜索楼盘</view>
+			<view class="flex-1"></view>
+		</view>
+	</view>
+</view>

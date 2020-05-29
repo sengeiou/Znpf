@@ -44,9 +44,9 @@
 
 
         <view data-id="3" class="flex-1 flex-row flex-column">
-          <view class="flex-row flex-center">
+          <view bindtap="showlabels" class="flex-row flex-center">
 
-            <view class="h5" style="color:{{shaixuanid==3?'#87BFF1':'#583A80'}}">筛选</view>
+            <view class="h5" style="color:{{shaixuanid==3?'#87BFF1':'#583A80'}}">{{selectlabels}}</view>
             <image class="paixuxia" src="{{uploadpath}}resource/{{res.paixuxia}}"></image>
 
           </view>
@@ -55,7 +55,9 @@
 
 
       </view>
-      <image class="icon-15 margin-right-30 " src="{{uploadpath}}resource/{{res.paixu}}"></image>
+      <image class="icon-15 margin-right-30 " wx:if="{{orderby==''}}" data-orderby='asc'  bindtap="changeorderby" src="{{uploadpath}}resource/{{res.paixu}}"></image>
+      <image wx:if="{{orderby=='asc'}}" data-orderby='desc'  bindtap="changeorderby"  class="icon-15 margin-right-30 " src="{{uploadpath}}resource/{{res.asc}}"></image>
+      <image wx:if="{{orderby=='desc'}}" data-orderby=''  bindtap="changeorderby"  class="icon-15 margin-right-30 " src="{{uploadpath}}resource/{{res.desc}}"></image>
 
     </view>
     <!-- 间隔 -->
@@ -122,6 +124,24 @@
 </view>
 
 
+
+
+<view class="fixTop hv100" style="margin-top:216rpx;  " wx:if="{{labelselect==true}}">
+  <view class="border-top padding-40 bg-white mhv50" >
+    <block wx:for="{{labeltypelist}}" wx:key="k" wx:for-item="typeitem" wx:for-index="typeidx">
+    <view class="h4 text-bold {{typeidx>0?'margin-top':''}}" >{{typeitem.name}}</view>
+    <view class="margin-top flex-row flex-wrap">
+      <view class="priceoption {{item.checked==true?'active':''}}" wx:for="{{typeitem.labels}}" bindtap="selectlabel"   wx:key="k" wx:for-index='idx' id="{{typeidx}}_{{idx}}">{{item.name}}</view>
+    </view>
+    </block>
+  </view>
+  <view class="padding-20 border-top bg-white">
+    <button type="primary" bindtap="setLabels">确定</button>
+  </view>
+  <view bindtap="closelabels" class="bg-back" style="height:calc( 100vh - 620rpx - 133rpx )">
+  
+  </view>
+</view>
 
 <view style="height:216rpx;"></view>
 
