@@ -3,7 +3,7 @@
 .midblock {
   width: 216rpx;
   height: 98rpx;
-  padding: 8rpx 16rpx 8rpx 16rpx;
+  padding: 12rpx 16rpx 8rpx 16rpx;
   /* align-items: center; */
   opacity: 1;
   border-radius: 8rpx;
@@ -52,7 +52,7 @@ view {
 }
 
 .leftblock {
-  width: 200rpx;
+  width: 240rpx;
   background: rgba(240, 233, 246, 1);
   opacity: 1;
   border-radius: 8rpx;

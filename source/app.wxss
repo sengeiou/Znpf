@@ -204,6 +204,9 @@ overflow:hidden;               /* 内容超出宽度时隐藏超出部分的内�
 .h6{
   font-size: 24rpx !important;
 }
+.h6_5{
+  font-size: 22rpx !important;
+}
 .h7{
   font-size: 20rpx !important;
 }
@@ -441,6 +444,9 @@ button[disabled][type=primary] {
 .margin-right-10{
   margin-right:10rpx;
 }
+.margin-right-16{
+  margin-right:16rpx;
+}
 .margin-right-20{
   margin-right:20rpx;
 }
@@ -603,7 +609,7 @@ button[disabled][type=primary] {
   border-radius: 8rpx;
 }
 .paddings{
-  padding: 10rpx 20rpx 40rpx 20rpx;
+  padding: 10rpx 20rpx 40rpx 30rpx;
 }
 .grayblock {
   width: 100%;

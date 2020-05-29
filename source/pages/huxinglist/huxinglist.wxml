@@ -3,7 +3,7 @@
 	<view slot="content" class="txt-bold" style="color:#161616;">{{detail.activitytype_id_name}}航拍景观</view>
 </cu-custom>
 
-<view class='padding-30 ' style="padding-bottom:10rpx">
+<view class='padding-30 ' style=" ">
 	<scroll-view scroll-x class="scroll " style=" width:100%">
 		<view class='' style=" display:inline-block" bindtap='bindorder' data-typeid="{{item.id}}" id="{{idx}}" wx:for='{{typelist}}' wx:for-index='idx' wx:key='e'>
 			<view class='h5 txt-bold text-center margin-right-10 {{nowidx==idx?"block1  txt-white":"block2"}}'>{{item.name}}</view>
@@ -11,19 +11,20 @@
 	</scroll-view>
 </view>
 
+<view class="grayblock"></view>
+
 <view class="padding-30" wx:for='{{housinglist}}' wx:for-index='idx' wx:key='y' bindtap="topage" data-name='huxing' id="{{item.id}}" wx:if='{{typeid==item.areatype_id}}'>
 
 	<view class="flex-row ">
 		<image src="{{uploadpath}}housing/{{item.fengmian}}" class="fengmian"></image>
 
-		<view class="margin-left-20 flex-1">
+		<view class="margin-left-40 flex-1">
 			<view class="txt-bold h4 txt-black">{{item.name}}</view>
-			<view class="margin-top-10">实际套内面积:{{item.actual_use_area}}</view>
+			<view class="margin-top-20">实际套内面积:{{item.actual_use_area}}</view>
 			<view class="margin-top-10">实际得房率:{{item.get_rate}}</view>
 
 			<view class="flex-row flex-center margin-top-10">
 				<view class="">评级:</view>
-
 
 				<view class="starbox text-right   margin-top-5  margin-left-10">
 					<view class="stars" style="width: 100%;">
@@ -39,7 +40,7 @@
 				</view>
 
 
-				<view class="txt-blue margin-left-10 ">{{item.grade}}</view>
+				<view class="txt-purple margin-left-10 ">{{item.grade}}</view>
 
 			</view>
 
