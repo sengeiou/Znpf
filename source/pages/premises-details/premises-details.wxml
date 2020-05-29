@@ -178,18 +178,20 @@
 
 		<!-- 楼盘纪事 -->
 		<view class="padding-30 margin-top-20 bg-white">
+
 			<view class="txt-bold">楼盘纪事</view>
 
 			<view class="flex-row flex-center margin-top ">
 
 				<view class="flex-row flex-column margin-right-20" wx:for='{{info.history}}'>
-					<view class="h6 ">{{item.time}}</view>
+					<view class="h6 " style="height:32rpx;line-height:32rpx">{{item.time}}</view>
 					<view class="txtblock text-center h6 margin-top-20" style="background:{{item.color}}">{{item.name}}</view>
 				</view>
 
-
 			</view>
 		</view>
+
+
 
 		<!-- 楼盘动态 -->
 		<view class="padding-30  margin-top-20 bg-white">
@@ -424,7 +426,6 @@
 			<button open-type="share" class="clear-button">
 				<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
 			</button>
-
 		</view>
 	</view>
 
