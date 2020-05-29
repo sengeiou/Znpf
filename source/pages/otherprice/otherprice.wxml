@@ -5,9 +5,9 @@
 	<view slot="content" class="txt-bold" style="color:#161616;">{{detail.activitytype_id_name}}详情</view>
 </cu-custom>
 
-<view class="padding-30 bg-white margin-top-20">
+<view class="padding-30 bg-white " st>
 
-	<view class="flex-row  margin-top" wx:for='{{info.otherprice}}' wx:key='o'>
+	<view class="flex-row  margin-top-20" wx:for='{{info.otherprice}}' wx:key='o'>
 		<view class="loupanname text-right h5">{{item.name}}</view>
 		<view class="flex-row flex-center flex-1">
 			<view class="priceblock margin-left-20" style="width:{{item.price>100000?300:(item.price/100000)*300}}rpx;background:{{item.color}}"></view>

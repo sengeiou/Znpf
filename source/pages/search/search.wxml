@@ -1,9 +1,9 @@
 <!--pages/search/search.wxml-->
 <cu-custom isCustom="{{true}}" bgColor="bg-white">
-	<view slot="content" class="txt-bold" style="color:#161616;">最新评测</view>
+	<view slot="content" class="txt-bold" style="color:#161616;">楼盘搜索</view>
 </cu-custom>
 
-<view class="sousuo  margin-30 padding-20 flex-row flex-center" bindtap="search">
+<view class="sousuo  margin-30 padding-20 flex-row flex-center" >
 	<image class="icon-15 margin-left-10" src="{{uploadpath}}resource/{{res.sousuo}}"></image>
 	<input class="h6 margin-left-20 flex-1" placeholder-style="color:#CCCCCC" placeholder="请输入您要搜索的内容" bindconfirm='bindsearch' bindinput="bindval"></input>
 </view>
