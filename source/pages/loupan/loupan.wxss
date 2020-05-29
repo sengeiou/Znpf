@@ -161,3 +161,7 @@ border-radius:2px;
 .priceoption.active{
   background: #d1b8f3;
 }
+.mhv50{
+  height:50vh;
+  overflow-y: scroll;
+}
