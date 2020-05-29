@@ -196,6 +196,12 @@
 					"pathName": "pages/huxingfenxi/huxingfenxi",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/bangdin/bangdin",
+					"pathName": "pages/bangdin/bangdin",
+					"scene": null
 				}
 			]
 		}

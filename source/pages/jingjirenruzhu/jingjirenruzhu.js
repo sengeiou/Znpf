@@ -131,24 +131,24 @@ class Content extends AppBase {
     var jingjigongsi = this.Base.getMyData().jingjigongsi;
     var api = new MemberApi;
     if (city_id.trim() == '') {
-      this.toast('请选择城市');
+      this.Base.toast('请选择城市');
       return
     }
     if (name.trim() == '') {
-      this.toast('请输入姓名');
+      this.Base.toast('请输入姓名');
       return
     }
 
     if (mobile.trim() == '') {
-      this.toast('请输入获取手机号');
+      this.Base.toast('请输入获取手机号');
       return
     }
     if (weixinhao.trim() == '') {
-      this.toast('请输入微信号');
+      this.Base.toast('请输入微信号');
       return
     }
     if (premises_id.trim() == '') {
-      this.toast('请选择楼盘');
+      this.Base.toast('请选择楼盘');
       return
     }
     var instApi = new InstApi;
