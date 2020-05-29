@@ -14,6 +14,10 @@ Page {
   height: 236rpx;
   width: 236rpx;
 }
+.icon-15{
+  width:32rpx;
+  height: 64rpx;
+}
 .position-230{
   /* position: relative; */
   /* bottom: 230rpx; */

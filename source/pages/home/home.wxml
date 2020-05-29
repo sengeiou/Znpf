@@ -236,7 +236,7 @@
 
 	<scroll-view scroll-x class="bg-white nav margin-top" scroll-with-animation scroll-left="{{scrollLeft}}">
 		<view style="margin:0;padding:0;margin-right:32rpx;" id="{{item.id}}" data-id="{{item.premises_id}}" wx:for="{{hanpai}}" wx:key='k' class="cutem" bindtap="todetails">
-			<image src="{{uploadpath}}entrance/{{item.fengmian}}" class="" style="width:152px;height:104px;"></image>
+			<image src="{{uploadpath}}entrance/{{item.fengmian}}" mode="aspectFit" class="" style="width:152px;height:104px;"></image>
 		</view>
 	</scroll-view>
 

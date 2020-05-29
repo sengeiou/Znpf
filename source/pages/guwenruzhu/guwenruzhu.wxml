@@ -62,7 +62,7 @@
  <view class="flex-row  bg-white padding-1213">
   <view style="color:#161616;">楼盘</view>
   <input placeholder="请选择您所在的楼盘"  value='{{loupan}}' class="flex-1" style="margin-left:144rpx;color:#161616;" placeholder-style="color:#CCCCCC"></input>
-<view class="flex-1"></view>
+
     <image src="{{uploadpath}}resource/{{res.right}}" class="icon-20"></image>
 </view>
 </picker>
