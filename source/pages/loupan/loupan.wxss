@@ -158,3 +158,6 @@ border-radius:2px;
   font-size: 26rpx;
   padding:4rpx 8rpx 4rpx 8rpx;
 }
+.priceoption.active{
+  background: #d1b8f3;
+}
