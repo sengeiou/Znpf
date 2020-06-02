@@ -14,14 +14,16 @@
 		</view>
 	</view>
 	<view class="">
-		<image src="{{uploadpath}}resource/{{res.bq}}" mode="widthFix" class="icon-200"></image>
-		<view class="position-left">
+		<view style="background-image:url({{uploadpath}}resource/{{res.bq}});background-size:100% 100%" class="icon-200">
+     <view style="margin-left:70rpx;margin-top:40rpx"> 
 			<view class="flex-row flex-bottom">
 				<view class="t-color-p h-44" style="line-height:44rpx">{{guwendetail.manyidu}}</view>
 				<view class="f-22" style="color:#583A80;line-height:22rpx">分</view>
 			</view>
 			<view class="f-22 t-color-p" style="color:#9C72C1;line-height:22rpx">满意度</view>
+			</view>
 		</view>
+
 	</view>
 </view>
 <view style="height:48rpx"></view>
