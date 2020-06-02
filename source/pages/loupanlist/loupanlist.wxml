@@ -160,9 +160,14 @@
 			<view class="flex-row flex-center chaochu" style=" width: 440rpx;">
 				<view wx:for="{{item.label}}" wx:key="k1" wx:for-item="label" class="lable1 ">{{label.name}}</view>
 			</view>
-			<view class="flex-row">
+			<view wx:if="{{item.premisestype_name!='二手房'}}" class="flex-row">
 				<view class="f-32 txt-bold margin-top-20" style="color:#583A80;">{{item.avg_price}} </view>
 				<view class="h5 lable margin-top-20" style="color:#A0A0A0;">建面 {{item.avg_area}}</view>
+			</view>
+
+			<view wx:if="{{item.premisestype_name=='二手房'}}" class="flex-row">
+				<view class="f-32 txt-bold margin-top-20" style="color:#583A80;">{{item.avg_price}} </view>
+				<view class="h5 lable margin-top-20" style="color:#A0A0A0;">{{item.avg_price}}</view>
 			</view>
 
 
