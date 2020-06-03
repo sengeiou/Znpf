@@ -93,10 +93,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 5,
 					"name": "pages/guwen/guwen",
 					"pathName": "pages/guwen/guwen",
-					"query": "",
+					"query": "id=2",
 					"scene": null
 				},
 				{
@@ -195,6 +195,20 @@
 					"name": "户型评测",
 					"pathName": "pages/huxingfenxi/huxingfenxi",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/map/map",
+					"pathName": "pages/map/map",
+					"query": "id=2",
 					"scene": null
 				}
 			]

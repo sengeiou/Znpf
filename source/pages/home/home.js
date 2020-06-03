@@ -11,6 +11,7 @@ import {
 import {
   PremisesApi
 } from "../../apis/premises.api.js";
+import { ApiUtil } from "../../apis/apiutil";
 class Content extends AppBase {
   constructor() {
     super();
@@ -31,12 +32,15 @@ class Content extends AppBase {
 
     })
     api.zuixinpince({}, (zuixinpince) => {
-
+     
       this.Base.setMyData({
         zuixinpince
       });
     })
     api.huxinfenxi({}, (huxinfenxi) => {
+          
+      
+     
 
       this.Base.setMyData({
         huxinfenxi
@@ -44,20 +48,17 @@ class Content extends AppBase {
     })
     api.wenzhan({}, (wenzhan) => {
 
+      wenzhan.map((item)=>{
+        
+        item.ToTime=ApiUtil.timestampToTime(item.time_timespan);
+
+      })
+      
       this.Base.setMyData({
         wenzhan
       });
     })
-    api.hanpai({}, (hanpai) => {
-
-      for (var i = 0; i < hanpai.length; i++) { 
-        hanpai[i].jinguan = new Number(hanpai[i].jinguan).toFixed(1); 
-      }
  
-      this.Base.setMyData({
-        hanpai
-      });
-    })
   }
   onMyShow() {
     var that = this;
@@ -73,6 +74,16 @@ class Content extends AppBase {
         })
       });
     });
+    api.hanpai({}, (hanpai) => {
+
+      for (var i = 0; i < hanpai.length; i++) { 
+        hanpai[i].jinguan = new Number(hanpai[i].jinguan).toFixed(1); 
+      }
+ 
+      this.Base.setMyData({
+        hanpai
+      });
+    })
 
     var premisesapi = new PremisesApi;
     premisesapi.list({

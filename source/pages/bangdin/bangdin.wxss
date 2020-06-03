@@ -13,11 +13,11 @@ Page {
   font-size: 34rpx;
 }
 .margin-left-80{
-  margin-left:160rpx;
+  margin-left: 24rpx;
 }
 .padding-top-40 {
   padding-top:40rpx;
 }
 .margin-left-104{
-  margin-left: 208rpx;
+  margin-left: 60rpx;
 }

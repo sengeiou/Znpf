@@ -46,12 +46,12 @@
 <view class='line'></view>
 <view class="flex-row flex-center bg-white padding-1213">
   <view style="color:#161616;">经纪公司</view>
-  <input value="{{jingjigongsi}}" placeholder="请输入您的经纪公司" bindinput="jingjigongsiFn" class="flex-1" style="margin-left:112rpx;color:#161616;" placeholder-style="color:#CCCCCC"></input>
+  <input value="{{jingjigongsi}}" placeholder="请输入您的经纪公司" bindinput="jingjigongsiFn" class="flex-1" style="margin-left:80rpx;color:#161616;" placeholder-style="color:#CCCCCC"></input>
 </view>
 <view class='line'></view>
 <view class="flex-row flex-center bg-white padding-1213">
   <view style="color:#161616;">门店</view>
-  <input value="{{mendian}}" placeholder="请输入您所在的门店" bindinput="memdianFn" class="flex-1" style="margin-left:112rpx;color:#161616;" placeholder-style="color:#CCCCCC"></input>
+  <input value="{{mendian}}" placeholder="请输入您所在的门店" bindinput="memdianFn" class="flex-1" style="margin-left:144rpx;color:#161616;" placeholder-style="color:#CCCCCC"></input>
 </view>
 <view class='line'></view>
 <view class="flex-row flex-center bg-white padding-1213">
@@ -72,7 +72,7 @@
   <view class="flex-row  bg-white padding-1213">
     <view style="color:#161616;">楼盘</view>
     <input placeholder="请选择您所在的楼盘" value='{{loupan}}' class="flex-1" style="margin-left:144rpx;color:#161616;" placeholder-style="color:#CCCCCC"></input>
-    <view class="flex-1"></view>
+   
     <image src="{{uploadpath}}resource/{{res.right}}" class="icon-20"></image>
   </view>
 </picker>

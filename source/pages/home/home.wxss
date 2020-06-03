@@ -85,7 +85,7 @@ page{
 
 .juxin1 {
 
-  width: 1rpx;
+  width: 2rpx;
   height: 40rpx;
   background: rgba(22, 22, 22, 0.3);
 }

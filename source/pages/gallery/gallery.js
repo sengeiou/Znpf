@@ -76,7 +76,16 @@ class Content extends AppBase {
     premisesapi.huxinfenlei({
       premises_id: this.Base.options.id
     }, (fllist) => {
-    this.Base.setMyData({fllist})
+      var hxnum=0;
+      for(var i=0;i<fllist.length;i++){
+        
+        var tuku=fllist[i].tuku;
+        for(var j=0;j<tuku.length;j++){
+          hxnum++
+        }
+
+      }
+    this.Base.setMyData({fllist,hxnum})
     })
 
   }

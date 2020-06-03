@@ -4,7 +4,7 @@
 <!--pages/city/city.wxml-->
 <view class='flex-row flex-center top'>
   <view class='h5 txt-bold txt-black'>当前：</view>
-  <view class='h5 txt-bold txt-black'>{{CurrentName}}</view>
+  <view class='h5 txt-bold txt-black'>{{cityname}}</view>
 </view>
 
 
