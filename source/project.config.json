@@ -210,6 +210,12 @@
 					"pathName": "pages/map/map",
 					"query": "id=2",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/pincelist/pincelist",
+					"pathName": "pages/pincelist/pincelist",
+					"scene": null
 				}
 			]
 		}

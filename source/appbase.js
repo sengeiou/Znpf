@@ -40,7 +40,7 @@ export class AppBase {
     }
   };
   static CITYID = 440300;
-  static CITYNAME = "天津";
+  static CITYNAME = "深圳市";
   static CITYSET = false;
   unicode = "znpf";
   needauth = false;
@@ -189,13 +189,8 @@ export class AppBase {
     });
 
     ApiConfig.SetUnicode(this.Base.unicode);
-    this.Base.getAddress((res)=>{
-      console.log("res",res);
-      this.addresscallback(res);
-      this.Base.setMyData({cityname:res.address_component.city})
-    },(failres)=>{
-      console.log("failres", failres);
-    });
+
+
 
 
 
@@ -371,6 +366,16 @@ export class AppBase {
         memberinfo: info
       });
     });
+
+    this.Base.getAddress((res)=>{
+      console.log("resssssss",res);
+      this.addresscallback(res);
+      //this.Base.setMyData({cityname:res.address_component.city})
+      this.Base.setMyData({cityname:AppBase.CITYNAME})
+    },(failres)=>{
+      console.log("failres", failres);
+    });
+    
     that.onMyShow();
 
   }
