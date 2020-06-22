@@ -26,11 +26,19 @@ class Content extends AppBase {
     this.Base.setMyData({ name, title,id });
     var api = new PremisesApi;
     api.label({}, (label1) => {
-
       this.Base.setMyData({
         label1
       });
-
+    })
+    
+    var instapi = new InstApi;
+    instapi.zonjia({}, (zonjia) => { 
+      for(var i=0;i<zonjia.length;i++){
+        zonjia[i].checked=false;
+      }
+      this.Base.setMyData({
+        pricearraylist:zonjia,selectpricearraylist:zonjia
+      }); 
     })
 
     this.Base.setMyData({
@@ -49,23 +57,9 @@ class Content extends AppBase {
       selectdistrict: null,
       selectdiquname:"区域",
       minprice:"",maxprice:"",
-      pricearraylist: [
-        { min: 0, max: 200, name:"200万以下",checked:false}, 
-        { min: 200, max: 300, name: "200-300万", checked: false},
-        { min: 300, max: 400, name: "300-400万", checked: false },
-        { min: 400, max: 500, name: "400-500万", checked: false },
-        { min: 500, max: 800, name: "500-800万", checked: false },
-        { min: 800, max: 1000, name: "800-1000万", checked: false },
-        { min: 1000, max: 65535, name: "1000万以上", checked: false }],
+     
       selectminprice: "", selectmaxprice: "",
-      selectpricearraylist: [
-        { min: 0, max: 200, name: "200万以下", checked: false },
-        { min: 200, max: 300, name: "200-300万", checked: false },
-        { min: 300, max: 400, name: "300-400万", checked: false },
-        { min: 400, max: 500, name: "400-500万", checked: false },
-        { min: 500, max: 800, name: "500-800万", checked: false },
-        { min: 800, max: 1000, name: "800-1000万", checked: false },
-        { min: 1000, max: 65535, name: "1000万以上", checked: false }],
+      
       selectprice: "价格",
     });
 
@@ -73,7 +67,7 @@ class Content extends AppBase {
 
     var instApi = new InstApi();
 
-    instApi.allsearchlabels({},(labeltypelist)=>{
+    instApi.allsearchlabels({type:'A,C'},(labeltypelist)=>{
       this.Base.setMyData({
         labeltypelist: labeltypelist,
         selectlabeltypelist: labeltypelist,
@@ -110,10 +104,6 @@ class Content extends AppBase {
   onMyShow() {
     var that = this;
 
-
-
-
-   
   }
 
 
