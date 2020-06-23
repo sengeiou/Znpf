@@ -47,11 +47,14 @@
 <view class="margin-top txt-bold margin-left-40">主营新房</view>
 <view class=" margin-top" wx:for='{{guwendetail.premises}}' wx:key='key'>
 	<view class="flex-row">
-		<image src="{{uploadpath}}premises/{{item.cover}}" class="icon-220 margin-left-40"></image>
+		<image  id="{{item.id}}" bindtap="topage"  src="{{uploadpath}}premises/{{item.cover}}" class="icon-220 margin-left-40"></image>
 		<view class="flex-1 margin-left-40">
 			<view class="flex">
 				<view class="flex-1 txt-bold">{{item.name}}</view>
-				<view class="h7 margin-right-40 txt-white padding-left-10 padding-right-10 padding-top-5 {{item.sales_status!=''?'bg-87':'bg-xf'}}">{{item.sales_status!=''?item.sales_status:item.premisestype_id_name}}</view>
+				<view class="h7 margin-right-40 txt-white padding-left-10 padding-right-10 padding-top-5 {{item.status!=''?'bg-87':'bg-xf'}}">{{item.sales_status!=''?item.premisestype_id_name:item.sales_status}}</view>
+
+
+				<!-- <view class="txt-white bg-color h6 padding-left-5 padding-bottom-2" style="background:{{item.premisestype_color}}">{{item.premisestype_summary}}</view> -->
 			</view>
 			<view class="t-color h6  margin-top-5">{{item.cname}} | {{item.dname}}</view>
 			<view class="flex margin-bottom-30 margin-top-10 flex-row flex-center">
@@ -59,7 +62,7 @@
 			</view>
 			<view class="flex flex-bottom">
 				<view class="t-color-p txt-bold">{{item.avg_price}}</view>
-				<view class="h6 t-color-p txt-bold">元/m2</view>
+				<!-- <view class="h6 t-color-p txt-bold">元/m2</view> -->
 				<view class="h5 t-color margin-left-20">建面 {{item.avg_area}}</view>
 			</view>
 		</view>
@@ -71,11 +74,11 @@
 <view class="margin-top txt-bold margin-left-40">主营二手房</view>
 <view class="margin-top" wx:for='{{guwendetail.premises2}}' wx:key='key'>
 	<view class="flex-row">
-		<image src="{{uploadpath}}resource/{{res.fz}}" class="icon-220 margin-left-40"></image>
+		<image  id="{{item.id}}" bindtap="topage" src="{{uploadpath}}resource/{{res.fz}}" class="icon-220 margin-left-40"></image>
 		<view class="flex-1 margin-left-40">
 			<view class="flex">
 				<view class="flex-1 txt-bold">{{item.name}}</view>
-				<view class="h7 margin-right-40  txt-white padding-left-10 padding-right-10 padding-top-5 {{item.sales_status!=''?'bg-87':'bg-xf'}}">{{item.sales_status!=''?item.sales_status:item.premisestype_id_name}}</view>
+				<view class="h7 margin-right-40  txt-white padding-left-10 padding-right-10 padding-top-5 {{item.sales_status!=''?'bg-87':'bg-xf'}}">{{item.sales_status!=''?item.premisestype_id_name:item.sales_status}}</view>
 			</view>
 			<view class="t-color h6  margin-top-5">{{item.cname}} | {{item.dname}}</view>
 			<view class="flex margin-bottom-30 margin-top-10">
@@ -83,7 +86,7 @@
 			</view>
 			<view class="flex flex-bottom">
 				<view class="t-color-p txt-bold">{{item.avg_price}}</view>
-				<view class="h6 t-color-p txt-bold">元/m2</view>
+				<!-- <view class="h6 t-color-p txt-bold">元/m2</view> -->
 				<view class="h5 t-color margin-left-20">建面 {{item.avg_area}}</view>
 			</view>
 		</view>

@@ -147,6 +147,8 @@ class Content extends AppBase {
       url: '/pages/zhiyeguwen/zhiyeguwen?id='+this.Base.options.id,
     })
   }
+
+
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -154,5 +156,6 @@ body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.bindorder = content.bindorder;
 body.guwen = content.guwen;
+
 //body.shoucang = content.shoucang;
 Page(body)

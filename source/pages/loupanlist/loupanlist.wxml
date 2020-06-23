@@ -166,7 +166,7 @@
 			</view>
 
 			<view wx:if="{{item.premisestype_name=='二手房'}}" class="flex-row">
-				<view class="f-32 txt-bold margin-top-20" style="color:#583A80;">{{item.avg_price}} </view>
+				<view class="f-32 txt-bold margin-top-20" style="color:#583A80;">{{item.sumprice}} </view>
 				<view class="h5 lable margin-top-20" style="color:#A0A0A0;">{{item.avg_price}}</view>
 			</view>
 

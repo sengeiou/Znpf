@@ -215,6 +215,13 @@
 					"id": -1,
 					"name": "pages/pincelist/pincelist",
 					"pathName": "pages/pincelist/pincelist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/premises-details/premises-details",
+					"pathName": "pages/premises-details/premises-details",
 					"scene": null
 				}
 			]

@@ -76,6 +76,13 @@ class Content extends AppBase {
       }
     })
   }
+  topage(e){
+    var id = e.currentTarget.id;
+    wx.navigateTo({
+      url: '/pages/premises-details/premises-details?id='+id,
+    })
+
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -83,6 +90,6 @@ body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.zixun = content.zixun;
 body.call = content.call;
-
+body.topage=content.topage;
 body.shoucangguwen = content.shoucangguwen;
 Page(body)
