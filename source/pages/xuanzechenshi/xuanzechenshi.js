@@ -30,6 +30,11 @@ class Content extends AppBase {
       instapi.citylist({},(usecitylist)=>{
       this.Base.setMyData({ usecitylist: usecitylist });
     });
+
+
+    console.log("cityid1:"+AppBase.CITYID);
+    console.log("CITYNAME1:"+AppBase.CITYNAME);
+    console.log("CITYSET1:"+AppBase.CITYSET);
   }
   setCity(e){
     console.log("进来了啊");
@@ -41,9 +46,11 @@ class Content extends AppBase {
         AppBase.CITYID = citylist[id].id;
         AppBase.CITYNAME = citylist[id].name;
         AppBase.CITYSET = true;
-      
-      
-  
+       
+
+        console.log("cityid:"+AppBase.CITYID);
+        console.log("CITYNAME:"+AppBase.CITYNAME);
+        console.log("CITYSET:"+AppBase.CITYSET);
     
     wx.navigateBack({
       

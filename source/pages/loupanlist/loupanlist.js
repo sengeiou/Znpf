@@ -32,7 +32,16 @@ class Content extends AppBase {
       });
 
     })
-
+    var instapi = new InstApi;
+    instapi.zonjia({}, (zonjia) => { 
+      for(var i=0;i<zonjia.length;i++){
+        zonjia[i].checked=false;
+      }
+      this.Base.setMyData({
+        pricearraylist:zonjia,selectpricearraylist:zonjia
+      }); 
+    })
+ 
     this.Base.setMyData({
       orderby:"",
       city_id: 0,
@@ -49,39 +58,45 @@ class Content extends AppBase {
       selectdistrict: null,
       selectdiquname:"区域",
       minprice:"",maxprice:"",
-      pricearraylist: [
-        { min: 0, max: 200, name:"200万以下",checked:false}, 
-        { min: 200, max: 300, name: "200-300万", checked: false},
-        { min: 300, max: 400, name: "300-400万", checked: false },
-        { min: 400, max: 500, name: "400-500万", checked: false },
-        { min: 500, max: 800, name: "500-800万", checked: false },
-        { min: 800, max: 1000, name: "800-1000万", checked: false },
-        { min: 1000, max: 65535, name: "1000万以上", checked: false }],
+      // pricearraylist: [
+      //   { min: 0, max: 200, name:"200万以下",checked:false}, 
+      //   { min: 200, max: 300, name: "200-300万", checked: false},
+      //   { min: 300, max: 400, name: "300-400万", checked: false },
+      //   { min: 400, max: 500, name: "400-500万", checked: false },
+      //   { min: 500, max: 800, name: "500-800万", checked: false },
+      //   { min: 800, max: 1000, name: "800-1000万", checked: false },
+      //   { min: 1000, max: 65535, name: "1000万以上", checked: false }],
       selectminprice: "", selectmaxprice: "",
-      selectpricearraylist: [
-        { min: 0, max: 200, name: "200万以下", checked: false },
-        { min: 200, max: 300, name: "200-300万", checked: false },
-        { min: 300, max: 400, name: "300-400万", checked: false },
-        { min: 400, max: 500, name: "400-500万", checked: false },
-        { min: 500, max: 800, name: "500-800万", checked: false },
-        { min: 800, max: 1000, name: "800-1000万", checked: false },
-        { min: 1000, max: 65535, name: "1000万以上", checked: false }],
+      // selectpricearraylist: [
+      //   { min: 0, max: 200, name: "200万以下", checked: false },
+      //   { min: 200, max: 300, name: "200-300万", checked: false },
+      //   { min: 300, max: 400, name: "300-400万", checked: false },
+      //   { min: 400, max: 500, name: "400-500万", checked: false },
+      //   { min: 500, max: 800, name: "500-800万", checked: false },
+      //   { min: 800, max: 1000, name: "800-1000万", checked: false },
+      //   { min: 1000, max: 65535, name: "1000万以上", checked: false }],
       selectprice: "价格",
     });
 
 
 
     var instApi = new InstApi();
-
-    instApi.allsearchlabels({},(labeltypelist)=>{
+    if(this.Base.options.name=="2"){
+        var type="A,B";
+    }
+    else if(this.Base.options.name==undefined){
+      var type="";
+    }else{
+      var type="A,C";
+    }
+    instApi.allsearchlabels({type:type},(labeltypelist)=>{
       this.Base.setMyData({
         labeltypelist: labeltypelist,
         selectlabeltypelist: labeltypelist,
         selectlabels:"筛选"
       });
     });
-
-
+  
 
     instApi.cityall({}, (citylist) => {
       this.Base.setMyData({
@@ -165,6 +180,8 @@ class Content extends AppBase {
     if(labels){
       json.searchlabel=labels.join(",");
     }
+
+ 
     if(data.orderby==""){
       json.orderby="r_main.seq";
     }else{
@@ -182,6 +199,7 @@ class Content extends AppBase {
     if (id != undefined) {
       json.xuanfantype = id;
     }
+     
     
 
     api.list(json,(list)=>{

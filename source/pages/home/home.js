@@ -21,7 +21,8 @@ class Content extends AppBase {
     //options.id=5;
     super.onLoad(options);
     this.Base.setMyData({
-      showSkeleton: true
+      showSkeleton: true,
+      tc:"B"
     });
     var api = new InstApi;
     api.homenum({}, (homenum) => {
@@ -38,10 +39,7 @@ class Content extends AppBase {
       });
     })
     api.huxinfenxi({}, (huxinfenxi) => {
-          
-      
-     
-
+           
       this.Base.setMyData({
         huxinfenxi
       });
@@ -95,8 +93,7 @@ class Content extends AppBase {
         list[i].rizhao = new Number(list[i].rizhao).toFixed(1);
         list[i].jingguan = new Number(list[i].jingguan).toFixed(1);
       }
-
-
+ 
       this.Base.setMyData({
         list
       });
@@ -151,6 +148,9 @@ class Content extends AppBase {
      url: '/pages/sunshine/sunshine?type=D&nowid=' + id + '&id=' + premises_id,
    })
   }
+  close(e){
+    this.Base.setMyData({tc:'A'})
+  }
 
 }
 var content = new Content();
@@ -161,6 +161,8 @@ body.fanyuanlist = content.fanyuanlist;
 body.gotoloupan = content.gotoloupan;
 body.pincelist = content.pincelist;
 body.gomap = content.gomap;
+
+body.close = content.close;
 
 body.todetails = content.todetails;
 body.tosunshine = content.tosunshine;

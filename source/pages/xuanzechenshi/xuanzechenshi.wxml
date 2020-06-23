@@ -9,8 +9,6 @@
 
 
 
-
-
 <view class='flex-row column mid '>
 
  <view class='h5 txt-bold txt-black margin-20'>定位/最近访问</view>

@@ -80,7 +80,7 @@ page{
   margin-left: 64rpx;
   margin-top: 16rpx;
 
-  z-index: 999;
+  z-index: 99;
 }
 
 .juxin1 {
@@ -106,4 +106,19 @@ page{
 .cutem{
   display:inline-block;
 
+}
+
+.xuanchuang{
+  background: rgba(22, 22, 22, 0.5);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 120;
+}
+.imgs{
+  width: 600rpx;
+  height: 800rpx;
+  margin-top: 50%;
 }
