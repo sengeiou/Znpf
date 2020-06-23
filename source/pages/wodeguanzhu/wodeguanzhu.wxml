@@ -84,7 +84,7 @@
 		<view class="margin-top-10">
 			<view class="flex-row flex-center ">
 				<view class="h5" style="color:#583A80">{{item.premises_avg_price}}</view>
-				<view class="h5 margin-left-20" style="color:#777777">建面 {{item.premises_avg_price}}</view>
+				<view class="h5 margin-left-20" style="color:#777777">建面 {{item.premises_avg_area}}m</view>
 			</view>
 		</view>
 

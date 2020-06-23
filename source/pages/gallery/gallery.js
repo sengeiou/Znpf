@@ -88,6 +88,8 @@ class Content extends AppBase {
     this.Base.setMyData({fllist,hxnum})
     })
 
+
+
   }
 
   bindorder(e) {
@@ -97,6 +99,13 @@ class Content extends AppBase {
     })
   }
 
+  dianji(e) {
+    var img = e.currentTarget.id;
+  console.log(e);
+    wx.previewImage({
+      urls: [img],
+    })
+  }
 
 }
 var content = new Content();
@@ -104,4 +113,5 @@ var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.bindorder = content.bindorder;
+body.dianji=content.dianji;
 Page(body)

@@ -26,9 +26,13 @@ class Content extends AppBase {
     this.Base.setMyData({ name, title,id });
     var api = new PremisesApi;
     api.label({}, (label1) => {
+      if (getCurrentPages().length != 0) {
+        //刷新当前页面的数据
+        getCurrentPages()[getCurrentPages().length - 1].onLoad()
       this.Base.setMyData({
         label1
       });
+      }
     })
     
     var instapi = new InstApi;
@@ -98,11 +102,14 @@ class Content extends AppBase {
 
     });
 
+    
+
 
   }
 
   onMyShow() {
     var that = this;
+    
 
   }
 
