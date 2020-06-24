@@ -1,6 +1,6 @@
 <!--pages/details/details.wxml-->
 <cu-custom isCustom="{{true}}" bgColor="bg-white">
-	<view slot="content" class="txt-bold" style="color:#161616;">航拍景观</view>
+	<view slot="content" class="txt-bold" style="color:#161616;">{{info.name}}</view>
 </cu-custom>
 
 <!-- 基本信息 -->

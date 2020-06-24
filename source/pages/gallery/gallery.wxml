@@ -1,89 +1,118 @@
 <!--pages/gallery/gallery.wxml-->
 <cu-custom isCustom="{{true}}" bgColor="bg-white">
-	<view slot="content" class="txt-bold" style="color:#161616;">航拍景观</view>
+  <view slot="content" class="txt-bold" style="color:#161616;">{{info.name}}</view>
 </cu-custom>
 
-<view class=' ' style="padding-bottom:10rpx">
 
-	<view class='flex-row flex-center'>
-		<view class="flex-1"></view>
-		<view class="flex-row flex-column" bindtap='bindorder' id="A">
-			<view class='h5 txt-bold flex-1  {{nowidx=="A"?"":"txt-gray opa8"}}'>效果图({{a}})</view>
-			<view class=' order {{nowidx=="A"?"bg-purple":"bg-white"}}'></view>
-		</view>
-		<view class="flex-1"></view>
-		<view class="flex-row flex-column" bindtap='bindorder' id="B">
-			<view class='h5 txt-bold flex-1  {{nowidx=="B"?"":"txt-gray opa8"}}'>户型({{hxnum}})</view>
-			<view class=' order {{nowidx=="B"?"bg-purple":"bg-white"}}'></view>
-		</view>
-		<view class="flex-1"></view>
-		<view class="flex-row flex-column" bindtap='bindorder' id="C">
-			<view class='h5 txt-bold flex-1  {{nowidx=="C"?"":"txt-gray opa8"}}'>样板间({{c}})</view>
-			<view class=' order {{nowidx=="C"?"bg-purple":"bg-white"}}'></view>
-		</view>
-		<view class="flex-1"></view>
-		<view class="flex-row flex-column" bindtap='bindorder' id="D">
-			<view class='h5 txt-bold flex-1  {{nowidx=="D"?"":"txt-gray opa8"}}'>区位({{d}})</view>
-			<view class=' order {{nowidx=="D"?"bg-purple":"bg-white"}}'></view>
-		</view>
-		<view class="flex-1"></view>
-	</view>
+<view>
+  <scroll-view class="" scroll-x="true" class="tab-h bg-white" scroll-left="{{scrollLeft}}" style="top:{{CustomBar}}px;">
+    <!-- <view class="tab-item {{idx==seq?'active':''}}"  bindtap="bindorder">户型</view> -->
+    <view class="tab-item h5 txt-bold {{idx==nowidx?'':'txt-gray opa8'}} " wx:for='{{gallerytype}}' wx:key="k" wx:for-index="idx" id="{{idx}}" bindtap="bindorder" >{{item.name}}({{item.num}})</view>
+  </scroll-view>
+</view>
 
+
+
+<!-- <view class=' ' style="padding-bottom:10rpx">
+
+  <view class='flex-row flex-center'>
+    <view class="flex-1"></view>
+    <view class="flex-row flex-column" bindtap='bindorder' id="A" wx:for='{{gallerytype}}' wx:key='k'>
+      <view class='h5 txt-bold flex-1  {{nowidx=="A"?"":"txt-gray opa8"}}'>效果图({{a}})</view>
+      <view class=' order {{nowidx=="A"?"bg-purple":"bg-white"}}'></view>
+    </view>
+    <view class="flex-1"></view>
+    <view class="flex-row flex-column" bindtap='bindorder' id="B">
+      <view class='h5 txt-bold flex-1  {{nowidx=="B"?"":"txt-gray opa8"}}'>户型({{hxnum}})</view>
+      <view class=' order {{nowidx=="B"?"bg-purple":"bg-white"}}'></view>
+    </view>
+    <view class="flex-1"></view>
+    <view class="flex-row flex-column" bindtap='bindorder' id="C">
+      <view class='h5 txt-bold flex-1  {{nowidx=="C"?"":"txt-gray opa8"}}'>样板间({{c}})</view>
+      <view class=' order {{nowidx=="C"?"bg-purple":"bg-white"}}'></view>
+    </view>
+    <view class="flex-1"></view>
+    <view class="flex-row flex-column" bindtap='bindorder' id="D">
+      <view class='h5 txt-bold flex-1  {{nowidx=="D"?"":"txt-gray opa8"}}'>区位({{d}})</view>
+      <view class=' order {{nowidx=="D"?"bg-purple":"bg-white"}}'></view>
+    </view>
+    <view class="flex-1"></view>
+  </view>
+
+</view> -->
+
+<view style="height:100rpx;"></view>
+<view class="grayblock"></view>
+<view wx:for='{{gallerytype}}' wx:key='k' wx:for-index='idx' id='c{{idx}}'>
+  <view class="padding-30">
+    <view class="txt-bold">{{item.name}}</view>
+    <view class="flex-row flex-center flex-wrap margin-top-20">
+      <view wx:for='{{item.list}}' wx:key='s'>
+        <view class="h5 txt-gray" wx:if='{{idx==0}}'>{{item.name}}</view>
+        <image wx:if='{{idx!=0}}' id="{{uploadpath}}gallery/{{item.picture}}" bindtap="dianji" src="{{uploadpath}}gallery/{{item.picture}}" class="icon-80 margin-right-10 margin-top-20"></image>
+        <image id="{{uploadpath}}huxin/{{item.img}}" wx:if='{{idx==0}}' bindtap="dianji" wx:for='{{item.tuku}}' wx:key='k' src="{{uploadpath}}huxin/{{item.img}}" class="icon-80 margin-right-10 margin-top-20"></image>
+      </view>
+    </view>
+
+  </view>
+  <view class="grayblock"></view>
+</view>
+
+
+<!-- <view style="height:100rpx;"></view>
+<view class="grayblock"></view>
+<view class="padding-30">
+  <view class="txt-bold">效果图</view>
+  <view class="flex-row flex-center flex-wrap margin-top-20">
+    <view wx:for='{{info.gallery}}' wx:key='s' wx:if='{{item.type_name=="效果图"}}'>
+      <image id="{{uploadpath}}gallery/{{item.picture}}" bindtap="dianji" src="{{uploadpath}}gallery/{{item.picture}}" class="icon-80 margin-right-10 margin-top-20"></image>
+    </view>
+  </view>
+</view> -->
+
+<!-- <view class="grayblock"></view>
+<view class="padding-30">
+  <view class="txt-bold">户型</view>
+  <view class="flex-row flex-center flex-wrap margin-top-20">
+    <view wx:for='{{fllist}}' wx:key='s'>
+      <view class="h5 txt-gray">{{item.name}}</view>
+      <image id="{{uploadpath}}huxin/{{item.img}}" bindtap="dianji" wx:for='{{item.tuku}}' src="{{uploadpath}}huxin/{{item.img}}" class="icon-80 margin-right-10 margin-top-20"></image>
+    </view>
+  </view>
 </view>
 
 <view class="grayblock"></view>
 <view class="padding-30">
-	<view class="txt-bold">效果图</view>
-	<view class="flex-row flex-center flex-wrap margin-top-20">
-		<view wx:for='{{info.gallery}}' wx:key='s' wx:if='{{item.type=="A"}}'>
-			<image id="{{uploadpath}}gallery/{{item.picture}}"  bindtap="dianji" src="{{uploadpath}}gallery/{{item.picture}}" class="icon-80 margin-right-10 margin-top-20"></image>
-		</view>
-	</view>
+  <view class="txt-bold">样板间</view>
+  <view class="flex-row flex-center flex-wrap margin-top-20">
+    <view wx:for='{{info.gallery}}' wx:key='s' wx:if='{{item.type_name=="样板间"}}'>
+      <image bindtap="dianji" id="{{uploadpath}}gallery/{{item.picture}}" src="{{uploadpath}}gallery/{{item.picture}}" class="icon-80 margin-right-10 margin-top-20"></image>
+    </view>
+  </view>
 </view>
 
 <view class="grayblock"></view>
 <view class="padding-30">
-	<view class="txt-bold">户型</view>
-	<view class="flex-row flex-center flex-wrap margin-top-20">
-		<view wx:for='{{fllist}}' wx:key='s'>
-			<view class="h5 txt-gray">{{item.name}}</view>
-			<image id="{{uploadpath}}huxin/{{item.img}}" bindtap="dianji" wx:for='{{item.tuku}}' src="{{uploadpath}}huxin/{{item.img}}" class="icon-80 margin-right-10 margin-top-20"></image>
-		</view>
-	</view>
-</view>
-
-<view class="grayblock"></view>
-<view class="padding-30">
-	<view class="txt-bold">样板间</view>
-	<view class="flex-row flex-center flex-wrap margin-top-20">
-		<view wx:for='{{info.gallery}}' wx:key='s' wx:if='{{item.type=="C"}}'>
-			<image bindtap="dianji" id="{{uploadpath}}gallery/{{item.picture}}" src="{{uploadpath}}gallery/{{item.picture}}" class="icon-80 margin-right-10 margin-top-20"></image>
-		</view>
-	</view>
-</view>
-
-<view class="grayblock"></view>
-<view class="padding-30">
-	<view class="txt-bold">区位</view>
-	<view class="flex-row flex-center flex-wrap margin-top-20">
-		<view wx:for='{{info.gallery}}' wx:key='s' wx:if='{{item.type=="D"}}'>
-			<image bindtap="dianji" id="{{uploadpath}}gallery/{{item.picture}}"  src="{{uploadpath}}gallery/{{item.picture}}" class="icon-80 margin-right-10 margin-top-20"></image>
-		</view>
-	</view>
-</view>
+  <view class="txt-bold">区位</view>
+  <view class="flex-row flex-center flex-wrap margin-top-20">
+    <view wx:for='{{info.gallery}}' wx:key='s' wx:if='{{item.type_name=="区位"}}'>
+      <image bindtap="dianji" id="{{uploadpath}}gallery/{{item.picture}}" src="{{uploadpath}}gallery/{{item.picture}}" class="icon-80 margin-right-10 margin-top-20"></image>
+    </view>
+  </view>
+</view> -->
 
 
 <view style="height:120rpx"></view>
 <view class="under_block bg-white">
-	<view class="flex-row flex-center paddings">
-		<image src="{{uploadpath}}resource/{{res.shoucang}}" wx:if='{{sc=="A"}}' class="icon-25" id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
-		<image src="{{uploadpath}}resource/{{res.bushoucang}}" wx:if='{{sc=="B"}}' class="icon-25" id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
-		<view class="flex-1"></view>
-		<button class="clear-button" open-type='contact'>
-			<view class="left_one text-center bg1 h5">联系客服</view>
-		</button>
-		<button open-type="share" class="clear-button">
-			<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
-		</button>
-	</view>
+  <view class="flex-row flex-center paddings">
+    <image src="{{uploadpath}}resource/{{res.shoucang}}" wx:if='{{sc=="A"}}' class="icon-25" id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
+    <image src="{{uploadpath}}resource/{{res.bushoucang}}" wx:if='{{sc=="B"}}' class="icon-25" id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
+    <view class="flex-1"></view>
+    <button class="clear-button" open-type='contact'>
+      <view class="left_one text-center bg1 h5">联系客服</view>
+    </button>
+    <button open-type="share" class="clear-button">
+      <view class="left_one text-center bg2 margin-left-20 h5">分享</view>
+    </button>
+  </view>
 </view>

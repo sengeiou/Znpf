@@ -111,7 +111,7 @@ class Content extends AppBase {
     var list = this.Base.getMyData().info.periphery;
     var markers=[];
     for(var i=0;i<list.length;i++){
-      if(list[i].type_id=nowid){
+      if(list[i].type_id==nowid){
         markers.push({
           id:list[i].id,
           title:list[i].name,

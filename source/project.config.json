@@ -156,10 +156,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 14,
 					"name": "图库",
 					"pathName": "pages/gallery/gallery",
-					"query": "",
+					"query": "id=1",
 					"scene": null
 				},
 				{
@@ -222,6 +222,7 @@
 					"id": -1,
 					"name": "pages/premises-details/premises-details",
 					"pathName": "pages/premises-details/premises-details",
+					"query": "",
 					"scene": null
 				}
 			]

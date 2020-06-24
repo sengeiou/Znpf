@@ -1,6 +1,6 @@
 <!--pages/sunshine/sunshine.wxml-->
 <cu-custom isCustom="{{true}}" bgColor="bg-white">
-	<view slot="content" class="txt-bold" style="color:#161616;">{{detail.activitytype_id_name}}航拍景观</view>
+	<view slot="content" class="txt-bold" style="color:#161616;">{{entrancelist[0].premises_name}}</view>
 </cu-custom>
 
 <view class='padding-30 ' style="padding-bottom:10rpx" wx:if='{{type!="D"}}'>

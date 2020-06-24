@@ -1,6 +1,6 @@
 <!--pages/huxinglist/huxinglist.wxml-->
 <cu-custom isCustom="{{true}}" bgColor="bg-white">
-	<view slot="content" class="txt-bold" style="color:#161616;">{{detail.activitytype_id_name}}航拍景观</view>
+	<view slot="content" class="txt-bold" style="color:#161616;">{{info.name}}</view>
 </cu-custom>
 
 <view class='padding-30 ' style=" ">
