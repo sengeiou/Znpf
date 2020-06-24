@@ -347,8 +347,8 @@
 		<view class="padding-30 bg-white margin-top-20">
 			<view class="txt-bold">楼盘优劣</view>
 
-			<view class='flex-row flex-center margin-top'>
-				<view class="label2 h6 text-center margin-right-10" wx:for='{{info.yllabels}}' wx:key='y'>{{item.name}}</view>
+			<view class='flex-row flex-wrap margin-top'>
+				<view class="label2 h6  margin-right-10 margin-top-10" wx:for='{{info.yllabels}}' wx:key='y'>{{item.name}}</view>
 			</view>
 		</view>
 

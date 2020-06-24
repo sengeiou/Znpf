@@ -50,7 +50,7 @@ Page {
 .label2 {
   min-width: 80rpx;
   padding: 0 10rpx 0 10rpx;
-  height: 40rpx;
+  /* height: 40rpx; */
   line-height: 40rpx;
   color: #583A80;
   background: #F0E9F6;
