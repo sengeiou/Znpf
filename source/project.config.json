@@ -86,10 +86,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 4,
 					"name": "楼盘详情",
 					"pathName": "pages/premises-details/premises-details",
-					"query": "",
+					"query": "id=1",
 					"scene": null
 				},
 				{

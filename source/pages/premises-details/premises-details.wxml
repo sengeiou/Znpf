@@ -371,7 +371,7 @@
 			<map class="map" latitude="{{info.lat}}" longitude="{{info.lng}}" show-location markers="{{markers}}" include-points="{{markers}}"> 
 			</map>
 			<view class="" style="padding:10rpx 30rpx 30rpx 30rpx">
-				<view class="margin-top-20 " wx:for-index='idxs' wx:for='{{info.periphery}}' wx:key='p' wx:if='{{item.type_id==nowid}}'>
+				<view class="margin-top-20 " bindtap="xiaoguo" id='{{item.id}}' wx:for-index='idxs' wx:for='{{info.periphery}}' wx:key='p' wx:if='{{item.type_id==nowid}}'>
 					<view class="flex-row flex-center">
 						<view class="flex-1 h5">{{item.name}}</view>
 						<image wx:if='{{item.fangshi=="A"}}' src="{{uploadpath}}resource/{{res.buxing}}" class="icon"></image>

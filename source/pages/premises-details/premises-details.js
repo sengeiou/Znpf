@@ -147,7 +147,22 @@ class Content extends AppBase {
       url: '/pages/zhiyeguwen/zhiyeguwen?id='+this.Base.options.id,
     })
   }
-
+  xiaoguo(e){
+    var id = e.currentTarget.id;
+    var list = this.Base.getMyData().info.periphery;
+    var markers = [];
+    for (var i = 0; i < list.length;i++){
+      if (id == list[i].id){
+        markers.push({
+          id: list[i].id,
+          title: list[i].name,
+          latitude: list[i].lat,
+          longitude: list[i].lng
+        });
+      }
+    }
+    this.Base.setMyData({ markers });
+  }
 
 }
 var content = new Content();
@@ -156,6 +171,7 @@ body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.bindorder = content.bindorder;
 body.guwen = content.guwen;
+body.xiaoguo = content.xiaoguo;
 
 //body.shoucang = content.shoucang;
 Page(body)
