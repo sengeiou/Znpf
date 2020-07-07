@@ -4,7 +4,7 @@ Page {
 }
 
 .topimage {
-  height: 352rpx;
+  height: 480rpx;
   width: 100%;
   position: absolute;
   top: 10.5%;
@@ -15,7 +15,7 @@ Page {
   border-radius: 32rpx 32rpx 0 0;
   width: 100%;
   position: absolute;
-  top: 30.5%;
+  top: 38.5%;
   z-index: 10;
 }
 
@@ -136,7 +136,7 @@ Page {
 }
 
 .loupanname {
-  width: 150rpx;
+  /* width: 150rpx; */
 }
 
 

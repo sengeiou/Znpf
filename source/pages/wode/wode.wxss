@@ -67,3 +67,17 @@ Page {
 .padding-block {
   padding: 48rpx 30rpx 48rpx 30rpx;
 }
+.pof {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  background: #000000;
+  opacity: 0.9;
+}
+.imggzh {
+  z-index: 11;
+  width: 100%;
+}

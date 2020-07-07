@@ -11,7 +11,7 @@
 
 	<view class="toptwo text-center padding-top-10" bindtap="topage" data-name="huxinglist" id="{{info.id}}">
 		<!-- <view class="h4 txt-bold txt-purple">户型</view> -->
-		<image src="{{uploadpath}}housing/{{info.housing[0].fengmian}}" class="imgs"></image>
+		<image src="{{uploadpath}}housing/{{info.housing[0].fengmian}}" mode="widthFix" class="imgs"></image>
 	</view>
 
 	<view class="topone text-center padding-top-10" bindtap="topage" data-name="gallery" id="{{info.id}}">
@@ -374,9 +374,9 @@
 				<view class="margin-top-20 " bindtap="xiaoguo" id='{{item.id}}' wx:for-index='idxs' wx:for='{{info.periphery}}' wx:key='p' wx:if='{{item.type_id==nowid}}'>
 					<view class="flex-row flex-center">
 						<view class="flex-1 h5">{{item.name}}</view>
-						<image wx:if='{{item.fangshi=="A"}}' src="{{uploadpath}}resource/{{res.buxing}}" class="icon"></image>
-						<image wx:if='{{item.fangshi=="B"}}' src="{{uploadpath}}resource/{{res.qiche}}" class="icon"></image>
-						<image wx:if='{{item.fangshi=="C"}}' src="{{uploadpath}}resource/{{res.kaiche}}" class="icon"></image>
+						<image wx:if='{{item.fangshi=="A"}}' src="{{uploadpath}}resource/{{res.buxing}}" mode="widthFix" class="icon"></image>
+						<image wx:if='{{item.fangshi=="B"}}' src="{{uploadpath}}resource/{{res.qiche}}"  mode="widthFix" class="icon"></image>
+						<image wx:if='{{item.fangshi=="C"}}' src="{{uploadpath}}resource/{{res.kaiche}}"  mode="widthFix" class="icon"></image>
 						<view class="h6 txt-gray margin-left-20">{{item.shichang}}</view>
 						<view class="h6 txt-gray margin-left-20">{{item.juli}}</view>
 					</view>
@@ -420,9 +420,9 @@
 			<image src="{{uploadpath}}resource/{{res.shoucang}}" wx:if='{{sc=="A"}}' class="icon-25  " id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
 			<image src="{{uploadpath}}resource/{{res.bushoucang}}" wx:if='{{sc=="B"}}' class="icon-25  " id="{{info.id}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
 			<view class="flex-1"></view>
-			<button class="clear-button" open-type='contact'>
-				<view class="left_one text-center bg1 h5">联系客服</view>
-			</button>
+			<!-- <button class="clear-button" open-type='contact'> -->
+				<view class="left_one text-center bg1 h5"  bindtap="zaixian">联系客服</view>
+			<!-- </button> -->
 			<button open-type="share" class="clear-button">
 				<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
 			</button>

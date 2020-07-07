@@ -13,7 +13,7 @@
 
 <view class="grayblock"></view>
 
-<view class="padding-30" wx:for='{{housinglist}}' wx:for-index='idx' wx:key='y' bindtap="topage" data-name='huxing' id="{{item.id}}" wx:if='{{typeid==item.areatype_id}}'>
+<view class="padding-30" wx:for='{{housinglist}}' wx:for-index='idx' wx:key='y' bindtap="topage" data-name='huxing' id="{{item.id}}" wx:if='{{housinglist.length>0 && typeid==item.areatype_id}}'>
 
 	<view class="flex-row ">
 		<image src="{{uploadpath}}housing/{{item.fengmian}}" class="fengmian"></image>
@@ -53,7 +53,11 @@
 	</view>
 
 </view>
-
+<view class="flex-row flex-center margin-top" wx:if='{{entrancelist==undefined || entrancelist==null}}'>
+  <view class="flex-1"></view>
+  <image src="{{uploadpath}}resource/{{res.hpzwsj}}" mode="widthFix" style="width:400rpx;"></image>
+  <view class="flex-1"></view>
+</view>
 <view style="height:120rpx"></view>
 <view class="under_block bg-white">
 	<view class="flex-row flex-center paddings">

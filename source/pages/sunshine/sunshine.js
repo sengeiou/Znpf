@@ -20,12 +20,14 @@ class Content extends AppBase {
     var premisesapi=new PremisesApi();
 
     premisesapi.entrancelist({premises_id:this.Base.options.id,orderby:'r_main.id'},(entrancelist)=>{ 
-     
-      if(this.Base.options.type=="D"){
-        this.Base.setMyData({entrancelist,nowid:this.Base.options.nowid,type:this.Base.options.type})
-      }else{
-        this.Base.setMyData({entrancelist,nowid:entrancelist[0].id,type:"A"})
+      if (entrancelist.length>0){
+        if (this.Base.options.type == "D") {
+          this.Base.setMyData({ entrancelist, nowid: this.Base.options.nowid, type: this.Base.options.type })
+        } else {
+          this.Base.setMyData({ entrancelist, nowid: entrancelist[0].id, type: "A" })
+        }
       }
+     
 
     })
 

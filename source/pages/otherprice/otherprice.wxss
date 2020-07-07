@@ -1,7 +1,7 @@
 /* pages/otherprice/otherprice.wxss */
 
 .loupanname {
-  width: 150rpx;
+  /* width: 150rpx; */
 }
 .priceblock {
   height: 50rpx; 

@@ -120,5 +120,5 @@ page{
 .imgs{
   width: 600rpx;
   height: 800rpx;
-  margin-top: 50%;
+  margin-top: 40%;
 }

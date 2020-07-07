@@ -1,179 +1,185 @@
 <!--pages/hangpai/hangpai.wxml-->
 <cu-custom isCustom="{{true}}" bgColor="bg-white">
-	<view slot="content" class="txt-bold" style="color:#161616;">{{entrancelist[0].premises_name}}</view>
+  <view slot="content" class="txt-bold" style="color:#161616;">{{entrancelist[0].premises_name}}</view>
 </cu-custom>
 
 <view class='padding-30 ' wx:if='{{type!="D"}}'>
-	<scroll-view scroll-x class="scroll " style=" width:100%">
-		<view class='' style="width:150rpx;display:inline-block" bindtap='bindorder' id="{{idx}}" data-id="{{item.id}}" wx:for='{{entrancelist}}' wx:for-index='idx' wx:key='e'>
-			<view class="flex-row flex-column">
-				<view class='h5 txt-bold flex-1  {{nowidx==idx?"":"txt-gray opa8"}}'>{{item.name}}</view>
-				<view class=' order {{nowidx==idx?"bg-purple":"bg-white"}}'></view>
-			</view>
-		</view>
-	</scroll-view>
+  <scroll-view scroll-x class="scroll " style=" width:100%">
+    <view class='' style="width:150rpx;display:inline-block" bindtap='bindorder' id="{{idx}}" data-id="{{item.id}}" wx:for='{{entrancelist}}' wx:for-index='idx' wx:key='e'>
+      <view class="flex-row flex-column">
+        <view class='h5 txt-bold flex-1  {{nowidx==idx?"":"txt-gray opa8"}}'>{{item.name}}</view>
+        <view class=' order {{nowidx==idx?"bg-purple":"bg-white"}}'></view>
+      </view>
+    </view>
+  </scroll-view>
 </view>
 
 <view class="grayblock"></view>
 
-<view wx:for='{{entrancelist}}' wx:key='k' wx:for-index='idx' wx:if='{{nowid==item.id}}' class="">
+<view wx:for='{{entrancelist}}' wx:key='k' wx:for-index='idx' wx:if='{{entrancelist.length>0 && nowid==item.id}}' class="">
 
 
-	<!-- 航拍 -->
-	<view class="padding-30">
-		<view class="txt-bold">航拍</view>
+  <!-- 航拍 -->
+  <view class="padding-30">
+    <view class="txt-bold">航拍</view>
 
-		<video class="margin-top" style='width:100%;height:320rpx;' object-fit="contain" autoplay='{{false}}' loop='{{false}}' controls src='{{uploadpath}}entrance/{{item.video}}'>
-		</video>
+    <video class="margin-top" style='width:100%;height:320rpx;' object-fit="contain" autoplay='{{false}}' loop='{{false}}' controls src='{{uploadpath}}entrance/{{item.video}}'>
+    </video>
 
-		<scroll-view scroll-x class="scroll margin-top-20" style="width:100%">
-			<image bindtap="viewPhoto" id="{{uploadpath}}hanpai/{{item.img}}" wx:for='{{item.hangpaitu}}' style=" display:inline-block" src="{{uploadpath}}hanpai/{{item.img}}" class="imgs margin-right-20"></image>
-		</scroll-view>
+    <scroll-view scroll-x class="scroll margin-top-20" style="width:100%">
+      <image bindtap="viewPhoto" id="{{uploadpath}}hanpai/{{item.img}}" wx:for='{{item.hangpaitu}}' style=" display:inline-block" src="{{uploadpath}}hanpai/{{item.img}}" class="imgs margin-right-20"></image>
+    </scroll-view>
 
-	</view>
+  </view>
 
-	<view class="grayblock"></view>
+  <view class="grayblock"></view>
 
-	<!-- 评级 -->
-	<view class="padding-30">
+  <!-- 评级 -->
+  <view class="padding-30">
 
-		<view class="txt-bold">评级</view>
+    <view class="txt-bold">评级</view>
 
-		<view class="flex-row   margin-top">
+    <view class="flex-row   margin-top">
 
-			<view class="leftblock text-center padding-20">
-				<view class="txt-bold h2 txt-purple margin-top-10">{{item.pingji}}</view>
-				<view class="h5 margin-top-5">知鸟评级</view>
-			</view>
+      <view class="leftblock text-center padding-20">
+        <view class="txt-bold h2 txt-purple margin-top-10">{{item.pingji}}</view>
+        <view class="h5 margin-top-5">知鸟评级</view>
+      </view>
 
-			<view class=" margin-left-40">
+      <view class=" margin-left-40">
 
-				<view class="flex-row flex-center">
-					<view class="h5">景观视野</view>
-					<view class="starbox text-right margin-top-10 flex-1  margin-left-40">
-						<view class="stars" style="width: 100%;">
-							<view class=" ims">
-								<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
-							</view>
-						</view>
-						<view class="stars2" style="width: {{(item.jinguan/5)*100}}%">
-							<view class="ims">
-								<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
-							</view>
-						</view>
-					</view>
-					<view class="txt-purple margin-left-20">{{item.jinguan}}</view>
-				</view>
+        <view class="flex-row flex-center">
+          <view class="h5">景观视野</view>
+          <view class="starbox text-right margin-top-10 flex-1  margin-left-40">
+            <view class="stars" style="width: 100%;">
+              <view class=" ims">
+                <image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+              </view>
+            </view>
+            <view class="stars2" style="width: {{(item.jinguan/5)*100}}%">
+              <view class="ims">
+                <image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+              </view>
+            </view>
+          </view>
+          <view class="txt-purple margin-left-20">{{item.jinguan}}</view>
+        </view>
 
-				<view class="flex-row flex-center margin-top-10">
-					<view class="h5">道路影响</view>
-					<view class="starbox text-right margin-top-10 flex-1  margin-left-40">
-						<view class="stars" style="width: 100%;">
-							<view class=" ims">
-								<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
-							</view>
-						</view>
-						<view class="stars2" style="width: {{(item.daolu/5)*100}}%">
-							<view class="ims">
-								<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
-							</view>
-						</view>
-					</view>
-					<view class="txt-purple margin-left-20">{{item.daolu}}</view>
-				</view>
+        <view class="flex-row flex-center margin-top-10">
+          <view class="h5">道路影响</view>
+          <view class="starbox text-right margin-top-10 flex-1  margin-left-40">
+            <view class="stars" style="width: 100%;">
+              <view class=" ims">
+                <image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+              </view>
+            </view>
+            <view class="stars2" style="width: {{(item.daolu/5)*100}}%">
+              <view class="ims">
+                <image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+              </view>
+            </view>
+          </view>
+          <view class="txt-purple margin-left-20">{{item.daolu}}</view>
+        </view>
 
-				<view class="flex-row flex-center margin-top-10">
-					<view class="h5">其他细节</view>
-					<view class="starbox text-right margin-top-10 flex-1  margin-left-40">
-						<view class="stars" style="width: 100%;">
-							<view class=" ims">
-								<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
-							</view>
-						</view>
-						<view class="stars2" style="width: {{(item.qita/5)*100}}%">
-							<view class="ims">
-								<image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
-							</view>
-						</view>
-					</view>
-					<view class="txt-purple margin-left-20">{{item.qita}}</view>
-				</view>
+        <view class="flex-row flex-center margin-top-10">
+          <view class="h5">其他细节</view>
+          <view class="starbox text-right margin-top-10 flex-1  margin-left-40">
+            <view class="stars" style="width: 100%;">
+              <view class=" ims">
+                <image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star2}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+              </view>
+            </view>
+            <view class="stars2" style="width: {{(item.qita/5)*100}}%">
+              <view class="ims">
+                <image wx:for='{{5}}' wx:for-index='idx' src="{{uploadpath}}resource/{{res.star}}" class="icon-14  {{idx>0?'margin-left-10':''}}"></image>
+              </view>
+            </view>
+          </view>
+          <view class="txt-purple margin-left-20">{{item.qita}}</view>
+        </view>
 
-			</view>
+      </view>
 
-		</view>
+    </view>
 
 
-	</view>
+  </view>
 
-	<view class="grayblock"></view>
+  <view class="grayblock"></view>
 
-	<!-- 景观视野 -->
-	<view class="padding-30">
+  <!-- 景观视野 -->
+  <view class="padding-30">
 
-		<view class="txt-bold">景观视野</view>
+    <view class="txt-bold">景观视野</view>
 
-		<view class="text-center margin-top ">
-			<image src="{{uploadpath}}entrance/{{item.attraction_img}}" class="shiye"></image>
-		</view>
+    <view class="text-center margin-top ">
+      <image src="{{uploadpath}}entrance/{{item.attraction_img}}" class="shiye"></image>
+    </view>
 
-		<view class="h6 txt-grayF margin-top">
-			{{item.attraction}}
-		</view>
+    <view class="h6 txt-grayF margin-top">
+      {{item.attraction}}
+    </view>
 
-	</view>
+  </view>
 
-	<view class="grayblock"></view>
+  <view class="grayblock"></view>
 
-	<!-- 道路影响 -->
-	<view class="padding-30">
+  <!-- 道路影响 -->
+  <view class="padding-30">
 
-		<view class="txt-bold">道路影响</view>
+    <view class="txt-bold">道路影响</view>
 
-		<view class="text-center margin-top ">
-			<image src="{{uploadpath}}entrance/{{item.trafficimpact_img}}" class="shiye"></image>
-		</view>
+    <view class="text-center margin-top ">
+      <image src="{{uploadpath}}entrance/{{item.trafficimpact_img}}" class="shiye"></image>
+    </view>
 
-		<view class="h6 txt-gray margin-top">
-			{{item.trafficimpact}}
-		</view>
+    <view class="h6 txt-gray margin-top">
+      {{item.trafficimpact}}
+    </view>
 
-	</view>
+  </view>
 
-	<view class="grayblock"></view>
+  <view class="grayblock"></view>
 
-	<!-- 其他细节 -->
-	<view class="padding-30">
+  <!-- 其他细节 -->
+  <view class="padding-30">
 
-		<view class="txt-bold">其他细节</view>
+    <view class="txt-bold">其他细节</view>
 
-		<view class="h6 txt-gray margin-top">
-			{{item.detail}}
-		</view>
+    <view class="h6 txt-gray margin-top">
+      {{item.detail}}
+    </view>
 
-	</view>
+  </view>
 
+</view>
+
+<view class="flex-row flex-center margin-top" wx:if='{{entrancelist==undefined || entrancelist==null}}'>
+  <view class="flex-1"></view>
+  <image src="{{uploadpath}}resource/{{res.hpzwsj}}" mode="widthFix" style="width:400rpx;"></image>
+  <view class="flex-1"></view>
 </view>
 
 <view style="height:120rpx"></view>
 <view class="under_block bg-white">
-	<view class="flex-row flex-center paddings">
+  <view class="flex-row flex-center paddings">
 
-		<view wx:if='{{type!="D"}}'>
-			<image src="{{uploadpath}}resource/{{res.shoucang}}" wx:if='{{sc=="A"}}' class="icon-25" id="{{premisesid}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
-			<image src="{{uploadpath}}resource/{{res.bushoucang}}" wx:if='{{sc=="B"}}' class="icon-25" id="{{premisesid}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
-		</view>
+    <view wx:if='{{type!="D"}}'>
+      <image src="{{uploadpath}}resource/{{res.shoucang}}" wx:if='{{sc=="A"}}' class="icon-25" id="{{premisesid}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
+      <image src="{{uploadpath}}resource/{{res.bushoucang}}" wx:if='{{sc=="B"}}' class="icon-25" id="{{premisesid}}" data-member_id="{{memberinfo.id}}" bindtap="shoucang"></image>
+    </view>
 
-		<view class="flex-1"></view>
+    <view class="flex-1"></view>
 
-		<button class="clear-button" open-type='contact'>
-			<view class="left_one text-center bg1 h5">联系客服</view>
-		</button>
+    <button class="clear-button" open-type='contact'>
+      <view class="left_one text-center bg1 h5">联系客服</view>
+    </button>
 
-		<view class="flex-1" wx:if='{{type=="D"}}'></view>
-		<button open-type="share" class="clear-button">
-			<view class="left_one text-center bg2 margin-left-20 h5">分享</view>
-		</button>
-		<view class="flex-1" wx:if='{{type=="D"}}'></view>
-	</view>
+    <view class="flex-1" wx:if='{{type=="D"}}'></view>
+    <button open-type="share" class="clear-button">
+      <view class="left_one text-center bg2 margin-left-20 h5">分享</view>
+    </button>
+    <view class="flex-1" wx:if='{{type=="D"}}'></view>
+  </view>
 </view>

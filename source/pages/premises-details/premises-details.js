@@ -163,7 +163,13 @@ class Content extends AppBase {
     }
     this.Base.setMyData({ markers });
   }
-
+  zaixian() {
+    var instinfo = this.Base.getMyData().instinfo;
+    var url = ApiConfig.GetUploadPath() + 'inst/' + instinfo.gzhewm;
+    wx.previewImage({
+      urls: [url],
+    })
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -172,6 +178,7 @@ body.onMyShow = content.onMyShow;
 body.bindorder = content.bindorder;
 body.guwen = content.guwen;
 body.xiaoguo = content.xiaoguo;
+body.zaixian = content.zaixian;
 
 //body.shoucang = content.shoucang;
 Page(body)

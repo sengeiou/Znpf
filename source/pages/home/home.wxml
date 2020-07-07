@@ -215,7 +215,7 @@
 
 		<view wx:for="{{huxinfenxi}}" wx:key="k" wx:for-index="idx" class="{{idx==0?'':'margin-left-20'}} " bindtap="topage" data-name="huxing" id="{{item.id}}">
 
-			<image src='{{uploadpath}}housing/{{item.fengmian}}' mode="aspectFit" class="img_2"></image>
+			<image src='{{uploadpath}}housing/{{item.fengmian}}' class="img_2"></image>
 
 			<view class="margin-top-5 h5" style="color:#161616">{{item.disposal}} | {{item.areatype_name}}</view>
 			<view class="margin-top-5 f-22" style="color:#777777">{{item.premises_name}}</view>

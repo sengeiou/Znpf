@@ -18,7 +18,8 @@ class Content extends AppBase {
     //options.id=5;
     super.onLoad(options);
     this.Base.setMyData({
-      mobile: ""
+      mobile: "",
+      gzh:false
     });
   }
   onMyShow() {
@@ -77,6 +78,14 @@ class Content extends AppBase {
       url: '/pages/wodeguanzhu/wodeguanzhu',
     })
   }
+  zaixian(){
+    var instinfo = this.Base.getMyData().instinfo;
+    var url = ApiConfig.GetUploadPath() + 'inst/' + instinfo.gzhewm;
+    wx.previewImage({
+      urls: [url],
+    })
+  }
+
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -87,5 +96,6 @@ body.fuwu = content.fuwu;
 body.aboutus = content.aboutus;
 body.bangdin = content.bangdin;
 body.todetail = content.todetail;
-body.wodeguanzhu=content.wodeguanzhu;
+body.wodeguanzhu = content.wodeguanzhu;
+body.zaixian = content.zaixian;
 Page(body)

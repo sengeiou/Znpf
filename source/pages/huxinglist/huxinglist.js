@@ -72,14 +72,16 @@ class Content extends AppBase {
       areatype_id: typeid,
       premises_id: this.Base.options.id
     }, (housinglist) => {
+      if (housinglist.length>0){
+        for (var i = 0; i < housinglist.length; i++) {
+          housinglist[i].grade = new Number(housinglist[i].grade).toFixed(1);
+        }
 
-      for (var i = 0; i < housinglist.length; i++) {
-        housinglist[i].grade = new Number(housinglist[i].grade).toFixed(1);
+        this.Base.setMyData({
+          housinglist
+        })
       }
-
-      this.Base.setMyData({
-        housinglist
-      })
+     
     })
   }
 

@@ -19,4 +19,6 @@
         <template is="wxParse" data="{{wxParseData:content.nodes}}" />
     </view>
    
+
+   <view></view>
 </view>
